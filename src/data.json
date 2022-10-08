@@ -1,0 +1,162 @@
+{
+  "profile": {
+    "name": "John Doe",
+    "email": "john@doe.com",
+    "phone": "123-456-7890",
+    "city": "New York",
+    "state": "NY",
+    "country": "USA",
+    "website": "https://www.johndoe.com"
+  },
+  "skills": [
+    {
+      "id": 1,
+      "name": "Skill 1",
+      "color": "red",
+      "progress": 100
+    },
+    {
+      "id": 2,
+      "name": "Skill 2",
+      "color": "green",
+      "progress": 75
+    },
+    {
+      "id": 3,
+      "name": "Skill 3",
+      "color": "blue",
+      "progress": 50
+    },
+    {
+      "id": 4,
+      "name": "Skill 4",
+      "color": "yellow",
+      "progress": 25
+    },
+    {
+      "id": 5,
+      "name": "Skill 5",
+      "color": "purple",
+      "progress": 5
+    }
+  ],
+  "languages": [
+    {
+      "id": 1,
+      "name": "Language 1",
+      "level": "Native",
+      "progress": 100,
+      "color": "purple"
+    },
+    {
+      "id": 2,
+      "name": "Language 2",
+      "level": "Fluent",
+      "progress": 75,
+      "color": "blue"
+    },
+    {
+      "id": 3,
+      "name": "Language 3",
+      "level": "Intermediate",
+      "progress": 50,
+      "color": "green"
+    },
+    {
+      "id": 4,
+      "name": "Language 4",
+      "level": "Beginner",
+      "progress": 20,
+      "color": "yellow"
+    },
+    {
+      "id": 5,
+      "name": "Language 5",
+      "level": "Elementary",
+      "progress": 2,
+      "color": "red"
+    }
+  ],
+  "certificates": [
+    {
+      "id": 1,
+      "name": "Certificate 1",
+      "date": "2019",
+      "issuer": "Issuer 1"
+    },
+    {
+      "id": 2,
+      "name": "Certificate 2",
+      "date": "2019",
+      "issuer": "Issuer 2"
+    },
+    {
+      "id": 3,
+      "name": "Certificate 3",
+      "date": "2019",
+      "issuer": "Issuer 3"
+    },
+    {
+      "id": 4,
+      "name": "Certificate 4",
+      "date": "2019",
+      "issuer": "Issuer 4"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "name": "Education 1",
+      "from": "2019",
+      "to": "2020",
+      "institution": "Institution 1"
+    },
+    {
+      "id": 2,
+      "name": "Education 2",
+      "from": "2019",
+      "to": "2020",
+      "institution": "Institution 2"
+    },
+    {
+      "id": 3,
+      "name": "Education 3",
+      "from": "2019",
+      "to": "2020",
+      "institution": "Institution 3"
+    },
+    {
+      "id": 4,
+      "name": "Education 4",
+      "from": "2019",
+      "to": "2020",
+      "institution": "Institution 4"
+    }
+  ],
+  "work": [
+    {
+      "id": 1,
+      "position": "Work 1",
+      "from": "2019",
+      "to": "2020",
+      "company": "Company 1",
+      "summary": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
+    },
+    {
+      "id": 2,
+      "position": "Work 2",
+      "from": "2019",
+      "to": "2020",
+      "company": "Company 2",
+      "summary": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
+    },
+    {
+      "id": 3,
+      "position": "Work 3",
+      "from": "2019",
+      "to": "2020",
+      "company": "Company 3",
+      "summary": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
+    }
+  ]
+}
