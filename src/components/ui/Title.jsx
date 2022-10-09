@@ -1,9 +1,10 @@
 import React from "react";
 
-function Title({ children }) {
+function Title({ children, customStyle, h, ...props }) {
+  // if h == 1, then h = "h1"
+  const Tag = `h${h}` || "h1";
+
   const style = {
-    fontSize: "1.5rem",
-    fontWeight: "400",
     marginBottom: "1rem",
     display: "flex",
     alignItems: "center",
@@ -11,7 +12,17 @@ function Title({ children }) {
     letterSpacing: "0.1rem",
   };
 
-  return <h1 style={style}>{children}</h1>;
+  if (customStyle) {
+    for (const [key, value] of Object.entries(customStyle)) {
+      style[key] = value;
+    }
+  }
+
+  return (
+    <Tag style={style} {...props}>
+      {children}
+    </Tag>
+  );
 }
 
 export default Title;

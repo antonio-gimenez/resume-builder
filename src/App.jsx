@@ -1,27 +1,10 @@
 import React from "react";
-import Header from "./components/Header";
-import Languages from "./components/Languages";
-import Skills from "./components/Skills";
-import Certifications from "./components/Certifications";
-import ProfessionalExperience from "./components/ProfessionalExperience";
-import Education from "./components/Education";
-import { Grid, Column, Container } from "./components/layouts";
-
+import { Container } from "./components/layouts";
+import Form from "./components/Form";
 function App() {
   return (
-    <Container maxWidth={1200}>
-      <Header />
-      <Grid columns={3}>
-        <Column span={1}>
-          <Skills />
-          <Languages />
-          <Certifications />
-        </Column>
-        <Column span={2}>
-          <ProfessionalExperience />
-          <Education />
-        </Column>
-      </Grid>
+    <Container customStyle={{ maxWidth: "1200px" }}>
+      <Form />
     </Container>
   );
 }

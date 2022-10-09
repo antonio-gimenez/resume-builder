@@ -1,10 +1,9 @@
 import React from "react";
-import { Container } from "./layouts";
-import { List, ListItem, Title } from "./ui";
-import { work } from "../data.json";
-function ProfessionalExperience() {
+import { List, ListItem, Title } from "../ui";
+function Work({ work }) {
+  if (!work) return null;
   return (
-    <Container>
+    <>
       <Title>Professional Experience</Title>
       <List>
         {work.map((item) => (
@@ -19,8 +18,8 @@ function ProfessionalExperience() {
           </ListItem>
         ))}
       </List>
-    </Container>
+    </>
   );
 }
 
-export default ProfessionalExperience;
+export default Work;

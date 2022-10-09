@@ -4,6 +4,10 @@
   --color-background: #e6e6e8;
   --color-accent: rgb(29, 78, 216);
   --color-date: rgb(107, 114, 128);
+  --color-background-input: rgb(239, 242, 249);
+  --color-placeholder: rgb(159, 166, 187);
+  --color-accent: rgb(25, 143, 240); /* #198ff0 */
+  --color-preview-background: rgb(101, 110, 131);
 }
 
 html {
@@ -13,7 +17,7 @@ html {
 }
 
 body {
-  background-color: var(--color-background);
+  /* background-color: var(--color-background); */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: normal;
@@ -28,6 +32,79 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.add-container {
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 6px 14px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: rgba(234, 246, 255, 0);
+  color: rgb(26, 145, 240);
+  font-weight: 600;
+  cursor: pointer;
+  outline: currentcolor none medium;
+  transition: background-color 0.15s ease 0s;
+}
+
+input {
+  border-radius: 3px;
+  padding: 12px 16px;
+  width: 100%;
+  display: block;
+  caret-color: var(--color-accent);
+  background-color: var(--color-background-input);
+  outline: currentcolor none medium;
+  border: 0px none;
+  color: rgb(30, 37, 50);
+  transition: all 0.1s ease 0s;
+  /* background-color: var(--color-background-input); */
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+input:focus {
+  outline: none;
+}
+
+.input-border {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: #1a91f0;
+  border-radius: 0px 0px 2px 2px;
+  pointer-events: none;
+  opacity: 0;
+  transform: scaleX(0.5);
+}
+input:focus-within + .input-border {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* make plaecholder */
+input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.input-label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgb(130, 139, 162);
+  margin-bottom: 6px;
 }
 
 .pointer {
@@ -248,5 +325,6 @@ a {
   width: 20px;
   margin-right: 0.25rem;
   height: 20px;
-  fill: var(--color-primary);
+  /* font-weight: 800;
+  /* fill: var(--color-primary); */
 }

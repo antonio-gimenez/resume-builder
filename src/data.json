@@ -1,6 +1,14 @@
 {
+  "pageSettings": {
+    "backgroundColor": "yellow",
+    "marign": "auto",
+    "color": "black",
+    "fontFamily": "Arial",
+    "fontSize": "12px"
+  },
   "profile": {
-    "name": "John Doe",
+    "firstName": "John",
+    "lastName": "Doe",
     "email": "john@doe.com",
     "phone": "123-456-7890",
     "city": "New York",

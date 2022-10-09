@@ -1,10 +1,9 @@
 import React from "react";
-import { Container } from "./layouts";
-import { Title, Progress, ListItem, List } from "./ui";
-import { languages } from "../data.json";
-function Languages() {
+import { Title, Progress, ListItem, List } from "../ui";
+function Languages({ languages }) {
+  if (!languages) return null;
   return (
-    <Container>
+    <>
       <Title>Languages</Title>
       <List>
         {languages.map((language) => (
@@ -16,7 +15,7 @@ function Languages() {
           </ListItem>
         ))}
       </List>
-    </Container>
+    </>
   );
 }
 

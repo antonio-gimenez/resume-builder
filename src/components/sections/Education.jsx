@@ -1,11 +1,10 @@
 import React from "react";
-import { education } from "../data.json";
-import { Container } from "./layouts";
-import { List, ListItem, Title } from "./ui";
+import { List, ListItem, Title } from "../ui";
 
-function Education() {
+function Education({ education }) {
+  if (!education) return null;
   return (
-    <Container className="Container">
+    <>
       <Title>Education</Title>
 
       <List>
@@ -20,7 +19,7 @@ function Education() {
           </ListItem>
         ))}
       </List>
-    </Container>
+    </>
   );
 }
 

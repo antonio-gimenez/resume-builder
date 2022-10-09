@@ -1,5 +1,5 @@
 import Grid from "./Grid";
 import Container from "./Container";
 import Column from "./Column";
-
-export { Grid, Container, Column };
+import Flex from "./Flex";
+export { Grid, Container, Column, Flex };
