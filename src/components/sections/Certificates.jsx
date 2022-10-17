@@ -1,13 +1,13 @@
 import React from "react";
 import { Title } from "../ui";
 
-function Certificates({ certificates }) {
-  if (!certificates) return null;
+function Certificates({ data }) {
+  if (!data) return null;
   return (
     <>
       <Title>Certificates</Title>
 
-      {certificates.map((certificate) => (
+      {data.map((certificate) => (
         <div key={certificate.id}>
           <span>{certificate.name}</span>
           <span>{certificate.date}</span>

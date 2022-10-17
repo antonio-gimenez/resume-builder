@@ -1,7 +1,7 @@
 {
   "pageSettings": {
-    "backgroundColor": "yellow",
-    "marign": "auto",
+    "backgroundColor": "white",
+    "marign": "4px",
     "color": "black",
     "fontFamily": "Arial",
     "fontSize": "12px"
@@ -18,34 +18,22 @@
   },
   "skills": [
     {
-      "id": 1,
-      "name": "Skill 1",
+      "id": "skill-1",
+      "name": "Leadership",
       "color": "red",
-      "progress": 100
+      "progress": 75
     },
     {
-      "id": 2,
-      "name": "Skill 2",
+      "id": "skill-2",
+      "name": "Communication",
       "color": "green",
       "progress": 75
     },
     {
-      "id": 3,
-      "name": "Skill 3",
+      "id": "skill-3",
+      "name": "Teamwork",
       "color": "blue",
       "progress": 50
-    },
-    {
-      "id": 4,
-      "name": "Skill 4",
-      "color": "yellow",
-      "progress": 25
-    },
-    {
-      "id": 5,
-      "name": "Skill 5",
-      "color": "purple",
-      "progress": 5
     }
   ],
   "languages": [
@@ -143,12 +131,12 @@
   ],
   "work": [
     {
-      "id": 1,
+      "id": "work-1",
       "position": "Work 1",
       "from": "2019",
       "to": "2020",
       "company": "Company 1",
-      "summary": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
+      "description": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
     },
     {
       "id": 2,
@@ -156,7 +144,7 @@
       "from": "2019",
       "to": "2020",
       "company": "Company 2",
-      "summary": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
+      "description": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
     },
     {
       "id": 3,
@@ -164,7 +152,7 @@
       "from": "2019",
       "to": "2020",
       "company": "Company 3",
-      "summary": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
+      "description": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
     }
   ]
 }

@@ -9,7 +9,7 @@ function Skills({ skills }) {
         {skills.map((skill) => (
           <ListItem key={skill.id}>
             <span>{skill.name}</span>
-            <Progress backgroundColor={skill.color} progress={skill.progress} />
+            <Progress progress={skill.progress} />
           </ListItem>
         ))}
       </List>

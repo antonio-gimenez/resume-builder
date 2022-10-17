@@ -1,8 +1,8 @@
 import React from "react";
 
-function Title({ children, customStyle, h, ...props }) {
+function Title({ children, customStyle, h = 1, ...props }) {
   // if h == 1, then h = "h1"
-  const Tag = `h${h}` || "h1";
+  const Tag = `h${h}`;
 
   const style = {
     marginBottom: "1rem",

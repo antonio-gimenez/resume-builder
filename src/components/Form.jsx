@@ -1,47 +1,36 @@
-import { PlusIcon } from "@heroicons/react/20/solid";
-import React, { useState } from "react";
+import React from "react";
 import useResume from "../hooks/useResume";
-import { Column, Container, Flex, Grid } from "./layouts";
+import { downloadJsonFile } from "../utils";
+import Collapse from "./Collapse";
+import { Column, Container, Grid } from "./layouts";
+import NewSkill from "./NewSkill";
 import Preview from "./Preview";
 import { Title, Input } from "./ui";
+import ToggleLevel from "./ui/ToggleLevel";
 
-const style = {
-  width: "auto",
-  height: "auto",
-  padding: "0rem",
-};
+const initialState = require("../data.json");
 
 function Form() {
-  const { resume, updateResumeSection, handleSkill } = useResume();
-  const [showPreview, setShowPreview] = useState(false);
-  const fixed = {
-    position: "fixed",
-    top: "0",
-    right: "0",
-    bottom: "0",
-    width: "50%",
-    height: "100%",
-    backgroundColor: "rgb(101, 110, 131)",
-  };
+  const { resume, updateResumeSection, handleSkill, updateSkillProgress, updateResume } = useResume();
 
   return (
-    <Container style={style}>
+    <Container>
       <Grid>
-        <Container style={fixed}>
+        <Container className={"form-fixed"}>
           <Column>
-            <Title h={1} customStyle={{ color: "#198ff0" }}>
+            <Title h={1} className={"accent"}>
               Resume Builder
             </Title>
-            <Flex>
-              <label htmlFor="show-preview">{showPreview ? "Hide" : "Show"} preview</label>
-              <input
-                id="show-preview"
-                type="checkbox"
-                value={showPreview}
-                onChange={() => setShowPreview(!showPreview)}
-              />
-            </Flex>
-            <Input placeholder={"Resume name"} label={"Resume name"} />
+            <button
+              onClick={() => {
+                updateResume(initialState);
+              }}
+            >
+              Set default values
+            </button>
+            <button onClick={() => downloadJsonFile(resume, resume.profile.firstName + "-" + resume.profile.lastName)}>
+              Download json
+            </button>
             <Title h={2}>Profile</Title>
             <Grid columns={2}>
               <Input
@@ -89,16 +78,85 @@ function Form() {
               {/* <Input placeholder={"ex: www.johndoe.com"} label={"Website"} name="website" /> */}
             </Grid>
             <Title h={2}>Skills</Title>
-            <Column>
-              <Input placeholder={"ex: Leadership"} label={"Skill 1"} onChange={(e) => handleSkill(e)} name="skill" />
-            </Column>
-            <Column></Column>
-
-            <Grid columns={2}></Grid>
+            <NewSkill />
+            <Grid columns={2}>
+              <Input
+                placeholder={"ex: Leadership"}
+                defaultValue={resume.skills[0].name}
+                label={"Skill 1"}
+                onBlur={(e) => handleSkill(e)}
+                name="skill-1"
+              />
+              <ToggleLevel
+                name="skill-1"
+                currentProgress={resume.skills[0].progress}
+                handleChange={updateSkillProgress}
+              />
+              <Input
+                placeholder={"ex: Leadership"}
+                label={"Skill 2"}
+                defaultValue={resume.skills[1].name}
+                onBlur={(e) => handleSkill(e)}
+                name="skill-2"
+              />
+              <ToggleLevel
+                name="skill-2"
+                currentProgress={resume.skills[1].progress}
+                handleChange={updateSkillProgress}
+              />
+              <Input
+                placeholder={"ex: Leadership"}
+                defaultValue={resume.skills[2].name}
+                label={"Skill 3"}
+                onBlur={(e) => handleSkill(e)}
+                name="skill-3"
+              />
+              <ToggleLevel
+                name="skill-3"
+                currentProgress={resume.skills[2].progress}
+                handleChange={updateSkillProgress}
+              />
+            </Grid>
+            <Grid columns={2}>
+              <Input
+                placeholder="Position"
+                label="Position 1"
+                value={resume.work[0].position}
+                onChange={(e) => updateResumeSection("work", e)}
+                name="work-1"
+              />
+              <Input
+                placeholder="Company"
+                label="Company 1"
+                value={resume.work[0].company}
+                onChange={(e) => updateResumeSection("work", e)}
+                name="company-1"
+              />
+              <Input
+                placeholder="Start Date"
+                label="Start Date 1"
+                value={resume.work[0].startDate}
+                onChange={(e) => updateResumeSection("work", e)}
+                name="startDate-1"
+              />
+              <Input
+                placeholder="End Date"
+                label="End Date 1"
+                value={resume.work[0].endDate}
+                onChange={(e) => updateResumeSection("experience", e)}
+                name="endDate-1"
+              />
+            </Grid>
           </Column>
+          <div className="bordered-container">
+            <Collapse title="Exmaple of coallpse" open={false}>
+              HOLACARACOLA
+            </Collapse>
+          </div>
         </Container>
 
-        {showPreview && <Preview data={resume} />}
+        {/* {showPreview && <Preview data={resume} />} */}
+        <Preview data={resume} />
       </Grid>
     </Container>
   );

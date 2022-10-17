@@ -1,12 +1,12 @@
 import React from "react";
 import { List, ListItem, Title } from "../ui";
-function Work({ work }) {
-  if (!work) return null;
+function Work({ data }) {
+  if (!data) return null;
   return (
     <>
       <Title>Professional Experience</Title>
       <List>
-        {work.map((item) => (
+        {data.map((item) => (
           <ListItem key={item.id}>
             <span>
               {item.from} - {item.to}

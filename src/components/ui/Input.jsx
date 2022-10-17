@@ -1,18 +1,10 @@
 import React from "react";
-import { Container, Flex } from "../layouts";
 
 function Input({ label, ...props }) {
-  const style = {
-    position: "relative",
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: "0.25rem",
-  };
   return (
-    <div style={style}>
+    <div>
       {label && (
-        <label className="input-label" htmlFor="name">
+        <label className="input-label " htmlFor="name">
           {label}
         </label>
       )}

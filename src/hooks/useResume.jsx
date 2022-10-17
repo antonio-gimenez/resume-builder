@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { isArray, isObject } from "../utils";
 import useLocalStorage from "./useLocalStorage";
 
 const initialState = require("../data.json");
@@ -7,32 +8,96 @@ function useResume() {
   const [resume, setResume] = useLocalStorage("resume", initialState);
 
   const updateResumeSection = (section, event) => {
+    // If the section is an array, we need to update the array
+    if (isArray(resume[section])) {
+      const newArray = [...resume[section]];
+      newArray[event.target.dataset.index][event.target.name] = event.target.value;
+      setResume({ ...resume, [section]: newArray });
+    } else {
+      setResume({ ...resume, [section]: { ...resume[section], [event.target.name]: event.target.value } });
+    }
+  };
+
+  const updateSkillProgress = (event) => {
     const { name, value } = event.target;
-    console.log({ name, value, section });
+    if (!name || !value) return null;
+    console.log(value);
     setResume((prev) => ({
       ...prev,
-      [section]: {
-        ...prev[section],
-        [name]: value,
-      },
+      skills: [
+        ...prev.skills.map((skill) => {
+          if (skill.id === name) {
+            skill.progress = parseInt(value);
+          }
+          return skill;
+        }),
+      ],
     }));
   };
 
-  const handleSkillChange = (event) => {
+  const addSkill = (event) => {
     const { name, value } = event.target;
-    const skills = resume.skills.map((skill) => {
-      if (skill.id === name) {
-        return {
-          ...skill,
-          name: value,
-        };
-      }
-      return skill;
-    });
-    setResume((prev) => ({
-      ...prev,
-      skills,
-    }));
+    if (!name || !value) return;
+    // if id already exists, update name
+    if (resume.skills.find((skill) => skill.id === name)) {
+      setResume((prev) => ({
+        ...prev,
+        skills: [
+          ...prev.skills.map((skill) => {
+            if (skill.id === name) {
+              skill.name = value;
+            }
+            return skill;
+          }),
+        ],
+      }));
+    } else {
+      setResume((prev) => ({
+        ...prev,
+        skills: [
+          ...prev.skills,
+          {
+            id: name,
+            name: value,
+            progress: 0,
+          },
+        ],
+      }));
+    }
+  };
+
+  const addExperience = (event) => {
+    const { name, value } = event.target;
+    if (!name || !value) return;
+    // if id already exists, update name
+    if (resume.work.find((exp) => exp.id === name)) {
+      setResume((prev) => ({
+        ...prev,
+        work: [
+          ...prev.work.map((exp) => {
+            if (exp.id === name) {
+              exp.name = value;
+            }
+            return exp;
+          }),
+        ],
+      }));
+    } else {
+      setResume((prev) => ({
+        ...prev,
+        work: [
+          ...prev.work,
+          {
+            id: name,
+            position: value,
+            from: "",
+            to: "",
+            company: "",
+            description: "",
+          },
+        ],
+      }));
+    }
   };
 
   const updateResume = (data) => {
@@ -49,7 +114,9 @@ function useResume() {
     certificates: resume.certificates,
     updateResumeSection,
     updateResume,
-    handleSkill: handleSkillChange,
+    handleSkill: addSkill,
+    updateSkillProgress,
+    handleExperience: addExperience,
     restore: () => setResume(initialState),
   };
 }

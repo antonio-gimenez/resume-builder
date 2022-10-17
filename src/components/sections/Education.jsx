@@ -1,14 +1,14 @@
 import React from "react";
 import { List, ListItem, Title } from "../ui";
 
-function Education({ education }) {
-  if (!education) return null;
+function Education({ data }) {
+  if (!data) return null;
   return (
     <>
       <Title>Education</Title>
 
       <List>
-        {education.map((item) => (
+        {data.map((item) => (
           <ListItem key={item.id}>
             <h3>
               {item.from} - {item.to}
