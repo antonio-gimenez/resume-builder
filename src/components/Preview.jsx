@@ -2,7 +2,7 @@ import React from "react";
 import useResume from "../hooks/useResume";
 import ColorPicker from "./ColorPicker";
 import { Column, Container, Flex, Grid } from "./layouts";
-import { Education, Work, Languages, Profile, Skills, Certificates } from "./sections";
+import { Education, Work, Languages, Profile, Skills, Certificates } from "./Resume";
 
 function Preview({ data }) {
   const { resume, updateResumeSection } = useResume();

@@ -6,7 +6,6 @@ function Certificates({ data }) {
   return (
     <>
       <Title>Certificates</Title>
-
       {data.map((certificate) => (
         <div key={certificate.id}>
           <span>{certificate.name}</span>

@@ -18,17 +18,15 @@ function Form() {
       <Title h={1} className={"accent"}>
         Resume Builder
       </Title>
-      <Flex direction={"row"}>
-        <Dropzone />
-        <button
-          onClick={() => {
-            updateResume(initialState);
-          }}
-        >
-          Set default values
-        </button>
-        <button onClick={() => downloadJsonFile(resume, fileName)}>Download json</button>
-      </Flex>
+      <Dropzone />
+      <button
+        onClick={() => {
+          updateResume(initialState);
+        }}
+      >
+        Set default values
+      </button>
+      <button onClick={() => downloadJsonFile(resume, fileName)}>Download json</button>
       <Title h={2}>Profile</Title>
       <Flex direction={"row"} space="2">
         <Input
