@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useResume from "../hooks/useResume";
 import { downloadJsonFile } from "../utils";
 import { Flex } from "./layouts";

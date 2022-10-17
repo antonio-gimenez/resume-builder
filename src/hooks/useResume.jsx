@@ -1,17 +1,10 @@
-import React, { useState } from "react";
-import { isArray, isObject } from "../utils";
+import { isArray } from "../utils";
 import useLocalStorage from "./useLocalStorage";
 
 const initialState = require("../data.json");
 
 function useResume() {
   const [resume, setResume] = useLocalStorage("resume", initialState);
-
-  // when setting a value, we need to refresh the state
-  // so that the component re-renders
-  const updateResume = (newResume) => {
-    setResume(newResume);
-  };
 
   const updateResumeSection = (section, event) => {
     // If the section is an array, we need to update the array
@@ -115,7 +108,7 @@ function useResume() {
     languages: resume.languages,
     certificates: resume.certificates,
     updateResumeSection,
-    updateResume,
+    updateResume: setResume,
     handleSkill: addSkill,
     updateSkillProgress,
     handleExperience: addExperience,

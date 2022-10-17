@@ -15,7 +15,6 @@ function useLocalStorage(key, initialValue) {
     }
   });
 
-  // When local storage changes, resends the value to the state
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
@@ -25,6 +24,10 @@ function useLocalStorage(key, initialValue) {
       const item = window.localStorage.getItem(key);
       setStoredValue(item ? JSON.parse(item) : initialValue);
     });
+
+    return () => {
+      window.removeEventListener("storage", () => {});
+    };
   }, [key, initialValue]);
 
   const setValue = (value) => {
@@ -33,6 +36,7 @@ function useLocalStorage(key, initialValue) {
       setStoredValue(valueToStore);
       if (typeof window !== "undefined") {
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
+        window.dispatchEvent(new Event("storage"));
       }
     } catch (error) {
       console.log(error);
