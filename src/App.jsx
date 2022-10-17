@@ -1,11 +1,14 @@
 import React from "react";
-import { Container } from "./components/layouts";
 import Form from "./components/Form";
+import Preview from "./components/Preview";
+import useResume from "./hooks/useResume";
 function App() {
+  const { resume } = useResume();
   return (
-    <Container style={{ maxWidth: "1200px" }}>
+    <div className="App">
       <Form />
-    </Container>
+      {/* <Preview data={resume} /> */}
+    </div>
   );
 }
 

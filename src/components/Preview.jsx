@@ -65,7 +65,6 @@ function Preview({ data }) {
           currentColor={resume.pageSettings.backgroundColor}
           onChange={onChangeColor}
         />
-        {/* <ColorPicker name="color" currentColor={data.pageSettings.color} onChange={onChangeColor} /> */}
       </div>
     </Container>
   );

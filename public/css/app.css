@@ -2,19 +2,75 @@
   --color-primary: rgb(28, 40, 59);
   --color-navigation: rgb(249, 250, 251);
   --color-background: rgb(101, 110, 131);
-  --color-accent: rgb(29, 78, 216);
+  --color-accent: rgb(10, 107, 255);
   --color-date: rgb(107, 114, 128);
   --color-background-input: rgb(239, 242, 249);
   --color-placeholder: rgb(159, 166, 187);
   --color-accent: rgb(100, 149, 237);
   --color-preview-background: rgb(25, 25, 112);
   --border-color: rgba(0, 0, 0, 0.15);
+  --stripe-color: rgba(10, 107, 255, 0.2);
+  --text-muted: rgb(107, 114, 128);
 }
 
 html {
   height: 100vh;
   min-width: 360px;
   scroll-behavior: smooth;
+}
+/* input file */
+input[type="file"] {
+  display: none;
+}
+
+.dropzone {
+  border: 2px dashed var(--border-color);
+  border-radius: 5px;
+  background: var(--color-navigation);
+  min-height: 3rem;
+  min-width: 8rem;
+}
+
+.dropzone.active {
+  background: var(--stripe-color);
+}
+
+.dropzone-file {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #065 dd8; */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropzone-label {
+  padding: 0.5rem 0.5rem;
+  font-size: small;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+}
+
+.dropzone-label-emphasis {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.dropzone-supported-file-types {
+  font-size: small;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+}
+
+.flex-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .range-container {
@@ -67,23 +123,25 @@ input[type="range"] {
 }
 
 button {
-  background-color: #0a6bff;
-  border-radius: 4px;
+  background-color: var(--color-accent);
+  border-radius: 0.25rem;
   border: 0;
   box-shadow: rgba(1, 60, 136, 0.5) 0 -1px 3px 0 inset, rgba(0, 44, 97, 0.1) 0 3px 6px 0;
   box-sizing: border-box;
   color: #fff;
+
   cursor: pointer;
-  display: inherit;
+  display: flex;
+  align-items: center;
+
   font-family: "Space Grotesk", -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 18px;
+  font-size: 1em;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 16px;
   margin: 0;
-  min-height: 56px;
-  min-width: 120px;
-  padding: 16px 20px;
+  min-height: 2em;
+  padding: 0.5rem 1rem;
   position: relative;
   text-align: center;
   user-select: none;
@@ -160,8 +218,8 @@ input:disabled {
   margin: 0 auto;
   padding: 0 0rem;
   max-width: 100%;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .form-fixed {
@@ -181,7 +239,7 @@ input:disabled {
   left: 0;
   bottom: 0;
   right: 0;
-  width: 50%;
+  width: auto;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -216,8 +274,8 @@ a {
 input {
   border-radius: 3px;
   padding: 12px 16px;
-  width: 100%;
-  display: block;
+  width: auto;
+  display: flex;
   caret-color: var(--color-accent);
   background-color: var(--color-background-input);
   outline: currentcolor none medium;
@@ -248,6 +306,31 @@ input:focus {
   opacity: 0;
   transform: scaleX(0.5);
   transition: all 0.2s ease 0s;
+}
+
+.bg-stripes {
+  background-image: linear-gradient(
+    135deg,
+    var(--stripe-color) 25%,
+    transparent 25%,
+    transparent 50%,
+    var(--stripe-color) 50%,
+    var(--stripe-color) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 0.5rem 0.5rem;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin: 0 auto;
+  max-width: 100vw;
+  padding: 1rem;
+  max-height: 100vh;
+  height: 100%;
 }
 
 input:focus-within + .input-border {

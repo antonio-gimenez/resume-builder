@@ -8,6 +8,7 @@ function Title({ children, customStyle, h = 1, ...props }) {
     marginBottom: "1rem",
     display: "flex",
     alignItems: "center",
+    width: "auto",
     textTransform: "uppercase",
     letterSpacing: "0.1rem",
   };

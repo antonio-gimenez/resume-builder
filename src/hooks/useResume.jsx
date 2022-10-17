@@ -7,6 +7,12 @@ const initialState = require("../data.json");
 function useResume() {
   const [resume, setResume] = useLocalStorage("resume", initialState);
 
+  // when setting a value, we need to refresh the state
+  // so that the component re-renders
+  const updateResume = (newResume) => {
+    setResume(newResume);
+  };
+
   const updateResumeSection = (section, event) => {
     // If the section is an array, we need to update the array
     if (isArray(resume[section])) {
@@ -98,10 +104,6 @@ function useResume() {
         ],
       }));
     }
-  };
-
-  const updateResume = (data) => {
-    setResume(data);
   };
 
   return {
