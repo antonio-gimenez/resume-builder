@@ -1,10 +1,10 @@
 import React from "react";
-import { Title, Progress, ListItem, List } from "../ui";
+import { Progress, ListItem, List } from "../ui";
 function Languages({ data }) {
   if (!data) return null;
   return (
     <>
-      <Title>Languages</Title>
+      <div className="heading-2">Languages</div>
       <List>
         {data.map((language) => (
           <ListItem key={language.id}>

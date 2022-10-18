@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useResume from "../hooks/useResume";
 import { downloadJsonFile } from "../utils";
-import { Flex } from "./layouts";
-import { Title, Input } from "./ui";
-import Dropzone from "./ui/Dropzone";
+import { Container, Flex } from "./layouts";
+import { Input, UploadFile, Button } from "./ui";
 import ToggleLevel from "./ui/ToggleLevel";
 
 const initialState = require("../data.json");
@@ -14,17 +13,20 @@ function Form() {
   const fileName = `resume-${new Date().getTime()}.json`;
 
   return (
-    <div style={{ maxWidth: "1200px" }}>
-      <Dropzone />
-      <button
+    <div>
+      <Container style={{ maxWidth: "200px" }}>
+        <UploadFile />
+      </Container>
+
+      <Button
         onClick={() => {
           updateResume(initialState);
         }}
       >
         Set default values
-      </button>
-      <button onClick={() => downloadJsonFile(resume, fileName)}>Download json</button>
-      <Title h={2}>Profile</Title>
+      </Button>
+      <Button onClick={() => downloadJsonFile(resume, fileName)}>Download json</Button>
+      <div className="heading-2">Profile</div>
       <Flex direction={"row"} space="2">
         <Input
           placeholder={"ex: John"}
@@ -74,7 +76,7 @@ function Form() {
         />
       </Flex>
       {/* <Input placeholder={"ex: www.johndoe.com"} label={"Website"} name="website" /> */}
-      <Title h={2}>Skills</Title>
+      <div className="heading-2">Skills</div>
       <Flex direction={"row"} space="2">
         <Input
           placeholder={"ex: Leadership"}

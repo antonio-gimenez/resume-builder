@@ -15,7 +15,7 @@ function NewSkill() {
     }
   }, []);
 
-  return <div className="bordered-container"></div>;
+  return <div></div>;
 }
 
 export default NewSkill;

@@ -1,11 +1,11 @@
 import React from "react";
-import { List, ListItem, Title } from "../ui";
+import { List, ListItem } from "../ui";
 
 function Education({ data }) {
   if (!data) return null;
   return (
     <>
-      <Title>Education</Title>
+      <div className="heading-2">Education</div>
 
       <List>
         {data.map((item) => (

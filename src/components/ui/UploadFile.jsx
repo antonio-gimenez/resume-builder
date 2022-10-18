@@ -1,6 +1,9 @@
-import { CheckCircleIcon, CloudArrowUpIcon, CloudIcon } from "@heroicons/react/24/outline";
+import { ArrowUpIcon, CheckCircleIcon, CloudArrowUpIcon, CloudIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import useResume from "../../hooks/useResume";
+import Button from "./Button";
+import Input from "./Input";
+import InputFile from "./InputFile";
 
 const fileNotUploaded = (
   <>
@@ -31,7 +34,7 @@ const fileUploaded = (
   </>
 );
 
-function Dropzone() {
+function UploadFile({ method = "input" }) {
   const { updateResume } = useResume();
   const [label, setLabel] = useState(fileNotUploaded);
   const [isDragActive, setIsDragActive] = useState(false);
@@ -75,7 +78,7 @@ function Dropzone() {
     setLabel(fileNotUploaded);
   };
 
-  return (
+  return method === "zone" ? (
     <div
       className={isDragReleased ? "dropzone file-uploaded" : isDragActive ? "dropzone drag-over" : "dropzone"}
       onDragLeave={onDragLeave}
@@ -84,10 +87,27 @@ function Dropzone() {
     >
       <label className="dropzone-file" htmlFor="dropzone-input">
         <div className="dropzone-label">{label}</div>
-        <input type="file" accept="application/json,json" id="dropzone-input" onChange={uploadResume} />
+        <input
+          type="file"
+          className="hidden"
+          accept="application/json,json"
+          id="dropzone-input"
+          onChange={uploadResume}
+        />
       </label>
+    </div>
+  ) : (
+    <div className="upload-file">
+      <InputFile
+        type="file"
+        label="Upload file"
+        accept="application/json,json"
+        id="upload-input"
+        onChange={uploadResume}
+      />
+      <div className="upload-file-name">{fileName}</div>
     </div>
   );
 }
 
-export default Dropzone;
+export default UploadFile;

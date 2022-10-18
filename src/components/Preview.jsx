@@ -40,7 +40,7 @@ function Preview({ data }) {
   };
 
   return (
-    <Container className={"preview-container"}>
+    <Container>
       <Container style={dinA4}>
         <div style={insidePageStyle}>
           {/* <Flex> */}

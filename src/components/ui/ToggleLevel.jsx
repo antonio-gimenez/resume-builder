@@ -23,10 +23,10 @@ function ToggleLevel({ currentProgress = 5, handleChange, ...props }) {
 
   return (
     <div className="range-container">
-      <label className="input-label" htmlFor="name">
+      <label className="label" htmlFor="name">
         {findLevel(progress)}
       </label>
-      <input type="range" className="range-slider" min={5} max={100} {...props} value={progress} onChange={onChange} />
+      <input type="range" min={5} max={100} {...props} value={progress} onChange={onChange} />
     </div>
   );
 }

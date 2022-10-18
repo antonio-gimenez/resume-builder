@@ -1,15 +1,10 @@
-/* 
-breakpoint-mobile: 768px;
-breakpoint-tablet: 1024px;
-breakpoint-laptop: 1280px;
-breakpoint-desktop: 1440px;
-breakpoint-widescreen: 1441px;
-
-*/
-
 @media screen and (max-width: 768px) {
   .mobile-hide {
     display: none;
+  }
+  .mobile-show {
+    display: block;
+    max-width: var(--breakpoint-mobile);
   }
 }
 
@@ -17,11 +12,17 @@ breakpoint-widescreen: 1441px;
   .tablet-hide {
     display: none;
   }
+  .tablet-show {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 1280px) and (min-width: 1025px) {
   .laptop-hide {
     display: none;
+  }
+  .laptop-show {
+    display: block;
   }
 }
 
@@ -29,10 +30,16 @@ breakpoint-widescreen: 1441px;
   .desktop-hide {
     display: none;
   }
+  .desktop-show {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 1441px) {
   .widescreen-hide {
     display: none;
+  }
+  .widescreen-show {
+    display: block;
   }
 }

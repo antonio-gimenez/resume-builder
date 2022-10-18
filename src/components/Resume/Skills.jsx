@@ -1,10 +1,10 @@
 import React from "react";
-import { ListItem, List, Progress, Title } from "../ui";
+import { ListItem, List, Progress } from "../ui";
 function Skills({ skills }) {
   if (!skills) return null;
   return (
     <>
-      <Title>Skills</Title>
+      <div className="heading-2">Skills</div>
       <List>
         {skills.map((skill) => (
           <ListItem key={skill.id}>

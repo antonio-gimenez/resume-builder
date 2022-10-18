@@ -1,14 +1,22 @@
 import React from "react";
 
-function Button({ children, ...props }) {
+function Button({ label, children, ...props }) {
+  const id = props.id || Math.random().toString(36).substr(2, 9);
+
+  const type = props.type || "button";
+
   return (
-    <button
-      type={props.type || "button"}
-      className="hover:bg-blue-200 hover:text-blue-600 disabled:hover:bg-neutral-100 disabled:hover:text-gray-700 disabled:opacity-80 disabled:cursor-not-allowed px-2 py-1 font-semibold text-gray-600 bg-gray-200 rounded"
-      {...props}
-    >
-      {children}
-    </button>
+    <div>
+      {label && (
+        <label className="label " htmlFor={id}>
+          {label}
+        </label>
+      )}
+      <div type={type} id={id} className="button" {...props}>
+        <span className="button-text">{children}</span>
+        <span className="button-decoration" />
+      </div>
+    </div>
   );
 }
 
