@@ -13,11 +13,32 @@
   --text-muted: rgb(107, 114, 128);
 }
 
-html {
+body {
   height: 100vh;
   min-width: 360px;
   scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
 }
+
+.App-title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 0.9rem;
+  /* text linear gradient */
+  background: linear-gradient(90deg, #111, #555);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
 /* input file */
 input[type="file"] {
   display: none;
@@ -28,11 +49,11 @@ input[type="file"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px dashed var(--border-color);
+  border: 2px dashed var(--color-placeholder);
   border-radius: 5px;
+
   width: auto;
-  background: var(--color-navigation);
-  margin: 0.5rem;
+  margin-bottom: 0.3rem;
   color: var(--text-muted);
 }
 

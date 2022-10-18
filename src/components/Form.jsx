@@ -15,9 +15,6 @@ function Form() {
 
   return (
     <div style={{ maxWidth: "1200px" }}>
-      <Title h={1} className={"accent"}>
-        Resume Builder
-      </Title>
       <Dropzone />
       <button
         onClick={() => {
