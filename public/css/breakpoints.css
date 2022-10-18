@@ -3,6 +3,8 @@ breakpoint-mobile: 768px;
 breakpoint-tablet: 1024px;
 breakpoint-laptop: 1280px;
 breakpoint-desktop: 1440px;
+breakpoint-widescreen: 1441px;
+
 */
 
 @media screen and (max-width: 768px) {
@@ -25,6 +27,12 @@ breakpoint-desktop: 1440px;
 
 @media screen and (max-width: 1440px) and (min-width: 1281px) {
   .desktop-hide {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .widescreen-hide {
     display: none;
   }
 }
