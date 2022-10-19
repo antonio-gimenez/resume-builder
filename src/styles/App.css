@@ -1,16 +1,14 @@
 /* Variables */
 :root {
-  --color-primary: rgb(28, 40, 59);
   --color-navigation: rgb(249, 250, 251);
   --color-background: rgb(101, 110, 131);
-  --color-accent: rgb(10, 107, 255);
+  --accent: rgb(60, 82, 132);
   --color-date: rgb(107, 114, 128);
   --color-background-input: rgb(239, 242, 249);
   --color-placeholder: rgb(159, 166, 187);
-  --color-accent: rgb(100, 149, 237);
+  --accent: rgb(78, 118, 192);
   --color-preview-background: rgb(25, 25, 112);
   --border-color: rgba(0, 0, 0, 0.15);
-  --stripe-color: rgba(10, 107, 255, 0.2);
   --muted: #6b7280;
   --label-color: rgb(130, 139, 162);
   --breakpoint-mobile: 768px;
@@ -25,9 +23,10 @@
 @import url("./buttons.css");
 @import url("./media-queries.css");
 @import url("./typography.css");
-@import url("./upload.css");
+
 @import url("./template.css");
 @import url("./symbols.css");
+
 /* Global styles */
 
 *,
@@ -82,87 +81,6 @@
 
 .chevron-closed {
   transform: rotate(0deg);
-}
-
-.pointer {
-  cursor: pointer;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  padding-bottom: 4rem;
-}
-
-.header-name {
-  margin: 0.45rem;
-  text-align: center;
-  color: var(--color-primary);
-  font-size: 2rem;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  text-transform: uppercase;
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  background-color: var(--color-navigation);
-  border-radius: 0.5rem;
-  padding: 1rem 0.25rem;
-  width: auto;
-  margin: 0.45rem;
-  flex-wrap: wrap;
-  overflow-wrap: break-word;
-  border: 2px solid var(--color-primary);
-}
-
-.nav-item {
-  margin: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 0.5rem;
-  margin-right: 0 auto;
-}
-
-.title-light {
-  color: var(--color-primary);
-  font-size: 1.3rem;
-  font-weight: 300;
-  word-wrap: break-word;
-  white-space: break-spaces;
-  word-break: break-word;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  text-transform: uppercase;
-}
-
-.section-title {
-  word-wrap: break-word;
-  white-space: break-spaces;
-  word-break: break-word;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.list-item {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
 }
 
 .icon {

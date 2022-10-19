@@ -14,7 +14,7 @@ function Input({ label, ...props }) {
       )}
       <div className="input-container">
         <input type={type} className="input" id={id} {...props} />
-        <div className="input-decoration" />
+        <div className="form-decoration" />
       </div>
     </div>
   );

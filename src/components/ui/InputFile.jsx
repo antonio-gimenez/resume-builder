@@ -8,12 +8,12 @@ function InputFile({ label, ...props }) {
       {label && (
         <label className="label button" htmlFor={id}>
           {label}
-          <div className="input-decoration" />
+          <div className="form-decoration" />
         </label>
       )}
       <div className="input-container">
         <input type={type} className="input hidden" id={id} {...props} />
-        <div className="input-decoration" />
+        <div className="form-decoration" />
       </div>
     </div>
   );

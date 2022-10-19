@@ -1,6 +1,7 @@
-import { TrashIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
+import Collapse from "../Collapse";
 import { Input, TextArea } from "../ui";
 
 function Education() {
@@ -24,74 +25,67 @@ function Education() {
 
   return (
     <div className="container">
-      <div className="heading-2">Education</div>
-
-      <div style={{ marginTop: "2rem" }}>
-        {education.map((education) => (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              // justifyContent: "center",
-              margin: "1rem",
-              flexWrap: "wrap",
-            }}
-            key={education.id}
-          >
-            <Input
-              id={education.id}
-              name="name"
-              label="Specialization or Field of Study"
-              defaultValue={education.name}
-              placeholder="(e.g. Bachelor of Science in Computer Science, etc.)"
-              onChange={handleUpdateEducation}
-            />
-            <Input
-              type="number"
-              id={education.id}
-              name="from"
-              min="1950"
-              label="From"
-              max={new Date().getFullYear()}
-              placeholder="From"
-              defaultValue={education.from}
-              onChange={handleUpdateEducation}
-            />
-            <Input
-              type="number"
-              id={education.id}
-              name="to"
-              min="1950"
-              label="To"
-              max={new Date().getFullYear()}
-              placeholder="To (or expected)"
-              defaultValue={education.to}
-              onChange={handleUpdateEducation}
-            />
-            <Input
-              id={education.id}
-              name="institution"
-              label="Institution"
-              placeholder="(e.g University of the Philippines, etc.)"
-              defaultValue={education.institution}
-              onChange={handleUpdateEducation}
-            />
-            <TrashIcon className="icon" onClick={() => removeEducation(education.id)} />
-            <TextArea
-              id={education.id}
-              placeholder="A brief description or key takeaways from your education"
-              name="description"
-              label="Description"
-              defaultValue={education.description}
-              onChange={handleUpdateEducation}
-            />
-          </div>
-        ))}
+      <div className="flex">
+        <div className="heading-2">Education</div>
+        <div className=" add-new-entry" onClick={() => updateEducation({ id: nextId, name: "" })}>
+          <PlusIcon className="icon" />
+          <span>Add new education</span>
+        </div>
       </div>
-      <span className="link" role={"link"} onClick={() => updateEducation({ id: nextId, name: "" })}>
-        Add new education
-      </span>
+      {education.map((education) => (
+        <Collapse key={education.id} open={true} title={education.name || "New Item"}>
+          <div className="container-delete">
+            <TrashIcon className="icon" onClick={() => removeEducation(education.id)} />
+          </div>
+
+          <Input
+            id={education.id}
+            name="name"
+            label="Specialization or Field of Study"
+            defaultValue={education.name}
+            placeholder="(e.g. Bachelor of Science in Computer Science, etc.)"
+            onChange={handleUpdateEducation}
+          />
+          <Input
+            type="number"
+            id={education.id}
+            name="from"
+            min="1950"
+            label="From"
+            max={new Date().getFullYear()}
+            placeholder="From"
+            defaultValue={education.from}
+            onChange={handleUpdateEducation}
+          />
+          <Input
+            type="number"
+            id={education.id}
+            name="to"
+            min="1950"
+            label="To"
+            max={new Date().getFullYear()}
+            placeholder="To (or expected)"
+            defaultValue={education.to}
+            onChange={handleUpdateEducation}
+          />
+          <Input
+            id={education.id}
+            name="institution"
+            label="Institution"
+            placeholder="(e.g University of the Philippines, etc.)"
+            defaultValue={education.institution}
+            onChange={handleUpdateEducation}
+          />
+          <TextArea
+            id={education.id}
+            placeholder="A brief description or key takeaways from your education"
+            name="description"
+            label="Description"
+            defaultValue={education.description}
+            onChange={handleUpdateEducation}
+          />
+        </Collapse>
+      ))}
     </div>
   );
 }

@@ -1,8 +1,8 @@
-import { TrashIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
-import { Input } from "../ui";
+import { Button, Input } from "../ui";
 
 function Certificates() {
   const { certificates, updateCertificate, removeCertificate } = useResume();
@@ -22,11 +22,21 @@ function Certificates() {
 
   return (
     <div className="container">
-      <div className="heading-2">Certificates</div>
-      <div className="auto-grid">
-        {certificates.map((certificate) => (
-          <div className="collapse-title">
-            <Collapse key={certificate.id} open={true} title={certificate.name || "Undefined"}>
+      <div className="flex">
+        <h1 className="heading-2">Certificates</h1>
+        <div className=" add-new-entry" onClick={() => updateCertificate({ id: nextId, name: "" })}>
+          <PlusIcon className="icon" />
+          <span>Add new certificate</span>
+        </div>
+      </div>
+      {certificates.map((certificate) => (
+        <div className="collapse-title">
+          <Collapse key={certificate.id} open={true} title={certificate.name || "New Item"}>
+            <div className="container-delete">
+              <TrashIcon className="icon" onClick={() => removeCertificate(certificate.id)} />
+            </div>
+            {/* <div className="flex-auto"> */}
+            <div className="auto-grid">
               <Input
                 id={certificate.id}
                 name="name"
@@ -35,7 +45,6 @@ function Certificates() {
                 placeholder="(e.g. React Developer, Full Stack Developer, etc.)"
                 onChange={handleUpdateCertificate}
               />
-              {/* issuer */}
               <Input
                 id={certificate.id}
                 name="issuer"
@@ -54,14 +63,10 @@ function Certificates() {
                 value={certificate.year || new Date().getFullYear()}
                 onChange={handleUpdateCertificate}
               />
-            </Collapse>
-            <TrashIcon className="icon" onClick={() => removeCertificate(certificate.id)} />
-          </div>
-        ))}
-      </div>
-      <span className="link" role={"link"} onClick={() => updateCertificate({ id: nextId, name: "" })}>
-        Add new certificate
-      </span>
+            </div>
+          </Collapse>
+        </div>
+      ))}
     </div>
   );
 }

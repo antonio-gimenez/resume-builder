@@ -1,15 +1,16 @@
-import { TrashIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
+import Collapse from "../Collapse";
 import { Input } from "../ui";
 import Range from "../ui/Range";
 
 const languagesLevels = [
-  { label: "Elementary", progress: 5, min: 0, max: 20 },
-  { label: "Limited Working", progress: 25, min: 20, max: 35 },
-  { label: "Professional Working", progress: 50, min: 35, max: 55 },
-  { label: "Full Professional", progress: 75, min: 55, max: 80 },
-  { label: "Native/Bilingual", progress: 100, min: 80, max: 100 },
+  { label: "Elementary Proficiency", progress: 5, min: 0, max: 20 },
+  { label: "Intermediate Proficiency", progress: 25, min: 20, max: 35 },
+  { label: "Working Proficiency", progress: 50, min: 35, max: 55 },
+  { label: "Professional Proficiency", progress: 75, min: 55, max: 80 },
+  { label: "Native Proficiency", progress: 100, min: 80, max: 100 },
 ];
 
 function Languages() {
@@ -30,11 +31,20 @@ function Languages() {
 
   return (
     <div className="container">
-      <h1 className="heading-2">Languages</h1>
+      <div className="flex">
+        <h1 className="heading-2">Languages</h1>
+        <div className=" add-new-entry" onClick={() => updateLanguage({ id: nextId, name: "", level: 0 })}>
+          <PlusIcon className="icon" />
+          <span>Add new language</span>
+        </div>
+      </div>
 
-      <div style={{ marginTop: "2rem" }}>
-        {languages.map((lang, index) => (
-          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "1rem" }} key={lang.id}>
+      {languages.map((lang, index) => (
+        <Collapse key={lang.id} open={true} title={lang.name || "New Item"}>
+          <div className="container-delete">
+            <TrashIcon className="icon" onClick={() => removeLanguage(lang.id)} />
+          </div>
+          <div className="flex-auto">
             <Input
               id={lang.id}
               name="name"
@@ -51,13 +61,9 @@ function Languages() {
               currentProgress={lang.progress}
               handleChange={handleUpdateLanguage}
             />
-            <TrashIcon className="icon" onClick={() => removeLanguage(lang.id)} />
           </div>
-        ))}
-      </div>
-      <span className="link" role={"link"} onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
-        Add new language
-      </span>
+        </Collapse>
+      ))}
     </div>
   );
 }

@@ -1,6 +1,7 @@
-import { TrashIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
+import Collapse from "../Collapse";
 import { Input } from "../ui";
 import Range from "../ui/Range";
 
@@ -22,15 +23,19 @@ function Skills() {
 
   return (
     <div className="container">
-      <h1 className="heading-2">Skills</h1>
-
-      <div style={{ marginTop: "2rem" }}>
-        <label style={{ display: "inline-flex", alignItems: "center" }}>
-          <Input type="checkbox" />
-          Show Badges insted of progress bars
-        </label>
-        {skills.map((skill, index) => (
-          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "2em" }} key={skill.id}>
+      <div className="flex">
+        <h1 className="heading-2">Skills</h1>
+        <div className=" add-new-entry" onClick={() => updateSkill({ id: nextId, name: "", level: 0 })}>
+          <PlusIcon className="icon" />
+          <span>Add new skill</span>
+        </div>
+      </div>
+      {skills.map((skill, index) => (
+        <Collapse key={skill.id} open={true} title={skill.name || "New Item"}>
+          <div className="container-delete">
+            <TrashIcon className="icon" onClick={() => removeSkill(skill.id)} />
+          </div>
+          <div className="flex-auto">
             <Input
               id={skill.id}
               label={`Skill #${index + 1}`}
@@ -46,13 +51,9 @@ function Skills() {
               currentProgress={skill.progress}
               handleChange={handleUpdateSkill}
             />
-            <TrashIcon className="icon" onClick={() => removeSkill(skill.id)} />
           </div>
-        ))}
-      </div>
-      <span className="link" role={"link"} onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
-        Add new skill
-      </span>
+        </Collapse>
+      ))}
     </div>
   );
 }

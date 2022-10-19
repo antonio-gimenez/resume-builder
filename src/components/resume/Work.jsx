@@ -1,6 +1,7 @@
-import { TrashIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
+import Collapse from "../Collapse";
 import { Input, TextArea } from "../ui";
 function Work() {
   const { professionalExperience, updateProfessionalExperience, removeProfessionalExperience } = useResume();
@@ -23,69 +24,73 @@ function Work() {
 
   return (
     <div className="container">
-      <div className="heading-2">Professional Experience</div>
-      {professionalExperience.map((work) => (
+      <div className="flex">
+        <div className="heading-2">Professional Experience</div>
         <div
-          style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}
-          key={work.id}
+          className=" add-new-entry"
+          onClick={() =>
+            updateProfessionalExperience({ id: nextId, position: "", from: "", to: "", company: "", description: "" })
+          }
         >
-          <Input
-            id={work.id}
-            name="position"
-            label="Position"
-            defaultValue={work.position}
-            placeholder="(e.g. Software Engineer)"
-            onChange={handleUpdateWork}
-          />
-          <Input
-            type="number"
-            id={work.id}
-            name="from"
-            min="1950"
-            label="From"
-            max={new Date().getFullYear()}
-            defaultValue={work.from}
-            onChange={handleUpdateWork}
-          />
-          <Input
-            type="number"
-            id={work.id}
-            name="to"
-            min="1950"
-            label="To"
-            max={new Date().getFullYear()}
-            placeholder="Leave blank if still working here"
-            defaultValue={work.to}
-            onChange={handleUpdateWork}
-          />
-          <Input
-            id={work.id}
-            name="company"
-            defaultValue={work.company}
-            label="Company"
-            placeholder="(e.g. Google)"
-            onChange={handleUpdateWork}
-          />
-          <TrashIcon className="icon" onClick={() => removeProfessionalExperience(work.id)} />
-          <TextArea
-            id={work.id}
-            name="description"
-            defaultValue={work.description}
-            placeholder={`Main responsibilities, achievements, a brief description of key projects, etc.`}
-            onChange={handleUpdateWork}
-          />
+          <PlusIcon className="icon" />
+          <span>Add new work experience</span>
         </div>
-      ))}
+      </div>
+      {professionalExperience.map((work) => (
+        <Collapse key={work.id} open={true} title={`${work.company} - ${work.position}`}>
+          <div className="container-delete">
+            <TrashIcon className="icon" onClick={() => removeProfessionalExperience(work.id)} />
+          </div>
+          <div className="flex-auto">
+            <Input
+              id={work.id}
+              name="position"
+              label="Position"
+              defaultValue={work.position}
+              placeholder="(e.g. Software Engineer)"
+              onChange={handleUpdateWork}
+            />
+            <Input
+              type="number"
+              id={work.id}
+              name="from"
+              min="1950"
+              label="From"
+              max={new Date().getFullYear()}
+              defaultValue={work.from}
+              onChange={handleUpdateWork}
+            />
+            <Input
+              type="number"
+              id={work.id}
+              name="to"
+              min="1950"
+              label="To"
+              max={new Date().getFullYear()}
+              placeholder="Leave blank if still working here"
+              defaultValue={work.to}
+              onChange={handleUpdateWork}
+            />
+            <Input
+              id={work.id}
+              name="company"
+              defaultValue={work.company}
+              label="Company"
+              placeholder="(e.g. Google)"
+              onChange={handleUpdateWork}
+            />
 
-      <span
-        className="link"
-        role={"link"}
-        onClick={() =>
-          updateProfessionalExperience({ id: nextId, position: "", from: "", to: "", company: "", description: "" })
-        }
-      >
-        Add new education
-      </span>
+            <TextArea
+              id={work.id}
+              label="Description"
+              name="description"
+              defaultValue={work.description}
+              placeholder={`Main responsibilities, achievements, a brief description of key projects, etc.`}
+              onChange={handleUpdateWork}
+            />
+          </div>
+        </Collapse>
+      ))}
     </div>
   );
 }

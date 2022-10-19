@@ -4,15 +4,15 @@ function TextArea({ label, ...props }) {
   const id = props.id || Math.random().toString(36).substr(2, 9);
 
   return (
-    <div>
+    <div className="textarea-container">
       {label && (
         <label className="label " htmlFor={id}>
           {label}
         </label>
       )}
-      <div className="input-container">
+      <div className="textarea-container">
         <textarea className="textarea" id={id} {...props} />
-        <div className="input-decoration" />
+        <div className="form-decoration" />
       </div>
     </div>
   );
