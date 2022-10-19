@@ -1,7 +1,6 @@
 import { TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
-import { Container } from "../layouts";
 import { Input } from "../ui";
 import Range from "../ui/Range";
 
@@ -22,12 +21,10 @@ function Skills() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1 className="heading-2">Skills</h1>
 
-      <div>nextId={nextId}</div>
-      <div>skills={JSON.stringify(skills)}</div>
-      <Container style={{ marginTop: "2rem" }}>
+      <div style={{ marginTop: "2rem" }}>
         <label style={{ display: "inline-flex", alignItems: "center" }}>
           <Input type="checkbox" />
           Show Badges insted of progress bars
@@ -52,7 +49,7 @@ function Skills() {
             <TrashIcon className="icon" onClick={() => removeSkill(skill.id)} />
           </div>
         ))}
-      </Container>
+      </div>
       <span className="link" role={"link"} onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
         Add new skill
       </span>

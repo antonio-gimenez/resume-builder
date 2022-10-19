@@ -22,10 +22,8 @@ function Work() {
   };
 
   return (
-    <>
+    <div className="container">
       <div className="heading-2">Professional Experience</div>
-      <div>nextId={nextId}</div>
-      <div>work={JSON.stringify(professionalExperience)}</div>
       {professionalExperience.map((work) => (
         <div
           style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}
@@ -88,7 +86,7 @@ function Work() {
       >
         Add new education
       </span>
-    </>
+    </div>
   );
 }
 

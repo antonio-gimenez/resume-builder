@@ -14,3 +14,14 @@ export function isArray(obj) {
 export function isObject(obj) {
   return Object.prototype.toString.call(obj) === "[object Object]";
 }
+
+export function drawTextInCanvas(ctx, text, x = 0, y = 0, color = "black", fontSize, fontFamily) {
+  if (!ctx) {
+    return console.error("ctx is required");
+  }
+  const font = `${fontSize} ${fontFamily}`;
+  console.log(font);
+  ctx.font = font;
+  ctx.fillStyle = color || "black";
+  ctx.fillText(text, x, y);
+}

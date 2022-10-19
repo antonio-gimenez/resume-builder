@@ -1,7 +1,6 @@
 import { TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
-import { Container } from "../layouts";
 import { Input } from "../ui";
 import Range from "../ui/Range";
 
@@ -30,11 +29,10 @@ function Languages() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1 className="heading-2">Languages</h1>
-      <div>nextId={nextId}</div>
-      <div>languages={JSON.stringify(languages)}</div>
-      <Container style={{ marginTop: "2rem" }}>
+
+      <div style={{ marginTop: "2rem" }}>
         {languages.map((lang, index) => (
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "1rem" }} key={lang.id}>
             <Input
@@ -56,7 +54,7 @@ function Languages() {
             <TrashIcon className="icon" onClick={() => removeLanguage(lang.id)} />
           </div>
         ))}
-      </Container>
+      </div>
       <span className="link" role={"link"} onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
         Add new language
       </span>

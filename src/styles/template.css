@@ -1,0 +1,11 @@
+.resume-preview {
+  width: 7in;
+  height: 9.25in;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background-color: white;
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}

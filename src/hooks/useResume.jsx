@@ -29,7 +29,7 @@ function useResume() {
   };
 
   const removeProfessionalExperience = (id) => {
-    if (NaN === id) {
+    if (isNaN(id)) {
       return console.error("No id provided or id is not a number");
     }
     if (!professionalExperience) {
@@ -49,7 +49,7 @@ function useResume() {
   };
 
   const removeEducation = (id) => {
-    if (NaN === id) {
+    if (isNaN(id)) {
       return console.error("No id provided or id is not a number");
     }
     if (!education) {
@@ -70,7 +70,7 @@ function useResume() {
   };
 
   const removeLanguage = (id) => {
-    if (NaN === id) {
+    if (isNaN(id)) {
       return console.error("No id provided or id is not a number");
     }
     if (!languages) {
@@ -92,7 +92,7 @@ function useResume() {
   };
 
   const removeCertificate = (id) => {
-    if (NaN === id) {
+    if (isNaN(id)) {
       return console.error("No id provided or id is not a number");
     }
     if (!certificates) {
@@ -119,7 +119,7 @@ function useResume() {
   };
 
   const removeSkill = (id) => {
-    if (NaN === id) {
+    if (isNaN(id)) {
       return console.error("No id provided or id is not a number");
     }
     if (!skills) {

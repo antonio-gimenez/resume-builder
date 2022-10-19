@@ -22,10 +22,6 @@ function UploadFile({ method = "input" }) {
     e.stopPropagation();
   };
 
-  // if file is uploaded add a button to remove it
-  const removeFile = () => {
-    setFileName("");
-  };
 
   return (
     <div className="upload-file">

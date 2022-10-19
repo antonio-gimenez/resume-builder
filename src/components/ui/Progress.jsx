@@ -1,8 +1,7 @@
 import React from "react";
-import { Container } from "../layouts";
 
 function Progress({ progress, backgroundColor = "rgb(28, 40, 59)" }) {
-  const styleBar = {
+  const widthProgress = {
     width: progress + "%",
     backgroundColor: backgroundColor,
     height: "0.4rem",
@@ -12,7 +11,7 @@ function Progress({ progress, backgroundColor = "rgb(28, 40, 59)" }) {
 
   return (
     <div className={"progress"}>
-      <div style={{ ...styleBar }} />
+      <div style={{ ...widthProgress }} />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import { TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
-import { Container } from "../layouts";
 import { Input, TextArea } from "../ui";
 
 function Education() {
@@ -24,11 +23,10 @@ function Education() {
   };
 
   return (
-    <>
+    <div className="container">
       <div className="heading-2">Education</div>
-      <div>nextId={nextId}</div>
-      <div>education={JSON.stringify(education)}</div>
-      <Container style={{ marginTop: "2rem" }}>
+
+      <div style={{ marginTop: "2rem" }}>
         {education.map((education) => (
           <div
             style={{
@@ -90,11 +88,11 @@ function Education() {
             />
           </div>
         ))}
-      </Container>
+      </div>
       <span className="link" role={"link"} onClick={() => updateEducation({ id: nextId, name: "" })}>
         Add new education
       </span>
-    </>
+    </div>
   );
 }
 

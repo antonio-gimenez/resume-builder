@@ -21,12 +21,13 @@
 }
 
 @import url("./forms.css");
-@import url("./containers.css");
+@import url("./layouts.css");
 @import url("./buttons.css");
 @import url("./media-queries.css");
 @import url("./typography.css");
 @import url("./upload.css");
-
+@import url("./template.css");
+@import url("./symbols.css");
 /* Global styles */
 
 *,
@@ -40,6 +41,7 @@
 
 .hidden {
   display: none;
+  visibility: hidden;
 }
 
 .show {
@@ -80,23 +82,6 @@
 
 .chevron-closed {
   transform: rotate(0deg);
-}
-
-.container {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  width: fit-content;
-  height: fit-content;
-}
-
-.progresss {
-  position: relative;
-  background-color: black;
-  width: 100%;
-  height: 8px;
-  border-radius: 0.5rem;
 }
 
 .pointer {

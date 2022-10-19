@@ -1,7 +1,7 @@
 import { TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
-import { Container } from "../layouts";
+import Collapse from "../Collapse";
 import { Input } from "../ui";
 
 function Certificates() {
@@ -21,51 +21,48 @@ function Certificates() {
   };
 
   return (
-    <>
+    <div className="container">
       <div className="heading-2">Certificates</div>
-      <div>nextId={nextId}</div>
-      <div>certificates={JSON.stringify(certificates)}</div>
-      <Container style={{ marginTop: "2rem" }}>
+      <div className="auto-grid">
         {certificates.map((certificate) => (
-          <div
-            style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "1rem" }}
-            key={certificate.id}
-          >
-            <Input
-              id={certificate.id}
-              name="name"
-              label="Certificate name"
-              defaultValue={certificate.name}
-              placeholder="(e.g. React Developer, Full Stack Developer, etc.)"
-              onChange={handleUpdateCertificate}
-            />
-            {/* issuer */}
-            <Input
-              id={certificate.id}
-              name="issuer"
-              label="Issued by"
-              defaultValue={certificate.issuer}
-              placeholder="(e.g. Udemy, Pluralsight, etc.)"
-              onChange={handleUpdateCertificate}
-            />
-            <Input
-              type="number"
-              id={certificate.id}
-              label="Expedition year"
-              name="year"
-              min="1950"
-              max={new Date().getFullYear()}
-              value={certificate.year || new Date().getFullYear()}
-              onChange={handleUpdateCertificate}
-            />
+          <div className="collapse-title">
+            <Collapse key={certificate.id} open={true} title={certificate.name || "Undefined"}>
+              <Input
+                id={certificate.id}
+                name="name"
+                label="Certificate name"
+                defaultValue={certificate.name}
+                placeholder="(e.g. React Developer, Full Stack Developer, etc.)"
+                onChange={handleUpdateCertificate}
+              />
+              {/* issuer */}
+              <Input
+                id={certificate.id}
+                name="issuer"
+                label="Issued by"
+                defaultValue={certificate.issuer}
+                placeholder="(e.g. Udemy, Pluralsight, etc.)"
+                onChange={handleUpdateCertificate}
+              />
+              <Input
+                type="number"
+                id={certificate.id}
+                label="Expedition year"
+                name="year"
+                min="1950"
+                max={new Date().getFullYear()}
+                value={certificate.year || new Date().getFullYear()}
+                onChange={handleUpdateCertificate}
+              />
+            </Collapse>
             <TrashIcon className="icon" onClick={() => removeCertificate(certificate.id)} />
           </div>
         ))}
-      </Container>
+      </div>
       <span className="link" role={"link"} onClick={() => updateCertificate({ id: nextId, name: "" })}>
         Add new certificate
       </span>
-    </>
+    </div>
   );
 }
 

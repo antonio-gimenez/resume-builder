@@ -1,5 +1,9 @@
-/* make the following tailwindbutton to css */
-
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 .button {
   color: #111827;
   display: inline-flex;
@@ -23,4 +27,9 @@
 .button:hover {
   background-color: hsl(216, 70%, 52%);
   color: #fff;
+}
+
+.collapse-button {
+  display: flex;
+  flex-direction: row;
 }
