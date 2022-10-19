@@ -1,45 +1,10 @@
-import { ArrowUpIcon, CheckCircleIcon, CloudArrowUpIcon, CloudIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import useResume from "../../hooks/useResume";
-import Button from "./Button";
-import Input from "./Input";
 import InputFile from "./InputFile";
-
-const fileNotUploaded = (
-  <>
-    <CloudIcon className="big-icon" />
-    <div>
-      <span className="dropzone-label-emphasis">Click or drag file</span>
-      to this area to upload
-    </div>
-  </>
-);
-
-const dragOver = (
-  <>
-    <CloudArrowUpIcon className="big-icon" />
-    <div>
-      <span className="dropzone-label-emphasis">Release</span>
-      to upload file
-    </div>
-  </>
-);
-
-const fileUploaded = (
-  <>
-    <CheckCircleIcon className="big-icon" />
-    <div>
-      <span className="dropzone-label-emphasis">File uploaded</span>
-    </div>
-  </>
-);
 
 function UploadFile({ method = "input" }) {
   const { updateResume } = useResume();
-  const [label, setLabel] = useState(fileNotUploaded);
-  const [isDragActive, setIsDragActive] = useState(false);
-  const [isDragReleased, setIsDragReleased] = useState(false);
-  const [fileName, setFileName] = useState("");
+  const [fileName, setFileName] = useState(null);
   const uploadResume = (e) => {
     e.preventDefault();
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -53,59 +18,25 @@ function UploadFile({ method = "input" }) {
       const resume = JSON.parse(e.target.result);
       updateResume(resume);
     };
-    setLabel(fileUploaded);
-    setIsDragReleased(true);
     reader.readAsText(file);
     e.stopPropagation();
   };
 
-  const onDrop = (e) => {
-    e.preventDefault();
-    uploadResume(e);
-    setIsDragActive(false);
-    setLabel(fileUploaded);
+  // if file is uploaded add a button to remove it
+  const removeFile = () => {
+    setFileName("");
   };
 
-  const onDragOver = (e) => {
-    e.preventDefault();
-    setIsDragActive(true);
-    setLabel(dragOver);
-  };
-
-  const onDragLeave = (e) => {
-    e.preventDefault();
-    setIsDragActive(false);
-    setLabel(fileNotUploaded);
-  };
-
-  return method === "zone" ? (
-    <div
-      className={isDragReleased ? "dropzone file-uploaded" : isDragActive ? "dropzone drag-over" : "dropzone"}
-      onDragLeave={onDragLeave}
-      onDragOver={onDragOver}
-      onDrop={onDrop}
-    >
-      <label className="dropzone-file" htmlFor="dropzone-input">
-        <div className="dropzone-label">{label}</div>
-        <input
-          type="file"
-          className="hidden"
-          accept="application/json,json"
-          id="dropzone-input"
-          onChange={uploadResume}
-        />
-      </label>
-    </div>
-  ) : (
+  return (
     <div className="upload-file">
       <InputFile
         type="file"
-        label="Upload file"
+        label={fileName || "Upload file"}
         accept="application/json,json"
         id="upload-input"
+        disabled={fileName !== null}
         onChange={uploadResume}
       />
-      <div className="upload-file-name">{fileName}</div>
     </div>
   );
 }

@@ -28,6 +28,10 @@ function Skills() {
       <div>nextId={nextId}</div>
       <div>skills={JSON.stringify(skills)}</div>
       <Container style={{ marginTop: "2rem" }}>
+        <label style={{ display: "inline-flex", alignItems: "center" }}>
+          <Input type="checkbox" />
+          Show Badges insted of progress bars
+        </label>
         {skills.map((skill, index) => (
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "2em" }} key={skill.id}>
             <Input
