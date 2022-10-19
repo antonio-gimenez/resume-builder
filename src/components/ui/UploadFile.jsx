@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useResume from "../../hooks/useResume";
 import InputFile from "./InputFile";
 
-function UploadFile({ method = "input" }) {
+function UploadFile() {
   const { updateResume } = useResume();
   const [fileName, setFileName] = useState(null);
   const uploadResume = (e) => {
@@ -21,7 +21,6 @@ function UploadFile({ method = "input" }) {
     reader.readAsText(file);
     e.stopPropagation();
   };
-
 
   return (
     <div className="upload-file">
