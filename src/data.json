@@ -35,17 +35,17 @@
   ],
   "languages": [
     {
-      "id": 1,
+      "id": 0,
       "name": "English",
       "progress": 100
     },
     {
-      "id": 2,
+      "id": 1,
       "name": "Spanish",
       "progress": 75
     },
     {
-      "id": 3,
+      "id": 2,
       "name": "French",
       "progress": 50
     }
@@ -90,7 +90,7 @@
       "description": "Internship by Google"
     }
   ],
-  "work": [
+  "professionalExperience": [
     {
       "id": 0,
       "position": "Software Engineer",

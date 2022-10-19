@@ -34,22 +34,24 @@ function Certificates() {
             <Input
               id={certificate.id}
               name="name"
+              label="Certificate name"
               defaultValue={certificate.name}
-              placeholder="Certificate Name"
+              placeholder="(e.g. React Developer, Full Stack Developer, etc.)"
               onChange={handleUpdateCertificate}
             />
             {/* issuer */}
             <Input
               id={certificate.id}
               name="issuer"
+              label="Issued by"
               defaultValue={certificate.issuer}
-              placeholder="Issuer"
+              placeholder="(e.g. Udemy, Pluralsight, etc.)"
               onChange={handleUpdateCertificate}
             />
             <Input
               type="number"
               id={certificate.id}
-              placeholder="Year"
+              label="Expedition year"
               name="year"
               min="1950"
               max={new Date().getFullYear()}

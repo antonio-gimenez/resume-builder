@@ -21,25 +21,30 @@
   resize: both;
 }
 
-.input:disabled,
+input:disabled,
 textarea:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.input:focus,
+input:focus,
 textarea:focus {
   outline: none;
 }
 
-.input:focus-within,
+input:focus-within + .input-decoration {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
 textarea:focus-within + .input-decoration {
   opacity: 1;
   transform: scaleX(1);
 }
 
-.input::placeholder,
+input::placeholder,
 textarea::placeholder {
+  font-size: small;
   color: var(--color-placeholder);
 }
 

@@ -35,13 +35,14 @@ function Languages() {
       <div>nextId={nextId}</div>
       <div>languages={JSON.stringify(languages)}</div>
       <Container style={{ marginTop: "2rem" }}>
-        {languages.map((lang) => (
+        {languages.map((lang, index) => (
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "1rem" }} key={lang.id}>
             <Input
               id={lang.id}
               name="name"
+              label={`Language #${index + 1}`}
               defaultValue={lang.name}
-              placeholder="Language"
+              placeholder="(e.g. English)"
               onChange={handleUpdateLanguage}
             />
             <Range

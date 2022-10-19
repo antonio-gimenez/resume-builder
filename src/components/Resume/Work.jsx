@@ -3,15 +3,20 @@ import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import { Input, TextArea } from "../ui";
 function Work() {
-  const { work, updateProfessionalExperience, removeProfessionalExperience } = useResume();
-  const [nextId, setNextId] = useState(work.length > 0 ? work[work.length - 1].id + 1 : 0);
+  const { professionalExperience, updateProfessionalExperience, removeProfessionalExperience } = useResume();
+  const [nextId, setNextId] = useState(
+    professionalExperience.length > 0 ? professionalExperience[professionalExperience.length - 1].id + 1 : 0
+  );
   useEffect(() => {
-    setNextId(work.length > 0 ? work[work.length - 1].id + 1 : 0);
-  }, [work]);
+    setNextId(professionalExperience.length > 0 ? professionalExperience[professionalExperience.length - 1].id + 1 : 0);
+  }, [professionalExperience]);
+
   const handleUpdateWork = (e) => {
     const { id, name, value } = e.target;
-    const workId = parseInt(id);
-    const work = work.find((work) => work.id === workId);
+    const experienceId = parseInt(id);
+    console.log({ id, name, value, experienceId });
+    const work = professionalExperience.find((work) => work.id === experienceId);
+    if (!work) return console.error("work not found");
     const updatedWork = { ...work, [name]: value };
     updateProfessionalExperience(updatedWork);
   };
@@ -20,8 +25,8 @@ function Work() {
     <>
       <div className="heading-2">Professional Experience</div>
       <div>nextId={nextId}</div>
-      <div>work={JSON.stringify(work)}</div>
-      {work.map((work) => (
+      <div>work={JSON.stringify(professionalExperience)}</div>
+      {professionalExperience.map((work) => (
         <div
           style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}
           key={work.id}
@@ -29,8 +34,9 @@ function Work() {
           <Input
             id={work.id}
             name="position"
+            label="Position"
             defaultValue={work.position}
-            placeholder="Position (e.g. Software Engineer)"
+            placeholder="(e.g. Software Engineer)"
             onChange={handleUpdateWork}
           />
           <Input
@@ -38,8 +44,8 @@ function Work() {
             id={work.id}
             name="from"
             min="1950"
+            label="From"
             max={new Date().getFullYear()}
-            placeholder="From"
             defaultValue={work.from}
             onChange={handleUpdateWork}
           />
@@ -48,8 +54,9 @@ function Work() {
             id={work.id}
             name="to"
             min="1950"
+            label="To"
             max={new Date().getFullYear()}
-            placeholder="To (leave blank if still working here)"
+            placeholder="Leave blank if still working here"
             defaultValue={work.to}
             onChange={handleUpdateWork}
           />
@@ -57,7 +64,8 @@ function Work() {
             id={work.id}
             name="company"
             defaultValue={work.company}
-            placeholder="Company (e.g. Google)"
+            label="Company"
+            placeholder="(e.g. Google)"
             onChange={handleUpdateWork}
           />
           <TrashIcon className="icon" onClick={() => removeProfessionalExperience(work.id)} />
@@ -65,7 +73,7 @@ function Work() {
             id={work.id}
             name="description"
             defaultValue={work.description}
-            placeholder="Description (e.g. Worked on the Google Search Engine)"
+            placeholder={`Main responsibilities, achievements, a brief description of key projects, etc.`}
             onChange={handleUpdateWork}
           />
         </div>

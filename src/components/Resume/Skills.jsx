@@ -28,13 +28,14 @@ function Skills() {
       <div>nextId={nextId}</div>
       <div>skills={JSON.stringify(skills)}</div>
       <Container style={{ marginTop: "2rem" }}>
-        {skills.map((skill) => (
+        {skills.map((skill, index) => (
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "2em" }} key={skill.id}>
             <Input
               id={skill.id}
+              label={`Skill #${index + 1}`}
               name="name"
               defaultValue={skill.name}
-              placeholder="Skill name"
+              placeholder="(e.g. React, JavaScript, etc.)"
               onChange={handleUpdateSkill}
             />
             <Range

@@ -15,8 +15,11 @@ function Education() {
   const handleUpdateEducation = (e) => {
     const { id, name, value } = e.target;
     const educationId = parseInt(id);
-    const education = education.find((education) => education.id === educationId);
-    const updatedEducation = { ...education, [name]: value };
+    const study = education.find((study) => study.id === educationId);
+    if (!study) {
+      return console.error("No education found with id", educationId);
+    }
+    const updatedEducation = { ...study, [name]: value };
     updateEducation(updatedEducation);
   };
 
@@ -41,8 +44,9 @@ function Education() {
             <Input
               id={education.id}
               name="name"
+              label="Specialization or Field of Study"
               defaultValue={education.name}
-              placeholder="Specialization and Field of Study (e.g. Computer Science, Software Engineering)"
+              placeholder="(e.g. Bachelor of Science in Computer Science, etc.)"
               onChange={handleUpdateEducation}
             />
             <Input
@@ -50,6 +54,7 @@ function Education() {
               id={education.id}
               name="from"
               min="1950"
+              label="From"
               max={new Date().getFullYear()}
               placeholder="From"
               defaultValue={education.from}
@@ -60,6 +65,7 @@ function Education() {
               id={education.id}
               name="to"
               min="1950"
+              label="To"
               max={new Date().getFullYear()}
               placeholder="To (or expected)"
               defaultValue={education.to}
@@ -68,15 +74,17 @@ function Education() {
             <Input
               id={education.id}
               name="institution"
-              placeholder="Institution"
+              label="Institution"
+              placeholder="(e.g University of the Philippines, etc.)"
               defaultValue={education.institution}
               onChange={handleUpdateEducation}
             />
             <TrashIcon className="icon" onClick={() => removeEducation(education.id)} />
             <TextArea
               id={education.id}
-              placeholder="Description"
+              placeholder="A brief description or key takeaways from your education"
               name="description"
+              label="Description"
               defaultValue={education.description}
               onChange={handleUpdateEducation}
             />

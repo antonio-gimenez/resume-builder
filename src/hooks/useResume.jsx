@@ -6,7 +6,7 @@ const initialState = require("../data.json");
 function useResume() {
   const [resume, setResume] = useLocalStorage("resume", initialState);
 
-  const { profile, skills, work, education, languages, certificates } = resume;
+  const { profile, skills, professionalExperience, education, languages, certificates } = resume;
 
   const updateResumeSection = (section, event) => {
     if (isArray(resume[section])) {
@@ -20,22 +20,22 @@ function useResume() {
 
   const updateProfessionalExperience = (experience) => {
     if (!experience) return;
-    const exisitingExperience = work.find((exp) => exp.id === experience.id);
+    const exisitingExperience = professionalExperience.find((exp) => exp.id === experience.id);
     if (exisitingExperience) {
-      const newExperience = work.map((exp) => (exp.id === experience.id ? experience : exp));
-      return setResume({ ...resume, work: newExperience });
+      const newExperience = professionalExperience.map((exp) => (exp.id === experience.id ? experience : exp));
+      return setResume({ ...resume, professionalExperience: newExperience });
     }
-    setResume({ ...resume, work: [...work, experience] });
+    setResume({ ...resume, professionalExperience: [...professionalExperience, experience] });
   };
 
   const removeProfessionalExperience = (id) => {
     if (NaN === id) {
       return console.error("No id provided or id is not a number");
     }
-    if (!work) {
+    if (!professionalExperience) {
       return console.error("No experience to remove");
     }
-    setResume({ ...resume, work: work.filter((exp) => exp.id !== id) });
+    setResume({ ...resume, professionalExperience: professionalExperience.filter((exp) => exp.id !== id) });
   };
 
   const updateEducation = (edu) => {
@@ -135,7 +135,7 @@ function useResume() {
     resume,
     profile,
     skills,
-    work,
+    professionalExperience,
     education,
     languages,
     certificates,
