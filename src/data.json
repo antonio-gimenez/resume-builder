@@ -18,141 +18,94 @@
   },
   "skills": [
     {
-      "id": "skill-1",
+      "id": 0,
       "name": "Leadership",
-      "color": "red",
       "progress": 75
     },
     {
-      "id": "skill-2",
+      "id": 1,
       "name": "Communication",
-      "color": "green",
       "progress": 75
     },
     {
-      "id": "skill-3",
+      "id": 2,
       "name": "Teamwork",
-      "color": "blue",
       "progress": 50
     }
   ],
   "languages": [
     {
       "id": 1,
-      "name": "Language 1",
-      "level": "Native",
-      "progress": 100,
-      "color": "purple"
+      "name": "English",
+      "progress": 100
     },
     {
       "id": 2,
-      "name": "Language 2",
-      "level": "Fluent",
-      "progress": 75,
-      "color": "blue"
+      "name": "Spanish",
+      "progress": 75
     },
     {
       "id": 3,
-      "name": "Language 3",
-      "level": "Intermediate",
-      "progress": 50,
-      "color": "green"
-    },
-    {
-      "id": 4,
-      "name": "Language 4",
-      "level": "Beginner",
-      "progress": 20,
-      "color": "yellow"
-    },
-    {
-      "id": 5,
-      "name": "Language 5",
-      "level": "Elementary",
-      "progress": 2,
-      "color": "red"
+      "name": "French",
+      "progress": 50
     }
   ],
   "certificates": [
     {
-      "id": 1,
-      "name": "Certificate 1",
+      "id": 0,
+      "name": "Advanced Leadership",
       "date": "2019",
-      "issuer": "Issuer 1"
+      "issuer": "Google"
     },
     {
       "id": 2,
-      "name": "Certificate 2",
-      "date": "2019",
-      "issuer": "Issuer 2"
-    },
-    {
-      "id": 3,
-      "name": "Certificate 3",
-      "date": "2019",
-      "issuer": "Issuer 3"
-    },
-    {
-      "id": 4,
-      "name": "Certificate 4",
-      "date": "2019",
-      "issuer": "Issuer 4"
+      "name": "Professional Communication",
+      "date": "2020",
+      "issuer": "Microsoft"
     }
   ],
   "education": [
     {
+      "id": 0,
+      "name": "Bachelor of Science in Computer Science",
+      "from": "2015",
+      "to": "2017",
+      "institution": "Harvard University",
+      "description": "Grade: 3.8/4.0 GPA"
+    },
+    {
       "id": 1,
-      "name": "Education 1",
-      "from": "2019",
-      "to": "2020",
-      "institution": "Institution 1"
+      "name": "Master of Science in Computer Science",
+      "from": "2018",
+      "to": "2019",
+      "institution": "Rutgers University",
+      "description": "Not completed"
     },
     {
       "id": 2,
-      "name": "Education 2",
+      "name": "PhD in Computer Science",
       "from": "2019",
       "to": "2020",
-      "institution": "Institution 2"
-    },
-    {
-      "id": 3,
-      "name": "Education 3",
-      "from": "2019",
-      "to": "2020",
-      "institution": "Institution 3"
-    },
-    {
-      "id": 4,
-      "name": "Education 4",
-      "from": "2019",
-      "to": "2020",
-      "institution": "Institution 4"
+      "institution": "Boston University",
+      "description": "Internship by Google"
     }
   ],
   "work": [
     {
-      "id": "work-1",
-      "position": "Work 1",
+      "id": 0,
+      "position": "Software Engineer",
       "from": "2019",
       "to": "2020",
-      "company": "Company 1",
-      "description": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
+      "company": "Google",
+      "description": "I worked as a software engineer at Google"
     },
     {
-      "id": 2,
-      "position": "Work 2",
-      "from": "2019",
-      "to": "2020",
-      "company": "Company 2",
-      "description": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
-    },
-    {
-      "id": 3,
-      "position": "Work 3",
-      "from": "2019",
-      "to": "2020",
-      "company": "Company 3",
-      "description": "Velit proident exercitation elit ex labore est. Laboris reprehenderit id eu est ullamco eiusmod velit non elit pariatur nulla. Magna voluptate commodo esse voluptate occaecat pariatur esse. Lorem dolore sint adipisicing id consequat. Ad pariatur aliquip eiusmod aliqua cupidatat mollit veniam qui anim voluptate. Labore adipisicing amet irure tempor pariatur aute et occaecat qui non velit dolore Lorem. Sit ut ut id adipisicing tempor magna excepteur labore excepteur commodo. Officia esse ut Lorem est ex labore incididunt nulla non voluptate id ad id. Minim aliqua sunt elit minim voluptate enim."
+      "id": 1,
+      "position": "Logistics Manager",
+      "from": "2020",
+      "to": "",
+      "company": "Amazon",
+      "description": "My main responsibilities were..."
     }
   ]
 }

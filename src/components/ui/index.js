@@ -5,4 +5,5 @@ import Input from "./Input";
 import UploadFile from "./UploadFile";
 import Button from "./Button";
 import InputFile from "./InputFile";
-export { Progress, List, ListItem, Input, InputFile, UploadFile, Button };
+import TextArea from "./TextArea";
+export { Progress, List, ListItem, Input, InputFile, UploadFile, Button, TextArea };

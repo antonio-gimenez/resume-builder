@@ -43,3 +43,10 @@
     display: block;
   }
 }
+
+.laptop-fit {
+  max-width: var(--breakpoint-tablet);
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  padding-top: 2rem;
+}

@@ -6,8 +6,9 @@ const initialState = require("../data.json");
 function useResume() {
   const [resume, setResume] = useLocalStorage("resume", initialState);
 
+  const { profile, skills, work, education, languages, certificates } = resume;
+
   const updateResumeSection = (section, event) => {
-    // If the section is an array, we need to update the array
     if (isArray(resume[section])) {
       const newArray = [...resume[section]];
       newArray[event.target.dataset.index][event.target.name] = event.target.value;
@@ -17,101 +18,139 @@ function useResume() {
     }
   };
 
-  const updateSkillProgress = (event) => {
-    const { name, value } = event.target;
-    if (!name || !value) return null;
-    console.log(value);
+  const updateProfessionalExperience = (experience) => {
+    if (!experience) return;
+    const exisitingExperience = work.find((exp) => exp.id === experience.id);
+    if (exisitingExperience) {
+      const newExperience = work.map((exp) => (exp.id === experience.id ? experience : exp));
+      return setResume({ ...resume, work: newExperience });
+    }
+    setResume({ ...resume, work: [...work, experience] });
+  };
+
+  const removeProfessionalExperience = (id) => {
+    if (NaN === id) {
+      return console.error("No id provided or id is not a number");
+    }
+    if (!work) {
+      return console.error("No experience to remove");
+    }
+    setResume({ ...resume, work: work.filter((exp) => exp.id !== id) });
+  };
+
+  const updateEducation = (edu) => {
+    if (!edu) return;
+    const exisitingEducation = education.find((education) => education.id === edu.id);
+    if (exisitingEducation) {
+      const newEducation = education.map((education) => (education.id === edu.id ? edu : education));
+      return setResume({ ...resume, education: newEducation });
+    }
+    setResume({ ...resume, education: [...education, edu] });
+  };
+
+  const removeEducation = (id) => {
+    if (NaN === id) {
+      return console.error("No id provided or id is not a number");
+    }
+    if (!education) {
+      return console.error("No education to remove");
+    }
+    setResume({ ...resume, education: education.filter((education) => education.id !== id) });
+  };
+
+  const updateLanguage = (lang) => {
+    if (!languages) return;
+    lang.progress = parseInt(lang.progress);
+    const existingLanguage = languages.find((language) => language.id === lang.id);
+    if (existingLanguage) {
+      const newLanguages = languages.map((language) => (language.id === lang.id ? lang : language));
+      return setResume({ ...resume, languages: newLanguages });
+    }
+    setResume((prev) => ({ ...prev, languages: [...prev.languages, lang] }));
+  };
+
+  const removeLanguage = (id) => {
+    if (NaN === id) {
+      return console.error("No id provided or id is not a number");
+    }
+    if (!languages) {
+      return console.error("No languages to remove");
+    }
+    setResume((prev) => ({ ...prev, languages: prev.languages.filter((lang) => lang.id !== id) }));
+  };
+
+  const updateCertificate = (cert) => {
+    if (!cert) {
+      return console.error("No certificate provided");
+    }
+    const exisitingCertificate = certificates.find((certificate) => certificate.id === cert.id);
+    if (exisitingCertificate) {
+      const newCertificates = certificates.map((certificate) => (certificate.id === cert.id ? cert : certificate));
+      return setResume({ ...resume, certificates: newCertificates });
+    }
+    setResume((prev) => ({ ...prev, certificates: [...prev.certificates, cert] }));
+  };
+
+  const removeCertificate = (id) => {
+    if (NaN === id) {
+      return console.error("No id provided or id is not a number");
+    }
+    if (!certificates) {
+      return console.error("No certificates to remove");
+    }
+    setResume((prev) => ({ ...prev, certificates: prev.certificates.filter((cert) => cert.id !== id) }));
+  };
+
+  const updateSkill = (skill) => {
+    if (!skill) {
+      return console.error("No skill provided");
+    }
+    // ensure that the skill progress is a number
+    skill.progress = parseInt(skill.progress);
+    const existingSkill = skills.find((s) => s.id === skill.id);
+    if (existingSkill) {
+      const newSkills = skills.map((s) => (s.id === skill.id ? skill : s));
+      return setResume({ ...resume, skills: newSkills });
+    }
     setResume((prev) => ({
       ...prev,
-      skills: [
-        ...prev.skills.map((skill) => {
-          if (skill.id === name) {
-            skill.progress = parseInt(value);
-          }
-          return skill;
-        }),
-      ],
+      skills: [...prev.skills, skill],
     }));
   };
 
-  const addSkill = (event) => {
-    const { name, value } = event.target;
-    if (!name || !value) return;
-    // if id already exists, update name
-    if (resume.skills.find((skill) => skill.id === name)) {
-      setResume((prev) => ({
-        ...prev,
-        skills: [
-          ...prev.skills.map((skill) => {
-            if (skill.id === name) {
-              skill.name = value;
-            }
-            return skill;
-          }),
-        ],
-      }));
-    } else {
-      setResume((prev) => ({
-        ...prev,
-        skills: [
-          ...prev.skills,
-          {
-            id: name,
-            name: value,
-            progress: 0,
-          },
-        ],
-      }));
+  const removeSkill = (id) => {
+    if (NaN === id) {
+      return console.error("No id provided or id is not a number");
     }
-  };
-
-  const addExperience = (event) => {
-    const { name, value } = event.target;
-    if (!name || !value) return;
-    // if id already exists, update name
-    if (resume.work.find((exp) => exp.id === name)) {
-      setResume((prev) => ({
-        ...prev,
-        work: [
-          ...prev.work.map((exp) => {
-            if (exp.id === name) {
-              exp.name = value;
-            }
-            return exp;
-          }),
-        ],
-      }));
-    } else {
-      setResume((prev) => ({
-        ...prev,
-        work: [
-          ...prev.work,
-          {
-            id: name,
-            position: value,
-            from: "",
-            to: "",
-            company: "",
-            description: "",
-          },
-        ],
-      }));
+    if (!skills) {
+      return console.error("No skills found");
     }
+    setResume((prev) => ({
+      ...prev,
+      skills: prev.skills.filter((skill) => skill.id !== id),
+    }));
   };
 
   return {
     resume,
-    profile: resume.profile,
-    skills: resume.skills,
-    work: resume.work,
-    education: resume.education,
-    languages: resume.languages,
-    certificates: resume.certificates,
+    profile,
+    skills,
+    work,
+    education,
+    languages,
+    certificates,
     updateResumeSection,
+    updateProfessionalExperience,
+    removeProfessionalExperience,
+    updateEducation,
+    removeEducation,
+    updateCertificate,
+    removeCertificate,
+    updateLanguage,
+    removeLanguage,
     updateResume: setResume,
-    handleSkill: addSkill,
-    updateSkillProgress,
-    handleExperience: addExperience,
+    removeSkill,
+    updateSkill,
     restore: () => setResume(initialState),
   };
 }
