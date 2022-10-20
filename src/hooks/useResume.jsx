@@ -9,12 +9,14 @@ function useResume() {
   const { profile, skills, professionalExperience, education, languages, certificates } = resume;
 
   const updateResumeSection = (section, event) => {
+    if (!section || !event) return;
+    const { name, value } = event.target;
     if (isArray(resume[section])) {
       const newArray = [...resume[section]];
-      newArray[event.target.dataset.index][event.target.name] = event.target.value;
+      newArray[name] = value;
       setResume({ ...resume, [section]: newArray });
     } else {
-      setResume({ ...resume, [section]: { ...resume[section], [event.target.name]: event.target.value } });
+      setResume({ ...resume, [section]: { ...resume[section], [name]: value } });
     }
   };
 

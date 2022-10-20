@@ -1,9 +1,11 @@
 import React from "react";
 import Preview from "./components/Preview";
 import { Skills, PersonalDetails, Languages, Certifications, Education, Work } from "./components/resume";
+import useResume from "./hooks/useResume";
 import "./styles/App.css";
 
 function App() {
+  const { addCustomSection } = useResume();
   return (
     <div className="main">
       <div className="scrollable-container">

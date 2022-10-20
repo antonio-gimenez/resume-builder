@@ -41,7 +41,7 @@ function Work() {
           <div className="container-delete">
             <TrashIcon className="icon" onClick={() => removeProfessionalExperience(work.id)} />
           </div>
-          <div className="grid-auto">
+          <div className="flex-auto">
             <Input
               id={work.id}
               name="position"

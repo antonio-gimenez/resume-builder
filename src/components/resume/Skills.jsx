@@ -25,7 +25,8 @@ function Skills() {
     <div className="container">
       <div className="flex">
         <h1 className="heading-2">Skills</h1>
-        <div className=" add-new-entry" onClick={() => updateSkill({ id: nextId, name: "", level: 0 })}>
+        {/* Bigger is more proficient */}
+        <div className=" add-new-entry" onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
           <PlusIcon className="icon" />
           <span>New Entry</span>
         </div>

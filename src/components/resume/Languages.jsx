@@ -7,8 +7,8 @@ import Range from "../ui/Range";
 
 const languagesLevels = [
   { label: "Elementary", progress: 5, min: 0, max: 20 },
-  { label: "Intermediate", progress: 25, min: 20, max: 35 },
-  { label: "Working", progress: 50, min: 35, max: 55 },
+  { label: "Beginner", progress: 25, min: 20, max: 35 },
+  { label: "Intermediate", progress: 50, min: 35, max: 55 },
   { label: "Professional", progress: 75, min: 55, max: 80 },
   { label: "Native", progress: 100, min: 80, max: 100 },
 ];
@@ -33,7 +33,7 @@ function Languages() {
     <div className="container">
       <div className="flex">
         <h1 className="heading-2">Languages</h1>
-        <div className=" add-new-entry" onClick={() => updateLanguage({ id: nextId, name: "", level: 0 })}>
+        <div className=" add-new-entry" onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
           <PlusIcon className="icon" />
           <span>New Entry</span>
         </div>

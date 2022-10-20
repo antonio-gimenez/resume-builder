@@ -22,11 +22,12 @@ function Range({ levels = defaultLevels, currentProgress = 5, handleChange, ...p
   };
 
   return (
-    <div className="range-container">
+    <div>
       <label className="label" htmlFor="name">
         {findLevel(progress)}
       </label>
       <input type="range" min={5} max={100} {...props} value={progress} onChange={onChange} />
+      {props.disabled && <div className="range-disabled-overlay" />}
     </div>
   );
 }
