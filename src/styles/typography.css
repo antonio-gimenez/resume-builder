@@ -53,3 +53,7 @@
   color: white;
   background-color: var(--secondary);
 }
+
+.text-muted {
+  color: var(--muted);
+}

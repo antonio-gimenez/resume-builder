@@ -39,31 +39,37 @@ function Languages() {
         </div>
       </div>
 
-      {languages.map((lang, index) => (
-        <Collapse key={lang.id} open={true} title={lang.name || "New Item"}>
-          <div className="container-delete">
-            <TrashIcon className="icon" onClick={() => removeLanguage(lang.id)} />
-          </div>
-          <div className="flex-auto">
-            <Input
-              id={lang.id}
-              name="name"
-              label={`Language #${index + 1}`}
-              defaultValue={lang.name}
-              placeholder="(e.g. English)"
-              onChange={handleUpdateLanguage}
-            />
-            <Range
-              levels={languagesLevels}
-              disabled={!lang.name}
-              id={lang.id}
-              name={"progress"}
-              currentProgress={lang.progress}
-              handleChange={handleUpdateLanguage}
-            />
-          </div>
-        </Collapse>
-      ))}
+      {languages.length > 0 ? (
+        languages.map((lang, index) => (
+          <Collapse key={lang.id} open={!lang.name} title={lang.name || "New Language"}>
+            <div className="container-delete">
+              <TrashIcon className="icon" onClick={() => removeLanguage(lang.id)} />
+            </div>
+            <div className="flex-auto">
+              <Input
+                id={lang.id}
+                name="name"
+                label={`Language #${index + 1}`}
+                defaultValue={lang.name}
+                placeholder="(e.g. English)"
+                onChange={handleUpdateLanguage}
+              />
+              <Range
+                levels={languagesLevels}
+                disabled={!lang.name}
+                id={lang.id}
+                name={"progress"}
+                currentProgress={lang.progress}
+                handleChange={handleUpdateLanguage}
+              />
+            </div>
+          </Collapse>
+        ))
+      ) : (
+        <div className="flex-auto">
+          <p className="text-muted">No languages added yet.</p>
+        </div>
+      )}
     </div>
   );
 }

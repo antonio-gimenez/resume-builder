@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 function Collapse({ children, title = "New Item", open = true, ...props }) {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(open);
 
   return (
     <div className="collapse-container" {...props} tabIndex={0}>

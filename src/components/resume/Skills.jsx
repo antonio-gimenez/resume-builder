@@ -31,30 +31,36 @@ function Skills() {
           <span>New Entry</span>
         </div>
       </div>
-      {skills.map((skill, index) => (
-        <Collapse key={skill.id} open={true} title={skill.name || "New Item"}>
-          <div className="container-delete">
-            <TrashIcon className="icon" onClick={() => removeSkill(skill.id)} />
-          </div>
-          <div className="flex-auto">
-            <Input
-              id={skill.id}
-              label={`Skill #${index + 1}`}
-              name="name"
-              defaultValue={skill.name}
-              placeholder="(e.g. React, JavaScript, etc.)"
-              onChange={handleUpdateSkill}
-            />
-            <Range
-              disabled={!skill.name}
-              id={skill.id}
-              name={"progress"}
-              currentProgress={skill.progress}
-              handleChange={handleUpdateSkill}
-            />
-          </div>
-        </Collapse>
-      ))}
+      {skills.length > 0 ? (
+        skills.map((skill, index) => (
+          <Collapse key={skill.id} open={!skill.name} title={skill.name || "New Skill"}>
+            <div className="container-delete">
+              <TrashIcon className="icon" onClick={() => removeSkill(skill.id)} />
+            </div>
+            <div className="flex-auto">
+              <Input
+                id={skill.id}
+                label={`Skill #${index + 1}`}
+                name="name"
+                defaultValue={skill.name}
+                placeholder="(e.g. React, JavaScript, etc.)"
+                onChange={handleUpdateSkill}
+              />
+              <Range
+                disabled={!skill.name}
+                id={skill.id}
+                name={"progress"}
+                currentProgress={skill.progress}
+                handleChange={handleUpdateSkill}
+              />
+            </div>
+          </Collapse>
+        ))
+      ) : (
+        <div className="flex-auto">
+          <p className="text-muted">No skills added yet.</p>
+        </div>
+      )}
     </div>
   );
 }

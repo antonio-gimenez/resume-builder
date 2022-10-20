@@ -29,42 +29,48 @@ function Certifications() {
           <span>New Entry</span>
         </div>
       </div>
-      {certificates.map((certificate) => (
-        <Collapse key={certificate.id} open={true} title={certificate.name || "New Item"}>
-          <div className="container-delete">
-            <TrashIcon className="icon" onClick={() => removeCertificate(certificate.id)} />
-          </div>
-          <div className="flex-auto">
-            {/* <div className="grid-auto"> */}
-            <Input
-              id={certificate.id}
-              name="name"
-              label="Certificate name"
-              defaultValue={certificate.name}
-              placeholder="(e.g. React Developer, Full Stack Developer, etc.)"
-              onChange={handleUpdateCertificate}
-            />
-            <Input
-              id={certificate.id}
-              name="issuer"
-              label="Issued by"
-              defaultValue={certificate.issuer}
-              placeholder="(e.g. Udemy, Pluralsight, etc.)"
-              onChange={handleUpdateCertificate}
-            />
-            <Input
-              type="number"
-              id={certificate.id}
-              label="Expedition year"
-              name="year"
-              min="1950"
-              max={new Date().getFullYear()}
-              value={certificate.year || new Date().getFullYear()}
-              onChange={handleUpdateCertificate}
-            />
-          </div>
-        </Collapse>
-      ))}
+      {certificates.length > 0 ? (
+        certificates.map((certificate) => (
+          <Collapse key={certificate.id} open={!certificate.name} title={certificate.name || "New Certification"}>
+            <div className="container-delete">
+              <TrashIcon className="icon" onClick={() => removeCertificate(certificate.id)} />
+            </div>
+            <div className="flex-auto">
+              {/* <div className="grid-auto"> */}
+              <Input
+                id={certificate.id}
+                name="name"
+                label="Certificate name"
+                defaultValue={certificate.name}
+                placeholder="(e.g. React Developer, Full Stack Developer, etc.)"
+                onChange={handleUpdateCertificate}
+              />
+              <Input
+                id={certificate.id}
+                name="issuer"
+                label="Issued by"
+                defaultValue={certificate.issuer}
+                placeholder="(e.g. Udemy, Pluralsight, etc.)"
+                onChange={handleUpdateCertificate}
+              />
+              <Input
+                type="number"
+                id={certificate.id}
+                label="Expedition year"
+                name="year"
+                min="1950"
+                max={new Date().getFullYear()}
+                value={certificate.year || new Date().getFullYear()}
+                onChange={handleUpdateCertificate}
+              />
+            </div>
+          </Collapse>
+        ))
+      ) : (
+        <div className="flex-auto">
+          <p className="text-muted">No certifications added yet.</p>
+        </div>
+      )}
     </div>
   );
 }

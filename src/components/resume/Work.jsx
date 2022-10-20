@@ -22,6 +22,14 @@ function Work() {
     updateProfessionalExperience(updatedWork);
   };
 
+  const entryTitle = (work) => {
+    if (!work.company && !work.position) return "New Entry";
+    if (work.company && work.position) return `${work.position} at ${work.company}`;
+    if (work.company) return work.company;
+    if (work.position) return work.position;
+    return `${work.company} - ${work.position}`;
+  };
+
   return (
     <div className="container">
       <div className="flex">
@@ -36,61 +44,67 @@ function Work() {
           <span>New Entry</span>
         </div>
       </div>
-      {professionalExperience.map((work) => (
-        <Collapse key={work.id} open={true} title={`${work.position || "Position"} at ${work.company || "Company"} `}>
-          <div className="container-delete">
-            <TrashIcon className="icon" onClick={() => removeProfessionalExperience(work.id)} />
-          </div>
-          <div className="flex-auto">
-            <Input
-              id={work.id}
-              name="position"
-              label="Position"
-              defaultValue={work.position}
-              placeholder="(e.g. Software Engineer)"
-              onChange={handleUpdateWork}
-            />
-            <Input
-              type="number"
-              id={work.id}
-              name="from"
-              min="1950"
-              label="From"
-              max={new Date().getFullYear()}
-              defaultValue={work.from}
-              onChange={handleUpdateWork}
-            />
-            <Input
-              type="number"
-              id={work.id}
-              name="to"
-              min="1950"
-              label="To"
-              max={new Date().getFullYear()}
-              placeholder="Leave blank if still working here"
-              defaultValue={work.to}
-              onChange={handleUpdateWork}
-            />
-            <Input
-              id={work.id}
-              name="company"
-              defaultValue={work.company}
-              label="Company"
-              placeholder="(e.g. Google)"
-              onChange={handleUpdateWork}
-            />
+      {professionalExperience.length > 0 ? (
+        professionalExperience.map((work) => (
+          <Collapse key={work.id} open={!work.position || !work.company} title={entryTitle(work)}>
+            <div className="container-delete">
+              <TrashIcon className="icon" onClick={() => removeProfessionalExperience(work.id)} />
+            </div>
+            <div className="flex-auto">
+              <Input
+                id={work.id}
+                name="position"
+                label="Position"
+                defaultValue={work.position}
+                placeholder="(e.g. Software Engineer)"
+                onChange={handleUpdateWork}
+              />
+              <Input
+                type="number"
+                id={work.id}
+                name="from"
+                min="1950"
+                label="From"
+                max={new Date().getFullYear()}
+                defaultValue={work.from}
+                onChange={handleUpdateWork}
+              />
+              <Input
+                type="number"
+                id={work.id}
+                name="to"
+                min="1950"
+                label="To"
+                max={new Date().getFullYear()}
+                placeholder="Leave blank if still working here"
+                defaultValue={work.to}
+                onChange={handleUpdateWork}
+              />
+              <Input
+                id={work.id}
+                name="company"
+                defaultValue={work.company}
+                label="Company"
+                placeholder="(e.g. Google)"
+                onChange={handleUpdateWork}
+              />
 
-            <TextArea
-              id={work.id}
-              label="Description"
-              name="description"
-              defaultValue={work.description}
-              placeholder={`Main responsibilities, achievements, a brief description of key projects, etc.`}
-              onChange={handleUpdateWork}
-            />
-          </div>
-        </Collapse>
-      ))}
+              <TextArea
+                id={work.id}
+                label="Description"
+                name="description"
+                defaultValue={work.description}
+                placeholder={`Main responsibilities, achievements, a brief description of key projects, etc.`}
+                onChange={handleUpdateWork}
+              />
+            </div>
+          </Collapse>
+        ))
+      ) : (
+        <div className="flex-auto">
+          <p className="text-muted">No work experience added yet.</p>
+        </div>
+      )}
     </div>
   );
 }
