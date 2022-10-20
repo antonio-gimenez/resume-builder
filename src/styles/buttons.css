@@ -5,6 +5,7 @@ button {
   cursor: pointer;
 }
 .button {
+  user-select: none;
   color: #111827;
   display: inline-flex;
   padding-top: 0.625rem;
