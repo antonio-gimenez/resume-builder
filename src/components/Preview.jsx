@@ -1,5 +1,6 @@
 import React from "react";
 import useResume from "../hooks/useResume";
+import Canvas from "./Canvas";
 import { TextArea } from "./ui";
 
 function Preview() {
@@ -7,10 +8,10 @@ function Preview() {
 
   return (
     <div className="resume-container">
-      <div className={"resume-preview"}>
-        {/* <TextArea disabled value={JSON.stringify(resume, null, 2)} /> */}
-        <span role={"textbox"}>{JSON.stringify(resume, null, 2)}</span>
-      </div>
+      {/* <div className={"resume-preview"}> */}
+      <Canvas />
+      {/* <span role={"textbox"}>{JSON.stringify(resume, null, 2)}</span> */}
+      {/* </div> */}
     </div>
   );
 }

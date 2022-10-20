@@ -166,3 +166,7 @@
   grid-gap: 0.5rem;
   padding: 2rem 1rem;
 }
+
+canvas {
+  border-radius: 0.5rem;
+}

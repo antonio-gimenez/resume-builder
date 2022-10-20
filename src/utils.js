@@ -15,13 +15,59 @@ export function isObject(obj) {
   return Object.prototype.toString.call(obj) === "[object Object]";
 }
 
-export function drawTextInCanvas(ctx, text, x = 0, y = 0, color = "black", fontSize, fontFamily) {
-  if (!ctx) {
-    return console.error("ctx is required");
+export function writeTextToCanvas(text, canvas) {
+  if (!canvas) return console.error("No canvas available to draw text");
+  if (!text) return console.error("No text to draw");
+  let ctx = canvas.getContext("2d");
+  ctx.font = "30px Arial";
+  ctx.fillText(text, 10, 50);
+}
+
+export function drawCanvas(context, canvasRef) {
+  if (!context) return console.error("No context available to draw canvas");
+  if (!canvasRef) return console.error("Canvase Ref is not provided");
+  // Resize the canvas to fit the parent element
+  const offsetWidth = canvasRef.current.parentElement.offsetWidth - 32;
+  const offsetHeight = canvasRef.current.parentElement.offsetHeight - 16; // Accounts for scrollbar
+  context.canvas.width = offsetWidth;
+  context.canvas.height = offsetHeight;
+  context.fillStyle = "white";
+  context.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+  // check if there are spaces available in the room
+}
+
+export function drawCanvasText(context, text) {
+  if (!context) return console.error("No context available to draw canvas");
+  if (!text) return console.error("No text to draw");
+
+  context.fillStyle = "black";
+  context.font = "20px Verdana";
+  // antialiasing, rendering of text
+  context.imageSmoothingEnabled = true;
+  context.mozImageSmoothingEnabled = true;
+  context.webkitImageSmoothingEnabled = true;
+  // scale the text size with the image size
+  context.scale(context.width / text.width, context.height / text.height);
+  // add text weight 600 : bolder
+  context.textAlign = "center";
+  context.fillText(text, context.canvas.offsetWidth / 2, 40);
+}
+
+export function wrapText(context, text, x, y, maxWidth, lineHeight) {
+  var words = text.split(" ");
+  var line = "";
+
+  for (var n = 0; n < words.length; n++) {
+    var testLine = line + words[n] + " ";
+    var metrics = context.measureText(testLine);
+    var testWidth = metrics.width;
+    if (testWidth > maxWidth && n > 0) {
+      context.fillText(line, x, y);
+      line = words[n] + " ";
+      y += lineHeight;
+    } else {
+      line = testLine;
+    }
   }
-  const font = `${fontSize} ${fontFamily}`;
-  console.log(font);
-  ctx.font = font;
-  ctx.fillStyle = color || "black";
-  ctx.fillText(text, x, y);
+  context.fillText(line, x, y);
 }
