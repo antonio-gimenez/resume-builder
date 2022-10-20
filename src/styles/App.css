@@ -1,13 +1,13 @@
 /* Variables */
 :root {
+  --secondary: rgb(25, 25, 112);
   --color-navigation: rgb(249, 250, 251);
   --color-background: rgb(101, 110, 131);
   --accent: rgb(60, 82, 132);
-  --color-date: rgb(107, 114, 128);
+  --accent-dark: rgb(48, 65, 105);
   --color-background-input: rgb(239, 242, 249);
   --color-placeholder: rgb(159, 166, 187);
   --accent: rgb(78, 118, 192);
-  --color-preview-background: rgb(25, 25, 112);
   --border-color: rgba(0, 0, 0, 0.15);
   --muted: #6b7280;
   --label-color: rgb(130, 139, 162);
@@ -66,33 +66,4 @@
 
 .block {
   display: block;
-}
-
-.chevron {
-  margin-left: 0.5rem;
-  height: 24px;
-  width: 24px;
-  transition: all 0.1s ease-in-out;
-}
-
-.chevron-open {
-  transform: rotate(180deg);
-}
-
-.chevron-closed {
-  transform: rotate(0deg);
-}
-
-.icon {
-  width: 20px;
-  margin-right: 0.25rem;
-  height: 20px;
-  font-weight: 800;
-}
-
-.big-icon {
-  width: 30px;
-  margin-right: 0.25rem;
-  height: 30px;
-  font-weight: 800;
 }

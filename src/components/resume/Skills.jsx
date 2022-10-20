@@ -27,7 +27,7 @@ function Skills() {
         <h1 className="heading-2">Skills</h1>
         <div className=" add-new-entry" onClick={() => updateSkill({ id: nextId, name: "", level: 0 })}>
           <PlusIcon className="icon" />
-          <span>Add new skill</span>
+          <span>New Entry</span>
         </div>
       </div>
       {skills.map((skill, index) => (

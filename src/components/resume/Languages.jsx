@@ -6,11 +6,11 @@ import { Input } from "../ui";
 import Range from "../ui/Range";
 
 const languagesLevels = [
-  { label: "Elementary Proficiency", progress: 5, min: 0, max: 20 },
-  { label: "Intermediate Proficiency", progress: 25, min: 20, max: 35 },
-  { label: "Working Proficiency", progress: 50, min: 35, max: 55 },
-  { label: "Professional Proficiency", progress: 75, min: 55, max: 80 },
-  { label: "Native Proficiency", progress: 100, min: 80, max: 100 },
+  { label: "Elementary", progress: 5, min: 0, max: 20 },
+  { label: "Intermediate", progress: 25, min: 20, max: 35 },
+  { label: "Working", progress: 50, min: 35, max: 55 },
+  { label: "Professional", progress: 75, min: 55, max: 80 },
+  { label: "Native", progress: 100, min: 80, max: 100 },
 ];
 
 function Languages() {
@@ -35,7 +35,7 @@ function Languages() {
         <h1 className="heading-2">Languages</h1>
         <div className=" add-new-entry" onClick={() => updateLanguage({ id: nextId, name: "", level: 0 })}>
           <PlusIcon className="icon" />
-          <span>Add new language</span>
+          <span>New Entry</span>
         </div>
       </div>
 

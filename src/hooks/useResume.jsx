@@ -85,8 +85,8 @@ function useResume() {
     }
     const exisitingCertificate = certificates.find((certificate) => certificate.id === cert.id);
     if (exisitingCertificate) {
-      const newCertificates = certificates.map((certificate) => (certificate.id === cert.id ? cert : certificate));
-      return setResume({ ...resume, certificates: newCertificates });
+      const newCertifications = certificates.map((certificate) => (certificate.id === cert.id ? cert : certificate));
+      return setResume({ ...resume, certificates: newCertifications });
     }
     setResume((prev) => ({ ...prev, certificates: [...prev.certificates, cert] }));
   };

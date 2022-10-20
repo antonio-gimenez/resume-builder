@@ -1,6 +1,6 @@
 import React from "react";
 import Preview from "./components/Preview";
-import { Skills, PersonalDetails, Languages, Certificates, Education, Work } from "./components/resume";
+import { Skills, PersonalDetails, Languages, Certifications, Education, Work } from "./components/resume";
 import "./styles/App.css";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
           <PersonalDetails />
           <Skills />
           <Languages />
-          <Certificates />
+          <Certifications />
           <Education />
           <Work />
         </div>

@@ -12,7 +12,7 @@ function Collapse({ children, title = "New Item", open = true, ...props }) {
           <ChevronDownIcon className={`chevron ${isOpen ? "chevron-open" : "chevron-closed"}`} />
         </div>
       </button>
-      <span className={` collapse-content ${isOpen ? "block" : "hidden"} `}>{children}</span>
+      <span className={` collapse-content ${isOpen ? "" : "hidden"} `}>{children}</span>
     </div>
   );
 }

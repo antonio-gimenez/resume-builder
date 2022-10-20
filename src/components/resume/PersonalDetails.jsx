@@ -8,7 +8,7 @@ function PersonalDetails() {
   return (
     <div className="container">
       <h1 className="heading-2">Personal Details</h1>
-      <div className="container-bordered grid-two-columns">
+      <div className="container-bordered grid-auto">
         <Input
           placeholder={"ex: John"}
           label={"First Name"}

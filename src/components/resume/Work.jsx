@@ -33,15 +33,15 @@ function Work() {
           }
         >
           <PlusIcon className="icon" />
-          <span>Add new work experience</span>
+          <span>New Entry</span>
         </div>
       </div>
       {professionalExperience.map((work) => (
-        <Collapse key={work.id} open={true} title={`${work.company} - ${work.position}`}>
+        <Collapse key={work.id} open={true} title={`${work.position || "Position"} at ${work.company || "Company"} `}>
           <div className="container-delete">
             <TrashIcon className="icon" onClick={() => removeProfessionalExperience(work.id)} />
           </div>
-          <div className="flex-auto">
+          <div className="grid-auto">
             <Input
               id={work.id}
               name="position"

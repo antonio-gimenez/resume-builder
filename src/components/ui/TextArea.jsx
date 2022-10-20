@@ -6,7 +6,7 @@ function TextArea({ label, ...props }) {
   return (
     <div className="textarea-container">
       {label && (
-        <label className="label " htmlFor={id}>
+        <label className="label" htmlFor={id}>
           {label}
         </label>
       )}

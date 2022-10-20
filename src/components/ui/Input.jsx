@@ -8,7 +8,7 @@ function Input({ label, ...props }) {
   return (
     <div>
       {label && (
-        <label className="label " htmlFor={id}>
+        <label className="label" htmlFor={id}>
           {label}
         </label>
       )}
