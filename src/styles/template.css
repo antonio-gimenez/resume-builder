@@ -4,28 +4,19 @@
   align-items: center;
   justify-content: center;
   flex-flow: column nowrap;
-  background-color: rgb(60, 82, 132);
   color: #222;
   user-select: none;
   z-index: 3;
 }
 
-.resume-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  inline-size: 98%; /* width */
-  block-size: 98%; /* height */
-}
 .resume-preview {
   width: 7in;
   height: 9.25in;
   max-width: 100%;
   max-height: 100%;
-  background-color: var(--white);
+  /* background-color: var(--white); */
   overflow: auto;
-  padding: 1rem;
+  /* padding: 1rem; */
   overflow-y: auto;
   border-radius: 0.5rem;
 }

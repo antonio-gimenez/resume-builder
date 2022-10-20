@@ -22,7 +22,6 @@
 @import url("./forms.css");
 @import url("./layouts.css");
 @import url("./buttons.css");
-@import url("./media-queries.css");
 @import url("./typography.css");
 @import url("./print.css");
 @import url("./template.css");
@@ -42,6 +41,13 @@
 body {
   background-color: var(--secondary);
   overflow-y: hidden;
+}
+
+.laptop-fit {
+  max-width: var(--breakpoint-tablet);
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  padding-top: 2rem;
 }
 
 .hidden {
