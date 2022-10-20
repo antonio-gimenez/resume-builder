@@ -1,4 +1,3 @@
-import { isArray } from "../utils";
 import useLocalStorage from "./useLocalStorage";
 
 const initialState = require("../data.json");
@@ -6,17 +5,34 @@ const initialState = require("../data.json");
 function useResume() {
   const [resume, setResume] = useLocalStorage("resume", initialState);
 
-  const { profile, skills, professionalExperience, education, languages, certificates } = resume;
+  const { profile, skills, professionalExperience, education, languages, certificates, sectionTitles } = resume;
 
-  const updateResumeSection = (section, event) => {
-    if (!section || !event) return;
+  const updateProfile = (event) => {
+    if (!event || !event.target) {
+      return console.error("No event or event.target provided");
+    }
     const { name, value } = event.target;
-    if (isArray(resume[section])) {
-      const newArray = [...resume[section]];
-      newArray[name] = value;
-      setResume({ ...resume, [section]: newArray });
+    const exisitingField = profile[name];
+    if (exisitingField) {
+      return setResume({ ...resume, profile: { ...profile, [name]: value } });
+    }
+    setResume({ ...resume, profile: { ...profile, [name]: value } });
+  };
+
+  const updateTitles = (event) => {
+    if (!event || !event.target) {
+      return console.error("No event or event.target provided");
+    }
+    const { name, value } = event.target;
+    if (!name) {
+      return console.error("No name provided");
+    }
+    const exisitingField = Boolean(sectionTitles[name]);
+    if (!exisitingField) {
+      const newTitles = { ...sectionTitles, [name]: value };
+      return setResume({ ...resume, sectionTitles: newTitles });
     } else {
-      setResume({ ...resume, [section]: { ...resume[section], [name]: value } });
+      return setResume({ ...resume, sectionTitles: { ...sectionTitles, [name]: value } });
     }
   };
 
@@ -141,7 +157,8 @@ function useResume() {
     education,
     languages,
     certificates,
-    updateResumeSection,
+    sectionTitles,
+    updateProfile,
     updateProfessionalExperience,
     removeProfessionalExperience,
     updateEducation,
@@ -150,6 +167,7 @@ function useResume() {
     removeCertificate,
     updateLanguage,
     removeLanguage,
+    updateTitles,
     updateResume: setResume,
     removeSkill,
     updateSkill,

@@ -3,7 +3,7 @@ import useResume from "../../hooks/useResume";
 import { Input } from "../ui";
 
 function PersonalDetails() {
-  const { profile, updateResumeSection } = useResume();
+  const { profile, updateProfile } = useResume();
 
   return (
     <div className="container">
@@ -13,14 +13,14 @@ function PersonalDetails() {
           placeholder={"ex: John"}
           label={"First Name"}
           value={profile.firstName}
-          onChange={(e) => updateResumeSection("profile", e)}
+          onChange={(e) => updateProfile(e)}
           name="firstName"
         />
         <Input
           placeholder={"ex: Doe"}
           label={"Last Name"}
           value={profile.lastName}
-          onChange={(e) => updateResumeSection("profile", e)}
+          onChange={(e) => updateProfile(e)}
           name="lastName"
         />
 
@@ -28,14 +28,14 @@ function PersonalDetails() {
           placeholder={"ex: john@doe.com"}
           label={"Email"}
           value={profile.email}
-          onChange={(e) => updateResumeSection("profile", e)}
+          onChange={(e) => updateProfile(e)}
           name="email"
         />
         <Input
           placeholder={"ex: 123-456-7890"}
           label={"Phone"}
           value={profile.phone}
-          onChange={(e) => updateResumeSection("profile", e)}
+          onChange={(e) => updateProfile(e)}
           name="phone"
         />
 
@@ -43,14 +43,14 @@ function PersonalDetails() {
           placeholder={"ex: New York"}
           label={"City"}
           value={profile.city}
-          onChange={(e) => updateResumeSection("profile", e)}
+          onChange={(e) => updateProfile(e)}
           name="city"
         />
         <Input
           placeholder={"ex: United States"}
           label={"State / Country"}
           value={profile.state}
-          onChange={(e) => updateResumeSection("profile", e)}
+          onChange={(e) => updateProfile(e)}
           name="state"
         />
       </div>

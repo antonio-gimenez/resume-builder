@@ -85,3 +85,32 @@ textarea::placeholder {
   font-weight: 500;
   cursor: pointer;
 }
+/* 
+clear formats for transparent-input classname
+ */
+
+.transparent-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.icon-on-hover-parent {
+  height: 24px;
+  width: 24px;
+  display: none;
+  visibility: hidden;
+}
+
+#on-hover:hover > .icon-on-hover-parent {
+  display: block;
+  visibility: visible;
+}

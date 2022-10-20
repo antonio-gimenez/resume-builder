@@ -2,11 +2,11 @@ import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
-import { Input } from "../ui";
+import { InlineEdit, InlineInput, Input } from "../ui";
 import Range from "../ui/Range";
 
 function Skills() {
-  const { skills, updateSkill, removeSkill } = useResume();
+  const { skills, updateTitles, sectionTitles, updateSkill, removeSkill } = useResume();
   const [nextId, setNextId] = useState(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
 
   useEffect(() => {
@@ -24,7 +24,13 @@ function Skills() {
   return (
     <div className="container">
       <div className="flex">
-        <h1 className="heading-2">Skills</h1>
+        <InlineEdit
+          name="skills"
+          label="Change title name"
+          placeholder="e.g. Personal Details"
+          value={sectionTitles.skills || "Skills"}
+          onChange={updateTitles}
+        />
         {/* Bigger is more proficient */}
         <div className=" add-new-entry" onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
           <PlusIcon className="icon" />
@@ -47,6 +53,7 @@ function Skills() {
                 onChange={handleUpdateSkill}
               />
               <Range
+                levelType="skills"
                 disabled={!skill.name}
                 id={skill.id}
                 name={"progress"}

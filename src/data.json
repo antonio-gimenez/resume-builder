@@ -1,11 +1,5 @@
 {
-  "pageSettings": {
-    "backgroundColor": "white",
-    "marign": "4px",
-    "color": "black",
-    "fontFamily": "Arial",
-    "fontSize": "12px"
-  },
+  "sectionTitles": {},
   "profile": {
     "firstName": "John",
     "lastName": "Doe",

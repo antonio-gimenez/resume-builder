@@ -5,14 +5,6 @@ import Collapse from "../Collapse";
 import { Input } from "../ui";
 import Range from "../ui/Range";
 
-const languagesLevels = [
-  { label: "Elementary", progress: 5, min: 0, max: 20 },
-  { label: "Beginner", progress: 25, min: 20, max: 35 },
-  { label: "Intermediate", progress: 50, min: 35, max: 55 },
-  { label: "Professional", progress: 75, min: 55, max: 80 },
-  { label: "Native", progress: 100, min: 80, max: 100 },
-];
-
 function Languages() {
   const { languages, updateLanguage, removeLanguage } = useResume();
   const [nextId, setNextId] = useState(languages.length > 0 ? languages[languages.length - 1].id + 1 : 0);
@@ -55,7 +47,7 @@ function Languages() {
                 onChange={handleUpdateLanguage}
               />
               <Range
-                levels={languagesLevels}
+                levelType="languages"
                 disabled={!lang.name}
                 id={lang.id}
                 name={"progress"}
