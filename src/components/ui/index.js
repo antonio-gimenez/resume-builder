@@ -5,5 +5,4 @@ import Button from "./Button";
 import InputFile from "./InputFile";
 import TextArea from "./TextArea";
 import Range from "./Range";
-import InlineEdit from "./InlineEdit";
-export { Progress, InlineEdit, Range, Input, InputFile, UploadFile, Button, TextArea };
+export { Progress, Range, Input, InputFile, UploadFile, Button, TextArea };

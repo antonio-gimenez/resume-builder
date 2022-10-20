@@ -35,9 +35,6 @@ function Education() {
       {education.length > 0 ? (
         education.map((education) => (
           <Collapse key={education.id} open={true} title={education.name || "New Entry"}>
-            <div className="container-delete">
-              <TrashIcon className="icon" onClick={() => removeEducation(education.id)} />
-            </div>
             <div className="flex-auto">
               <Input
                 id={education.id}
@@ -85,6 +82,9 @@ function Education() {
                 defaultValue={education.description}
                 onChange={handleUpdateEducation}
               />
+            </div>
+            <div className="container-delete">
+              <TrashIcon className="icon" onClick={() => removeEducation(education.id)} />
             </div>
           </Collapse>
         ))

@@ -1,0 +1,27 @@
+@media print {
+  .print-hide {
+    display: none;
+    visibility: hidden;
+  }
+
+  .preview-container,
+  .resume-container {
+    background-color: none;
+    display: block;
+  }
+
+  /* remove all backgrounds */
+  body,
+  *,
+  *:before,
+  *:after {
+    background-color: none;
+  }
+
+  /* disable headers and footers */
+  @page {
+    size: 8.5in 11in;
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+  }
+}

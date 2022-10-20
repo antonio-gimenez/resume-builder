@@ -2,7 +2,7 @@ import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
-import { Button, Input } from "../ui";
+import { Input } from "../ui";
 
 function Certifications() {
   const { certificates, updateCertificate, removeCertificate } = useResume();
@@ -32,9 +32,6 @@ function Certifications() {
       {certificates.length > 0 ? (
         certificates.map((certificate) => (
           <Collapse key={certificate.id} open={!certificate.name} title={certificate.name || "New Certification"}>
-            <div className="container-delete">
-              <TrashIcon className="icon" onClick={() => removeCertificate(certificate.id)} />
-            </div>
             <div className="flex-auto">
               {/* <div className="grid-auto"> */}
               <Input
@@ -63,6 +60,9 @@ function Certifications() {
                 value={certificate.year || new Date().getFullYear()}
                 onChange={handleUpdateCertificate}
               />
+            </div>
+            <div className="container-delete">
+              <TrashIcon className="icon" onClick={() => removeCertificate(certificate.id)} />
             </div>
           </Collapse>
         ))

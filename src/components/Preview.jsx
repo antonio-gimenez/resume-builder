@@ -4,12 +4,12 @@ import { findLabelProgress } from "../utils";
 import Progress from "./ui/Progress";
 
 function Preview() {
-  const { resume, updateResume } = useResume();
+  const { resume } = useResume();
 
   return (
-    <div className="resume-container">
+    <div className={"preview-container"}>
       <div className={"resume-preview"}>
-        <div className="preview-body">
+        <div>
           <div className="preview-profile container-bordered">
             <h1 className="heading-2">{`${resume.profile.firstName} ${resume.profile.lastName}`}</h1>
             <address className="preview-address">

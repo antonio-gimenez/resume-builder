@@ -2,13 +2,13 @@ import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
-import { InlineEdit, InlineInput, Input } from "../ui";
+import { Button, Input } from "../ui";
 import Range from "../ui/Range";
 
 function Skills() {
   const { skills, updateTitles, sectionTitles, updateSkill, removeSkill } = useResume();
   const [nextId, setNextId] = useState(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
-
+  const [editTitle, setEditTitle] = useState(false);
   useEffect(() => {
     setNextId(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
   }, [skills]);
@@ -24,13 +24,25 @@ function Skills() {
   return (
     <div className="container">
       <div className="flex">
-        <InlineEdit
-          name="skills"
-          label="Change title name"
-          placeholder="e.g. Personal Details"
-          value={sectionTitles.skills || "Skills"}
-          onChange={updateTitles}
-        />
+        {editTitle ? (
+          <Input
+            name="skills"
+            maxLength={20}
+            onBlur={() => setEditTitle(false)}
+            placeholder="e.g. Personal Details"
+            value={sectionTitles.skills}
+            onInput={updateTitles}
+          />
+        ) : (
+          <>
+            <h1 className="heading-2">{sectionTitles.skills}</h1>
+            <Button onClick={() => setEditTitle(true)} className="edit-title">
+              {" "}
+              Edit{" "}
+            </Button>
+          </>
+        )}
+
         {/* Bigger is more proficient */}
         <div className=" add-new-entry" onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
           <PlusIcon className="icon" />
@@ -40,9 +52,6 @@ function Skills() {
       {skills.length > 0 ? (
         skills.map((skill, index) => (
           <Collapse key={skill.id} open={!skill.name} title={skill.name || "New Skill"}>
-            <div className="container-delete">
-              <TrashIcon className="icon" onClick={() => removeSkill(skill.id)} />
-            </div>
             <div className="flex-auto">
               <Input
                 id={skill.id}
@@ -54,12 +63,15 @@ function Skills() {
               />
               <Range
                 levelType="skills"
-                disabled={!skill.name}
+                // disabled={!skill.name}
                 id={skill.id}
                 name={"progress"}
-                currentProgress={skill.progress}
+                currentProgress={skill.progress || 5}
                 handleChange={handleUpdateSkill}
               />
+            </div>
+            <div className="container-delete">
+              <TrashIcon className="icon" onClick={() => removeSkill(skill.id)} />
             </div>
           </Collapse>
         ))

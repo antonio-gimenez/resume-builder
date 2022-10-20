@@ -47,9 +47,6 @@ function Work() {
       {professionalExperience.length > 0 ? (
         professionalExperience.map((work) => (
           <Collapse key={work.id} open={!work.position || !work.company} title={entryTitle(work)}>
-            <div className="container-delete">
-              <TrashIcon className="icon" onClick={() => removeProfessionalExperience(work.id)} />
-            </div>
             <div className="flex-auto">
               <Input
                 id={work.id}
@@ -97,6 +94,9 @@ function Work() {
                 placeholder={`Main responsibilities, achievements, a brief description of key projects, etc.`}
                 onChange={handleUpdateWork}
               />
+            </div>
+            <div className="container-delete">
+              <TrashIcon className="icon" onClick={() => removeProfessionalExperience(work.id)} />
             </div>
           </Collapse>
         ))

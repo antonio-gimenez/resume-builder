@@ -24,16 +24,19 @@ function useResume() {
       return console.error("No event or event.target provided");
     }
     const { name, value } = event.target;
+
     if (!name) {
       return console.error("No name provided");
     }
+    console.log({ name, value });
     const exisitingField = Boolean(sectionTitles[name]);
     if (!exisitingField) {
       const newTitles = { ...sectionTitles, [name]: value };
       return setResume({ ...resume, sectionTitles: newTitles });
-    } else {
-      return setResume({ ...resume, sectionTitles: { ...sectionTitles, [name]: value } });
     }
+    // update existing field
+    const newTitles = { ...sectionTitles, [name]: value };
+    return setResume({ ...resume, sectionTitles: newTitles });
   };
 
   const updateProfessionalExperience = (experience) => {

@@ -1,5 +1,16 @@
 {
-  "sectionTitles": {},
+  "sectionTitles": {
+    "personalDetails": "Personal Details",
+    "skills": "Skills",
+    "education": "Education",
+    "certifications": "Certifications",
+    "workExperience": "Work Experience",
+    "projects": "Projects",
+    "awards": "Awards",
+    "languages": "Languages",
+    "interests": "Interests",
+    "references": "References"
+  },
   "profile": {
     "firstName": "John",
     "lastName": "Doe",

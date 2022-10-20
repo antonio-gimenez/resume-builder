@@ -34,9 +34,6 @@ function Languages() {
       {languages.length > 0 ? (
         languages.map((lang, index) => (
           <Collapse key={lang.id} open={!lang.name} title={lang.name || "New Language"}>
-            <div className="container-delete">
-              <TrashIcon className="icon" onClick={() => removeLanguage(lang.id)} />
-            </div>
             <div className="flex-auto">
               <Input
                 id={lang.id}
@@ -54,6 +51,9 @@ function Languages() {
                 currentProgress={lang.progress}
                 handleChange={handleUpdateLanguage}
               />
+            </div>
+            <div className="container-delete">
+              <TrashIcon className="icon" onClick={() => removeLanguage(lang.id)} />
             </div>
           </Collapse>
         ))

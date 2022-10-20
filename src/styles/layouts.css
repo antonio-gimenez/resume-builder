@@ -1,13 +1,13 @@
 .main {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* background-color: #f5f5f5d6; */
+  grid-template-columns: repeat(auto-fit, minmax(768px, 1fr));
   gap: 0.8rem;
   overflow-y: hidden;
 }
 
 .scrollable-container {
   overflow-y: scroll;
+  background-color: var(--white);
   overflow-x: hidden;
   height: 100vh;
   max-height: 100vh;
@@ -24,46 +24,10 @@
   height: 5rem;
 }
 
-.preview-container {
-  display: none;
-  visibility: hid;
-  position: fixed;
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
-  width: 50%;
-  flex: 1 1 0%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column nowrap;
-  background-color: rgb(60, 82, 132);
-  color: #222;
-  user-select: none;
-  z-index: 3;
-}
-
-.resume-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  inline-size: 98%; /* width */
-  block-size: 98%; /* height */
-}
-
 .container {
   padding: 0rem 0.75rem;
-  margin: 0 auto;
-  border-radius: 0.25rem;
-  /* margin: 1rem 0; */
-  /* background-color: white; */
-  /* border: 1px solid var(--border-color); */
-  /* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1); */
-}
 
-.main-content {
-  /* padding: 1rem; */
+  margin: 1rem 0;
 }
 
 .progress-bar {
@@ -80,7 +44,6 @@
 
 .collapse-container {
   display: flex;
-  /* background-color: white; */
   flex-direction: column;
   border: 1px solid var(--border-color);
   padding: 0.5rem 1rem;
@@ -114,6 +77,7 @@
 }
 
 .container-delete {
+  margin-top: 0.5rem;
   display: flex;
   width: 100%;
   justify-content: flex-end;
@@ -150,7 +114,7 @@
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background-color: white;
+  background-color: var(--white);
   padding: 0.5rem 1rem;
   width: 100%;
   margin-top: 0.25rem;

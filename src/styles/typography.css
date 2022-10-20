@@ -39,7 +39,7 @@
   display: inline-flex;
   align-items: center;
   margin-right: 0.25rem;
-  color: whitesmoke;
+  color: var(--white);
   background-color: var(--accent-dark);
   border-radius: 0.25rem;
   font-size: small;
@@ -50,7 +50,7 @@
 }
 
 .add-new-entry:hover {
-  color: white;
+  color: var(--white);
   background-color: var(--secondary);
 }
 
