@@ -1,6 +1,6 @@
 import React from "react";
 
-function Progress({ progress, backgroundColor = "rgb(28, 40, 59)" }) {
+function Progress({ progress, backgroundColor = "rgb(60, 82, 132)" }) {
   const widthProgress = {
     width: progress + "%",
     backgroundColor: backgroundColor,

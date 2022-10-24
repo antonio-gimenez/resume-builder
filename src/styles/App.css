@@ -1,8 +1,7 @@
 /* Variables */
 :root {
   --white: #fff;
-  --secondary: rgb(60, 82, 132);
-  --color-navigation: rgb(249, 250, 251);
+  --primary: rgb(60, 82, 132);
   --color-background: rgb(101, 110, 131);
   --accent: rgb(60, 82, 132);
   --accent-dark: rgb(48, 65, 105);
@@ -12,11 +11,7 @@
   --border-color: rgba(0, 0, 0, 0.15);
   --muted: #6b7280;
   --label-color: rgb(130, 139, 162);
-  --breakpoint-mobile: 768px;
-  --breakpoint-tablet: 1024px;
-  --breakpoint-laptop: 1280px;
-  --breakpoint-desktop: 1440px;
-  --breakpoint-widescreen: 1441px;
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 @import url("./forms.css");
@@ -26,6 +21,7 @@
 @import url("./print.css");
 @import url("./template.css");
 @import url("./symbols.css");
+@import url("./progress.css");
 
 /* Global styles */
 
@@ -39,8 +35,13 @@
 }
 
 body {
-  background-color: var(--secondary);
   overflow-y: hidden;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .laptop-fit {

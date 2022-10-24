@@ -4,24 +4,33 @@
     visibility: hidden;
   }
 
-  .preview-container,
-  .resume-container {
-    background-color: none;
+  .print-show {
     display: block;
+    visibility: visible;
   }
 
-  /* remove all backgrounds */
-  body,
-  *,
-  *:before,
-  *:after {
-    background-color: none;
+  .din-A4 {
+    margin: 0 0 0 0 !important;
+    transform: scale(1) !important;
+    padding: 0 auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    border-radius: 0% !important;
   }
 
   /* disable headers and footers */
   @page {
-    size: 8.5in 11in;
-    margin: 0;
+    size: 8.27in 11.69in !important;
+    /* only one page */
+    size: auto !important;
+    font-size: 0.8rem !important;
+    margin: 0 !important;
+    border-radius: 0% !important;
+    padding: 0 !important;
     -webkit-print-color-adjust: exact;
+    color-adjust: exact;
   }
 }

@@ -12,6 +12,7 @@ function useResume() {
       return console.error("No event or event.target provided");
     }
     const { name, value } = event.target;
+    console.log({ name, value });
     const exisitingField = profile[name];
     if (exisitingField) {
       return setResume({ ...resume, profile: { ...profile, [name]: value } });

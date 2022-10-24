@@ -1,0 +1,8 @@
+.progress {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color-placeholder);
+  border-radius: 0.2rem;
+  height: 0.4rem;
+}

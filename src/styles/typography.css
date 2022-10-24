@@ -5,7 +5,7 @@
   text-align: center;
 }
 .heading-1 {
-  font-size: 2.5rem;
+  font-size: xx-large;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.04em;
@@ -13,14 +13,14 @@
 }
 
 .heading-2 {
-  font-size: 2rem;
+  font-size: x-large;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.04em;
 }
 
 .heading-3 {
-  font-size: 1.75rem;
+  font-size: large;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.04em;

@@ -1,14 +1,33 @@
 import React from "react";
 import useResume from "../../hooks/useResume";
-import { Input } from "../ui";
+import { getBase64 } from "../../utils";
+import { Input, TextArea } from "../ui";
 
 function PersonalDetails() {
   const { profile, updateProfile } = useResume();
+  // base64 image
+  const [image, setImage] = React.useState(null);
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    getBase64(file).then((base64) => {
+      setImage(base64);
+      const newEvent = {
+        ...event,
+        target: {
+          ...event.target,
+          name: "avatar",
+          value: base64,
+        },
+      };
+      updateProfile(newEvent);
+    });
+  };
 
   return (
     <div className="container">
       <h1 className="heading-2">Personal Details</h1>
-      <div className="grid-auto container">
+      <div className="grid-auto container flex-auto">
         <Input
           placeholder={"ex: John"}
           label={"First Name"}
@@ -53,6 +72,8 @@ function PersonalDetails() {
           onChange={(e) => updateProfile(e)}
           name="state"
         />
+        <TextArea label={"Summary"} value={profile.summary} onChange={(e) => updateProfile(e)} name="summary" />
+        <Input type="file" label={"Profile Picture"} onChange={(e) => handleImageChange(e)} name="avatar" />
       </div>
     </div>
   );
