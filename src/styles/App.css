@@ -2,16 +2,14 @@
 :root {
   --white: #fff;
   --primary: rgb(60, 82, 132);
-  --color-background: rgb(101, 110, 131);
   --accent: rgb(60, 82, 132);
-  --accent-dark: rgb(48, 65, 105);
+  --secondary: rgb(48, 65, 105);
   --color-background-input: rgb(239, 242, 249);
   --color-placeholder: rgb(159, 166, 187);
   --accent: rgb(78, 118, 192);
-  --border-color: rgba(0, 0, 0, 0.15);
-  --muted: #6b7280;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --muted: rgb(107, 114, 128);
   --label-color: rgb(130, 139, 162);
-  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 @import url("./forms.css");

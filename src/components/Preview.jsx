@@ -2,16 +2,11 @@ import React, { useState } from "react";
 import useResume from "../hooks/useResume";
 import { findLabelProgress } from "../utils";
 import Progress from "./ui/Progress";
-import Drawer from "./Drawer";
 function Preview() {
   const { resume } = useResume();
-  const [openDrawer, setOpenDrawer] = useState(false);
 
   return (
     <div className={"preview-container print-hide"}>
-      <button className="" onClick={() => setOpenDrawer((openDrawer) => !openDrawer)}></button>
-      <Drawer open={openDrawer} onCloseDrawer={() => setOpenDrawer(false)}></Drawer>
-
       <div className={"din-A4"}>
         <div className="print-show">
           <div className="template-header">

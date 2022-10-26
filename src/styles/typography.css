@@ -28,8 +28,11 @@
 
 .label {
   font-size: small;
+  font-weight: 500;
+  line-height: 1.2;
   display: flex;
   flex-direction: row;
+  margin-bottom: 0.5rem;
   width: fit-content;
   width: auto;
   color: var(--label-color);
@@ -40,7 +43,7 @@
   align-items: center;
   margin-right: 0.25rem;
   color: var(--white);
-  background-color: var(--accent-dark);
+  background-color: var(--secondary);
   border-radius: 0.25rem;
   font-size: small;
   padding: 0.5rem 0.75rem;
