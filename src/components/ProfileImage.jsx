@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { getBase64 } from "../utils";
 import useResume from "../hooks/useResume";
+import { PhotoIcon } from "@heroicons/react/24/outline";
 function ProfileImage() {
   const { profile, updateProfile } = useResume();
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState(profile.avatar || null);
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     getBase64(file).then((base64) => {
@@ -20,19 +21,15 @@ function ProfileImage() {
     });
   };
 
-  const initials = profile.firstName[0] + profile.lastName[0];
-
   return (
     <div>
       <label className="label">Profile Photo</label>
       <label className="input-avatar">
-        <input type="file" className="input-file" accept="image/*" onChange={handleImageChange} />
+        <input type="file" className="hide-input-file" accept="image/*" onChange={handleImageChange} />
         {image ? (
           <img src={image} className={"image"} alt={"Profile Photo"} />
         ) : (
-          <>
-            <span className="initials">{initials}</span>
-          </>
+          <PhotoIcon className={"placeholder"} />
         )}
       </label>
     </div>

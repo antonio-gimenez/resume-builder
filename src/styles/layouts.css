@@ -1,6 +1,10 @@
 .main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  /* make template columns 1 with min */
+  /* grid-template-columns: 1fr; */
+  /* make template rows 1 with min */
+  /* grid-template-rows: 1fr; */
+  grid-template-columns: repeat(auto-fill, minmax(375px, 100%));
   grid-auto-flow: column dense;
   overflow-y: hidden;
 }
@@ -9,8 +13,8 @@
   overflow-y: scroll;
   height: 100vh;
   /* min-width: 768px; */
-  width: auto;
-  /* flex-shrink: 1; */
+
+  flex-shrink: 0;
   max-height: 100vh;
 }
 

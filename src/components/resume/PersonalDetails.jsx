@@ -18,7 +18,6 @@ function PersonalDetails() {
           onChange={(e) => updateProfile(e)}
           name="firstName"
         />
-        <ProfileImage />
         <Input
           placeholder={"ex: Doe"}
           label={"Last Name"}
@@ -26,6 +25,7 @@ function PersonalDetails() {
           onChange={(e) => updateProfile(e)}
           name="lastName"
         />
+        <ProfileImage />
 
         <Input
           placeholder={"ex: john@doe.com"}

@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   background-color: var(--primary);
   user-select: none;
   height: 100vh;
