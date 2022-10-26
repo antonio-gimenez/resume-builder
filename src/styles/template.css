@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   flex-flow: column nowrap;
-  background-color: var(--color-background);
+  background-color: var(--primary);
   user-select: none;
   height: 100vh;
 }

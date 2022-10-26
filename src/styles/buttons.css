@@ -14,7 +14,7 @@ button {
   padding-right: 1.25rem;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
-  background-color: var(--color-background-input);
+  background-color: var(--background-input);
   color: #111827;
   font-size: 0.875rem;
   line-height: 1.25rem;
