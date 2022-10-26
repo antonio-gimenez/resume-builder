@@ -34,7 +34,7 @@ function Education() {
       </div>
       {education.length > 0 ? (
         education.map((education) => (
-          <Collapse key={education.id} open={true} title={education.name || "New Entry"}>
+          <Collapse key={education.id} open={!education.name} title={education.name || "New Entry"}>
             <div className="flex-auto">
               <Input
                 id={education.id}

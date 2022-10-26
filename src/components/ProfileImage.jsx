@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { getBase64 } from "../utils";
 import useResume from "../hooks/useResume";
-import { PhotoIcon } from "@heroicons/react/24/outline";
+import { PhotoIcon, XMarkIcon } from "@heroicons/react/24/outline";
 function ProfileImage() {
   const { profile, updateProfile } = useResume();
   const [image, setImage] = useState(profile.avatar || null);
@@ -24,13 +24,26 @@ function ProfileImage() {
   return (
     <div>
       <label className="label">Profile Photo</label>
+      {image && (
+        <button
+          type="button"
+          onClick={() => {
+            setImage(null);
+            const newEvent = {
+              target: {
+                name: "avatar",
+                value: null,
+              },
+            };
+            updateProfile(newEvent);
+          }}
+        >
+          <XMarkIcon className="icon" />
+        </button>
+      )}
       <label className="input-avatar">
         <input type="file" className="hide-input-file" accept="image/*" onChange={handleImageChange} />
-        {image ? (
-          <img src={image} className={"image"} alt={"Profile Photo"} />
-        ) : (
-          <PhotoIcon className={"placeholder"} />
-        )}
+        {image ? <img src={image} className={"image"} alt={"Avatar"} /> : <PhotoIcon className={"placeholder"} />}
       </label>
     </div>
   );

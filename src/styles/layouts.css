@@ -1,24 +1,9 @@
-.main {
-  display: grid;
-  /* make template columns 1 with min */
-  /* grid-template-columns: 1fr; */
-  /* make template rows 1 with min */
-  /* grid-template-rows: 1fr; */
-  grid-template-columns: repeat(auto-fill, minmax(375px, 100%));
-  grid-auto-flow: column dense;
-  overflow-y: hidden;
-}
-
-.scrollable-container {
-  overflow-y: scroll;
+.editor {
+  overflow: auto;
   height: 100vh;
-  /* min-width: 768px; */
-
-  flex-shrink: 0;
-  max-height: 100vh;
 }
 
-.scrollable-container-fade {
+.scroll-decoration {
   background-image: linear-gradient(to top, rgba(60, 82, 132, 0.3), rgba(245, 245, 245, 0));
   position: -webkit-sticky;
   position: sticky;

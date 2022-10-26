@@ -1,21 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useResume from "../hooks/useResume";
 import { findLabelProgress } from "../utils";
 import Progress from "./ui/Progress";
 function Preview() {
   const { resume } = useResume();
 
+  const [scale, setScale] = useState(1);
+  useEffect(() => {
+    const handleResize = () => {
+      const paper = document.querySelector("#paper");
+      const paperWidth = paper.offsetWidth;
+      const paperHeight = paper.offsetHeight;
+      const pageWidth = window.innerWidth;
+      const pageHeight = window.innerHeight;
+      const scaleWidth = pageWidth / paperWidth;
+      const scaleHeight = pageHeight / paperHeight;
+      const scale = Math.min(scaleWidth, scaleHeight);
+      setScale(scale);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className={"preview-container print-hide"}>
-      <div className={"din-A4"}>
+    <div className={"preview-resume print-hide"}>
+      <div id="paper" style={{ transform: `scale(${scale})` }} className={"paper-A4"}>
         <div className="print-show">
-          <div className="template-header">
-            <div className="heading">
-              <h1 className="heading-2">{`${resume.profile.firstName} ${resume.profile.lastName}`}</h1>
-              {resume.profile.avatar ? <img className="avatar" src={resume.profile.avatar} alt="profile" /> : null}
+          <div className="preview-header">
+            <div className="header">
+              <h1 className="header-name">{`${resume.profile.firstName} ${resume.profile.lastName}`}</h1>
+              {resume.profile.avatar ? (
+                <div className="avatar-wrapper-border-gradient">
+                  <img className="avatar" src={resume.profile.avatar} alt="profile" />
+                </div>
+              ) : null}
             </div>
-            <p className="summary">{resume.profile.summary}</p>
-            <address className="address">
+            <p className="header-summary">{resume.profile.summary}</p>
+            <address className="header-info">
               <span>{resume.profile.phone}</span>
               <span>{resume.profile.email}</span>
               <span>

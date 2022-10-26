@@ -1,12 +1,12 @@
 import React from "react";
-import Main from "./components/Main";
 import Preview from "./components/Preview";
 import "./styles/App.css";
+import Editor from "./components/Editor";
 
 function App() {
   return (
-    <div className="main">
-      <Main />
+    <div className="App">
+      <Editor />
       <Preview />
     </div>
   );
