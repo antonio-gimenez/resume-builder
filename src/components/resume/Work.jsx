@@ -35,7 +35,7 @@ function Work() {
       <div className="flex">
         <div className="heading-2">Professional Experience</div>
         <div
-          className=" add-new-entry"
+          className=" button"
           onClick={() =>
             updateProfessionalExperience({ id: nextId, position: "", from: "", to: "", company: "", description: "" })
           }

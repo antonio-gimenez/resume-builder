@@ -1,0 +1,45 @@
+/* Custom snippets */
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.show {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+}
+
+.grid-row {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.bordered {
+  border: 1px solid var(--shadow);
+}

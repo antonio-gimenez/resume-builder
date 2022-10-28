@@ -27,7 +27,7 @@ function Education() {
     <div className="container">
       <div className="flex">
         <div className="heading-2">Education</div>
-        <div className=" add-new-entry" onClick={() => updateEducation({ id: nextId, name: "" })}>
+        <div className=" button" onClick={() => updateEducation({ id: nextId, name: "" })}>
           <PlusIcon className="icon" />
           <span>New Entry</span>
         </div>

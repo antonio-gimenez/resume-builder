@@ -14,7 +14,7 @@ function Range({ levelType = "skills", currentProgress = 5, handleChange, ...pro
       <label className="label" htmlFor="name">
         {findLabelProgress(progress, levelType)}
       </label>
-      <input type="range" min={5} max={100} {...props} value={progress} onChange={onChange} />
+      <input type="range" min={5} className={"range"} max={100} {...props} value={progress} onChange={onChange} />
       {props.disabled && <div className="range-disabled-overlay" />}
     </div>
   );

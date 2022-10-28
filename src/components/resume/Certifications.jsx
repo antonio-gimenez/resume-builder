@@ -24,7 +24,7 @@ function Certifications() {
     <div className="container">
       <div className="flex">
         <h1 className="heading-2">Certifications</h1>
-        <div className=" add-new-entry" onClick={() => updateCertificate({ id: nextId, name: "" })}>
+        <div className=" button" onClick={() => updateCertificate({ id: nextId, name: "" })}>
           <PlusIcon className="icon" />
           <span>New Entry</span>
         </div>

@@ -25,7 +25,7 @@ function Languages() {
     <div className="container">
       <div className="flex">
         <h1 className="heading-2">Languages</h1>
-        <div className=" add-new-entry" onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
+        <div className=" button" onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
           <PlusIcon className="icon" />
           <span>New Entry</span>
         </div>

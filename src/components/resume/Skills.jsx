@@ -44,7 +44,7 @@ function Skills() {
         )}
 
         {/* Bigger is more proficient */}
-        <div className=" add-new-entry" onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
+        <div className=" button" onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
           <PlusIcon className="icon" />
           <span>New Entry</span>
         </div>

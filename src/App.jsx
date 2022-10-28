@@ -5,7 +5,7 @@ import Editor from "./components/Editor";
 
 function App() {
   return (
-    <div className="App">
+    <div className="grid-column App">
       <Editor />
       <Preview />
     </div>
