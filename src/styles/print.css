@@ -9,28 +9,18 @@
     visibility: visible;
   }
 
-  .din-A4 {
-    margin: 0 0 0 0 !important;
-    transform: scale(1) !important;
-    padding: 0 auto !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    width: 100% !important;
-    height: 100% !important;
-    border: none !important;
-    border-radius: 0% !important;
-  }
-
   /* disable headers and footers */
+  /* adjust page size to A4 ISO format */
+
   @page {
-    size: 8.27in 11.69in !important;
-    /* only one page */
-    size: auto !important;
-    font-size: 0.8rem !important;
-    margin: 0 !important;
-    border-radius: 0% !important;
-    padding: 0 !important;
+    size: A4;
+    margin: 0;
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
+  }
+
+  .paper {
+    width: 210mm;
+    height: 297mm;
   }
 }

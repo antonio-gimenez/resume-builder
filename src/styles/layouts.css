@@ -1,10 +1,10 @@
 .editor {
-  overflow: auto;
-  height: 100vh;
+  /* overflow: auto; */
+  height: clamp(1px, fit-content, 100vh);
 }
 
 .scroll-decoration {
-  background-image: linear-gradient(to top, rgba(60, 82, 132, 0.3), rgba(245, 245, 245, 0));
+  /* background-image: linear-gradient(to top, rgba(60, 82, 132, 0.3), rgba(245, 245, 245, 0)); */
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -14,83 +14,10 @@
   height: 5rem;
 }
 
-.container {
-  padding: 0rem 0.75rem;
-  margin: 1rem 0;
-}
-
-.progress-bar {
-  height: 0.4rem;
-  position: relative;
-  border-radius: 0.5rem;
-}
-
 .grid-auto {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 0.5rem;
-}
-
-.collapse-container {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--shadow);
-  padding: 0.5rem 1rem;
-  width: 100%;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  border-radius: 0.5rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.collapse-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0.5rem;
-  font-size: large;
-  font-weight: 600;
-  color: rgb(60, 82, 132);
-}
-
-.collapse-content {
-  display: flex;
-  position: relative;
-
-  flex-direction: column;
-  padding: 0.5rem;
-  font-size: medium;
-  font-weight: 400;
-  color: #222;
-}
-
-.container-delete {
-  margin-top: 0.5rem;
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.container-delete > .icon {
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.container-delete > .icon:hover {
-  color: red;
-  border-radius: 0.5rem;
-  background-color: rgba(255, 0, 0, 0.1);
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .flex-auto {
@@ -100,20 +27,4 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: space-between;
-}
-
-.container-bordered {
-  border: 1px solid var(--shadow);
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  background-color: var(--white);
-  padding: 0.5rem 1rem;
-  width: 100%;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  border-radius: 0.5rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }

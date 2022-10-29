@@ -4,8 +4,7 @@ import { Certifications, Education, Languages, PersonalDetails, Skills, Work } f
 function Editor() {
   return (
     <div className="editor print-hide">
-      <h1 className="title">Resume Builder</h1>
-      <div className="container">
+      <div className="section-list">
         <PersonalDetails />
         <Skills />
         <Languages />

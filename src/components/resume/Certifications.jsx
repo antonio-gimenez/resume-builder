@@ -21,57 +21,59 @@ function Certifications() {
   };
 
   return (
-    <div className="container">
-      <div className="flex">
-        <h1 className="heading-2">Certifications</h1>
+    <section className="section">
+      <div className="section-header">
+        <h2 className="heading-2">Certifications</h2>
         <div className=" button" onClick={() => updateCertificate({ id: nextId, name: "" })}>
-          <PlusIcon className="icon" />
-          <span>New Entry</span>
+          {/* <PlusIcon className="icon" /> */}
+          <span>Add Certification</span>
         </div>
       </div>
-      {certificates.length > 0 ? (
-        certificates.map((certificate) => (
-          <Collapse key={certificate.id} open={!certificate.name} title={certificate.name || "New Certification"}>
-            <div className="flex-auto">
-              {/* <div className="grid-auto"> */}
-              <Input
-                id={certificate.id}
-                name="name"
-                label="Certificate name"
-                defaultValue={certificate.name}
-                placeholder="(e.g. React Developer, Full Stack Developer, etc.)"
-                onChange={handleUpdateCertificate}
-              />
-              <Input
-                id={certificate.id}
-                name="issuer"
-                label="Issued by"
-                defaultValue={certificate.issuer}
-                placeholder="(e.g. Udemy, Pluralsight, etc.)"
-                onChange={handleUpdateCertificate}
-              />
-              <Input
-                type="number"
-                id={certificate.id}
-                label="Expedition year"
-                name="year"
-                min="1950"
-                max={new Date().getFullYear()}
-                value={certificate.year || new Date().getFullYear()}
-                onChange={handleUpdateCertificate}
-              />
-            </div>
-            <div className="container-delete">
-              <TrashIcon className="icon" onClick={() => removeCertificate(certificate.id)} />
-            </div>
-          </Collapse>
-        ))
-      ) : (
-        <div className="flex-auto">
-          <p className="text-muted">No certifications added yet.</p>
-        </div>
-      )}
-    </div>
+      <div className="section-content">
+        {certificates.length > 0 ? (
+          certificates.map((certificate) => (
+            <Collapse key={certificate.id} open={!certificate.name} title={certificate.name || "New Certification"}>
+              <div className="flex-auto">
+                {/* <div className="grid-auto"> */}
+                <Input
+                  id={certificate.id}
+                  name="name"
+                  label="Certificate name"
+                  defaultValue={certificate.name}
+                  placeholder="(e.g. React Developer, Full Stack Developer, etc.)"
+                  onChange={handleUpdateCertificate}
+                />
+                <Input
+                  id={certificate.id}
+                  name="issuer"
+                  label="Issued by"
+                  defaultValue={certificate.issuer}
+                  placeholder="(e.g. Udemy, Pluralsight, etc.)"
+                  onChange={handleUpdateCertificate}
+                />
+                <Input
+                  type="number"
+                  id={certificate.id}
+                  label="Expedition year"
+                  name="year"
+                  min="1950"
+                  max={new Date().getFullYear()}
+                  value={certificate.year || new Date().getFullYear()}
+                  onChange={handleUpdateCertificate}
+                />
+              </div>
+              <div className="container-delete">
+                <TrashIcon className="icon" onClick={() => removeCertificate(certificate.id)} />
+              </div>
+            </Collapse>
+          ))
+        ) : (
+          <div className="flex-auto">
+            <p className="text-muted">No certifications added yet.</p>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 

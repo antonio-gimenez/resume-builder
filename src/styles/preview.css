@@ -1,16 +1,13 @@
-.preview-resume {
-  max-height: 100vh;
-  overflow-y: auto;
-  background-color: var(--paper-background);
-}
-
-.paper-A4 {
-  position: relative;
-  top: 0;
-  width: 210mm;
-  height: 297mm;
-  margin: 0 auto;
+.paper {
+  overflow: hidden;
   background-color: var(--white);
+  padding: 1rem;
+  height: clamp(1px, 400px, 600px);
+  width: clamp(1px, 400px, 600px);
+  top: 0;
+  right: 0;
+  position: sticky;
+  overflow-y: auto;
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
 }
 

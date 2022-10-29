@@ -3,34 +3,36 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
+
 .button {
-  user-select: none;
-  color: #111827;
   display: inline-flex;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  background: var(--tertiary);
-  color: var(--primary);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  text-align: center;
   align-items: center;
-  border-radius: 0.15rem;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
   cursor: pointer;
+  height: fit-content;
+  padding: 0.25rem 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji;
+  outline: 0;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  white-space: nowrap;
+  vertical-align: baseline;
 }
 
 .button:hover {
-  background-color: var(--primary);
-  color: #fff;
-}
-
-.collapse-button {
-  display: flex;
-  flex-direction: row;
+  background-color: var(--green-100);
+  color: var(--green-800);
 }

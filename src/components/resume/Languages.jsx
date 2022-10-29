@@ -22,47 +22,48 @@ function Languages() {
   };
 
   return (
-    <div className="container">
-      <div className="flex">
-        <h1 className="heading-2">Languages</h1>
+    <section className="section">
+      <div className="section-header">
+        <h2 className="heading-2">Languages</h2>
         <div className=" button" onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
-          <PlusIcon className="icon" />
-          <span>New Entry</span>
+          {/* <PlusIcon className="icon" /> */}
+          <span>Add Language</span>
         </div>
       </div>
-
-      {languages.length > 0 ? (
-        languages.map((lang, index) => (
-          <Collapse key={lang.id} open={!lang.name} title={lang.name || "New Language"}>
-            <div className="flex-auto">
-              <Input
-                id={lang.id}
-                name="name"
-                label={`Language #${index + 1}`}
-                defaultValue={lang.name}
-                placeholder="(e.g. English)"
-                onChange={handleUpdateLanguage}
-              />
-              <Range
-                levelType="languages"
-                disabled={!lang.name}
-                id={lang.id}
-                name={"progress"}
-                currentProgress={lang.progress}
-                handleChange={handleUpdateLanguage}
-              />
-            </div>
-            <div className="container-delete">
-              <TrashIcon className="icon" onClick={() => removeLanguage(lang.id)} />
-            </div>
-          </Collapse>
-        ))
-      ) : (
-        <div className="flex-auto">
-          <p className="text-muted">No languages added yet.</p>
-        </div>
-      )}
-    </div>
+      <div className="section-content">
+        {languages.length > 0 ? (
+          languages.map((lang, index) => (
+            <Collapse key={lang.id} open={!lang.name} title={lang.name || "New Language"}>
+              <div className="flex-auto">
+                <Input
+                  id={lang.id}
+                  name="name"
+                  label={`Language #${index + 1}`}
+                  defaultValue={lang.name}
+                  placeholder="(e.g. English)"
+                  onChange={handleUpdateLanguage}
+                />
+                <Range
+                  levelType="languages"
+                  disabled={!lang.name}
+                  id={lang.id}
+                  name={"progress"}
+                  currentProgress={lang.progress}
+                  handleChange={handleUpdateLanguage}
+                />
+              </div>
+              <div className="container-delete">
+                <TrashIcon className="icon" onClick={() => removeLanguage(lang.id)} />
+              </div>
+            </Collapse>
+          ))
+        ) : (
+          <div className="flex-auto">
+            <p className="text-muted">No languages added yet.</p>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 
