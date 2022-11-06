@@ -33,6 +33,9 @@ button {
 }
 
 .button:hover {
-  background-color: var(--green-100);
-  color: var(--green-800);
+  color: var(--primary-700);
+}
+
+.button.delete {
+  color: var(--red-500);
 }

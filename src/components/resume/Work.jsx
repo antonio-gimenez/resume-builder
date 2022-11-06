@@ -1,4 +1,3 @@
-import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
@@ -40,7 +39,6 @@ function Work() {
             updateProfessionalExperience({ id: nextId, position: "", from: "", to: "", company: "", description: "" })
           }
         >
-          {/* {/* <PlusIcon className="icon" /> */} */}
           <span>Add Experience</span>
         </div>
       </div>
@@ -96,8 +94,10 @@ function Work() {
                   onChange={handleUpdateWork}
                 />
               </div>
-              <div className="container-delete">
-                <TrashIcon className="icon" onClick={() => removeProfessionalExperience(work.id)} />
+              <div className="action-delete">
+                <span className="button delete" onClick={() => removeProfessionalExperience(work.id)}>
+                  Delete this entry
+                </span>
               </div>
             </Collapse>
           ))
