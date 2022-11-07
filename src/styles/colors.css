@@ -82,6 +82,7 @@
 
   /* Body */
   --template-margins: 4px;
+  --template-radius: 4px;
   --template-body-background: #f9fafb;
   --template-body-text-color: #3c5284;
   /* Header */
