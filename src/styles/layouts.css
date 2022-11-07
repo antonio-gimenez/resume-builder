@@ -14,17 +14,17 @@
   height: 5rem;
 }
 
-.grid-auto {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 0.5rem;
+.box {
+  height: clamp(1px, 576px, 100vh);
+  border: 2px solid var(--shadow);
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--white);
 }
 
-.flex-auto {
-  display: flex;
-  flex: 1 1 0%;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: space-between;
+.box:hover {
+  cursor: pointer;
+  border-color: var(--primary);
+  box-shadow: 0 0 12px var(--shadow);
 }

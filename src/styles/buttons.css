@@ -11,7 +11,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
+  color: var(--label-color);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -33,7 +33,7 @@ button {
 }
 
 .button:hover {
-  color: var(--primary-700);
+  color: var(--primary);
 }
 
 .button.delete {

@@ -1,4 +1,4 @@
-import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
@@ -25,7 +25,6 @@ function Certifications() {
       <div className="section-header">
         <h2 className="heading-2">Certifications</h2>
         <div className=" button" onClick={() => updateCertificate({ id: nextId, name: "" })}>
-          {/* <PlusIcon className="icon" /> */}
           <span>Add Certification</span>
         </div>
       </div>
@@ -34,7 +33,6 @@ function Certifications() {
           certificates.map((certificate) => (
             <Collapse key={certificate.id} open={!certificate.name} title={certificate.name || "New Certification"}>
               <div className="flex-auto">
-                {/* <div className="grid-auto"> */}
                 <Input
                   id={certificate.id}
                   name="name"

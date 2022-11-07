@@ -1,4 +1,7 @@
 {
+  "customSettings": {
+    "templateNumber": 0
+  },
   "sectionTitles": {
     "personalDetails": "Personal Details",
     "skills": "Skills",

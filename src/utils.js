@@ -44,3 +44,8 @@ export function getBase64(file) {
 export function getBlobUrl(base64) {
   return URL.createObjectURL(base64);
 }
+
+export function isNumber(value) {
+  // check if value is number and not NaN
+  return typeof value === "number" && !isNaN(value);
+}

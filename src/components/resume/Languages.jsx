@@ -1,4 +1,4 @@
-import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
@@ -26,7 +26,6 @@ function Languages() {
       <div className="section-header">
         <h2 className="heading-2">Languages</h2>
         <div className=" button" onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
-          {/* <PlusIcon className="icon" /> */}
           <span>Add Language</span>
         </div>
       </div>

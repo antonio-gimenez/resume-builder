@@ -1,3 +1,4 @@
+import { isNumber } from "../utils";
 import useLocalStorage from "./useLocalStorage";
 
 const initialState = require("../data.json");
@@ -5,7 +6,8 @@ const initialState = require("../data.json");
 function useResume() {
   const [resume, setResume] = useLocalStorage("resume", initialState);
 
-  const { profile, skills, professionalExperience, education, languages, certificates, sectionTitles } = resume;
+  const { profile, skills, professionalExperience, education, languages, certificates, sectionTitles, customSettings } =
+    resume;
 
   const updateProfile = (event) => {
     if (!event || !event.target) {
@@ -18,6 +20,13 @@ function useResume() {
       return setResume({ ...resume, profile: { ...profile, [name]: value } });
     }
     setResume({ ...resume, profile: { ...profile, [name]: value } });
+  };
+
+  const updateTemplate = (templateNumber) => {
+    if (!isNumber) {
+      return console.error("No template number provided or is not a number");
+    }
+    setResume({ ...resume, customSettings: { ...customSettings, ["templateNumber"]: templateNumber } });
   };
 
   const updateTitles = (event) => {
@@ -175,6 +184,8 @@ function useResume() {
     updateResume: setResume,
     removeSkill,
     updateSkill,
+    updateTemplate,
+    templateNumber: customSettings.templateNumber || 0,
     restore: () => setResume(initialState),
   };
 }

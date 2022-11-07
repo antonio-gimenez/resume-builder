@@ -1,0 +1,27 @@
+.template-body {
+  background-color: var(--template-body-background, rgba(0, 0, 0, 0.012));
+  color: var(--template-body-text, black);
+  padding: var(--template-margins, 0);
+  height: 100%;
+  width: 100%;
+}
+.template-header {
+  background-color: var(--template-header-background, darkslategray);
+  color: var(--template-header-text-color, white);
+  display: grid;
+  border-radius: var(--template-radius, 4px);
+  grid-template-columns: repeat(var(--template-header-columns, 1), 1fr);
+}
+
+.template-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  gap: 0.5rem;
+}
+
+.template-select-item {
+  cursor: pointer;
+}

@@ -1,14 +1,13 @@
-import { PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
-import { Button, Input } from "../ui";
+import { Input } from "../ui";
 import Range from "../ui/Range";
 
 function Skills() {
-  const { skills, updateTitles, sectionTitles, updateSkill, removeSkill } = useResume();
+  const { skills, sectionTitles, updateSkill, removeSkill } = useResume();
   const [nextId, setNextId] = useState(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
-  const [editTitle, setEditTitle] = useState(false);
   useEffect(() => {
     setNextId(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
   }, [skills]);
@@ -26,7 +25,6 @@ function Skills() {
       <div className="section-header">
         <h2 className="heading-2">{sectionTitles.skills}</h2>
         <div className="button" onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
-          {/* <PlusIcon className="icon" /> */}
           <span>Add Skill</span>
         </div>
       </div>

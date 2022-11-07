@@ -2,13 +2,12 @@ import React from "react";
 import "./styles/App.css";
 import Editor from "./components/Editor";
 import Templates from "./components/Templates";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
-      <nav role="navigation">
-        <h2 className="heading-2">Resume builder</h2>
-      </nav>
+      <Navbar />
       <div className="App grid-column grid">
         <Editor />
         <Templates />
