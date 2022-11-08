@@ -5,15 +5,25 @@ import Navbar from "./components/Navbar";
 import Preview from "./components/Preview";
 import TemplateSelector from "./components/resume/TemplateSelector";
 import AppWrapper from "./components/layouts/AppWrapper";
+import Aside from "./components/layouts/Aside";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <div className="print-hide">
+        <Navbar />
+      </div>
+
       <AppWrapper>
-        <Editor />
+        <div className="print-hide">
+          <Editor />
+        </div>
         <Preview />
-        <TemplateSelector />
+        <div className="print-hide">
+          <Aside>
+            <TemplateSelector />
+          </Aside>
+        </div>
       </AppWrapper>
     </>
   );

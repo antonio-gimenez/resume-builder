@@ -38,13 +38,9 @@ function TemplateSelector() {
       </div>
     );
   };
-  return (
-    <div className="template-selector ">
-      {templates.map((template) => {
-        return templateSample(template);
-      })}
-    </div>
-  );
+  return templates.map((template) => {
+    return templateSample(template);
+  });
 }
 
 export default TemplateSelector;

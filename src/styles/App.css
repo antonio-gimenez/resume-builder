@@ -21,9 +21,8 @@
 }
 
 body {
-  overflow-y: hidden;
-  background: var(--grey-300);
-  overflow-y: auto;
+  overflow: hidden;
+  /* background: var(--grey-300); */
 }
 
 ul {
@@ -38,17 +37,29 @@ ul {
 
 .app {
   height: clamp(100vh, 100vh, 100vh);
-  width: clamp(380px, 100vw, 1700px);
+  width: clamp(384px, 100vw, 1200px);
   margin: 0 auto;
 }
 
-.App-layout {
+.scrollable-content {
+  padding: 0.15rem;
+  box-shadow: 0 4px 5px rgba(200, 200, 200, 0.9);
+  /* background: white; */
+  background: var(--grey-300);
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  overflow: auto;
+  height: 100%;
+}
+
+.scrollable-content.scrolled {
+  /* padding-top: 0.5rem; */
+}
+
+.app-layout {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: stretch; /* grid-template-columns: repeat(, minmax(300px, 1fr)); */
-  padding: 0.5rem;
-  /* align-items: center; */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: start;
 }
 
 .section-list {
@@ -150,8 +161,8 @@ ul {
 }
 .icon {
   width: 20px;
-  color: var(--primary);
   height: 20px;
+  color: var(--primary);
   fill: white;
   /* font-weight: 800; */
 }
