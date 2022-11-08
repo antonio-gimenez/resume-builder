@@ -1,16 +1,58 @@
 .template-body {
   background-color: var(--template-body-background, rgba(0, 0, 0, 0.012));
   color: var(--template-body-text, black);
-  padding: var(--template-margins, 0);
+  padding: var(--template-paddings, 0);
+  margin: var(--template-margins, 0);
   height: 100%;
   width: 100%;
 }
 .template-header {
   background-color: var(--template-header-background, darkslategray);
   color: var(--template-header-text-color, white);
-  display: grid;
+
+  padding: var(--template-paddings, 0);
   border-radius: var(--template-radius, 4px);
   grid-template-columns: repeat(var(--template-header-columns, 1), 1fr);
+}
+.template-header-personal-info {
+  margin-top: 0.15rem;
+  padding: 0.15rem 0.25rem 0.15rem 0.25rem;
+  background-color: var(--shadow);
+  font-style: italic;
+  font-size: 14px;
+}
+
+.color-sample-square {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  background-color: currentColor;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  padding: 0;
+  margin: 0 0;
+  background: white;
+  box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
+  border: 1px #d3d3d3 solid;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.template-select-item {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  padding: 0.25rem;
+  align-items: center;
+}
+
+.template-select-item:hover {
+  background-color: var(--shadow);
 }
 
 .template-selector {
@@ -22,6 +64,15 @@
   gap: 0.5rem;
 }
 
-.template-select-item {
-  cursor: pointer;
+.template-header-title {
+  font-weight: 600;
+  text-align: center;
+}
+
+.template-avatar {
+  width: clamp(12px, 32px, 64px);
+  height: clamp(12px, 32px, 64px);
+  border: 2px solid var(--paper-background);
+  border-radius: 100%;
+  object-fit: cover;
 }

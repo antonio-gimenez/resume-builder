@@ -8,7 +8,7 @@ const gitHubIcon = (
 
 function Navbar() {
   return (
-    <nav role="navigation" className="navbar">
+    <nav role="navigation" className="navbar print-hide">
       <h2 className="heading-2">Resume builder</h2>
       <span>{gitHubIcon}</span>
     </nav>

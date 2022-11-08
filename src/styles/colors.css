@@ -81,8 +81,9 @@
   --label-color: rgb(130, 139, 162);
 
   /* Body */
-  --template-margins: 4px;
-  --template-radius: 4px;
+  --template-margins: 0px;
+  --template-paddings: 6px;
+  --template-radius: 0px;
   --template-body-background: #f9fafb;
   --template-body-text-color: #3c5284;
   /* Header */

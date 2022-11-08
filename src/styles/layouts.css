@@ -13,18 +13,3 @@
   width: 100%;
   height: 5rem;
 }
-
-.box {
-  height: clamp(1px, 576px, 100vh);
-  border: 2px solid var(--shadow);
-  width: 100%;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background-color: var(--white);
-}
-
-.box:hover {
-  cursor: pointer;
-  border-color: var(--primary);
-  box-shadow: 0 0 12px var(--shadow);
-}

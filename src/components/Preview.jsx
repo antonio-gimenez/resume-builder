@@ -1,109 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
+
 import useResume from "../hooks/useResume";
-import { findLabelProgress } from "../utils";
-import Progress from "./ui/Progress";
+
 function Preview() {
-  const { resume } = useResume();
+  const { templateNumber, profile } = useResume();
+  //  set a trigger with useEffect
+  const previewRef = useRef(null);
+
+  // ussing useEffect and useRef to scale the preview to fit the page when the window is resized or the template is changed
+  useEffect(() => {
+    const preview = previewRef.current;
+    const scale = Math.min(preview.offsetWidth / 800, preview.offsetHeight / 1000);
+    preview.style.transform = `scale(${scale})`;
+  }, [templateNumber]);
 
   return (
-    <div className={"paper "}>
-      <div className="preview-header">
-        <div className="header">
-          <h1 className="header-name">{`${resume.profile.firstName} ${resume.profile.lastName}`}</h1>
-          {resume.profile.avatar ? (
-            <div className="avatar-wrapper-border-gradient">
-              <img className="avatar" src={resume.profile.avatar} alt="profile" />
+    <div className="wrapper">
+      <section id="preview" ref={previewRef} className={`page template-${templateNumber}`}>
+        <div className="template-body ">
+          <div className={`template-header `}>
+            <div className="space-between flex flex-row">
+              <span className="template-header-title">
+                {profile.firstName} {profile.lastName}
+              </span>
+              {profile.avatar && <img className="template-avatar" src={profile.avatar} alt="avatar" />}
             </div>
-          ) : null}
+          </div>
+          <div className="template-header-personal-info flex-auto">
+            <a href={`mailto:${profile.email}`}> {profile.email}</a>
+            <span>{profile.phone}</span>
+            <span>{profile.address}</span>
+            <span>{profile.state}</span>
+            <span>{profile.city}</span>
+            <a href={profile.website}>{profile.website}</a>
+          </div>
         </div>
-        <p className="header-summary">{resume.profile.summary}</p>
-        <address className="header-info">
-          <span>{resume.profile.phone}</span>
-          <span>{resume.profile.email}</span>
-          <span>
-            {resume.profile.city}, {resume.profile.state}, {resume.profile.country}
-          </span>
-          <span>{resume.profile.website}</span>
-        </address>
-      </div>
-
-      <div className="columns-2">
-        <section className="column">
-          <div>
-            <h2 className="heading-2">{resume.sectionTitles["education"] || "Education"}</h2>
-            <ul className="preview-list">
-              {resume.education.map((edu) => (
-                <li key={edu.id}>
-                  <span>{edu.name}</span>
-                  <span>{edu.institution}</span>
-                  <span>{edu.to}</span>
-                  <span>{edu.from}</span>
-                  <span>{edu.description}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="heading-2">{resume.sectionTitles["experience"] || "Experience"}</h2>
-            <ul className="preview-list">
-              {resume.professionalExperience.map((job) => (
-                <li key={job.id}>
-                  <span>{job.position}</span>
-                  <span>{job.company}</span>
-                  <span>{job.to}</span>
-                  <span>{job.from}</span>
-                  <span>{job.description}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="column">
-          <div>
-            <h2 className="heading-2">{resume.sectionTitles["skills"] || "Skills"}</h2>
-            <ul className="grid-auto">
-              {resume.skills.map((skill) => (
-                <li key={skill.id}>
-                  <div className="flex-auto">
-                    <span>{skill.name}</span>
-                    <span>{findLabelProgress(skill.progress, "skills")}</span>
-                  </div>
-                  <Progress progress={skill.progress} />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="heading-2">{resume.sectionTitles["languages"] || "Languages"}</h2>
-            <ul className="grid-auto">
-              {resume.languages.map((lang) => (
-                <li key={lang.id}>
-                  <div className="flex-auto">
-                    <span>{lang.name}</span>
-                    <span>{findLabelProgress(lang.progress, "languages")}</span>
-                  </div>
-                  <Progress progress={lang.progress} />
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="heading-2">{resume.sectionTitles["certifications"] || "Certificates"}</h2>
-
-            <ul className="preview-list">
-              {resume.certificates.map((cert) => (
-                <li key={cert.id}>
-                  <span>{cert.name}</span>
-                  <span>{cert.date}</span>
-                  <span>{cert.issuer}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      </div>
+      </section>
     </div>
   );
 }
