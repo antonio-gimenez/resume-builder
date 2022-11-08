@@ -8,9 +8,11 @@ const gitHubIcon = (
 
 function Navbar() {
   return (
-    <nav role="navigation" className="navbar print-hide">
+    <nav role="navigation" className="app-nav print-hide">
       <h2 className="heading-2">Resume builder</h2>
-      <span>{gitHubIcon}</span>
+      <a target="_blank" href="https://github.com/antonio-gimenez/resume-generator">
+        {gitHubIcon}
+      </a>
     </nav>
   );
 }

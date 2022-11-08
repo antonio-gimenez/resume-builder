@@ -44,9 +44,10 @@
   justify-content: center;
 }
 .template-select-item {
+  user-select: none;
   cursor: pointer;
   display: flex;
-  width: 100%;
+  width: fit-content;
   padding: 0.25rem;
   align-items: center;
 }

@@ -15,28 +15,26 @@ function Preview() {
   }, [templateNumber]);
 
   return (
-    <div className="wrapper">
-      <section id="preview" ref={previewRef} className={`page template-${templateNumber}`}>
-        <div className="template-body ">
-          <div className={`template-header `}>
-            <div className="space-between flex flex-row">
-              <span className="template-header-title">
-                {profile.firstName} {profile.lastName}
-              </span>
-              {profile.avatar && <img className="template-avatar" src={profile.avatar} alt="avatar" />}
-            </div>
-          </div>
-          <div className="template-header-personal-info flex-auto">
-            <a href={`mailto:${profile.email}`}> {profile.email}</a>
-            <span>{profile.phone}</span>
-            <span>{profile.address}</span>
-            <span>{profile.state}</span>
-            <span>{profile.city}</span>
-            <a href={profile.website}>{profile.website}</a>
+    <section id="preview" ref={previewRef} className={`page template-${templateNumber}`}>
+      <div className="template-body ">
+        <div className={`template-header `}>
+          <div className="space-between flex flex-row">
+            <span className="template-header-title">
+              {profile.firstName} {profile.lastName}
+            </span>
+            {profile.avatar && <img className="template-avatar" src={profile.avatar} alt="avatar" />}
           </div>
         </div>
-      </section>
-    </div>
+        <div className="template-header-personal-info flex-auto">
+          <a href={`mailto:${profile.email}`}> {profile.email}</a>
+          <span>{profile.phone}</span>
+          <span>{profile.address}</span>
+          <span>{profile.state}</span>
+          <span>{profile.city}</span>
+          <a href={profile.website}>{profile.website}</a>
+        </div>
+      </div>
+    </section>
   );
 }
 

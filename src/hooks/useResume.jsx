@@ -26,7 +26,7 @@ function useResume() {
     if (!isNumber) {
       return console.error("No template number provided or is not a number");
     }
-    setResume({ ...resume, customSettings: { ...customSettings, ["templateNumber"]: templateNumber } });
+    setResume({ ...resume, customSettings: { ...customSettings, templateNumber: templateNumber } });
   };
 
   const updateTitles = (event) => {

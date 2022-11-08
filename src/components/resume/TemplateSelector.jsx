@@ -6,7 +6,7 @@ function TemplateSelector() {
 
   const templates = [
     {
-      name: "Antique",
+      name: "Formal",
       id: 0,
       accentColor: "#3c5284",
       backgroundColor: "#f9fafb",
@@ -24,7 +24,7 @@ function TemplateSelector() {
   // make a square sample depending on the template selected
   const templateSample = (template) => {
     return (
-      <li key={template.id} className="template-select-item" onClick={() => updateTemplate(template.id)}>
+      <div key={template.id} className="template-select-item" onClick={() => updateTemplate(template.id)}>
         <div
           style={{
             width: "12px",
@@ -35,16 +35,14 @@ function TemplateSelector() {
           }}
         />
         <span>{template.name}</span>
-      </li>
+      </div>
     );
   };
   return (
-    <div>
-      <ul className="template-selector ">
-        {templates.map((template) => {
-          return templateSample(template);
-        })}
-      </ul>
+    <div className="template-selector ">
+      {templates.map((template) => {
+        return templateSample(template);
+      })}
     </div>
   );
 }

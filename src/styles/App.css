@@ -22,6 +22,8 @@
 
 body {
   overflow-y: hidden;
+  background: var(--grey-300);
+  overflow-y: auto;
 }
 
 ul {
@@ -34,11 +36,19 @@ ul {
   display: none;
 }
 
-.App {
-  background: var(--grey-300);
-  height: 100vh;
-  width: 100vw;
-  overflow: auto;
+.app {
+  height: clamp(100vh, 100vh, 100vh);
+  width: clamp(380px, 100vw, 1700px);
+  margin: 0 auto;
+}
+
+.App-layout {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch; /* grid-template-columns: repeat(, minmax(300px, 1fr)); */
+  padding: 0.5rem;
+  /* align-items: center; */
 }
 
 .section-list {
