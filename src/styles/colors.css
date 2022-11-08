@@ -71,7 +71,7 @@
   --green-900: #0d600d;
 
   --white: #fff;
-  --primary: #3a86ff;
+  --primary: #1d3759;
   --secondary: rgb(48, 65, 105);
   --paper-background: rgb(244, 244, 244);
   --background-input: #eff2f9;
@@ -103,7 +103,8 @@
   --template-body-background: #f9fafb;
   --template-body-text-color: black;
   /* Header */
-  --template-header-background: #914843;
+  /* --template-header-background: #914843; */
+  --template-header-background: #1d3759;
   --template-header-text-color: white;
   --template-header-columns: 1;
 }
