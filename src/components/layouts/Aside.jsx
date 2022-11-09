@@ -3,7 +3,7 @@ import React from "react";
 function Aside({ children }) {
   return (
     <aside role={"navigation"} className="aside">
-      {children}
+      <nav className="aside-nav">{children}</nav>
     </aside>
   );
 }

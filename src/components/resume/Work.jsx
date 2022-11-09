@@ -94,7 +94,7 @@ function Work() {
                   onChange={handleUpdateWork}
                 />
               </div>
-              <div className="action-delete">
+              <div className="flex flex-end padding-medium">
                 <span className="button delete" onClick={() => removeProfessionalExperience(work.id)}>
                   Delete this entry
                 </span>

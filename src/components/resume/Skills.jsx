@@ -1,4 +1,3 @@
-import { TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
@@ -50,8 +49,10 @@ function Skills() {
                   handleChange={handleUpdateSkill}
                 />
               </div>
-              <div className="container-delete">
-                <TrashIcon className="icon" onClick={() => removeSkill(skill.id)} />
+              <div className="flex flex-end padding-medium">
+                <span className="button delete" onClick={() => removeSkill(skill.id)}>
+                  Delete this entry
+                </span>
               </div>
             </Collapse>
           ))

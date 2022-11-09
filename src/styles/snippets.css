@@ -46,6 +46,11 @@
   align-items: center;
 }
 
+.flex-end {
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .grid {
   display: grid;
 }
@@ -65,4 +70,12 @@
 
 .bordered {
   border: 1px solid var(--shadow);
+}
+
+.padding-medium {
+  padding: 0.25rem;
+}
+
+.margin-medium {
+  margin: 0.25rem;
 }

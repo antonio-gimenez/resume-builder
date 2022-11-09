@@ -2,7 +2,7 @@
 .collapse-container:not(:last-child) {
   margin-bottom: 0.5rem;
   border-radius: 0;
-  border-bottom: 1px solid var(--grey-300);
+  border-bottom: 1px solid var(--input-background);
 }
 
 .collapse-container {
@@ -15,11 +15,12 @@
 }
 
 .collapse-container:hover > .collapse-button {
-  background-color: #e6e6e6;
+  background-color: var(--primary-100);
+  border-radius: 0.15rem;
 }
 
-.collapse-container:hover > .collapse-title {
-  color: var(--primary);
+.collapse-container:hover > .collapse-button {
+  color: red !important;
 }
 
 .collapse-title {

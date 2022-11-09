@@ -37,5 +37,11 @@ button {
 }
 
 .button.delete {
-  color: var(--red-500);
+  transition: all 0.2s ease-in-out;
+  color: var(--danger);
+}
+
+.button.delete:hover {
+  background-color: var(--danger);
+  color: var(--white);
 }

@@ -1,4 +1,3 @@
-import { TrashIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
@@ -51,8 +50,10 @@ function Languages() {
                   handleChange={handleUpdateLanguage}
                 />
               </div>
-              <div className="container-delete">
-                <TrashIcon className="icon" onClick={() => removeLanguage(lang.id)} />
+              <div className="flex flex-end padding-medium">
+                <span className="button delete" onClick={() => removeLanguage(lang.id)}>
+                  Delete this entry
+                </span>
               </div>
             </Collapse>
           ))

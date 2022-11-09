@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { findLabelProgress } from "../../utils";
+import { defaultLevels, findLabelProgress } from "../../utils";
 
 function Range({ levelType = "skills", currentProgress = 5, handleChange, ...props }) {
   const [progress, setProgress] = useState(currentProgress);
@@ -15,7 +15,11 @@ function Range({ levelType = "skills", currentProgress = 5, handleChange, ...pro
         {findLabelProgress(progress, levelType)}
       </label>
       <input type="range" min={5} className={"range"} max={100} {...props} value={progress} onChange={onChange} />
-      {props.disabled && <div className="range-disabled-overlay" />}
+      <div className="range-ruler">
+        {defaultLevels[levelType].map((level, index) => (
+          <div key={index} className="tick" />
+        ))}
+      </div>
     </div>
   );
 }

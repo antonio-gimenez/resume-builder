@@ -12,7 +12,6 @@ function Editor() {
         <Education />
         <Work />
       </div>
-      <div className="scroll-decoration" />
     </div>
   );
 }

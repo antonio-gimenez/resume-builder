@@ -1,5 +1,5 @@
 import React from "react";
-import useResume from "../../hooks/useResume";
+import useResume from "../hooks/useResume";
 
 function TemplateSelector() {
   const { updateTemplate } = useResume();
