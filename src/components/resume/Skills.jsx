@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
+import { Card, CardContent, CardHeader } from "../Card";
+
 import Collapse from "../Collapse";
+
 import { Input } from "../ui";
 import Range from "../ui/Range";
 
@@ -20,14 +23,14 @@ function Skills() {
   };
 
   return (
-    <section className="section">
-      <div className="section-header">
-        <h2 className="heading-2">{sectionTitles.skills}</h2>
+    <Card>
+      <CardHeader>
+        <span className="heading-2">Skills</span>
         <div className="button" onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
           <span>Add Skill</span>
         </div>
-      </div>
-      <div className="section-content">
+      </CardHeader>
+      <CardContent>
         {skills.length > 0 ? (
           skills.map((skill, index) => (
             <Collapse key={skill.id} open={!skill.name} title={skill.name || "New Skill"}>
@@ -61,8 +64,8 @@ function Skills() {
             <p className="text-muted">No skills added yet.</p>
           </div>
         )}
-      </div>
-    </section>
+      </CardContent>
+    </Card>
   );
 }
 

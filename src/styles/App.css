@@ -64,7 +64,7 @@ ul {
   z-index: 1;
 }
 
-.section-list {
+.card-list {
   padding: 1rem 0.5em;
   display: grid;
   gap: 0.5rem;

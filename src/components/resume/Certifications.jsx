@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
 import { Input } from "../ui";
-
+// @ts-check
 function Certifications() {
   const { certificates, updateCertificate, removeCertificate } = useResume();
   const [nextId, setNextId] = useState(certificates.length > 0 ? certificates[certificates.length - 1].id + 1 : 0);

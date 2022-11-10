@@ -1,6 +1,6 @@
-.section-list {
+.card-list {
   padding: 1rem 0.5em;
-  display: grid;
+  display: flex;
   gap: 0.5rem;
 }
 

@@ -7,6 +7,7 @@ const gitHubIcon = (
   </svg>
 );
 
+// @ts-check
 function Navbar() {
   useEffect(() => {
     const mainContainer = document.querySelector(".scrollable-content");
@@ -14,7 +15,6 @@ function Navbar() {
       const navbar = document.querySelector(".app-nav");
       const title = document.querySelector(".app-title");
       const githubIcon = document.querySelector(".github-icon");
-      console.log(mainContainer.scrollTop);
       if (mainContainer.scrollTop > 0) {
         mainContainer.classList.add("scrolled");
         navbar.classList.add("shrink");

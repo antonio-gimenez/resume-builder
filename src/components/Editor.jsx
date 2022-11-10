@@ -4,7 +4,7 @@ import { Certifications, Education, Languages, PersonalDetails, Skills, Work } f
 function Editor() {
   return (
     <div className="editor print-hide">
-      <div className="section-list">
+      <div className="card-list">
         <PersonalDetails />
         <Skills />
         <Languages />

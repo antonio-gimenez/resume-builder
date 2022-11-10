@@ -16,8 +16,8 @@ function Range({ levelType = "skills", currentProgress = 5, handleChange, ...pro
       </label>
       <input type="range" min={5} className={"range"} max={100} {...props} value={progress} onChange={onChange} />
       <div className="range-ruler">
-        {defaultLevels[levelType].map((level, index) => (
-          <div key={index} className="tick" />
+        {defaultLevels[levelType].map((level) => (
+          <div key={level.id} className="tick" />
         ))}
       </div>
     </div>

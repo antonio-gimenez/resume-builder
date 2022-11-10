@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import Aside from "./layouts/Aside";
 import TemplateSelector from "./TemplateSelector";
 import useResume from "../hooks/useResume";
 import { Progress } from "./ui";
-import Card from "./layouts/Card";
+import { Card } from "./Card";
 
 function Preview() {
   const { templateNumber, profile, skills, languages, certificates, professionalExperience } = useResume();
@@ -24,7 +23,7 @@ function Preview() {
               </div>
             </header>
 
-            <div className="section-list">
+            <div className="card-list">
               <div className="grid">
                 <div className="section">
                   <div className="section-header">

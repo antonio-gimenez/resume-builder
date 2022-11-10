@@ -1,6 +1,6 @@
 import React from "react";
 import useResume from "../../hooks/useResume";
-import Card from "../layouts/Card";
+import Card from "../Card/Card";
 import ProfileImage from "../ProfileImage";
 
 import { Input, TextArea } from "../ui";
