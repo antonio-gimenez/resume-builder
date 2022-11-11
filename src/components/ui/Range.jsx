@@ -38,22 +38,12 @@ function Range({ levelType = "skills", steps = 30, currentProgress = 5, handleCh
           return (
             <div
               key={level.id}
-              className={isLevelSelected(level.min, level.max) ? `level selected` : "level"}
+              className={isLevelSelected(level.min, level.max) ? `level selected thumb-${getLevelLabel()}` : "level"}
               onClick={() => onChange(level)}
             />
           );
         })}
       </div>
-      {/* <input
-        type="range"
-        step={steps}
-        min={5}
-        className={"range"}
-        max={100}
-        {...props}
-        value={progress}
-        onChange={onChange}
-      /> */}
     </div>
   );
 }
