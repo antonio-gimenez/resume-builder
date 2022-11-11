@@ -1,15 +1,15 @@
 export const defaultLevels = {
   languages: [
-    { label: "Beginner", id: "lang-1", progress: 5, min: 0, max: 25 },
-    { label: "Intermediate", id: "lang-2", progress: 26, min: 26, max: 50 },
-    { label: "Professional", id: "lang-3", progress: 51, min: 51, max: 75 },
-    { label: "Native", id: "lang-4", progress: 76, min: 76, max: 100 },
+    { label: "Beginner", id: "lang-1", style: "1", progress: 25, min: 0, max: 25 },
+    { label: "Intermediate", id: "lang-2", style: "2", progress: 50, min: 26, max: 50 },
+    { label: "Professional", id: "lang-3", style: "3", progress: 75, min: 51, max: 75 },
+    { label: "Native", id: "lang-4", style: "4", progress: 100, min: 76, max: 100 },
   ],
   skills: [
-    { label: "Apprentice", id: "skill-1", progress: 5, min: 0, max: 25 },
-    { label: "Intermediate", id: "skill-2", progress: 26, min: 26, max: 50 },
-    { label: "Expert", id: "skill-3", progress: 51, min: 51, max: 75 },
-    { label: "Master", id: "skill-4", progress: 76, min: 76, max: 100 },
+    { label: "Apprentice", id: "skill-1", style: "1", progress: 25, min: 0, max: 25 },
+    { label: "Intermediate", id: "skill-2", style: "2", progress: 50, min: 26, max: 50 },
+    { label: "Expert", id: "skill-3", style: "3", progress: 75, min: 51, max: 75 },
+    { label: "Master", id: "skill-4", style: "4", progress: 100, min: 76, max: 100 },
   ],
 };
 
@@ -39,11 +39,15 @@ export function getBase64(file) {
   });
 }
 
-export function getBlobUrl(base64) {
-  return URL.createObjectURL(base64);
+export function isNumber(value) {
+  return typeof value === "number" && !isNaN(value);
 }
 
-export function isNumber(value) {
-  // check if value is number and not NaN
-  return typeof value === "number" && !isNaN(value);
+export function checkType(component) {
+  const type = typeof component;
+  // check if component is a node
+  if (type === "object" && component !== null) {
+    return "node";
+  }
+  return type;
 }

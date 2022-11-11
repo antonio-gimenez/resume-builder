@@ -6,10 +6,14 @@
 
 .card {
   background-color: var(--white);
-  border-radius: 0.5rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0 0 1px var(--shadow);
-  /* width: clamp(480px, 100%, 768px); */
+}
+
+.card.rounded {
+  border-radius: 0.5rem;
 }
 
 .card-header {

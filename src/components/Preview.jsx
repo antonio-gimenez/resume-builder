@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import TemplateSelector from "./TemplateSelector";
 import useResume from "../hooks/useResume";
 import { Progress } from "./ui";
-import { Card } from "./Card";
+import Card from "./Card";
 
 function Preview() {
   const { templateNumber, profile, skills, languages, certificates, professionalExperience } = useResume();

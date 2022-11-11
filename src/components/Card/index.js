@@ -3,3 +3,5 @@ import CardContent from "./CardContent";
 import CardHeader from "./CardHeader";
 
 export { Card, CardContent, CardHeader };
+
+export default Card;

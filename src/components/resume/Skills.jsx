@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import { Card, CardContent, CardHeader } from "../Card";
-
 import Collapse from "../Collapse";
 
 import { Input } from "../ui";
 import Range from "../ui/Range";
 
 function Skills() {
-  const { skills, sectionTitles, updateSkill, removeSkill } = useResume();
+  const { skills, updateSkill, removeSkill } = useResume();
   const [nextId, setNextId] = useState(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
   useEffect(() => {
     setNextId(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
@@ -23,7 +22,7 @@ function Skills() {
   };
 
   return (
-    <Card>
+    <Card rounded>
       <CardHeader>
         <span className="heading-2">Skills</span>
         <div className="button" onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
