@@ -24,25 +24,25 @@ function Range({ levelType = "skills", steps = 30, currentProgress = 5, handleCh
   }
 
   function getLevelLabel() {
-    // if currentProgress is between min and max, return the style
     return defaultLevels[levelType].find((level) => currentProgress >= level.min && currentProgress <= level.max).style;
   }
 
   return (
     <div className={`level-container`}>
       <label className="label" htmlFor="name">
-        {findLabelProgress(progress, levelType)}
+        Level - {findLabelProgress(progress, levelType)}
       </label>
       <div className={`level-selector level-${getLevelLabel()}`}>
         {defaultLevels[levelType].map((level) => {
           return (
             <div
               key={level.id}
-              className={isLevelSelected(level.min, level.max) ? `level selected thumb-${getLevelLabel()}` : "level"}
+              className={isLevelSelected(level.min, level.max) ? `level-${getLevelLabel()}  level selected` : "level"}
               onClick={() => onChange(level)}
             />
           );
         })}
+        <div className="thumb" />
       </div>
     </div>
   );

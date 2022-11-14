@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
-import { Card, CardContent, CardHeader } from "../Card";
+import { Card, CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
 
 import { Input } from "../ui";
@@ -51,11 +51,16 @@ function Skills() {
                   handleChange={handleUpdateSkill}
                 />
               </div>
-              <div className="flex flex-end padding-medium">
+              <CardActions>
                 <span className="button delete" onClick={() => removeSkill(skill.id)}>
                   Delete this entry
                 </span>
-              </div>
+              </CardActions>
+              {/* <div className="flex flex-end padding-medium">
+                <span className="button delete" onClick={() => removeSkill(skill.id)}>
+                  Delete this entry
+                </span>
+              </div> */}
             </Collapse>
           ))
         ) : (

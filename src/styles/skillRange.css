@@ -1,61 +1,100 @@
+:root {
+  --background-1: hsl(0, 94%, 92%);
+  --background-2: hsl(38, 92%, 92%);
+  --background-3: hsl(142, 71%, 92%);
+  --background-4: hsl(207, 74%, 92%);
+  --thumb-1: hsl(0, 94%, 65%);
+  --thumb-2: hsl(38, 92%, 50%);
+  --thumb-3: hsl(142, 71%, 45%);
+  --thumb-4: hsl(207, 74%, 65%);
+  --hover-thumb-1: hsl(0, 94%, 80%);
+  --hover-thumb-2: hsl(38, 92%, 80%);
+  --hover-thumb-3: hsl(142, 71%, 80%);
+  --hover-thumb-4: hsl(207, 74%, 80%);
+  --selected-background: hsl(0, 0%, 100%);
+  --selected-thumb: hsl(0, 0%, 100%);
+  --selected-thumb-hover: hsl(0, 0%, 100%);
+  --position-thumb: 0%;
+}
+
+.level-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .level-selector {
   display: flex;
+  /* flex-direction: row; */
   position: relative;
   overflow: hidden;
   height: 3rem;
-  min-width: 16rem;
   border-radius: 0.25rem;
-  background-color: var(--background-input);
-  transition: background-color 0.2s ease 0s;
-  transform: translateZ(0px);
+  /* background-color: var(--background-input); */
+  transition: all 0.3 cubic-bezier(0.39, 0.575, 0.565, 1);
+  transform: translateX(0px);
+  background-color: var(--selected-background, var(--background-input));
   pointer-events: auto;
+  cursor: pointer;
 }
 
 .level {
-  display: inline-block;
+  flex: 1;
   position: relative;
-  flex-grow: 1;
-  cursor: pointer;
+}
+
+.level:not(.selected):not(:first-child)::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  width: 1px;
+  height: 14px;
+  margin-top: -7px;
+  background-color: var(--selected-thumb);
+}
+
+.level:not(.selected):hover {
+  border-radius: 0.25rem;
+  background: var(--selected-thumb-hover);
+}
+
+.thumb {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 25%;
+  height: 100%;
+  border-radius: 0.25rem;
+  background-color: var(--selected-thumb);
+  transition: all 0.2s ease 0s;
+  transform: translateX(var(--position-thumb));
 }
 
 .level-1 {
-  background-color: #eab473;
+  --selected-background: var(--background-1);
+  --selected-thumb: var(--thumb-1);
+  --selected-thumb-hover: var(--hover-thumb-1);
+  --position-thumb: 0%;
 }
 
 .level-2 {
-  background-color: #eae073;
+  --selected-background: var(--background-2);
+  --selected-thumb: var(--thumb-2);
+  --selected-thumb-hover: var(--hover-thumb-2);
+  --position-thumb: 100%;
 }
 
 .level-3 {
-  background-color: #81ea73;
+  --selected-background: var(--background-3);
+  --selected-thumb: var(--thumb-3);
+  --selected-thumb-hover: var(--hover-thumb-3);
+  --position-thumb: 200%;
 }
 
 .level-4 {
-  background-color: #73b4ea;
-}
-
-.level.selected {
-  height: 4.3rem;
-  cursor: pointer;
-  transition: transform 0.2s ease 0s;
-}
-
-.thumb-1 {
-  background-color: hsl(33, 74%, 55%);
-  box-shadow: 0px 0px 0px 0.25rem hsl(33, 74%, 55%);
-}
-
-.thumb-2 {
-  background-color: hsl(55, 74%, 50%);
-  box-shadow: 0px 0px 0px 0.25rem hsl(55, 74%, 50%);
-}
-
-.thumb-3 {
-  background-color: hsl(113, 74%, 55%);
-  box-shadow: 0px 0px 0px 0.25rem hsl(113, 74%, 55%);
-}
-
-.thumb-4 {
-  background-color: hsl(207, 74%, 55%);
-  box-shadow: 0px 0px 0px 0.25rem hsl(207, 74%, 55%);
+  --selected-background: var(--background-4);
+  --selected-thumb: var(--thumb-4);
+  --selected-thumb-hover: var(--hover-thumb-4);
+  --position-thumb: 300%;
 }
