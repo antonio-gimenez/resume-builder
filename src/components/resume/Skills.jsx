@@ -46,7 +46,7 @@ function Skills() {
                 />
                 <Range
                   levelType="skills"
-                  // disabled={!skill.name}
+                  disabled={!skill.name}
                   id={skill.id}
                   name={"progress"}
                   currentProgress={skill.progress || 5}

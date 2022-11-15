@@ -35,10 +35,7 @@ function Range({ levelType = "skills", steps = 30, currentProgress = 5, handleCh
       <div className={`level-selector ${props.disabled && "disabled"} level-${getLevelLabel()}`}>
         {defaultLevels[levelType].map((level) => {
           return (
-            <input
-              type={"radio"}
-              // disabled={!props.disabled}
-              checked={isLevelSelected(level.min, level.max)}
+            <span
               key={level.id}
               className={isLevelSelected(level.min, level.max) ? `level-${getLevelLabel()}  level selected` : "level"}
               onClick={() => onChange(level)}

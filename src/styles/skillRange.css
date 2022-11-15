@@ -1,23 +1,8 @@
 :root {
-  --background-1: hsl(0, 94%, 92%);
-  --background-2: hsl(38, 92%, 92%);
-  --background-3: hsl(142, 71%, 92%);
-  --background-4: hsl(207, 74%, 92%);
-  --thumb-1: hsl(0, 94%, 65%);
-  --thumb-2: hsl(38, 92%, 50%);
-  --thumb-3: hsl(142, 71%, 45%);
-  --thumb-4: hsl(207, 74%, 65%);
-  /* --thumb-4: hsl(263, 74%, 65%); */
-  --hover-thumb-1: hsl(0, 94%, 80%);
-  --hover-thumb-2: hsl(38, 92%, 80%);
-  --hover-thumb-3: hsl(142, 71%, 80%);
-  --hover-thumb-4: hsl(207, 74%, 80%);
   --selected-background: hsl(0, 0%, 100%);
   --selected-thumb: hsl(0, 0%, 100%);
   --selected-thumb-hover: hsl(0, 0%, 100%);
   --position-thumb: 0%;
-  --disabled-thumb: hsl(240, 10%, 80%);
-  --disabled-background: hsl(240, 10%, 95%);
 }
 
 .level-container {
@@ -41,7 +26,7 @@
   cursor: not-allowed;
   pointer-events: none;
   background: var(--disabled-background);
-  --selected-thumb: var(--disabled-thumb);
+  --selected-thumb: var(--disabled-color);
 }
 
 .level:not(.selected) {
@@ -82,29 +67,29 @@
 }
 
 .level-1 {
-  --selected-background: var(--background-1);
-  --selected-thumb: var(--thumb-1);
-  --selected-thumb-hover: var(--hover-thumb-1);
+  --selected-background: var(--yellow-lighter);
+  --selected-thumb: var(--yellow-medium);
+  --selected-thumb-hover: var(--yellow-light);
   --position-thumb: 0%;
 }
 
 .level-2 {
-  --selected-background: var(--background-2);
-  --selected-thumb: var(--thumb-2);
-  --selected-thumb-hover: var(--hover-thumb-2);
+  --selected-background: var(--orange-lighter);
+  --selected-thumb: var(--orange-medium);
+  --selected-thumb-hover: var(--orange-light);
   --position-thumb: 100%;
 }
 
 .level-3 {
-  --selected-background: var(--background-3);
-  --selected-thumb: var(--thumb-3);
-  --selected-thumb-hover: var(--hover-thumb-3);
+  --selected-background: var(--green-lighter);
+  --selected-thumb: var(--green-medium);
+  --selected-thumb-hover: var(--green-light);
   --position-thumb: 200%;
 }
 
 .level-4 {
-  --selected-background: var(--background-4);
-  --selected-thumb: var(--thumb-4);
-  --selected-thumb-hover: var(--hover-thumb-4);
+  --selected-background: var(--blue-lighter);
+  --selected-thumb: var(--blue-medium);
+  --selected-thumb-hover: var(--blue-light);
   --position-thumb: 300%;
 }
