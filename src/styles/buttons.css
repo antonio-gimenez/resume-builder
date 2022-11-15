@@ -37,6 +37,8 @@ button {
 }
 
 .button.delete {
+  border-color: var(--danger);
+  width: 100%;
   transition: all 0.2s ease-in-out;
   color: var(--danger);
 }

@@ -10,6 +10,7 @@
 @import url("./card.css");
 @import url("./templates/template-default.css");
 @import url("skillRange.css");
+@import url("modal.css");
 /* Global styles */
 
 *,
@@ -50,7 +51,7 @@ ul {
   background: var(--paper-background);
   overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(300px, 1.5fr));
   align-items: stretch;
 }
 
@@ -74,6 +75,8 @@ ul {
 .section {
   background-color: var(--white);
   border-radius: 0.5rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0 0 1px var(--shadow);
   /* width: clamp(480px, 100%, 768px); */

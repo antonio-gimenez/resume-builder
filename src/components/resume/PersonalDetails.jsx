@@ -1,5 +1,6 @@
 import React from "react";
 import useResume from "../../hooks/useResume";
+import { CardContent, CardHeader } from "../Card";
 import Card from "../Card/Card";
 import ProfileImage from "../ProfileImage";
 
@@ -9,8 +10,11 @@ function PersonalDetails() {
   const { profile, updateProfile } = useResume();
 
   return (
-    <Card title="Personal Details">
-      <div className="grid-auto flex-auto">
+    <Card>
+      <CardHeader>
+        <span className="heading-2">Personal Details</span>
+      </CardHeader>
+      <CardContent>
         <Input
           placeholder={"ex: John"}
           label={"First Name"}
@@ -57,7 +61,7 @@ function PersonalDetails() {
           name="state"
         />
         <TextArea label={"Summary"} value={profile.summary} onChange={(e) => updateProfile(e)} name="summary" />
-      </div>
+      </CardContent>
     </Card>
   );
 }

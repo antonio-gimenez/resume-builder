@@ -1,0 +1,27 @@
+.modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0px;
+  padding: 32px 40px;
+  z-index: 1200;
+  opacity: 1;
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+  transition-duration: 150ms;
+  background: hsla(240, 40%, 10%, 0.8);
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--input-background);
+}
+
+.modal-content {
+  padding: 2rem 2.5rem;
+}

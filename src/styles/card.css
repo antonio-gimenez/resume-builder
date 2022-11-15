@@ -26,12 +26,13 @@
 }
 
 .card-content {
-  padding: 0 0.5rem;
+  padding: 1rem;
 }
 
 .card-actions {
   padding: 0.75rem 0rem;
   border-top: 1px solid var(--input-background);
   display: flex;
+  justify-items: center;
   align-items: center;
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import { Card, CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
+import Modal, { ModalHeader } from "../Modal";
 
 import { Input } from "../ui";
 import Range from "../ui/Range";
@@ -9,6 +10,7 @@ import Range from "../ui/Range";
 function Skills() {
   const { skills, updateSkill, removeSkill } = useResume();
   const [nextId, setNextId] = useState(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   useEffect(() => {
     setNextId(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
   }, [skills]);
@@ -52,15 +54,18 @@ function Skills() {
                 />
               </div>
               <CardActions>
-                <span className="button delete" onClick={() => removeSkill(skill.id)}>
+                <span className="button delete" onClick={() => setIsModalOpen(true)}>
                   Delete this entry
                 </span>
+                <Modal open={isModalOpen}>
+                  <ModalHeader>
+                    <h2 className="heading-2">Delete Skill</h2>
+                  </ModalHeader>
+                </Modal>
+                {/* <span className="button delete" onClick={() => removeSkill(skill.id)}>
+                  Delete this entry
+                </span> */}
               </CardActions>
-              {/* <div className="flex flex-end padding-medium">
-                <span className="button delete" onClick={() => removeSkill(skill.id)}>
-                  Delete this entry
-                </span>
-              </div> */}
             </Collapse>
           ))
         ) : (
