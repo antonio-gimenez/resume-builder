@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
+import Card, { CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
-import { Input, TextArea } from "../ui";
+import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
+import { Button, Input, TextArea } from "../ui";
 function Work() {
   const { professionalExperience, updateProfessionalExperience, removeProfessionalExperience } = useResume();
   const [nextId, setNextId] = useState(
@@ -10,6 +12,14 @@ function Work() {
   useEffect(() => {
     setNextId(professionalExperience.length > 0 ? professionalExperience[professionalExperience.length - 1].id + 1 : 0);
   }, [professionalExperience]);
+
+  const [isModalOpen, setModalOpen] = useState({});
+
+  function handleModal(id) {
+    setModalOpen({
+      [id]: !isModalOpen[id] ? true : false,
+    });
+  }
 
   const handleUpdateWork = (e) => {
     const { id, name, value } = e.target;
@@ -21,31 +31,37 @@ function Work() {
     updateProfessionalExperience(updatedWork);
   };
 
-  const entryTitle = (work) => {
-    if (!work.company && !work.position) return "New";
-    if (work.company && work.position) return `${work.position} at ${work.company}`;
-    if (work.company) return work.company;
-    if (work.position) return work.position;
-    return `${work.company} - ${work.position}`;
+  const workTitle = (work) => {
+    if (work.company && work.position) {
+      return `${work.position} at ${work.company}`;
+    }
+    if (work.company) {
+      return work.company;
+    }
+    if (work.position) {
+      return work.position;
+    }
+
+    return "(Not specified)";
   };
 
   return (
-    <section className="section">
-      <div className="section-header">
+    <Card>
+      <CardHeader>
         <div className="heading-2">Professional Experience</div>
-        <div
-          className=" button primary"
+        <Button
+          borderless
           onClick={() =>
             updateProfessionalExperience({ id: nextId, position: "", from: "", to: "", company: "", description: "" })
           }
         >
-          <span>Add Experience</span>
-        </div>
-      </div>
-      <div className="section-content">
+          Add Experience
+        </Button>
+      </CardHeader>
+      <CardContent>
         {professionalExperience.length > 0 ? (
           professionalExperience.map((work) => (
-            <Collapse key={work.id} open={!work.position || !work.company} title={entryTitle(work)}>
+            <Collapse key={work.id} open={!work.position || !work.company} title={workTitle(work)}>
               <div className="flex-auto">
                 <Input
                   id={work.id}
@@ -94,11 +110,30 @@ function Work() {
                   onChange={handleUpdateWork}
                 />
               </div>
-              <div className="flex flex-end padding-medium">
-                <span className="button delete" onClick={() => removeProfessionalExperience(work.id)}>
-                  Delete this entry
-                </span>
-              </div>
+              <CardActions>
+                <Button color={"red"} onClick={() => handleModal(work.id)}>
+                  Delete
+                </Button>
+                <Modal open={isModalOpen[work.id]}>
+                  <ModalHeader>Delete Entry</ModalHeader>
+                  <ModalContent>
+                    <p>Are you sure you want to delete this entry?</p>
+                  </ModalContent>
+                  <ModalActions>
+                    <Button
+                      onClick={() => {
+                        removeProfessionalExperience(work.id);
+                        handleModal(work.id);
+                      }}
+                    >
+                      Confirm
+                    </Button>
+                    <Button color={"blue"} block onClick={() => handleModal(work.id)}>
+                      Cancel
+                    </Button>
+                  </ModalActions>
+                </Modal>
+              </CardActions>
             </Collapse>
           ))
         ) : (
@@ -106,8 +141,8 @@ function Work() {
             <p className="text-muted">No work experience added yet.</p>
           </div>
         )}
-      </div>
-    </section>
+      </CardContent>
+    </Card>
   );
 }
 

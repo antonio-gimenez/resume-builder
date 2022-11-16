@@ -1,12 +1,11 @@
 .app-nav {
-  /* position: relative; */
   top: 0;
   z-index: 1;
   overflow: hidden;
   height: 100%;
   transition: cubic-bezier(0.4, 0, 0.2, 1) 1s;
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--black);
   box-shadow: 0px 0px 8px 2px var(--shadow);
   display: flex;
   flex-direction: row;
@@ -29,29 +28,29 @@
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 1s;
   width: 40px;
   height: 40px;
-  color: var(--primary);
-  fill: white;
+  color: var(--black);
+  fill: black;
 }
 
 .github-icon.shrink {
   width: 24px;
   height: 24px;
   margin: 0.5rem;
-  color: var(--primary);
-  fill: white;
+  color: var(--black);
+  fill: black;
 }
 
 .app-title.shrink {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--black);
   text-transform: uppercase;
 }
 
 .app-title {
   font-size: 1.9rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--black);
   text-transform: uppercase;
   text-align: center;
 }

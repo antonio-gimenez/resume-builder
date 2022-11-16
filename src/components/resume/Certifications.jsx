@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
+import Card, { CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
-import { Input } from "../ui";
-// @ts-check
+import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
+import { Button, Input } from "../ui";
+
 function Certifications() {
   const { certificates, updateCertificate, removeCertificate } = useResume();
   const [nextId, setNextId] = useState(certificates.length > 0 ? certificates[certificates.length - 1].id + 1 : 0);
+
+  const [isModalOpen, setModalOpen] = useState({});
+
+  function handleModal(id) {
+    setModalOpen({
+      [id]: !isModalOpen[id] ? true : false,
+    });
+  }
 
   useEffect(() => {
     setNextId(certificates.length > 0 ? certificates[certificates.length - 1].id + 1 : 0);
@@ -20,14 +30,14 @@ function Certifications() {
   };
 
   return (
-    <section className="section">
-      <div className="section-header">
+    <Card>
+      <CardHeader>
         <h2 className="heading-2">Certifications</h2>
-        <div className=" button" onClick={() => updateCertificate({ id: nextId, name: "" })}>
-          <span>Add Certification</span>
-        </div>
-      </div>
-      <div className="section-content">
+        <Button borderless onClick={() => updateCertificate({ id: nextId, name: "" })}>
+          Add Certification
+        </Button>
+      </CardHeader>
+      <CardContent>
         {certificates.length > 0 ? (
           certificates.map((certificate) => (
             <Collapse key={certificate.id} open={!certificate.name} title={certificate.name || "New Certification"}>
@@ -59,11 +69,30 @@ function Certifications() {
                   onChange={handleUpdateCertificate}
                 />
               </div>
-              <div className="flex flex-end padding-medium">
-                <span className="button delete" onClick={() => removeCertificate(certificate.id)}>
-                  Delete this entry
-                </span>
-              </div>
+              <CardActions>
+                <Button color={"red"} onClick={() => handleModal(certificate.id)}>
+                  Delete
+                </Button>
+                <Modal open={isModalOpen[certificate.id]}>
+                  <ModalHeader>Delete Entry</ModalHeader>
+                  <ModalContent>
+                    <p>Are you sure you want to delete this entry?</p>
+                  </ModalContent>
+                  <ModalActions>
+                    <Button
+                      onClick={() => {
+                        removeCertificate(certificate.id);
+                        handleModal(certificate.id);
+                      }}
+                    >
+                      Confirm
+                    </Button>
+                    <Button color={"blue"} block onClick={() => handleModal(certificate.id)}>
+                      Cancel
+                    </Button>
+                  </ModalActions>
+                </Modal>
+              </CardActions>
             </Collapse>
           ))
         ) : (
@@ -71,8 +100,8 @@ function Certifications() {
             <p className="text-muted">No certifications added yet.</p>
           </div>
         )}
-      </div>
-    </section>
+      </CardContent>
+    </Card>
   );
 }
 

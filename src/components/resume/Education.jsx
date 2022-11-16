@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
+import Card, { CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
-import { Input, TextArea } from "../ui";
+import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
+import { Button, Input, TextArea } from "../ui";
 
 function Education() {
   const { education, updateEducation, removeEducation } = useResume();
   const [nextId, setNextId] = useState(education.length > 0 ? education[education.length - 1].id + 1 : 0);
+
+  const [isModalOpen, setModalOpen] = useState({});
+
+  function handleModal(id) {
+    setModalOpen({
+      [id]: !isModalOpen[id] ? true : false,
+    });
+  }
 
   useEffect(() => {
     setNextId(education.length > 0 ? education[education.length - 1].id + 1 : 0);
@@ -23,14 +33,14 @@ function Education() {
   };
 
   return (
-    <section className="section">
-      <div className="section-header">
+    <Card>
+      <CardHeader>
         <h2 className="heading-2">Education</h2>
-        <div className=" button" onClick={() => updateEducation({ id: nextId, name: "" })}>
-          <span>Add Education</span>
-        </div>
-      </div>
-      <div className="section-content">
+        <Button borderless onClick={() => updateEducation({ id: nextId, name: "" })}>
+          Add Education
+        </Button>
+      </CardHeader>
+      <CardContent>
         {education.length > 0 ? (
           education.map((education) => (
             <Collapse key={education.id} open={!education.name} title={education.name || "New"}>
@@ -82,11 +92,30 @@ function Education() {
                   onChange={handleUpdateEducation}
                 />
               </div>
-              <div className="flex flex-end padding-medium">
-                <span className="button delete" onClick={() => removeEducation(education.id)}>
-                  Delete this entry
-                </span>
-              </div>
+              <CardActions>
+                <Button color={"red"} onClick={() => handleModal(education.id)}>
+                  Delete
+                </Button>
+                <Modal open={isModalOpen[education.id]}>
+                  <ModalHeader>Delete Entry</ModalHeader>
+                  <ModalContent>
+                    <p>Are you sure you want to delete this entry?</p>
+                  </ModalContent>
+                  <ModalActions>
+                    <Button
+                      onClick={() => {
+                        removeEducation(education.id);
+                        handleModal(education.id);
+                      }}
+                    >
+                      Confirm
+                    </Button>
+                    <Button color={"blue"} block onClick={() => handleModal(education.id)}>
+                      Cancel
+                    </Button>
+                  </ModalActions>
+                </Modal>
+              </CardActions>
             </Collapse>
           ))
         ) : (
@@ -94,8 +123,8 @@ function Education() {
             <p className="text-muted">No academical background yet.</p>
           </div>
         )}
-      </div>
-    </section>
+      </CardContent>
+    </Card>
   );
 }
 

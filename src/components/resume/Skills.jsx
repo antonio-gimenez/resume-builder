@@ -10,15 +10,13 @@ function Skills() {
   const { skills, updateSkill, removeSkill } = useResume();
   const [nextId, setNextId] = useState(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
 
-  const [modalSkillId, setModalSkillId] = useState({});
+  const [isModalOpen, setModalOpen] = useState({});
 
-  function handleModalOpen(id) {
-    setModalSkillId({
-      [id]: !modalSkillId[id] ? true : false,
+  function handleModal(id) {
+    setModalOpen({
+      [id]: !isModalOpen[id] ? true : false,
     });
   }
-
-  console.log("modalSkillId", modalSkillId);
 
   useEffect(() => {
     setNextId(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
@@ -63,24 +61,24 @@ function Skills() {
                 />
               </div>
               <CardActions>
-                <Button color={"red"} onClick={() => handleModalOpen(skill.id)}>
-                  Delete this entry
+                <Button color={"red"} onClick={() => handleModal(skill.id)}>
+                  Delete
                 </Button>
-                <Modal open={modalSkillId[skill.id]}>
-                  <ModalHeader>Delete Skill</ModalHeader>
+                <Modal open={isModalOpen[skill.id]}>
+                  <ModalHeader>Delete Entry</ModalHeader>
                   <ModalContent>
-                    <p>Are you sure you want to delete this skill?</p>
+                    <p>Are you sure you want to delete this entry?</p>
                   </ModalContent>
                   <ModalActions>
                     <Button
                       onClick={() => {
                         removeSkill(skill.id);
-                        handleModalOpen(skill.id);
+                        handleModal(skill.id);
                       }}
                     >
-                      Delete
+                      Confirm
                     </Button>
-                    <Button color={"blue"} block onClick={() => handleModalOpen(skill.id)}>
+                    <Button color={"blue"} block onClick={() => handleModal(skill.id)}>
                       Cancel
                     </Button>
                   </ModalActions>

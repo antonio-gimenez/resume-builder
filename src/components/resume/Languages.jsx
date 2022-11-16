@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
+import Card, { CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
-import { Input } from "../ui";
+import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
+import { Button, Input } from "../ui";
 import Range from "../ui/Range";
 
 function Languages() {
   const { languages, updateLanguage, removeLanguage } = useResume();
   const [nextId, setNextId] = useState(languages.length > 0 ? languages[languages.length - 1].id + 1 : 0);
+
+  const [isModalOpen, setModalOpen] = useState({});
+
+  function handleModal(id) {
+    setModalOpen({
+      [id]: !isModalOpen[id] ? true : false,
+    });
+  }
 
   useEffect(() => {
     setNextId(languages.length > 0 ? languages[languages.length - 1].id + 1 : 0);
@@ -21,22 +31,22 @@ function Languages() {
   };
 
   return (
-    <section className="section">
-      <div className="section-header">
+    <Card>
+      <CardHeader>
         <h2 className="heading-2">Languages</h2>
-        <div className=" button" onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
-          <span>Add Language</span>
-        </div>
-      </div>
-      <div className="section-content">
+        <Button borderless onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
+          Add Language
+        </Button>
+      </CardHeader>
+      <CardContent>
         {languages.length > 0 ? (
-          languages.map((lang, index) => (
-            <Collapse key={lang.id} open={!lang.name} title={lang.name || "New Language"}>
+          languages.map((lang) => (
+            <Collapse key={lang.id} open={!lang.name} title={lang.name || "(Not specified)"}>
               <div className="flex-auto">
                 <Input
                   id={lang.id}
                   name="name"
-                  label={`Language #${index + 1}`}
+                  label={`Language`}
                   defaultValue={lang.name}
                   placeholder="(e.g. English)"
                   onChange={handleUpdateLanguage}
@@ -50,11 +60,30 @@ function Languages() {
                   handleChange={handleUpdateLanguage}
                 />
               </div>
-              <div className="flex flex-end padding-medium">
-                <span className="button delete" onClick={() => removeLanguage(lang.id)}>
-                  Delete this entry
-                </span>
-              </div>
+              <CardActions>
+                <Button color={"red"} onClick={() => handleModal(lang.id)}>
+                  Delete
+                </Button>
+                <Modal open={isModalOpen[lang.id]}>
+                  <ModalHeader>Delete Entry</ModalHeader>
+                  <ModalContent>
+                    <p>Are you sure you want to delete this entry?</p>
+                  </ModalContent>
+                  <ModalActions>
+                    <Button
+                      onClick={() => {
+                        removeLanguage(lang.id);
+                        handleModal(lang.id);
+                      }}
+                    >
+                      Confirm
+                    </Button>
+                    <Button color={"blue"} block onClick={() => handleModal(lang.id)}>
+                      Cancel
+                    </Button>
+                  </ModalActions>
+                </Modal>
+              </CardActions>
             </Collapse>
           ))
         ) : (
@@ -62,8 +91,8 @@ function Languages() {
             <p className="text-muted">No languages added yet.</p>
           </div>
         )}
-      </div>
-    </section>
+      </CardContent>
+    </Card>
   );
 }
 
