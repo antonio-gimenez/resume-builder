@@ -31,7 +31,7 @@ function Skills() {
   };
 
   return (
-    <Card rounded>
+    <Card>
       <CardHeader>
         <span className="heading-2">Skills</span>
         <Button borderless onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>

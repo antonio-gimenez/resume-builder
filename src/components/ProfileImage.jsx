@@ -21,34 +21,33 @@ function ProfileImage() {
     });
   };
 
+  const removeImage = () => {
+    setImage(null);
+    const newEvent = {
+      target: {
+        name: "avatar",
+        value: null,
+      },
+    };
+    updateProfile(newEvent);
+  };
+
   return (
-    <div>
-      <label className="label">Profile Photo</label>
-      {image && (
-        <button
-          type="button"
-          onClick={() => {
-            setImage(null);
-            const newEvent = {
-              target: {
-                name: "avatar",
-                value: null,
-              },
-            };
-            updateProfile(newEvent);
-          }}
-        >
-          <XMarkIcon className="icon" />
-        </button>
-      )}
-      <label className="input-avatar">
-        <input type="file" className="hide-input-file" accept="image/*" onChange={handleImageChange} />
-        {image ? <img src={image} className={"image"} alt={"Avatar"} /> : <PhotoIcon className={"placeholder"} />}
+    <div className="inline">
+      <label className="avatar" htmlFor="avatar">
+        <input type="file" className="hide-input" id={"avatar"} accept="image/*" onChange={handleImageChange} />
+
+        {image ? (
+          <img src={image} className={"profile-photo"} alt={"profile-photo"} />
+        ) : (
+          <div className="placeholder">
+            <div className="figure">64x64</div>
+          </div>
+        )}
       </label>
+      <div className="status">{image ? <span onClick={() => removeImage()}>Remove</span> : <span>Upload</span>}</div>
     </div>
   );
-
-  //   return <input className="avatar-input" type="file" onChange={(e) => handleImageChange(e)} name="avatar" />;
 }
 
 export default ProfileImage;

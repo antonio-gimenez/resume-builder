@@ -58,7 +58,12 @@ function PersonalDetails() {
           onChange={(e) => updateProfile(e)}
           name="state"
         />
-        <TextArea label={"Summary"} value={profile.summary} onChange={(e) => updateProfile(e)} name="summary" />
+        <TextArea
+          label={"Summary (optional)"}
+          value={profile.summary}
+          onChange={(e) => updateProfile(e)}
+          name="summary"
+        />
       </CardContent>
     </Card>
   );
