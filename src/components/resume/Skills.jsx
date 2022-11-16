@@ -42,7 +42,7 @@ function Skills() {
       </CardHeader>
       <CardContent>
         {skills.length > 0 ? (
-          skills.map((skill, index) => (
+          skills.map((skill) => (
             <Collapse key={skill.id} open={!skill.name} title={skill.name || "(Not specified)"}>
               <div className="flex-auto">
                 <Input
