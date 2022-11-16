@@ -67,29 +67,29 @@
 }
 
 .level-1 {
-  --selected-background: var(--yellow-lighter);
-  --selected-thumb: var(--yellow-medium);
-  --selected-thumb-hover: var(--yellow-light);
+  --selected-background: var(--orange-lighter);
+  --selected-thumb: var(--orange-medium);
+  --selected-thumb-hover: var(--orange-light);
   --position-thumb: 0%;
 }
 
 .level-2 {
-  --selected-background: var(--orange-lighter);
-  --selected-thumb: var(--orange-medium);
-  --selected-thumb-hover: var(--orange-light);
+  --selected-background: var(--green-lighter);
+  --selected-thumb: var(--green-medium);
+  --selected-thumb-hover: var(--green-light);
   --position-thumb: 100%;
 }
 
 .level-3 {
-  --selected-background: var(--green-lighter);
-  --selected-thumb: var(--green-medium);
-  --selected-thumb-hover: var(--green-light);
+  --selected-background: var(--blue-lighter);
+  --selected-thumb: var(--blue-medium);
+  --selected-thumb-hover: var(--blue-light);
   --position-thumb: 200%;
 }
 
 .level-4 {
-  --selected-background: var(--blue-lighter);
-  --selected-thumb: var(--blue-medium);
-  --selected-thumb-hover: var(--blue-light);
+  --selected-background: var(--violet-lighter);
+  --selected-thumb: var(--violet-medium);
+  --selected-thumb-hover: var(--violet-light);
   --position-thumb: 300%;
 }

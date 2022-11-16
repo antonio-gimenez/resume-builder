@@ -1,7 +1,7 @@
 /* Variables */
 :root {
   --white: #fff;
-  --primary: var(--violet-medium);
+  --primary: var(--violet-dark);
   --danger: #e53e3e;
   --primary-light: rgba(109, 153, 210, 0.195);
   --secondary: rgb(48, 65, 105);

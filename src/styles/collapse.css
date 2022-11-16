@@ -14,25 +14,16 @@
   user-select: none;
 }
 
-.collapse-container:hover > .collapse-button {
-  background-color: var(--primary-100);
-  border-radius: 0.15rem;
-}
-
-.collapse-container:hover > .collapse-button {
-  color: red !important;
-}
-
 .collapse-title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-self: start;
   width: 100%;
-  padding: 0.25rem;
+  /* padding: 0.25rem; */
   font-weight: 600;
-  font-size: large;
-  color: var(--primary);
+  /* font-size: large; */
+  /* color: var(--primary); */
 }
 
 .collapse-content {

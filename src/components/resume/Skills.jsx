@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
-import { Card, CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
-import Modal, { ModalHeader } from "../Modal";
-
-import { Input } from "../ui";
+import Card, { CardActions, CardContent, CardHeader } from "../Card";
+import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
+import { Button, Input } from "../ui";
 import Range from "../ui/Range";
 
 function Skills() {
   const { skills, updateSkill, removeSkill } = useResume();
   const [nextId, setNextId] = useState(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [modalSkillId, setModalSkillId] = useState({});
+
+  function handleModalOpen(id) {
+    setModalSkillId({
+      [id]: !modalSkillId[id] ? true : false,
+    });
+  }
+
+  console.log("modalSkillId", modalSkillId);
+
   useEffect(() => {
     setNextId(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
   }, [skills]);
@@ -27,18 +36,18 @@ function Skills() {
     <Card rounded>
       <CardHeader>
         <span className="heading-2">Skills</span>
-        <div className="button" onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
-          <span>Add Skill</span>
-        </div>
+        <Button borderless onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
+          Add Skill
+        </Button>
       </CardHeader>
       <CardContent>
         {skills.length > 0 ? (
           skills.map((skill, index) => (
-            <Collapse key={skill.id} open={!skill.name} title={skill.name || "New Skill"}>
+            <Collapse key={skill.id} open={!skill.name} title={skill.name || "(Not specified)"}>
               <div className="flex-auto">
                 <Input
                   id={skill.id}
-                  label={`Skill #${index + 1}`}
+                  label={`Proficency`}
                   name="name"
                   defaultValue={skill.name}
                   placeholder="(e.g. React, JavaScript, etc.)"
@@ -54,17 +63,28 @@ function Skills() {
                 />
               </div>
               <CardActions>
-                <span className="button delete" onClick={() => setIsModalOpen(true)}>
+                <Button color={"red"} onClick={() => handleModalOpen(skill.id)}>
                   Delete this entry
-                </span>
-                <Modal open={isModalOpen}>
-                  <ModalHeader>
-                    <h2 className="heading-2">Delete Skill</h2>
-                  </ModalHeader>
+                </Button>
+                <Modal open={modalSkillId[skill.id]}>
+                  <ModalHeader>Delete Skill</ModalHeader>
+                  <ModalContent>
+                    <p>Are you sure you want to delete this skill?</p>
+                  </ModalContent>
+                  <ModalActions>
+                    <Button
+                      onClick={() => {
+                        removeSkill(skill.id);
+                        handleModalOpen(skill.id);
+                      }}
+                    >
+                      Delete
+                    </Button>
+                    <Button color={"blue"} block onClick={() => handleModalOpen(skill.id)}>
+                      Cancel
+                    </Button>
+                  </ModalActions>
                 </Modal>
-                {/* <span className="button delete" onClick={() => removeSkill(skill.id)}>
-                  Delete this entry
-                </span> */}
               </CardActions>
             </Collapse>
           ))

@@ -1,10 +1,11 @@
 import React from "react";
 
-function Button({ label, children, ...props }) {
+function Button({ label, color, type = "button", children, borderless = false, block = false, ...props }) {
   const id = props.id || Math.random().toString(36).substr(2, 9);
-
-  const type = props.type || "button";
-
+  const buttonType = type ? type : "button";
+  const buttonColor = color ? color : "";
+  const buttonBlock = block ? "block" : "";
+  const buttonBorderless = borderless ? "borderless" : "";
   return (
     <div>
       {label && (
@@ -12,10 +13,15 @@ function Button({ label, children, ...props }) {
           {label}
         </label>
       )}
-      <div type={type} id={id} className="button" {...props}>
+      <button
+        type={buttonType}
+        id={id}
+        className={`button ${buttonBorderless} ${buttonColor} ${buttonBlock}`}
+        {...props}
+      >
         <span className="button-text">{children}</span>
         <span className="button-decoration" />
-      </div>
+      </button>
     </div>
   );
 }
