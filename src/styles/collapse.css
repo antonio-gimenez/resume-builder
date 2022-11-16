@@ -20,10 +20,7 @@
   justify-content: space-between;
   align-self: start;
   width: 100%;
-  /* padding: 0.25rem; */
   font-weight: 600;
-  /* font-size: large; */
-  /* color: var(--primary); */
 }
 
 .collapse-content {
@@ -33,4 +30,18 @@
   padding: 0.5rem;
   font-size: medium;
   font-weight: 400;
+}
+
+.collapse-content.visible {
+  height: auto;
+  opacity: 1;
+  overflow: visible;
+  transition: height 200ms ease 0s, opacity 200ms ease 0s;
+}
+
+.collapse-content.hidden {
+  height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 200ms ease 0s, opacity 200ms ease 0s;
 }
