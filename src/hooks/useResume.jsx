@@ -9,6 +9,13 @@ function useResume() {
   const { profile, skills, professionalExperience, education, languages, certificates, sectionTitles, customSettings } =
     resume;
 
+  const changeSectionOrder = (section, index) => {
+    const newSection = [...section];
+    const [removed] = newSection.splice(index, 1);
+    newSection.splice(index - 1, 0, removed);
+    return newSection;
+  };
+
   const updateProfile = (event) => {
     if (!event || !event.target) {
       return console.error("No event or event.target provided");

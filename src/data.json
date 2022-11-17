@@ -15,9 +15,9 @@
     "references": "References"
   },
   "profile": {
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john@doe.com",
+    "firstName": "",
+    "lastName": "",
+    "email": "",
     "phone": "",
     "city": "",
     "state": "",
