@@ -69,8 +69,8 @@
 
 .template-0 {
   --template-body-background: var(--template-body-background);
-  --template-header-background: var(--template-accent);
-  --template-header-text-color: var(--template-color);
+  --template-header-background: var(--blue-dark);
+  --template-header-text-color: var(--white);
 }
 
 .template-1 {

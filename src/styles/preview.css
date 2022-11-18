@@ -3,7 +3,7 @@
   top: 0px;
   bottom: 0px;
   right: 0px;
-  width: 50%;
+  width: 100%;
   flex: 1 1 0%;
   display: flex;
   align-items: center;
@@ -11,14 +11,24 @@
   flex-flow: column nowrap;
   background-color: var(--blue-darkest);
   color: rgb(255, 255, 255);
-  user-select: none;
-  z-index: 3;
+  /* user-select: none; */
+  z-index: 1;
 }
 
 .page {
-  position: absolute;
+  position: relative;
   top: 0;
+  margin: 0 auto;
   left: 0;
+  transform: scale(0.75);
+  border-radius: 0.25rem;
+  background-color: aliceblue;
   width: clamp(24rem, 100%, 28rem);
   height: clamp(28rem, 100%, 32rem);
+}
+
+.preview-title {
+  line-height: 0%;
+  padding: 0;
+  /* margin: 0.5rem; */
 }

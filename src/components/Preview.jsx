@@ -11,7 +11,7 @@ function Preview() {
 
   return (
     <div className="preview-wrapper">
-      <div className="fle lex-column">
+      <div className="flex flex-column">
         <div id="preview" ref={previewRef} className={`page template-${templateNumber}`}>
           <section className="template-body ">
             <header className={`template-header`}>
@@ -23,22 +23,16 @@ function Preview() {
               </div>
             </header>
 
-            <div className="card-list">
-              <div className="grid">
-                <div className="section">
-                  <div className="section-header">
-                    <h2 className="heading-2">Profile</h2>
-                  </div>
-                  <div className="section-content wrap-text flex flex-column">
-                    <a href={`mailto:${profile.email}`}> {profile.email}</a>
-                    <span>{profile.phone}</span>
-                    <span>{profile.address}</span>
-                    <span>{profile.state}</span>
-                    <span>{profile.city}</span>
-                    <a href={profile.website}>{profile.website}</a>
-                    <span>{profile.summary}</span>
-                  </div>
-                </div>
+            <div className="grid">
+              <h4 className="preview-title">Profile</h4>
+              <div className="section-content wrap-text flex flex-column">
+                <a href={`mailto:${profile.email}`}> {profile.email}</a>
+                <span>{profile.phone}</span>
+                <span>{profile.address}</span>
+                <span>{profile.state}</span>
+                <span>{profile.city}</span>
+                <a href={profile.website}>{profile.website}</a>
+                <span>{profile.summary}</span>
               </div>
               <div className="grid-auto">
                 <div className="section">

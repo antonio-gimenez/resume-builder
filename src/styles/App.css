@@ -40,19 +40,23 @@ ul {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100vw;
 }
 
 .scrollable-content {
   height: clamp(100vh, 100vh, 100vh);
-  width: clamp(384px, 100vw, 100vw);
+  width: clamp(384px, 100vw, 50vw);
   margin: 0 auto;
   padding: 0 1rem;
-  padding-top: 2vh;
+  /* padding-top: 2vh; */
   background: var(--paper-background);
   overflow-y: auto;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1.5fr));
   align-items: stretch;
+}
+
+.grid-columns-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
 }
 
 .scroll-decoration {

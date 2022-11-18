@@ -27,20 +27,24 @@ function TemplateSelector() {
       <div key={template.id} className="template-select-item" onClick={() => updateTemplate(template.id)}>
         <div
           style={{
-            width: "12px",
-            height: "12px",
-            borderRadius: "50%",
+            width: "2rem",
+            height: "2rem",
             backgroundColor: template.accentColor,
+            border: "2px solid #fff",
+            borderRadius: "50%",
             marginRight: "8px",
           }}
         />
-        <span>{template.name}</span>
       </div>
     );
   };
-  return templates.map((template) => {
-    return templateSample(template);
-  });
+  return (
+    <div className="flex flex-row">
+      {templates.map((template) => {
+        return templateSample(template);
+      })}
+    </div>
+  );
 }
 
 export default TemplateSelector;
