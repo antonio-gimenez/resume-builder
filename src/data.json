@@ -2,6 +2,18 @@
   "customSettings": {
     "templateNumber": 0
   },
+  "sectionsOrder": [
+    "personalDetails",
+    "skills",
+    "languages",
+    "workExperience",
+    "education",
+    "certifications",
+    "projects",
+    "awards",
+    "interests",
+    "references"
+  ],
   "sectionTitles": {
     "personalDetails": "Personal Details",
     "skills": "Skills",

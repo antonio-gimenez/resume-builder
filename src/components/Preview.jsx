@@ -10,8 +10,8 @@ function Preview() {
   const previewRef = useRef(null);
 
   return (
-    <Card title="Preview">
-      <div className="flex flex-column">
+    <div className="preview-wrapper">
+      <div className="fle lex-column">
         <div id="preview" ref={previewRef} className={`page template-${templateNumber}`}>
           <section className="template-body ">
             <header className={`template-header`}>
@@ -109,7 +109,7 @@ function Preview() {
 
         <TemplateSelector />
       </div>
-    </Card>
+    </div>
   );
 }
 

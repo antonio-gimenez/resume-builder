@@ -11,6 +11,7 @@
 @import url("level.css");
 @import url("modal.css");
 @import url("avatar.css");
+@import url("preview.css");
 
 *,
 *::before,
@@ -43,7 +44,7 @@ ul {
 
 .scrollable-content {
   height: clamp(100vh, 100vh, 100vh);
-  width: clamp(384px, 100vw, 1400px);
+  width: clamp(384px, 100vw, 100vw);
   margin: 0 auto;
   padding: 0 1rem;
   padding-top: 2vh;

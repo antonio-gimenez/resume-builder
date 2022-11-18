@@ -40,7 +40,7 @@ function Certifications() {
       <CardContent>
         {certificates.length > 0 ? (
           certificates.map((certificate) => (
-            <Collapse key={certificate.id} open={!certificate.name} title={certificate.name || "New Certification"}>
+            <Collapse key={certificate.id} open={!certificate.name} title={certificate.name || "(Not specified)"}>
               <div className="flex-auto">
                 <Input
                   id={certificate.id}

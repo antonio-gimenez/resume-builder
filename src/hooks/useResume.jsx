@@ -6,14 +6,23 @@ const initialState = require("../data.json");
 function useResume() {
   const [resume, setResume] = useLocalStorage("resume", initialState);
 
-  const { profile, skills, professionalExperience, education, languages, certificates, sectionTitles, customSettings } =
-    resume;
+  const {
+    profile,
+    skills,
+    professionalExperience,
+    education,
+    languages,
+    certificates,
+    sectionTitles,
+    customSettings,
+    sectionsOrder,
+  } = resume;
 
-  const changeSectionOrder = (section, index) => {
-    const newSection = [...section];
-    const [removed] = newSection.splice(index, 1);
-    newSection.splice(index - 1, 0, removed);
-    return newSection;
+  const changeSectionsOrder = (section, index) => {
+    const newSectionsOrder = [...sectionsOrder];
+    newSectionsOrder.splice(index, 1);
+    newSectionsOrder.splice(section.index, 0, section.id);
+    setResume({ ...resume, sectionsOrder: newSectionsOrder });
   };
 
   const updateProfile = (event) => {

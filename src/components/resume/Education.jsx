@@ -43,7 +43,7 @@ function Education() {
       <CardContent>
         {education.length > 0 ? (
           education.map((education) => (
-            <Collapse key={education.id} open={!education.name} title={education.name || "New"}>
+            <Collapse key={education.id} open={!education.name} title={education.name || "(Not specified)"}>
               <div className="flex-auto">
                 <Input
                   id={education.id}
