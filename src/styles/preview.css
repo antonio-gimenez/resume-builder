@@ -22,11 +22,14 @@
   margin: 0 auto;
   left: 0;
   /* width: m; */
-  /* transform: scale(0.75); */
-  /* dimensions for A4 */
+  /* origin top */
+  transform: scale(0.9);
   width: 210mm;
   height: 297mm;
-  overflow: auto;
+  /* dimensions for A4 */
+  /* width: 210mm; */
+
+  /* height: 297mm; */
   border-radius: 0.25rem;
   background-color: aliceblue;
   /* width: clamp(8rem, 210mm, 210mm); */
