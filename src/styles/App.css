@@ -110,9 +110,9 @@ ul {
 }
 
 .progress .bar {
-  background: var(--primary);
+  background: var(--progress-bar, --primary);
   border-radius: 8px;
-  height: 10px;
+  height: var(--progress-height);
 }
 
 /* Typography */

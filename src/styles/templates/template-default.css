@@ -9,7 +9,6 @@
 .template-header {
   background-color: var(--template-header-background, darkslategray);
   color: var(--template-header-text-color, white);
-
   padding: var(--template-paddings, 0);
   border-radius: var(--template-radius, 4px);
   grid-template-columns: repeat(var(--template-header-columns, 1), 1fr);
