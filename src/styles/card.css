@@ -1,14 +1,14 @@
 .card-list {
   padding: 1rem 0.5em;
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
 .card {
   background-color: var(--white);
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
+  width: clamp(200px, 100%, 480px);
   box-shadow: 0 0 1px var(--shadow);
 }
 

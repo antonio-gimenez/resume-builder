@@ -1,85 +1,51 @@
 /* Variables */
 :root {
+  /* Basic colors */
   --black: #000000;
   --white: #fff;
-  --primary: var(--violet-medium);
-  --danger: #e53e3e;
-  --primary-light: rgba(109, 153, 210, 0.195);
-  --secondary: rgb(48, 65, 105);
+  --shadow: rgba(0, 0, 0, 0.15);
+  --muted: rgb(107, 114, 128);
+
   --paper-background: rgb(244, 244, 244);
   --background-input: #eff2f9;
   --color-placeholder: rgb(159, 166, 187);
-  --shadow: rgba(0, 0, 0, 0.15);
-  --muted: rgb(107, 114, 128);
   --label-color: rgb(130, 139, 162);
   --input-background: #eff2f9;
 
   /* Colors */
   /* Darkest */
-  --yellow-darkest: hsl(50, 94%, 27%);
   --orange-darkest: hsl(30, 94%, 27%);
   --red-darkest: hsl(0, 94%, 27%);
   --green-darkest: hsl(140, 94%, 27%);
-  --blue-darkest: hsl(200, 94%, 27%);
+  --blue-darkest: hsl(220, 94%, 27%);
   --violet-darkest: hsl(260, 94%, 27%);
   /* Dark */
-  --yellow-dark: hsl(50, 94%, 40%);
   --orange-dark: hsl(30, 94%, 40%);
   --red-dark: hsl(0, 94%, 40%);
   --green-dark: hsl(140, 74%, 40%);
-  --blue-dark: hsl(200, 74%, 40%);
+  --blue-dark: hsl(220, 74%, 40%);
   --violet-dark: hsl(260, 94%, 40%);
-
   /* Medium */
-  --yellow-medium: hsl(50, 94%, 65%);
   --orange-medium: hsl(30, 94%, 65%);
   --red-medium: hsl(0, 94%, 65%);
   --green-medium: hsl(140, 74%, 65%);
-  --blue-medium: hsl(200, 74%, 65%);
+  --blue-medium: hsl(220, 74%, 65%);
   --violet-medium: hsl(260, 74%, 65%);
   /* Light */
-  --yellow-light: hsl(50, 94%, 80%);
   --orange-light: hsl(40, 94%, 80%);
   --red-light: hsl(0, 94%, 80%);
   --green-light: hsl(140, 74%, 80%);
-  --blue-light: hsl(200, 74%, 80%);
+  --blue-light: hsl(220, 74%, 80%);
   --violet-light: hsl(260, 74%, 80%);
   /* Lighter */
-  --yellow-lighter: hsl(50, 94%, 92%);
   --orange-lighter: hsl(40, 94%, 92%);
   --red-lighter: hsl(0, 94%, 92%);
   --green-lighter: hsl(140, 74%, 92%);
-  --blue-lighter: hsl(200, 74%, 92%);
+  --blue-lighter: hsl(220, 74%, 92%);
   --violet-lighter: hsl(260, 74%, 92%);
 
   --disabled-background: hsl(240, 10%, 95%);
   --disabled-color: hsl(240, 10%, 80%);
-}
 
-.template-0 {
-  --clr-accent: #3c5284;
-  --progress-height: 6px;
-  --progress-bar: var(--clr-accent);
-  --template-margins: 0px;
-  --template-paddings: 6px;
-  --template-radius: 0px;
-  --template-body-background: var(--white);
-  --template-body-text-color: var(--black);
-  --template-header-background: var(--clr-accent);
-  --template-header-text-color: var(--white);
-  --template-header-columns: 2;
-}
-
-.template-1 {
-  --clr-accent: #914843;
-  --progress-height: 6px;
-  --progress-bar: var(--clr-accent);
-  --template-margins: 0px;
-  --template-paddings: 6px;
-  --template-radius: 0px;
-  --template-body-background: var(--white);
-  --template-body-text-color: var(--black);
-  --template-header-background: var(--clr-accent);
-  --template-header-text-color: var(--white);
-  --template-header-columns: 2;
+  --clr-accent: var(--violet-darkest);
 }

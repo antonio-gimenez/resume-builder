@@ -8,14 +8,14 @@ import AppWrapper from "./components/layouts/AppWrapper";
 function App() {
   return (
     <AppWrapper>
-      <Navbar />
-      <div className="grid-columns-2">
-        <div className="scrollable-content">
-          <Editor />
-        </div>
-        <Preview />
+      {/* <div className="grid-columns-2"> */}
+      <div className="scrollable-content">
+        <Navbar />
+        <Editor />
         <div className="scroll-decoration" />
       </div>
+      <Preview />
+      {/* </div> */}
     </AppWrapper>
   );
 }
