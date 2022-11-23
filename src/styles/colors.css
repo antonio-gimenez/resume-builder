@@ -1,10 +1,29 @@
 /* Variables */
 :root {
+  /* Rule 60 30 10 */
+  --clr-neutral: 220, 50%, 95%;
+  --clr-complementary: 140, 35%, 75%;
+  --color: hsl(140, 35%, 78%);
+  --clr-accent: 260, 100%, 95%;
+
   /* Basic colors */
-  --black: #000000;
-  --white: #fff;
-  --shadow: rgba(0, 0, 0, 0.15);
-  --muted: rgb(107, 114, 128);
+  --black: 0, 0%, 0%;
+  --white: 0, 0%, 100%;
+  /* --grey: 180, 0%, 50%; */
+  --grey: 180, 0%, 90%;
+  --green: 100, 65%;
+  --orange: 45, 80%;
+  --red: 0, 100%;
+  --blue: 220, 90%;
+  --violet: 260, 90%;
+
+  --shadow: hsla(var(--black), 0.15);
+
+  /* Text */
+  --clr-text: hsl(var(--white));
+  --clr-text-dark: hsl(var(--black));
+
+  /*  */
 
   --paper-background: rgb(244, 244, 244);
   --background-input: #eff2f9;

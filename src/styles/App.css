@@ -39,22 +39,11 @@ ul {
 
 .app {
   display: flex;
+  background-color: hsl(var(--clr-neutral));
   flex-direction: column;
   height: 100vh;
   width: 50vw;
 }
-
-/* .scrollable-content {
-  height: clamp(100vh, 100vh, 100vh);
-  width: clamp(480px, 50%, 50w);
-  margin: 0 auto;
-  padding: 0 1rem;
-  flex: 1 0 0%;
-  background: var(--paper-background);
-  overflow-y: auto;
-  align-items: stretch;
-}
-*/
 
 .editor {
   margin: 0 auto;
@@ -64,7 +53,6 @@ ul {
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  background: var(--paper-background);
   overflow: auto;
 }
 
@@ -99,7 +87,7 @@ ul {
 }
 
 .progress .bar {
-  background: var(--progress-bar, --primary);
+  background: var(--progress-bar, --clr-neutral);
   border-radius: 8px;
   height: var(--progress-height);
 }
@@ -109,7 +97,7 @@ ul {
 .title {
   font-weight: 600;
   /* color: #334; */
-  color: var(--grey-700);
+  color: var(--grey);
   text-transform: uppercase;
   text-align: center;
   border-bottom: 1px solid var(--shadow);
@@ -140,7 +128,7 @@ ul {
 }
 
 .text-muted {
-  color: var(--muted);
+  color: var(--grey);
 }
 
 /* Symbols */

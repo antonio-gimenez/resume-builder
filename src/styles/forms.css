@@ -13,7 +13,7 @@
   outline: currentcolor none medium;
   border: 0px none;
   resize: vertical;
-  color: var(--grey-900);
+  color: var(--grey);
   transition: all 0.1s ease 0s;
 }
 

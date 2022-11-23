@@ -29,8 +29,7 @@ button {
   border: 1px solid var(--shadow);
   user-select: none;
   pointer-events: auto;
-  background: rgba(26, 145, 240, 0);
-  background-color: rgba(26, 145, 240, 0);
+  background-color: hsl(var(--clr-accent));
   color: rgb(30, 37, 50);
 }
 
@@ -46,7 +45,7 @@ button {
   width: 100%;
 }
 
-.button.blue {
+/* .button.blue {
   border-color: transparent;
   background-color: var(--blue-darkest);
   color: var(--white);
@@ -64,4 +63,4 @@ button {
 
 .button.red:hover {
   background-color: var(--red-darkest);
-}
+} */

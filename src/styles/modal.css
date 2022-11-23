@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: hsla(240, 40%, 10%, 0.8);
+  background: var(--shadow);
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -42,11 +42,11 @@
   display: block;
   width: 20px;
   height: 20px;
-  fill: var(--muted);
+  fill: var(--black);
 }
 
 .close-icon:hover {
-  fill: var(--primary);
+  fill: var(--clr-accent);
 }
 
 .modal-close:hover {

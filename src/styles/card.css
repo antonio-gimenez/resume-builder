@@ -6,10 +6,11 @@
 }
 
 .card {
-  background-color: var(--white);
+  background-color: hsl(var(--clr-complementary));
+  color: var(--clr-accent);
   height: fit-content;
   width: clamp(200px, 100%, 480px);
-  box-shadow: 0 0 1px var(--shadow);
+  box-shadow: 0 0 8px currentColor;
 }
 
 .card.rounded {
