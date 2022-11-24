@@ -32,8 +32,8 @@ function Certifications() {
   return (
     <Card>
       <CardHeader>
-        <h2 className="heading-2">Certifications</h2>
-        <Button borderless onClick={() => updateCertificate({ id: nextId, name: "" })}>
+        <h3>Certifications</h3>
+        <Button color={"blue"} onClick={() => updateCertificate({ id: nextId, name: "" })}>
           Add Certification
         </Button>
       </CardHeader>

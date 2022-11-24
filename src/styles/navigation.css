@@ -4,41 +4,32 @@
   overflow: hidden;
   position: sticky;
   height: auto;
-  transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
-  background-color: var(--clr-accent);
-  color: var(--white);
-  fill: var(--white);
+  transition: var(--smooth);
+  background-color: hsl(var(--clr-accent));
+  color: var(--clr-text-light);
+  fill: var(--clr-text-light);
   display: flex;
   flex-wrap: wrap-reverse;
   flex-direction: row;
-  padding: 1rem 2rem;
-  /* margin: 0 auto; */
-  /* width: clamp(384px, 100%, 98%); */
+  padding: 0.85rem 1.5rem;
   line-height: 0;
   align-items: center;
   justify-content: space-between;
 }
 
 .app-title {
-  font-size: 1.9rem;
-  font-weight: 600;
-  transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
   text-transform: uppercase;
   display: flex;
   text-align: center;
 }
 
 .github-icon {
-  transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
   width: 40px;
   height: 40px;
 }
 .app-nav.shrink {
   padding: 0.5rem 1rem;
-  opacity: 0.85;
-  box-shadow: 0 0 3px var(--shadow);
-  color: var(--white);
-  fill: var(--white);
+  box-shadow: 0 0 5px var(--shadow);
 }
 
 .github-icon.shrink {
@@ -48,10 +39,16 @@
 }
 
 .app-title.shrink {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   display: flex;
   flex-wrap: wrap;
 
   text-transform: uppercase;
+}
+
+.box {
+  border: 2px solid var(--shadow);
+  width: 128px;
+  height: 128px;
 }

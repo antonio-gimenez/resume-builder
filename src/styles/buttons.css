@@ -1,4 +1,13 @@
 :root {
+  --button-padding: 0.5rem 1rem;
+  --button-background: hsla(0, 0, 0, 0%);
+  --button-font-size: 1rem;
+  --button-line-height: normal;
+  --button-radius: 0.25rem;
+  --button-clr-text: var(--clr-text-dark);
+  --button-border-clr: hsl(0, 0%, 0%);
+  --button-border: 2px solid var(--button-border-clr);
+  --button-border-transparent: 2px solid transparent;
 }
 
 button {
@@ -12,55 +21,65 @@ button {
 
 .button {
   position: relative;
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: var(--button-font-size);
+  line-height: var(--button-line-height);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   appearance: none;
+  overflow: hidden;
   outline: none;
   white-space: nowrap;
   text-align: center;
-  padding: 16px 24px;
-  border-radius: 0.25rem;
-  transition: background-color 0.1s ease 0s, color 0.1s ease 0s, box-shadow 0.1s ease 0s;
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
+  background-color: var(--button-background);
+  transition: background 0.1s ease 0s, color 0.1s ease 0s, box-shadow 0.1s ease 0s;
   cursor: pointer;
-  border: 1px solid var(--shadow);
+  border: var(--button-border);
+  color: var(--button-clr-text);
   user-select: none;
   pointer-events: auto;
-  background-color: hsl(var(--clr-accent));
-  color: rgb(30, 37, 50);
+}
+
+/* if button doesn't container color */
+.button:hover:not(.red):not(.blue) {
+  background-color: var(--button-border-clr);
+  color: var(--clr-text-light);
+}
+
+.button.large {
+  --button-padding: 0.55rem 1.15rem;
+  --button-font-size: 1.15rem;
+  --button-line-height: 1.15;
 }
 
 .button.borderless {
-  border: none;
-}
-.button:hover {
-  color: var(--blue-darkest);
-  border-color: var(--blue-dark);
+  --button-border: none;
+  --button-clr-text: var(--clr-accent);
 }
 
 .block {
   width: 100%;
 }
 
-/* .button.blue {
-  border-color: transparent;
-  background-color: var(--blue-darkest);
-  color: var(--white);
+.button.blue {
+  --button-border: var(--button-border-transparent);
+  --button-background: hsl(var(--blue), 45%);
+  --button-clr-text: var(--clr-text-light);
 }
 
 .button.blue:hover {
-  background-color: var(--blue-dark);
+  --button-background: hsl(var(--blue), 35%);
 }
 
 .button.red {
-  border-color: transparent;
-  background-color: var(--red-dark);
-  color: var(--white);
+  --button-border: var(--button-border-transparent);
+  --button-background: hsl(var(--red), 45%);
+  --button-clr-text: var(--clr-text-light);
 }
 
 .button.red:hover {
-  background-color: var(--red-darkest);
-} */
+  --button-background: hsl(var(--red), 35%);
+}

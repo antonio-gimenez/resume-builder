@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
-import Card, { CardActions, CardContent, CardHeader } from "../Card";
+import Card, { CardActions, CardContent, CardFooter, CardHeader } from "../Card";
 import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
 import { Button, Input } from "../ui";
 import Range from "../ui/Range";
@@ -33,8 +33,8 @@ function Skills() {
   return (
     <Card>
       <CardHeader>
-        <span className="heading-2">Skills</span>
-        <Button borderless onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
+        <h3>Skills</h3>
+        <Button color={"blue"} onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
           Add Skill
         </Button>
       </CardHeader>
@@ -61,7 +61,7 @@ function Skills() {
                 />
               </div>
               <CardActions>
-                <Button color={"red"} onClick={() => handleModal(skill.id)}>
+                <Button color={"red"} large onClick={() => handleModal(skill.id)}>
                   Delete
                 </Button>
                 <Modal open={isModalOpen[skill.id]}>
@@ -71,6 +71,7 @@ function Skills() {
                   </ModalContent>
                   <ModalActions>
                     <Button
+                      large
                       onClick={() => {
                         removeSkill(skill.id);
                         handleModal(skill.id);
@@ -78,7 +79,7 @@ function Skills() {
                     >
                       Confirm
                     </Button>
-                    <Button color={"blue"} block onClick={() => handleModal(skill.id)}>
+                    <Button color={"blue"} large onClick={() => handleModal(skill.id)}>
                       Cancel
                     </Button>
                   </ModalActions>
@@ -92,6 +93,11 @@ function Skills() {
           </div>
         )}
       </CardContent>
+      <CardFooter>
+        <Button color={"blue"} onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
+          Add Skill
+        </Button>
+      </CardFooter>
     </Card>
   );
 }

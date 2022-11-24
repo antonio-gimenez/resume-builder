@@ -33,8 +33,8 @@ function Languages() {
   return (
     <Card>
       <CardHeader>
-        <h2 className="heading-2">Languages</h2>
-        <Button borderless onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
+        <h3>Languages</h3>
+        <Button color={"blue"} onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
           Add Language
         </Button>
       </CardHeader>

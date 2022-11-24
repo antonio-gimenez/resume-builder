@@ -1,7 +1,7 @@
 import React from "react";
 
-function CollapseTitle() {
-  return <div>CollapseTitle</div>;
+function CollapseTitle({ children }) {
+  return <div className="collapse-title">{children}</div>;
 }
 
 export default CollapseTitle;

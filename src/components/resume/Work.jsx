@@ -48,9 +48,9 @@ function Work() {
   return (
     <Card>
       <CardHeader>
-        <div className="heading-2">Professional Experience</div>
+        <h3>Professional Experience</h3>
         <Button
-          borderless
+          color={"blue"}
           onClick={() =>
             updateProfessionalExperience({ id: nextId, position: "", from: "", to: "", company: "", description: "" })
           }

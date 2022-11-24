@@ -38,7 +38,7 @@ function Navbar() {
 
   return (
     <nav role="navigation" className="app-nav print-hide">
-      <h2 className="app-title">Resume builder</h2>
+      <h1 className="app-title">Resume builder</h1>
       <a
         role="button"
         target="_blank"

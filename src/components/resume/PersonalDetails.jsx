@@ -11,7 +11,9 @@ function PersonalDetails() {
 
   return (
     <Card>
-      <CardHeader>Personal Details</CardHeader>
+      <CardHeader>
+        <h3>Personal Details</h3>
+      </CardHeader>
       <CardContent>
         <Input
           placeholder={"ex: John"}

@@ -19,11 +19,11 @@
 *::after {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif;
 }
 
 body {
+  font-family: "Poppins", sans-serif;
+
   overflow: hidden;
 }
 
@@ -42,17 +42,18 @@ ul {
   background-color: hsl(var(--clr-neutral));
   flex-direction: column;
   height: 100vh;
-  width: 50vw;
+  width: fit-content;
 }
 
 .editor {
   margin: 0 auto;
-  width: 100%;
+  width: clamp(320px, 480px, 480px);
 }
 .scrollable-content {
   height: 100%;
-  width: 100%;
   margin: 0 auto;
+  width: clamp(320px, 100%, 480px);
+
   overflow: auto;
 }
 
@@ -87,7 +88,7 @@ ul {
 }
 
 .progress .bar {
-  background: var(--progress-bar, --clr-neutral);
+  background: hsl(var(--clr-accent));
   border-radius: 8px;
   height: var(--progress-height);
 }
@@ -125,10 +126,6 @@ ul {
   width: fit-content;
   width: auto;
   color: var(--label-color);
-}
-
-.text-muted {
-  color: var(--grey);
 }
 
 /* Symbols */

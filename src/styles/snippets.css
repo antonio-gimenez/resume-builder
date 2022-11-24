@@ -23,6 +23,10 @@
   justify-content: space-between;
 }
 
+.text-muted {
+  color: var(--clr-text-muted);
+}
+
 .gap {
   gap: 0.5rem;
 }

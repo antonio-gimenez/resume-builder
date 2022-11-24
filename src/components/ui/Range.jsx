@@ -5,7 +5,6 @@ function Range({ levelType = "skills", steps = 30, currentProgress = 5, handleCh
   const [progress, setProgress] = useState(currentProgress);
 
   const onChange = (e) => {
-    // check if e is an event object
     if (e.target) {
       const { value } = e.target;
       setProgress(value);
@@ -46,25 +45,6 @@ function Range({ levelType = "skills", steps = 30, currentProgress = 5, handleCh
       </div>
     </div>
   );
-  // return (
-  //   <div className={`level-container`}>
-  //     <label className="label" htmlFor="name">
-  //       Level - {findLabelProgress(progress, levelType)}
-  //     </label>
-  //     <div className={`level-selector ${props.disabled && "disabled"} level-${getLevelLabel()}`}>
-  //       {defaultLevels[levelType].map((level) => {
-  //         return (
-  //           <div
-  //             key={level.id}
-  //             className={isLevelSelected(level.min, level.max) ? `level-${getLevelLabel()}  level selected` : "level"}
-  //             onClick={() => onChange(level)}
-  //           />
-  //         );
-  //       })}
-  //       <div className="thumb" />
-  //     </div>
-  //   </div>
-  // );
 }
 
 export default Range;

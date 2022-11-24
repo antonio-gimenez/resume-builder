@@ -1,5 +1,4 @@
 :root {
-  /* --clr-accent: #3c5284; */
   --progress-height: 6px;
   --progress-bar: var(--clr-accent);
   --template-margins: 0px;
@@ -14,7 +13,6 @@
 }
 
 .template-0 {
-  --clr-accent: #3c5284;
   --progress-height: 6px;
   --progress-bar: var(--clr-accent);
   --template-margins: 0px;
@@ -29,7 +27,6 @@
 }
 
 .template-1 {
-  --clr-accent: #914843;
   --progress-height: 6px;
   --progress-bar: var(--clr-accent);
   --template-margins: 0px;

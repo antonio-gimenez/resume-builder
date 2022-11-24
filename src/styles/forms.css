@@ -187,7 +187,7 @@ textarea::placeholder {
   right: 0px;
   width: 100%;
   height: clamp(2px, 2px, 2px);
-  background-color: var(--primary);
+  background-color: hsl(var(--clr-accent));
   pointer-events: none;
   opacity: 0;
   transform: scaleX(0.5);
