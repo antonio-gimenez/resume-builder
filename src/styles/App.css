@@ -1,17 +1,19 @@
-@import url("./colors.css");
-@import url("./forms.css");
-@import url("./layouts.css");
-@import url("./buttons.css");
-@import url("./print.css");
-@import url("./snippets.css");
-@import url("./collapse.css");
-@import url("./navigation.css");
-@import url("./card.css");
-@import url("./templates.css");
+@import url("colors.css");
+@import url("forms.css");
+@import url("layouts.css");
+@import url("buttons.css");
+@import url("print.css");
+@import url("snippets.css");
+@import url("collapse.css");
+@import url("navigation.css");
+@import url("card.css");
+@import url("templates.css");
 @import url("level.css");
 @import url("modal.css");
+@import url("tabs.css");
 @import url("avatar.css");
 @import url("preview.css");
+
 @import url("mobile.css");
 
 *,
