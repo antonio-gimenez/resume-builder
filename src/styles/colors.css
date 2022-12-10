@@ -5,8 +5,13 @@
   --clr-complementary: 0, 0%, 100%;
   --clr-accent: 260 60% 45%;
 
+  /* Rule 60 30 10 */
+  --clr-primary: 220, 50%, 95%;
+  --clr-secondary: 220, 90%, 10%;
+  --clr-accent: 260 60% 45%;
+
   /* Basic colors */
-  --black: 0, 0%, 0%;
+  --black: 230, 20%, 20%;
   --white: 0, 0%, 100%;
   --grey: 180, 0%, 45%;
   --green: 100, 65%;
@@ -17,7 +22,7 @@
 
   /* Shadows and borders */
   --shadow: hsla(var(--black), 0.1);
-  --border: hsla(var(--black), 0.15);
+  --border: hsla(var(--white), 0.2);
 
   /* Typography */
   --clr-text-light: hsl(var(--white));
@@ -35,4 +40,7 @@
 
   --disabled-background: hsl(240, 10%, 95%);
   --disabled-color: hsl(240, 10%, 80%);
+
+  /* Header */
+  --header-height: 4rem;
 }

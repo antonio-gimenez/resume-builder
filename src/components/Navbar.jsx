@@ -11,28 +11,28 @@ const gitHubIcon = (
 function Navbar() {
   useEffect(() => {
     const mainContainer = document.querySelector(".scrollable-content");
-    function shrinkOnScroll() {
+    function fadeOnScroll() {
       const navbar = document.querySelector(".app-nav");
       const title = document.querySelector(".app-title");
       const githubIcon = document.querySelector(".github-icon");
       if (mainContainer.scrollTop > 0) {
         mainContainer.classList.add("scrolled");
-        navbar.classList.add("shrink");
-        title.classList.add("shrink");
-        githubIcon.classList.add("shrink");
+        navbar.classList.add("fade");
+        title.classList.add("fade");
+        githubIcon.classList.add("fade");
       } else {
         mainContainer.classList.remove("scrolled");
-        navbar.classList.remove("shrink");
-        title.classList.remove("shrink");
-        githubIcon.classList.remove("shrink");
+        navbar.classList.remove("fade");
+        title.classList.remove("fade");
+        githubIcon.classList.remove("fade");
       }
     }
     if (mainContainer.scrollTop > 0) {
-      shrinkOnScroll();
+      fadeOnScroll();
     }
-    mainContainer.addEventListener("scroll", shrinkOnScroll);
+    mainContainer.addEventListener("scroll", fadeOnScroll);
     return () => {
-      mainContainer.removeEventListener("scroll", shrinkOnScroll);
+      mainContainer.removeEventListener("scroll", fadeOnScroll);
     };
   }, []);
 
