@@ -5,7 +5,7 @@
 @import url("print.css");
 @import url("snippets.css");
 @import url("collapse.css");
-@import url("navigation.css");
+@import url("header.css");
 @import url("card.css");
 @import url("templates.css");
 @import url("level.css");
@@ -25,7 +25,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-
+  background: transparent;
   overflow: hidden;
 }
 
@@ -40,31 +40,20 @@ ul {
 }
 
 .app {
+  padding-top: var(--header-height);
   display: flex;
-  background-color: hsl(var(--clr-neutral));
   flex-direction: column;
+  background: hsl(var(--clr-secondary));
+
   height: 100vh;
-  width: fit-content;
+  width: 100vw;
 }
 
-.editor {
-  margin: 0 auto;
-  width: clamp(320px, 480px, 480px);
-}
 .scrollable-content {
   height: 100%;
-  margin: 0 auto;
-  width: clamp(320px, 100%, 480px);
 
   overflow: auto;
 }
-
-/* .grid-columns-2 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
-} */
 
 .scroll-decoration {
   position: absolute;
