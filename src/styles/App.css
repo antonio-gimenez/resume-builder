@@ -1,4 +1,5 @@
 @import url("colors.css");
+@import url("color-switcher.css");
 @import url("forms.css");
 @import url("layouts.css");
 @import url("buttons.css");
@@ -13,7 +14,6 @@
 @import url("tabs.css");
 @import url("avatar.css");
 @import url("preview.css");
-
 @import url("mobile.css");
 
 *,
@@ -21,6 +21,11 @@
 *::after {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -73,7 +78,7 @@ ul {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: var(--background-input);
+  background: var(--background-input);
   border-radius: 8px;
   height: 10px;
 }
@@ -89,7 +94,7 @@ ul {
 .title {
   font-weight: 600;
   /* color: #334; */
-  color: var(--grey);
+  color: var(--clr-text-title);
   text-transform: uppercase;
   text-align: center;
   border-bottom: 1px solid var(--shadow);

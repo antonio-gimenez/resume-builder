@@ -5,17 +5,17 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: clamp(--header-height, --header-height, --header-height);
+  height: clamp(var(--header-height), var(--header-height), var(--header-height));
   width: 100%;
   transition: var(--smooth);
-  background: hsl(var(--clr-accent));
+  background: hsla(var(--dark), 0.8);
   backdrop-filter: blur(0px);
-  color: var(--clr-text-light);
-  fill: var(--clr-text-light);
+  color: var(--clr-text-title);
+  fill: var(--clr-text-title);
   display: flex;
   flex-wrap: wrap-reverse;
   flex-direction: row;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   line-height: 0;
   align-items: center;
   justify-content: space-between;
@@ -26,13 +26,9 @@
   display: flex;
   text-align: center;
 }
-.github-icon {
-  width: 40px;
-  height: 40px;
-}
+
 .app-nav.fade {
   background: hsla(var(--clr-secondary) 0.8);
-  box-shadow: 0 4px 30px var(--shadow);
+  box-shadow: 0 4px 30px hsla(var(--black), 0.15);
   backdrop-filter: blur(5px);
-  border-bottom: 1px solid var(--border);
 }

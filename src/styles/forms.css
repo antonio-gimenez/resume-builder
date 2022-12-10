@@ -67,7 +67,7 @@ input[type="range"]::-ms-thumb {
   border-color: transparent;
 }
 
-/* .range {
+.range {
   accent-color: var(--primary);
 }
 
@@ -79,7 +79,7 @@ input[type="range"]::-ms-thumb {
   background-color: var(--primary);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-} */
+}
 
 input:disabled,
 textarea:disabled {

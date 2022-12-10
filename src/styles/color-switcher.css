@@ -1,0 +1,75 @@
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.toggle-wrapper {
+  width: 8.125rem;
+  height: 4.063rem;
+  display: flex;
+  position: relative;
+  margin: 0 0.15rem;
+}
+
+.toggle {
+  height: 4.063rem;
+  width: 8.125rem;
+  background: hsla(var(--black), 0.15);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  position: relative;
+  transition: background var(--smooth);
+  cursor: pointer;
+}
+
+.toggle::before {
+  content: "";
+  display: block;
+  height: 2.563rem;
+  width: 2.563rem;
+  border-radius: 100%;
+  background: hsla(var(--white), 1);
+  position: absolute;
+  z-index: 2;
+  transform: translateX(0);
+  transition: transform 0.5s ease, background 0.5s ease;
+}
+
+.toggle.moon::before {
+  transform: translateX(4.063rem);
+}
+
+.toggle input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+
+.toggle .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 0.313rem;
+}
+
+.toggle .icons svg {
+  height: 1.875rem;
+  width: 1.875rem;
+  z-index: 0;
+}
+
+.sun {
+  fill: hsla(var(--orange), 55%, 1);
+  color: hsla(var(--orange), 55%, 1);
+}
+
+.moon {
+  fill: hsla(var(--blue), 55%, 1);
+  color: hsla(var(--blue), 55%, 1);
+}

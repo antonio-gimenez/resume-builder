@@ -46,7 +46,7 @@ button {
 /* if button doesn't container color */
 .button:hover:not(.red):not(.blue) {
   background-color: var(--button-border-clr);
-  color: var(--clr-text-light);
+  color: var(--clr-text);
 }
 
 .button.large {
@@ -67,7 +67,7 @@ button {
 .button.blue {
   --button-border: var(--button-border-transparent);
   --button-background: hsl(var(--blue), 45%);
-  --button-clr-text: var(--clr-text-light);
+  --button-clr-text: var(--clr-text);
 }
 
 .button.blue:hover {
@@ -77,7 +77,7 @@ button {
 .button.red {
   --button-border: var(--button-border-transparent);
   --button-background: hsl(var(--red), 45%);
-  --button-clr-text: var(--clr-text-light);
+  --button-clr-text: var(--clr-text);
 }
 
 .button.red:hover {

@@ -11,7 +11,8 @@
   --clr-accent: 260 60% 45%;
 
   /* Basic colors */
-  --black: 230, 20%, 20%;
+  --black: 0, 0%, 0%;
+  --dark: 0, 0%, 20%;
   --white: 0, 0%, 100%;
   --grey: 180, 0%, 45%;
   --green: 100, 65%;
@@ -25,8 +26,8 @@
   --border: hsla(var(--white), 0.2);
 
   /* Typography */
-  --clr-text-light: hsl(var(--white));
-  --clr-text-dark: hsl(var(--black));
+  --clr-text: hsl(var(--black));
+  --clr-text-title: hsl(var(--white));
   --clr-text-muted: hsl(var(--grey));
 
   /* Transition */
@@ -43,4 +44,28 @@
 
   /* Header */
   --header-height: 4rem;
+}
+
+/* Color scheme toggle */
+.app[data-theme="dark"] {
+  --clr-text: hsl(var(--white));
+  --clr-text-title: hsl(var(--black));
+}
+
+.app[data-theme="light"] {
+  --clr-text: hsl(var(--black));
+  --clr-text-title: hsl(var(--white));
+}
+/* if color scheme is dark change clr-text */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-text: hsl(var(--white));
+    --clr-text-title: hsl(var(--black));
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --clr-text: hsl(var(--black));
+    --clr-text-title: hsl(var(--white));
+  }
 }
