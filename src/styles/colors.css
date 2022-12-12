@@ -12,7 +12,6 @@
 
   /* Basic colors */
   --black: 0, 0%, 0%;
-  --dark: 0, 0%, 20%;
   --white: 0, 0%, 100%;
   --grey: 180, 0%, 45%;
   --green: 100, 65%;
@@ -20,6 +19,10 @@
   --red: 340, 60%;
   --blue: 220, 90%;
   --violet: 260, 90%;
+
+  /* Dark light */
+  --dark: 0, 0%, 20%;
+  --light: 0, 0%, 85%;
 
   /* Shadows and borders */
   --shadow: hsla(var(--black), 0.1);
@@ -33,6 +36,9 @@
   /* Transition */
   --smooth: all 0.5s 0s ease;
 
+  /* App */
+  --app-background: hsl(var(--light));
+  --oposite-color: hsl(var(--dark));
   --paper-background: rgb(244, 244, 244);
   --background-input: #eff2f9;
   --color-placeholder: rgb(159, 166, 187);
@@ -48,16 +54,19 @@
 
 /* Color scheme toggle */
 .app[data-theme="dark"] {
+  --app-background: var(--dark);
   --clr-text: hsl(var(--white));
-  --clr-text-title: hsl(var(--black));
+  --clr-text-title: hsl(var(--white));
 }
 
 .app[data-theme="light"] {
+  --app-background: var(--light);
   --clr-text: hsl(var(--black));
-  --clr-text-title: hsl(var(--white));
+  --clr-text-title: hsl(var(--black));
+  /* --dark: 0, 0%, 96%; */
 }
 /* if color scheme is dark change clr-text */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --clr-text: hsl(var(--white));
     --clr-text-title: hsl(var(--black));
@@ -68,4 +77,4 @@
     --clr-text: hsl(var(--black));
     --clr-text-title: hsl(var(--white));
   }
-}
+} */

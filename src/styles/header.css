@@ -8,7 +8,8 @@
   height: clamp(var(--header-height), var(--header-height), var(--header-height));
   width: 100%;
   transition: var(--smooth);
-  background: hsla(var(--dark), 0.8);
+  background: hsl(var(--app-background));
+  box-shadow: 0 4px 30px var(--shadow);
   backdrop-filter: blur(0px);
   color: var(--clr-text-title);
   fill: var(--clr-text-title);
@@ -27,8 +28,15 @@
   text-align: center;
 }
 
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .app-nav.fade {
-  background: hsla(var(--clr-secondary) 0.8);
+  /* background: hsla(var(--clr-secondary) 0.8); */
   box-shadow: 0 4px 30px hsla(var(--black), 0.15);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px) !important;
 }

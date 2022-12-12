@@ -31,15 +31,17 @@ function Header() {
   return (
     <nav role="navigation" className="app-nav print-hide">
       <h1 className="app-title">Resume builder</h1>
-      <a
-        role="button"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/antonio-gimenez/resume-generator"
-      >
-        <GitHubIcon className="github-icon" />
-      </a>
-      <ColorSwitcher />
+      <div className="nav-right">
+        <a
+          role="button"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/antonio-gimenez/resume-generator"
+        >
+          <GitHubIcon className="github-icon" />
+        </a>
+        <ColorSwitcher />
+      </div>
     </nav>
   );
 }

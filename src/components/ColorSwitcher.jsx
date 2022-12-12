@@ -10,17 +10,17 @@ function ColorSwitcher() {
     setColorScheme(newColorScheme);
   }
 
-  const isEnabled = colorScheme === "dark";
+  const isEnabledDark = colorScheme === "dark";
 
   return (
     <label className="toggle-wrapper" htmlFor="toggle">
-      <div className={`toggle ${isEnabled ? "moon" : "sun"}`}>
-        <span className="hidden">{isEnabled ? "Enable Light Mode" : "Enable Dark Mode"}</span>
+      <div className={`toggle`}>
+        <span className="hidden">{isEnabledDark ? "Enable Light Mode" : "Enable Dark Mode"}</span>
         <div className="icons">
-          <SunIcon className="sun" />
-          <MoonIcon className="moon" />
+          <SunIcon className={`sun ${isEnabledDark ? "" : "enabled"}`} />
+          <MoonIcon className={`moon ${isEnabledDark ? "enabled" : ""}`} />
         </div>
-        <input id="toggle" name="toggle" type="checkbox" checked={isEnabled} onChange={toggleColorScheme} />
+        <input id="toggle" name="toggle" type="checkbox" checked={isEnabledDark} onChange={toggleColorScheme} />
       </div>
     </label>
   );
