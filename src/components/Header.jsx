@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import ColorSwitcher from "./ColorSwitcher";
+import DarkModeSwitcher from "./DarkModeSwitcher";
 import { ReactComponent as GitHubIcon } from "../assets/github.svg";
 // @ts-check
 function Header() {
@@ -31,7 +31,7 @@ function Header() {
   return (
     <nav role="navigation" className="app-nav print-hide">
       <h1 className="app-title">Resume builder</h1>
-      <ColorSwitcher />
+      <DarkModeSwitcher />
       <a
         role="button"
         target="_blank"

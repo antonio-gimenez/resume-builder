@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import useLocalStorage from "./useLocalStorage";
 
 function useColorScheme() {
-  const [colorScheme, setColorScheme] = useLocalStorage("prefers-color-scheme");
+  const [colorScheme, setColorScheme] = useLocalStorage("color-scheme");
 
   useEffect(() => {
     // if a color scheme is not set, use the browser's default

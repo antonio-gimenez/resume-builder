@@ -2,7 +2,7 @@ import React from "react";
 import useColorScheme from "../hooks/useColorScheme";
 import { ReactComponent as MoonIcon } from "../assets/moon.svg";
 import { ReactComponent as SunIcon } from "../assets/sun.svg";
-function ColorSwitcher() {
+function DarkModeSwitcher() {
   const { colorScheme, setColorScheme } = useColorScheme();
 
   function toggleColorScheme() {
@@ -13,14 +13,20 @@ function ColorSwitcher() {
   const isEnabledDark = colorScheme === "dark";
 
   return (
-    <label className="toggle-wrapper" htmlFor="toggle">
-      <div className={`toggle`}>
-        <span className="hidden">{isEnabledDark ? "Enable Light Mode" : "Enable Dark Mode"}</span>
-        <div className="icons">{isEnabledDark ? <MoonIcon className="moon" /> : <SunIcon className="sun" />}</div>
-        <input id="toggle" name="toggle" type="checkbox" checked={isEnabledDark} onChange={toggleColorScheme} />
+    <label className="switcher" htmlFor="theme-switcher">
+      <div className="switcher-input">
+        <span className={isEnabledDark ? "darkmode" : "lightmode"}>Auto complete</span>
+        <input
+          type="checkbox"
+          id="theme-switcher"
+          checked={isEnabledDark}
+          onChange={toggleColorScheme}
+          className="dark-input"
+        />
+        <span className="slider" />
       </div>
     </label>
   );
 }
 
-export default ColorSwitcher;
+export default DarkModeSwitcher;

@@ -5,10 +5,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: clamp(var(--header-height), var(--header-height), var(--header-height));
+  height: clamp(24px, var(--header-height), 3rem);
   width: 100%;
   transition: var(--smooth);
-  background: hsl(var(--app-background));
+  background: var(--bg-header);
   box-shadow: 0 4px 30px var(--shadow);
   backdrop-filter: blur(0px);
   color: var(--clr-text-title);
@@ -35,15 +35,4 @@
   margin-left: 0 !important;
   margin-right: 0;
   justify-content: center;
-}
-
-.github-icon {
-  margin-left: auto;
-  margin-right: 0.5rem;
-}
-
-.app-nav.fade {
-  /* background: hsla(var(--clr-secondary) 0.8); */
-  box-shadow: 0 4px 30px hsla(var(--black), 0.15);
-  backdrop-filter: blur(10px) !important;
 }
