@@ -31,6 +31,7 @@ function Header() {
   return (
     <nav role="navigation" className="app-nav print-hide">
       <h1 className="app-title">Resume builder</h1>
+      <ColorSwitcher />
       <a
         role="button"
         target="_blank"
@@ -39,7 +40,6 @@ function Header() {
       >
         <GitHubIcon className="github-icon" />
       </a>
-      <ColorSwitcher />
     </nav>
   );
 }
