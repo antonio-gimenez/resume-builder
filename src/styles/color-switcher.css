@@ -9,39 +9,19 @@
 }
 
 .toggle-wrapper {
-  width: 8.125rem;
-  height: 4.063rem;
   display: flex;
   position: relative;
-  margin: 0 0.15rem;
 }
 
 .toggle {
   height: 4.063rem;
-  width: 8.125rem;
-  background: hsla(var(--black), 0.35);
-  border-radius: 0.75rem;
+  background: hsla(var(--clr-text-light), 0.9);
+  border-radius: 0.5rem;
   padding: 0.75rem;
   position: relative;
   transition: background var(--smooth);
   cursor: pointer;
 }
-
-/* .toggle::before {
-  content: "";
-  display: block;
-  height: 2.563rem;
-  width: 2.563rem;
-  border-radius: 100%;
-  z-index: 5;
-  position: absolute;
-  transform: translateX(0);
-  transition: transform 0.5s ease, background 0.5s ease;
-}
-
-.toggle.moon::before {
-  transform: translateX(4.063rem);
-} */
 
 .toggle input {
   opacity: 0;
@@ -54,40 +34,22 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  margin: 0 0.313rem;
 }
 
-.toggle .icons svg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 1.875rem;
-  width: 1.875rem;
-  z-index: 0;
+.toggle:hover {
+  background: hsla(var(--black), 0.09);
 }
 
 .sun {
-  transform: rotate(0deg);
-  fill: hsla(var(--light), 0.9);
-  color: hsla(var(--light), 0.9);
-  transition: transform 0.5s ease;
+  /* stroke */
+
+  fill: hsla(var(--dark), 0.9);
+  color: hsla(var(--dark), 0.9);
+  transition: color 0.5s ease;
 }
 
 .moon {
-  transform: rotate(0deg);
-  fill: hsla(var(--dark), 0.9);
-  color: hsla(var(--dark), 0.9);
-  transition: transform 0.5s ease;
-}
-
-.sun.enabled {
-  transform: rotate(180deg);
-  fill: hsla(var(--orange), 65%, 1);
-  color: hsla(var(--orange), 65%, 1);
-}
-
-.moon.enabled {
-  transform: rotate(90deg);
-  fill: hsla(var(--blue), 55%, 1);
-  color: hsla(var(--blue), 55%, 1);
+  fill: hsla(var(--white), 55%, 1);
+  color: hsla(var(--white), 55%, 1);
+  transition: color 0.5s ease;
 }

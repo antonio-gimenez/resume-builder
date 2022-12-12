@@ -16,10 +16,7 @@ function ColorSwitcher() {
     <label className="toggle-wrapper" htmlFor="toggle">
       <div className={`toggle`}>
         <span className="hidden">{isEnabledDark ? "Enable Light Mode" : "Enable Dark Mode"}</span>
-        <div className="icons">
-          <SunIcon className={`sun ${isEnabledDark ? "" : "enabled"}`} />
-          <MoonIcon className={`moon ${isEnabledDark ? "enabled" : ""}`} />
-        </div>
+        <div className="icons">{isEnabledDark ? <MoonIcon className="moon" /> : <SunIcon className="sun" />}</div>
         <input id="toggle" name="toggle" type="checkbox" checked={isEnabledDark} onChange={toggleColorScheme} />
       </div>
     </label>
