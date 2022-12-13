@@ -1,57 +1,177 @@
-.switcher {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
+:root {
+  --clr-moon: #749ed7;
+  --clr-sun: #ffcf96;
+  --clr-day-sky: linear-gradient(
+    90deg,
+    hsl(190, 70%, 80%) 0%,
+    hsl(200, 70%, 80%) 25%,
+    hsl(210, 70%, 80%) 50%,
+    hsl(215, 70%, 80%) 75%,
+    hsl(220, 70%, 80%) 100%
+  );
+  --clr-night-sky: linear-gradient(to right, hsl(253, 25%, 15%) 0%, hsl(247, 84%, 17%) 100%);
+  --width-toggle: calc(var(--header-height) * 1.5);
+  --height-toggle: calc(var(--header-height) / 1.5);
+  --sun-moon-position: calc(var(--width-toggle) - var(--sun-moon-size) - 0.5rem);
+  --star-size-1: 1px;
+  --star-size-2: 2px;
+  --crater-size-1: 4px;
+  --crater-size-2: 6px;
+  --sun-moon-size: calc(var(--height-toggle) - 0.25rem);
 }
 
-.switcher-input {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  cursor: pointer;
-}
-
-.switcher-input + .darkmode {
-  background: red;
-}
-
-.switcher-input + .lightmode {
-  background: blue;
-}
-
-.dark-input {
-  display: none;
+.switch-theme-container input {
   position: absolute;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  border-radius: 0.375rem;
-  appearance: none;
+  top: 0;
+  left: 0;
+  width: auto;
+  visibility: hidden;
 }
-
-.slider {
-  display: flex;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  background-color: #d1d5db;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  flex-shrink: 0;
-  align-items: center;
-  width: 2.5rem;
-  height: 0.5rem;
-  border-radius: 9999px;
+.toggle {
   cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: var(--width-toggle);
+  height: var(--height-toggle);
+  background: var(--clr-day-sky);
+  border-radius: 100rem;
+  transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-/* if dark input is checked */
-.dark-input:checked + .slider {
-  background-color: blue;
-  transform: translateX(1.25rem);
+.satellite {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  top: 0.1rem;
+  left: 0.2rem;
+  width: var(--sun-moon-size);
+  height: var(--sun-moon-size);
+  background-color: var(--clr-sun);
+  border-radius: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: rotate(-45deg);
 }
-.dark-input:checked + .slider::after {
-  background-color: white;
-  transform: translateX(0.25rem);
+
+.satellite .crater {
+  position: absolute;
+  background-color: #e8cda5;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  border-radius: 100%;
+}
+.satellite .crater-1 {
+  width: var(--crater-size-2);
+  height: var(--crater-size-2);
+}
+.satellite .crater-2 {
+  top: 28px;
+  left: 22px;
+  width: var(--crater-size-1);
+  height: var(--crater-size-1);
+}
+.satellite .crater-3 {
+  top: 10px;
+  left: 25px;
+  width: var(--crater-size-1);
+  height: var(--crater-size-1);
+}
+.star {
+  position: absolute;
+  background-color: #fff;
+  transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  border-radius: 100%;
+}
+
+.cloud {
+  top: 0.85rem;
+  left: 1.5rem;
+  width: 2.5rem;
+  height: 1rem;
+  z-index: 3;
+  background: #eceff1;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+}
+
+.cloud:after,
+.cloud:before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.cloud::after {
+  width: 1rem;
+  height: 1rem;
+  top: -50%;
+  left: -25%;
+  z-index: 4;
+}
+.cloud::before {
+  width: 1.2rem;
+  height: 1.2rem;
+  top: -50%;
+  left: 40%;
+  z-index: 2;
+}
+
+input:checked + .toggle {
+  background: var(--clr-night-sky);
+}
+input:checked + .toggle:before {
+  color: hsl(var(--dark));
+  display: none;
+}
+input:checked + .toggle:after {
+  color: hsl(var(--light));
+  display: block;
+}
+input:checked + .toggle .satellite {
+  background-color: #ffe5b5;
+  transform: translate3d(var(--sun-moon-position), 0, 0) rotate(0);
+}
+
+input:checked + .toggle .star.cloud {
+  display: none;
+}
+
+input:checked + .toggle .satellite .crater-1 {
+  top: 0.5rem;
+  left: 0.75rem;
+  width: var(--crater-size-2);
+  height: var(--crater-size-2);
+}
+input:checked + .toggle .satellite .crater {
+  opacity: 1;
+}
+input:checked + .toggle .star-1 {
+  width: var(--star-size-2);
+  height: var(--star-size-2);
+  top: 0.5rem;
+  left: 0.75rem;
+}
+input:checked + .toggle .star-2 {
+  width: var(--star-size-1);
+  height: var(--star-size-1);
+  top: 1rem;
+  left: 2.5rem;
+  transform: translate3d(-5px, 0, 0);
+}
+input:checked + .toggle .star-3 {
+  width: 2px;
+  height: 2px;
+  top: 1.5rem;
+  left: 1.5rem;
+  transform: translate3d(-7px, 0, 0);
+}
+
+input:checked + .toggle .star-4 {
+  width: var(--star-size-1);
+  height: var(--star-size-1);
+  top: 2.2rem;
+  left: 2rem;
+  transform: translate3d(-5px, 0, 0);
 }

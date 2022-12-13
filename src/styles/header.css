@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: clamp(24px, var(--header-height), 3rem);
+  height: clamp(var(--header-height), var(--header-height), var(--header-height));
   width: 100%;
   transition: var(--smooth);
   background: var(--bg-header);
@@ -35,4 +35,10 @@
   margin-left: 0 !important;
   margin-right: 0;
   justify-content: center;
+}
+
+.github-icon {
+  margin-left: 0.5rem;
+  height: calc(var(--header-height) - 1rem);
+  width: auto;
 }

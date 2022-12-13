@@ -50,7 +50,7 @@
   --clr-disabled: hsl(240, 10%, 80%);
 
   /* Header */
-  --header-height: 3rem;
+  --header-height: clamp(3rem, 10vw, 4rem);
 }
 
 /* Color scheme toggle */
