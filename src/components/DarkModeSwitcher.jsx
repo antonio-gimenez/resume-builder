@@ -14,16 +14,14 @@ function DarkModeSwitcher() {
     <div className="switch-theme-container">
       <input type="checkbox" className="dn" id="dn" onChange={toggleColorScheme} checked={isEnabledDark} />
       <label for="dn" className="toggle">
-        <span className="satellite">
-          <span className="crater crater-1" />
-          <span className="crater crater-2" />
-          <span className="crater crater-3" />
-        </span>
-        <div className="star cloud" />
-        <span className="star star-1" />
-        <span className="star star-2" />
-        <span className="star star-3" />
-        <span className="star star-4" />
+        <div className="satellite">
+          <div className="craters" />
+        </div>
+        <span className="cloud" />
+        <div className="stars">
+          <span />
+          <span />
+        </div>
       </label>
     </div>
   );

@@ -25,13 +25,14 @@
 
 html {
   /* font-size: 62.5%; */
+  /* font-size: 18px; */
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
+  font-size: 16px;
   background: transparent;
-  overflow: hidden;
 }
 
 .sr-only {
@@ -77,9 +78,9 @@ ul {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: linear-gradient(to bottom, transparent, var(--shadow));
+  background: linear-gradient(to bottom, transparent, var(--red));
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 4rem;
   pointer-events: none;
   z-index: 1;

@@ -1,23 +1,25 @@
 :root {
-  --clr-moon: #749ed7;
-  --clr-sun: #ffcf96;
-  --clr-day-sky: linear-gradient(
-    90deg,
-    hsl(190, 70%, 80%) 0%,
-    hsl(200, 70%, 80%) 25%,
-    hsl(210, 70%, 80%) 50%,
-    hsl(215, 70%, 80%) 75%,
-    hsl(220, 70%, 80%) 100%
-  );
-  --clr-night-sky: linear-gradient(to right, hsl(253, 25%, 15%) 0%, hsl(247, 84%, 17%) 100%);
-  --width-toggle: calc(var(--header-height) * 1.5);
-  --height-toggle: calc(var(--header-height) / 1.5);
-  --sun-moon-position: calc(var(--width-toggle) - var(--sun-moon-size) - 0.5rem);
+  --clr-moon: hsl(60, 100%, 95%);
+  --clr-sun: hsl(58, 90%, 55%);
+  --clr-cloud: hsl(205, 15%, 95%);
+  --clr-star: hsla(0, 0%, 100%, 0.95);
+  /* --clr-crater: hsl(60, 0%, 87%); */
+  --clr-crater: hsla(0, 0%, 50%, 0.1);
+  --clr-crater-border: hsla(0, 0%, 0%, 0.1);
+  --clr-sky-day: linear-gradient(to right, hsl(198, 78%, 86%), hsl(205, 85%, 90%));
+  --clr-sky-night: linear-gradient(to right, hsl(230, 45%, 25%) 0%, hsl(245, 25%, 20%) 100%);
+  --border-container: hsla(200, 50%, 50%);
+  --toggle-size-x: calc(var(--header-height) * 1.75);
+  --toggle-size-y: calc(var(--header-height) / 1.75);
+  /* --toggle-size-x: 150px; */
+  /* --toggle-size-y: 64px; */
   --star-size-1: 1px;
-  --star-size-2: 2px;
+  --star-size-2: 3px;
   --crater-size-1: 4px;
   --crater-size-2: 6px;
-  --sun-moon-size: calc(var(--height-toggle) - 0.25rem);
+  --clr-satellite-border: hsl(38, 77%, 58%);
+  --satellite-size: var(--toggle-size-y);
+  --satellite-position: calc(var(--toggle-size-x) - var(--satellite-size));
 }
 
 .switch-theme-container input {
@@ -29,149 +31,202 @@
 }
 .toggle {
   cursor: pointer;
+  overflow: hidden;
   display: inline-block;
   position: relative;
-  width: var(--width-toggle);
-  height: var(--height-toggle);
-  background: var(--clr-day-sky);
+  width: var(--toggle-size-x);
+  height: var(--toggle-size-y);
+  background: var(--clr-sky-day);
   border-radius: 100rem;
+  box-shadow: 0 0 0 2px var(--border-container);
   transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .satellite {
+  overflow: hidden;
   display: inline-block;
   position: relative;
   z-index: 1;
-  top: 0.1rem;
-  left: 0.2rem;
-  width: var(--sun-moon-size);
-  height: var(--sun-moon-size);
+  top: calc(var(--toggle-size-x) * 0);
+  left: calc(var(--toggle-size-x) * 0);
+  width: var(--satellite-size);
+  height: var(--satellite-size);
+  border-width: 2px;
+  border-color: var(--clr-satellite-border);
+  border-style: solid;
   background-color: var(--clr-sun);
   border-radius: 100%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); */
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform: rotate(-45deg);
 }
 
-.satellite .crater {
-  position: absolute;
-  background-color: #e8cda5;
+.craters {
+  position: relative;
   opacity: 0;
-  transition: opacity 200ms ease-in-out;
-  border-radius: 100%;
+  top: calc(var(--satellite-size) * 0.1);
+  left: calc(var(--satellite-size) * 0.5);
+  width: calc(var(--satellite-size) * 0.25);
+  height: calc(var(--satellite-size) * 0.25);
 }
-.satellite .crater-1 {
-  width: var(--crater-size-2);
-  height: var(--crater-size-2);
+
+.craters,
+.craters::before,
+.craters::after {
+  position: relative;
+  display: block;
+  background-color: var(--clr-crater);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 0 1px inset var(--clr-crater-border);
+  transition: all 0.3s ease-in-out;
 }
-.satellite .crater-2 {
-  top: 28px;
-  left: 22px;
-  width: var(--crater-size-1);
-  height: var(--crater-size-1);
-}
-.satellite .crater-3 {
-  top: 10px;
-  left: 25px;
-  width: var(--crater-size-1);
-  height: var(--crater-size-1);
-}
-.star {
+
+.craters::before {
   position: absolute;
-  background-color: #fff;
+  width: calc(var(--satellite-size) * 0.15);
+  height: calc(var(--satellite-size) * 0.15);
+  top: calc(var(--satellite-size) * 0.02);
+  left: calc(var(--satellite-size) * -0.4);
+}
+
+.craters::after {
+  position: absolute;
+  width: calc(var(--satellite-size) * 0.15);
+  height: calc(var(--satellite-size) * 0.15);
+  top: calc(var(--satellite-size) * 0.5);
+  left: calc(var(--satellite-size) * 0.25);
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  z-index: 0;
   transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  border-radius: 100%;
 }
 
 .cloud {
-  top: 0.85rem;
-  left: 1.5rem;
-  width: 2.5rem;
-  height: 1rem;
+  position: relative;
+  display: block;
+  top: calc(var(--toggle-size-y) * -0.35);
+  height: calc(var(--satellite-size) / 3.5);
+  width: calc(var(--satellite-size) / 1);
   z-index: 3;
-  background: #eceff1;
+  background: var(--clr-cloud);
   box-shadow: 1px 1px rgba(0, 0, 0, 0.15);
-  border-radius: 100px;
+  border-radius: 6.25rem;
+  translate: 0.5rem;
+  animation: cloud 6s linear infinite;
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(var(--toggle-size-x));
+  }
 }
 
 .cloud:after,
 .cloud:before {
   content: "";
-  position: relative;
+  position: absolute;
   display: inline-block;
   background: inherit;
   border-radius: inherit;
 }
 
 .cloud::after {
-  width: 1rem;
-  height: 1rem;
-  top: -50%;
-  left: -25%;
-  z-index: 4;
+  top: calc(var(--satellite-size) * -0.15);
+  left: calc(var(--satellite-size) * 0.25);
+  height: calc(var(--satellite-size) / 3.5);
+  width: calc(var(--satellite-size) / 3.5);
+  z-index: 1;
 }
 .cloud::before {
-  width: 1.2rem;
-  height: 1.2rem;
-  top: -50%;
-  left: 40%;
+  top: calc(var(--satellite-size) * -0.25);
+  right: calc(var(--satellite-size) * 0.15);
+  height: calc(var(--satellite-size) / 2.5);
+  width: calc(var(--satellite-size) / 2.5);
   z-index: 2;
 }
 
 input:checked + .toggle {
-  background: var(--clr-night-sky);
+  --border-container: hsl(220, 65%, 55%);
 }
-input:checked + .toggle:before {
-  color: hsl(var(--dark));
-  display: none;
-}
-input:checked + .toggle:after {
-  color: hsl(var(--light));
-  display: block;
+
+input:checked + .toggle .stars {
+  background: var(--clr-sky-night);
+  opacity: 1;
 }
 input:checked + .toggle .satellite {
-  background-color: #ffe5b5;
-  transform: translate3d(var(--sun-moon-position), 0, 0) rotate(0);
+  background-color: var(--clr-moon);
+  --clr-satellite-border: hsl(0, 0%, 60%);
+  /* left: calc(var(--toggle-size-x) - 1rem); */
+  transform: translateX(calc(var(--toggle-size-x) - var(--satellite-size))) rotate(0);
+}
+input:checked + .toggle .craters {
+  opacity: 1;
 }
 
-input:checked + .toggle .star.cloud {
+input:checked + .toggle .cloud {
   display: none;
 }
 
-input:checked + .toggle .satellite .crater-1 {
-  top: 0.5rem;
-  left: 0.75rem;
-  width: var(--crater-size-2);
-  height: var(--crater-size-2);
-}
 input:checked + .toggle .satellite .crater {
   opacity: 1;
 }
-input:checked + .toggle .star-1 {
-  width: var(--star-size-2);
-  height: var(--star-size-2);
-  top: 0.5rem;
-  left: 0.75rem;
-}
-input:checked + .toggle .star-2 {
-  width: var(--star-size-1);
-  height: var(--star-size-1);
-  top: 1rem;
-  left: 2.5rem;
-  transform: translate3d(-5px, 0, 0);
-}
-input:checked + .toggle .star-3 {
-  width: 2px;
-  height: 2px;
-  top: 1.5rem;
-  left: 1.5rem;
-  transform: translate3d(-7px, 0, 0);
+
+.stars span,
+.stars span::before,
+.stars span::after {
+  position: absolute;
+  display: block;
+  background: var(--clr-star);
+  border-radius: 50%;
+  content: "";
 }
 
-input:checked + .toggle .star-4 {
+.stars span:nth-child(1) {
+  top: 65%;
+  left: 15%;
+  width: var(--star-size-2);
+  height: var(--star-size-2);
+}
+.stars span:nth-child(2) {
+  top: 60%;
+  left: 35%;
   width: var(--star-size-1);
   height: var(--star-size-1);
-  top: 2.2rem;
-  left: 2rem;
-  transform: translate3d(-5px, 0, 0);
+}
+
+.stars span:nth-child(1)::before {
+  bottom: 0.625em;
+  left: 0.25em;
+  width: var(--star-size-1);
+  height: var(--star-size-1);
+}
+.stars span:nth-child(2)::before {
+  bottom: 0.625em;
+  left: 0.25em;
+  width: var(--star-size-2);
+  height: var(--star-size-2);
+}
+.stars span:nth-child(1)::after {
+  bottom: 0.938em;
+  left: -0.063em;
+  width: var(--star-size-1);
+  height: var(--star-size-1);
+}
+
+.stars span:nth-child(2)::after {
+  bottom: 0.938em;
+  left: -0.033em;
+  width: var(--star-size-1);
+  height: var(--star-size-1);
 }
