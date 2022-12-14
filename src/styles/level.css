@@ -11,7 +11,7 @@
 
   flex-direction: column;
   width: clamp(48px, 100%, 250px);
-  height: clamp(48px, 100%, 250px);
+  height: clamp(64px, 100%, 250px);
 }
 
 .level-selector {
