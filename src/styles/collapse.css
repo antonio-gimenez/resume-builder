@@ -2,13 +2,13 @@
 .collapse-container:not(:last-child) {
   margin-bottom: 0.5rem;
   border-radius: 0;
-  border-bottom: 2px dotted var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .collapse-container {
   display: flex;
   flex-direction: column;
-  padding: 0.15rem;
+  padding: 0.5rem 0;
   width: 100%;
   border-radius: 0.5rem;
   user-select: none;
@@ -29,7 +29,6 @@
 }
 
 .collapse-content {
-  /* background: var(--bg-collapse); */
   display: flex;
   position: relative;
   flex-direction: column;
