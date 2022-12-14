@@ -8,7 +8,7 @@
 .collapse-container {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 0rem;
+  padding: 0.15rem;
   width: 100%;
   border-radius: 0.5rem;
   user-select: none;
@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-self: start;
+  align-items: center;
   color: var(--clr-text);
   width: 100%;
   font-weight: 600;
