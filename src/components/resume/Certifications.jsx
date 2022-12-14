@@ -32,7 +32,7 @@ function Certifications() {
   return (
     <Card>
       <CardHeader>
-        <h3>Certifications</h3>
+        <h5>Certifications</h5>
         <Button color={"blue"} onClick={() => updateCertificate({ id: nextId, name: "" })}>
           Add Certification
         </Button>

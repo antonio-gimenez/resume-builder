@@ -33,7 +33,7 @@ function Skills() {
   return (
     <Card>
       <CardHeader>
-        <h3>Skills</h3>
+        <h5>Skills</h5>
         <Button color={"blue"} onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
           Add Skill
         </Button>

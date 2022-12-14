@@ -35,7 +35,7 @@ function Education() {
   return (
     <Card>
       <CardHeader>
-        <h3>Education</h3>
+        <h5>Education</h5>
         <Button color={"blue"} onClick={() => updateEducation({ id: nextId, name: "" })}>
           Add Education
         </Button>

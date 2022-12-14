@@ -16,7 +16,7 @@ function Page() {
           </div>
         </header>
 
-        <h4 className="preview-title">Profile</h4>
+        <h5 className="preview-title">Profile</h5>
         <div className=" wrap-text flex flex-column">
           <a href={`mailto:${profile.email}`}> {profile.email}</a>
           <span>{profile.phone}</span>
@@ -29,7 +29,7 @@ function Page() {
 
         {skills.length > 0 && (
           <>
-            <h4 className="preview-title">Skills</h4>
+            <h5 className="preview-title">Skills</h5>
             {skills.map((skill) => (
               <div key={skill.id} className="flex flex-column items-center">
                 <span>{skill.name}</span>
@@ -40,7 +40,7 @@ function Page() {
         )}
         {languages.length > 0 && (
           <>
-            <h4 className="preview-title">Languages</h4>
+            <h5 className="preview-title">Languages</h5>
             <div className="">
               {languages.map((lang) => (
                 <div key={lang.id} className="flex flex-column items-center">

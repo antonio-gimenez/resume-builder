@@ -29,7 +29,7 @@
 .level-selector.disabled {
   cursor: not-allowed;
   pointer-events: none;
-  background: var(--background-disabled);
+  background: var(--bg-disabled);
   --selected-thumb: var(--clr-disabled);
 }
 

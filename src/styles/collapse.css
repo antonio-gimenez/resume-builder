@@ -2,7 +2,7 @@
 .collapse-container:not(:last-child) {
   margin-bottom: 0.5rem;
   border-radius: 0;
-  /* border-bottom: 1px solid var(--border); */
+  border-bottom: 2px dotted var(--border);
 }
 
 .collapse-container {
@@ -24,8 +24,12 @@
   font-weight: 600;
 }
 
+.titlew {
+  font-size: small;
+}
+
 .collapse-content {
-  background: var(--bg-collapse);
+  /* background: var(--bg-collapse); */
   display: flex;
   position: relative;
   flex-direction: column;

@@ -21,6 +21,7 @@
   --dark: 0, 0%, 30%;
   --light: 0, 0%, 90%;
   --grey: 220, 10%, 45%;
+  --lightgrey: hsl(0, 0%, 27%);
 
   /* Shadows and borders */
   --shadow: hsla(var(--black), 0.1);
@@ -35,16 +36,18 @@
 
   --bg-input: 222, 22%, 90%;
 
+  --header-bg: 226 26% 90%;
+
   --smooth: all 0.5s 0s ease;
 
   --paper-background: rgb(244, 244, 244);
   --clr-placeholder: rgb(159, 166, 187);
   --clr-label: rgb(130, 139, 162);
 
-  --background-disabled: hsl(240, 10%, 95%);
+  --bg-disabled: hsl(240, 10%, 95%);
   --clr-disabled: hsl(240, 10%, 80%);
 
-  --header-height: clamp(4vh, 5vh, 8vh);
+  --header-height: clamp(2.5rem, 3rem, 3.5rem);
 }
 
 /* Color scheme toggle */
@@ -63,10 +66,11 @@
 
 .app[data-theme="light"] {
   --bg-app: hsl(var(--white));
-  --bg-header: hsl(var(--bg-input));
+  --bg-header: hsl(var(--header-bg));
+  --bg-input: hsl(222, 40%, 87%);
   --bg-collapse: hsla(var(--white));
-  --clr-text: #333333;
-  --border: hsla(var(--dark), 0.2);
+  --clr-text: hsla(var(--lightgrey), 1);
+  --border: hsla(var(--dark), 0.1);
 }
 /* if color scheme is dark change clr-text */
 /* @media (prefers-color-scheme: dark) {

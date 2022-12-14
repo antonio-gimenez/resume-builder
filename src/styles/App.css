@@ -13,7 +13,6 @@
 @import url("tabs.css");
 @import url("avatar.css");
 @import url("preview.css");
-@import url("toolbar.css");
 @import url("mobile.css");
 
 *,
@@ -57,8 +56,13 @@ ul {
   margin: 0;
 }
 
+h5 {
+  font-weight: 600;
+}
+
 .text-muted {
   color: var(--clr-text-muted);
+  font-size: small;
 }
 
 .container > * {

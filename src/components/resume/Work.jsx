@@ -48,7 +48,7 @@ function Work() {
   return (
     <Card>
       <CardHeader>
-        <h3>Professional Experience</h3>
+        <h5>Experience</h5>
         <Button
           color={"blue"}
           onClick={() =>

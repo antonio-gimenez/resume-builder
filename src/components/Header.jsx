@@ -30,7 +30,7 @@ function Header() {
 
   return (
     <nav role="navigation" className="app-nav print-hide">
-      <h4 className="app-title">Resume builder</h4>
+      <h5 className="app-title">Resume builder</h5>
       <DarkModeSwitcher />
       <a
         role="button"
