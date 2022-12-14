@@ -2,10 +2,8 @@
   padding: 1rem 0.75rem;
   display: grid;
   align-items: stretch;
-  justify-items: stretch;
-  grid-auto-flow: row dense;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: auto;
+  justify-content: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 0.5rem;
 }
 
@@ -13,7 +11,6 @@
   overflow: hidden;
   background-color: var(--bg-header);
   border-radius: 0.75rem;
-
   height: fit-content;
   width: clamp(200px, 100%, 480px);
 }
@@ -23,15 +20,25 @@
 }
 
 .card-header {
-  padding: 0.25rem 0.75rem;
+  padding: 1rem 1.2rem;
   color: var(--clr-text);
-  width: auto;
-  border-bottom: 2px solid var(--shadow);
+  font-size: var(--fs-large);
+  font-weight: 300;
+  box-shadow: 0 -0.2rem 0rem inset var(--shadow);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   text-transform: uppercase;
   justify-content: space-between;
+}
+
+.card-header .card-title {
+  font-size: var(--fs-large);
+  font-weight: var(--ff-medium);
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-transform: none;
 }
 
 .card-content {

@@ -33,7 +33,7 @@ function Languages() {
   return (
     <Card>
       <CardHeader>
-        <h5>Languages</h5>
+        <h2 className="card-title">Languages</h2>
         <Button color={"blue"} onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
           Add Language
         </Button>

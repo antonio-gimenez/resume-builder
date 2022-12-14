@@ -1,4 +1,4 @@
-:root {
+html {
   --selected-background: hsl(0, 0%, 100%);
   --selected-thumb: hsl(0, 0%, 100%);
   --selected-thumb-hover: hsl(0, 0%, 100%);

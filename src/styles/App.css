@@ -1,4 +1,5 @@
 @import url("_variables.css");
+@import url("fonts.css");
 @import url("color-switcher.css");
 @import url("forms.css");
 @import url("layouts.css");
@@ -10,7 +11,6 @@
 @import url("templates.css");
 @import url("level.css");
 @import url("modal.css");
-@import url("tabs.css");
 @import url("avatar.css");
 @import url("preview.css");
 @import url("mobile.css");
@@ -23,19 +23,19 @@
 }
 
 html {
-  /* font-size: 62.5%; */
-  font-size: 18px;
-  scroll-behavior: smooth;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -o-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  /*
+  This sets the base font size to 10px, which makes it easier to work with rems.
+  The important thing to understand is that the html tag font-size need not be the same as the font-size on the body tag. 
+  */
+  font-size: 62.5%;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  scroll-behavior: smooth;
+  font-family: var(--ff-family);
+  font-weight: var(--ff-regular);
 }
 
 .sr-only {
@@ -56,13 +56,9 @@ ul {
   margin: 0;
 }
 
-h5 {
-  font-weight: 600;
-}
-
 .text-muted {
   color: var(--clr-text-muted);
-  font-size: small;
+  font-size: var(--fs-small);
 }
 
 .container > * {
@@ -119,16 +115,11 @@ h5 {
 }
 
 .label {
-  font-size: small;
-  font-weight: 500;
-  line-height: 1.2;
+  font-weight: var(--ff-light);
+  font-size: var(--fs-base);
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  width: auto;
   color: var(--clr-label);
 }
 

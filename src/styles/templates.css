@@ -1,4 +1,4 @@
-:root {
+html {
   --progress-height: 6px;
   --progress-bar: var(--clr-accent);
   --template-margins: 0px;
@@ -64,7 +64,6 @@
   padding: 0.15rem 0.25rem 0.15rem 0.25rem;
   background-color: var(--shadow);
   font-style: italic;
-  font-size: 14px;
 }
 
 .color-sample-square {

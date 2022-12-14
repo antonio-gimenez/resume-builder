@@ -1,47 +1,21 @@
 import React from "react";
-import { useEffect } from "react";
-import DarkModeSwitcher from "./DarkModeSwitcher";
-import { ReactComponent as GitHubIcon } from "../assets/github.svg";
-// @ts-check
+import ThemeSwitcher from "./ThemeSwitcher";
 function Header() {
-  useEffect(() => {
-    const mainContainer = document.querySelector(".scrollable-content");
-    function fadeOnScroll() {
-      const navbar = document.querySelector(".app-nav");
-      const title = document.querySelector(".app-title");
-      if (mainContainer.scrollTop > 0) {
-        mainContainer.classList.add("scrolled");
-        navbar.classList.add("fade");
-        title.classList.add("fade");
-      } else {
-        mainContainer.classList.remove("scrolled");
-        navbar.classList.remove("fade");
-        title.classList.remove("fade");
-      }
-    }
-    if (mainContainer.scrollTop > 0) {
-      fadeOnScroll();
-    }
-    mainContainer.addEventListener("scroll", fadeOnScroll);
-    return () => {
-      mainContainer.removeEventListener("scroll", fadeOnScroll);
-    };
-  }, []);
-
   return (
-    <nav role="navigation" className="app-nav print-hide">
-      <h5 className="app-title">Resume builder</h5>
-      <DarkModeSwitcher />
-      <a
-        role="button"
-        aria-label="View repository on GitHub"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/antonio-gimenez/resume-generator"
-      >
-        <GitHubIcon className="github-icon" />
-      </a>
-    </nav>
+    <header className="header">
+      <div className="navbar">
+        <span className="navbar-branding">Resume builder</span>
+        <a
+          aria-label="View repository on GitHub"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/antonio-gimenez/resume-generator"
+        >
+          View on GitHub
+        </a>
+        <ThemeSwitcher />
+      </div>
+    </header>
   );
 }
 

@@ -1,6 +1,5 @@
 /* if there are more than 2 collapse-container add a separator */
 .collapse-container:not(:last-child) {
-  margin-bottom: 0.5rem;
   border-radius: 0;
   border-bottom: 1px solid var(--border);
 }
@@ -8,9 +7,9 @@
 .collapse-container {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 0.9rem;
+  padding: 1rem 1rem;
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 1.6rem;
   user-select: none;
 }
 
@@ -20,22 +19,18 @@
   justify-content: space-between;
   align-items: center;
   color: var(--clr-text);
+  font-size: var(--fs-base);
   width: 100%;
-  font-weight: 600;
-}
-
-.titlew {
-  font-size: small;
+  line-height: normal;
+  font-weight: var(--ff-regular);
 }
 
 .collapse-content {
   display: flex;
   position: relative;
   flex-direction: column;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  font-size: medium;
-  font-weight: 400;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .collapse-content.visible {

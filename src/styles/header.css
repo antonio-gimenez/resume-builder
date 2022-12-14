@@ -1,31 +1,29 @@
-.app-nav {
+.header {
   z-index: 1;
   overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
-  height: clamp(var(--header-height), var(--header-height), var(--header-height));
+  /* height: clamp(var(--header-height), var(--header-height), var(--header-height)); */
   width: 100%;
-  transition: var(--smooth);
   background: var(--bg-header);
   box-shadow: 0 0.25rem 1rem var(--shadow);
-  backdrop-filter: blur(0px);
   color: var(--clr-text);
   fill: var(--clr-text);
   display: flex;
-  /* flex-wrap: wrap; */
-  flex-direction: row;
-  padding: 0 1rem;
-  line-height: 0;
   align-items: center;
-  justify-content: space-between;
+  padding-block: 1rem;
 }
 
-.app-title {
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-branding {
   text-transform: uppercase;
-  font-size: clamp(1rem, 1.2rem, 1.4rem);
-  width: auto;
-  word-wrap: break-word;
+  font-size: var(--fs-xxl);
+  font-weight: var(--ff-bold);
 }
 
 .nav-right {

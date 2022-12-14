@@ -1,10 +1,11 @@
 import React from "react";
-import useColorScheme from "../../hooks/useColorScheme";
+import useTheme from "../../hooks/useTheme";
 
 function AppWrapper({ children, ...props }) {
-  const { colorScheme } = useColorScheme();
+  const { theme } = useTheme();
+
   return (
-    <div className="app" data-theme={colorScheme} {...props}>
+    <div className="app" data-theme={theme} {...props}>
       {children}
     </div>
   );

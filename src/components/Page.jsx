@@ -16,7 +16,7 @@ function Page() {
           </div>
         </header>
 
-        <h5 className="preview-title">Profile</h5>
+        <h2 className="preview-title">Profile</h2>
         <div className=" wrap-text flex flex-column">
           <a href={`mailto:${profile.email}`}> {profile.email}</a>
           <span>{profile.phone}</span>
@@ -29,7 +29,7 @@ function Page() {
 
         {skills.length > 0 && (
           <>
-            <h5 className="preview-title">Skills</h5>
+            <h2 className="preview-title">Skills</h2>
             {skills.map((skill) => (
               <div key={skill.id} className="flex flex-column items-center">
                 <span>{skill.name}</span>
@@ -40,7 +40,7 @@ function Page() {
         )}
         {languages.length > 0 && (
           <>
-            <h5 className="preview-title">Languages</h5>
+            <h2 className="preview-title">Languages</h2>
             <div className="">
               {languages.map((lang) => (
                 <div key={lang.id} className="flex flex-column items-center">
@@ -54,7 +54,7 @@ function Page() {
         {education.length > 0 && (
           <div className="section">
             <div className="section-header">
-              <h2 className="heading-2">Education</h2>
+              <-- className="heading-2">Education</-->
             </div>
             <div className="section-content">
               {education.map((edu) => (
@@ -74,7 +74,7 @@ function Page() {
         {certificates.length > 0 && (
           <div className="section">
             <div className="section-header">
-              <h2 className="heading-2">Certificates</h2>
+              <-- className="heading-2">Certificates</-->
             </div>
             <div className="section-content">
               {certificates.map((certificate) => (
@@ -89,7 +89,7 @@ function Page() {
         )}
         {professionalExperience.length > 0 && (
           <>
-            <h2 className="preview-title">Professional Experience</h2>
+            <-- className="preview-title">Professional Experience</-->
             {professionalExperience.map((exp) => (
               <div key={exp.id} className="container">
                 <span>{exp.company}</span>

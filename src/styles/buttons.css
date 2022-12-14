@@ -1,12 +1,13 @@
-:root {
-  --button-padding: 0.3rem 0.6rem;
+html {
+  --button-padding: 0.4rem 0.6rem;
   --button-background: hsl(0, 0%, 40%);
-  --button-font-size: 14px;
+  --button-font-size: clamp(1.2rem, 1.4rem, 1.6rem);
   --button-line-height: normal;
   --button-radius: 0.25rem;
   --button-clr-text: var(--clr-text-light);
   --button-border-clr: var(--button-background);
   --button-border: 2px solid transparent;
+  --button-weight: var(--ff-medium);
 }
 
 button {
@@ -22,7 +23,7 @@ button {
   position: relative;
   font-size: var(--button-font-size);
   line-height: var(--button-line-height);
-  font-weight: 600;
+  font-weight: var(--button-weight);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -45,12 +46,6 @@ button {
 .button:hover {
   --button-background: hsl(0, 0%, 30%);
   --button-border-clr: hsl(0, 0%, 30%);
-}
-
-.button.large {
-  --button-padding: 0.55rem 1.15rem;
-  --button-font-size: 1.15rem;
-  --button-line-height: 1.15;
 }
 
 .button.block {
