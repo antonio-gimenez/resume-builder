@@ -107,7 +107,7 @@ function useResume() {
 
   const updateLanguage = (lang) => {
     if (!languages) return;
-    lang.progress = parseInt(lang.progress) || 0;
+    lang.progress = parseInt(lang.progress) || 1;
     const existingLanguage = languages.find((language) => language.id === lang.id);
     if (existingLanguage) {
       const newLanguages = languages.map((language) => (language.id === lang.id ? lang : language));

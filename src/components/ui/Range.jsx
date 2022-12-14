@@ -3,7 +3,6 @@ import { defaultLevels, findLabelProgress } from "../../utils";
 
 function Range({ levelType = "skills", steps = 30, currentProgress = 5, handleChange, ...props }) {
   const [progress, setProgress] = useState(currentProgress);
-
   const onChange = (e) => {
     if (e.target) {
       const { value } = e.target;
@@ -29,7 +28,7 @@ function Range({ levelType = "skills", steps = 30, currentProgress = 5, handleCh
   return (
     <div className={`level-container`}>
       <label className="label" htmlFor="name">
-        Level - {findLabelProgress(progress, levelType)}
+        Level {"- " + findLabelProgress(progress, levelType)}
       </label>
       <div className={`level-selector ${props.disabled && "disabled"} level-${getLevelLabel()}`}>
         {defaultLevels[levelType].map((level) => {
