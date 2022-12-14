@@ -62,7 +62,7 @@ function Work() {
         {professionalExperience.length > 0 ? (
           professionalExperience.map((work) => (
             <Collapse key={work.id} open={!work.position || !work.company} title={workTitle(work)}>
-              <div className="flex-auto">
+              <div className="container">
                 <Input
                   id={work.id}
                   name="position"
@@ -137,7 +137,7 @@ function Work() {
             </Collapse>
           ))
         ) : (
-          <div className="flex-auto">
+          <div className="container">
             <p className="text-muted">No work experience added yet.</p>
           </div>
         )}

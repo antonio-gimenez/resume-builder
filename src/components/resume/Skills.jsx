@@ -42,7 +42,7 @@ function Skills() {
         {skills.length > 0 ? (
           skills.map((skill, index) => (
             <Collapse key={skill.id} open={!skill.name} title={skill.name || "(Not specified)"}>
-              <div className="flex-auto">
+              <div className="container">
                 <Input
                   id={skill.id}
                   label={`Proficency`}
@@ -61,7 +61,7 @@ function Skills() {
                 />
               </div>
               <CardActions>
-                <Button color={"red"} large onClick={() => handleModal(skill.id)}>
+                <Button color={"red"} onClick={() => handleModal(skill.id)}>
                   Delete
                 </Button>
                 <Modal open={isModalOpen[skill.id]}>
@@ -71,7 +71,6 @@ function Skills() {
                   </ModalContent>
                   <ModalActions>
                     <Button
-                      large
                       onClick={() => {
                         removeSkill(skill.id);
                         handleModal(skill.id);
@@ -79,7 +78,7 @@ function Skills() {
                     >
                       Confirm
                     </Button>
-                    <Button color={"blue"} large onClick={() => handleModal(skill.id)}>
+                    <Button color={"blue"} onClick={() => handleModal(skill.id)}>
                       Cancel
                     </Button>
                   </ModalActions>
@@ -88,16 +87,11 @@ function Skills() {
             </Collapse>
           ))
         ) : (
-          <div className="flex-auto">
+          <div className="container">
             <p className="text-muted">No skills added yet.</p>
           </div>
         )}
       </CardContent>
-      <CardFooter>
-        <Button color={"blue"} onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
-          Add Skill
-        </Button>
-      </CardFooter>
     </Card>
   );
 }

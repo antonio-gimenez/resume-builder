@@ -42,7 +42,7 @@ function Languages() {
         {languages.length > 0 ? (
           languages.map((lang) => (
             <Collapse key={lang.id} open={!lang.name} title={lang.name || "(Not specified)"}>
-              <div className="flex-auto">
+              <div className="container">
                 <Input
                   id={lang.id}
                   name="name"
@@ -71,6 +71,7 @@ function Languages() {
                   </ModalContent>
                   <ModalActions>
                     <Button
+                      color={"red"}
                       onClick={() => {
                         removeLanguage(lang.id);
                         handleModal(lang.id);
@@ -87,7 +88,7 @@ function Languages() {
             </Collapse>
           ))
         ) : (
-          <div className="flex-auto">
+          <div className="container">
             <p className="text-muted">No languages added yet.</p>
           </div>
         )}

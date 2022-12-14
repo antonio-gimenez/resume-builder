@@ -24,11 +24,15 @@
 .horizontal {
   flex-direction: row;
   flex: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
 .vertical {
   flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 

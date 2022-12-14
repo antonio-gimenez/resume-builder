@@ -31,17 +31,16 @@ function Header() {
   return (
     <nav role="navigation" className="app-nav print-hide">
       <h1 className="app-title">Resume builder</h1>
-      {/* <div className="flex items-center"> */}
       <DarkModeSwitcher />
-      {/* <a
-          role="button"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/antonio-gimenez/resume-generator"
-        >
-          <GitHubIcon className="github-icon" />
-        </a> */}
-      {/* </div> */}
+      <a
+        role="button"
+        aria-label="View repository on GitHub"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/antonio-gimenez/resume-generator"
+      >
+        <GitHubIcon className="github-icon" />
+      </a>
     </nav>
   );
 }

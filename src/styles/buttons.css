@@ -1,13 +1,12 @@
 :root {
-  --button-padding: 0.5rem 1rem;
-  --button-background: hsla(0, 0, 0, 0%);
-  --button-font-size: 1rem;
+  --button-padding: 0.3rem 0.6rem;
+  --button-background: hsl(0, 0%, 40%);
+  --button-font-size: 14px;
   --button-line-height: normal;
   --button-radius: 0.25rem;
-  --button-clr-text: var(--clr-text-dark);
-  --button-border-clr: hsl(0, 0%, 0%);
-  --button-border: 2px solid var(--button-border-clr);
-  --button-border-transparent: 2px solid transparent;
+  --button-clr-text: var(--clr-text-light);
+  --button-border-clr: var(--button-background);
+  --button-border: 2px solid transparent;
 }
 
 button {
@@ -43,10 +42,9 @@ button {
   pointer-events: auto;
 }
 
-/* if button doesn't container color */
-.button:hover:not(.red):not(.blue) {
-  background-color: var(--button-border-clr);
-  color: var(--clr-text);
+.button:hover {
+  --button-background: hsl(0, 0%, 30%);
+  --button-border-clr: hsl(0, 0%, 30%);
 }
 
 .button.large {
@@ -55,19 +53,12 @@ button {
   --button-line-height: 1.15;
 }
 
-.button.borderless {
-  --button-border: none;
-  --button-clr-text: var(--clr-accent);
-}
-
-.block {
+.button.block {
   width: 100%;
 }
 
 .button.blue {
-  --button-border: var(--button-border-transparent);
   --button-background: hsl(var(--blue), 45%);
-  --button-clr-text: var(--clr-text);
 }
 
 .button.blue:hover {
@@ -75,9 +66,7 @@ button {
 }
 
 .button.red {
-  --button-border: var(--button-border-transparent);
   --button-background: hsl(var(--red), 45%);
-  --button-clr-text: var(--clr-text);
 }
 
 .button.red:hover {

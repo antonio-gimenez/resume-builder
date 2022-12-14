@@ -13,7 +13,7 @@ function DarkModeSwitcher() {
   return (
     <div className="switch-theme-container">
       <input type="checkbox" className="dn" id="dn" onChange={toggleColorScheme} checked={isEnabledDark} />
-      <label for="dn" className="toggle">
+      <label htmlFor="dn" className="toggle">
         <div className="satellite">
           <div className="craters" />
         </div>

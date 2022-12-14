@@ -58,7 +58,7 @@ function Page() {
             </div>
             <div className="section-content">
               {education.map((edu) => (
-                <div key={edu.id} className="flex flex-row space-between">
+                <div key={edu.id} className="container">
                   <span>{edu.institution}</span>
                   <span>{edu.name}</span>
                   <span>
@@ -72,40 +72,35 @@ function Page() {
         )}
 
         {certificates.length > 0 && (
-          <div className="flex-auto">
-            <div className="section">
-              <div className="section-header">
-                <h2 className="heading-2">Certificates</h2>
-              </div>
-              <div className="section-content">
-                {certificates.map((certificate) => (
-                  <div key={certificate.id} className="flex flex-row gap">
-                    <span>{certificate.name}</span>
-                    <span>{certificate.year}</span>
-                    <span>{certificate.issuer}</span>
-                  </div>
-                ))}
-              </div>
+          <div className="section">
+            <div className="section-header">
+              <h2 className="heading-2">Certificates</h2>
+            </div>
+            <div className="section-content">
+              {certificates.map((certificate) => (
+                <div key={certificate.id} className="container">
+                  <span>{certificate.name}</span>
+                  <span>{certificate.year}</span>
+                  <span>{certificate.issuer}</span>
+                </div>
+              ))}
             </div>
           </div>
         )}
-        <div className="grid-auto">
-          {professionalExperience.length > 0 && (
-            <>
-              <h2 className="preview-title">Professional Experience</h2>
-              {professionalExperience.map((exp) => (
-                <div key={exp.id} className="flex flex-row space-between">
-                  <span>{exp.company}</span>
-                  <span>{exp.position}</span>
-                  <span>{exp.from}</span>
-                  <span>{exp.to}</span>
-                  <span>{exp.description}</span>
-                </div>
-              ))}
-            </>
-          )}
-        </div>
-        {/* </div> */}
+        {professionalExperience.length > 0 && (
+          <>
+            <h2 className="preview-title">Professional Experience</h2>
+            {professionalExperience.map((exp) => (
+              <div key={exp.id} className="container">
+                <span>{exp.company}</span>
+                <span>{exp.position}</span>
+                <span>{exp.from}</span>
+                <span>{exp.to}</span>
+                <span>{exp.description}</span>
+              </div>
+            ))}
+          </>
+        )}
       </section>
     </page>
   );

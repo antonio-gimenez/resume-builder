@@ -4,9 +4,9 @@ import useColorScheme from "../../hooks/useColorScheme";
 function AppWrapper({ children, ...props }) {
   const { colorScheme } = useColorScheme();
   return (
-    <main className="app" data-theme={colorScheme} {...props}>
+    <div className="app" data-theme={colorScheme} {...props}>
       {children}
-    </main>
+    </div>
   );
 }
 

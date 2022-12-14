@@ -6,7 +6,7 @@ function Collapse({ children, title = "New Item", open = true, ...props }) {
 
   return (
     <div className="collapse-container" {...props} tabIndex={0}>
-      <button className="collapse-button" onClick={() => setOpen(!isOpen)}>
+      <button type={"button"} className="collapse-button" onClick={() => setOpen(!isOpen)}>
         <div className={`collapse-title`}>
           <span>{title}</span>
           <ChevronDownIcon className={`chevron ${isOpen ? "chevron-open" : "chevron-closed"}`} />

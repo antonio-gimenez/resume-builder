@@ -35,6 +35,7 @@ function Range({ levelType = "skills", steps = 30, currentProgress = 5, handleCh
         {defaultLevels[levelType].map((level) => {
           return (
             <span
+              id={level.id}
               key={level.id}
               className={isLevelSelected(level.min, level.max) ? `level-${getLevelLabel()}  level selected` : "level"}
               onClick={() => onChange(level)}

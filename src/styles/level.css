@@ -7,6 +7,8 @@
 
 .level-container {
   display: flex;
+  overflow: hidden;
+
   flex-direction: column;
   width: clamp(48px, 100%, 250px);
   height: clamp(48px, 100%, 250px);
@@ -17,8 +19,9 @@
   position: relative;
   overflow: hidden;
   height: 3rem;
-  border-radius: 0.25rem;
+  border-radius: 5px;
   transform: translateX(0px);
+  border: 1px solid var(--selected-thumb);
   background-color: var(--selected-background, var(--bg-input));
   pointer-events: auto;
 }
@@ -58,6 +61,7 @@
 }
 
 .thumb {
+  overflow: hidden;
   position: absolute;
   top: 0px;
   left: 0px;

@@ -3,10 +3,9 @@ import React from "react";
 function Button({
   as = "button",
   large = false,
-  color,
+  color = "default",
   type = "button",
   children,
-  borderless = false,
   block = false,
   ...props
 }) {
@@ -14,11 +13,10 @@ function Button({
   const buttonType = type ? type : "button";
   const buttonColor = color ? color : "";
   const buttonBlock = block ? "block" : "";
-  const buttonBorderless = borderless ? "borderless" : "";
   const buttonLarge = large ? "large" : "";
   if (as === "link") {
     return (
-      <a role="link" id={id} className={`button ${buttonColor} ${buttonBlock} ${buttonBorderless}`} {...props}>
+      <a role="link" aria-label={children} id={id} className={`button link  ${buttonBlock}`} {...props}>
         {children}
       </a>
     );
@@ -26,12 +24,7 @@ function Button({
 
   return (
     <div>
-      <button
-        type={buttonType}
-        id={id}
-        className={`button ${buttonBorderless} ${buttonLarge} ${buttonColor} ${buttonBlock}`}
-        {...props}
-      >
+      <button type={buttonType} id={id} className={`button ${buttonLarge} ${buttonColor} ${buttonBlock}`} {...props}>
         <span className="button-text">{children}</span>
       </button>
     </div>

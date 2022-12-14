@@ -1,0 +1,79 @@
+/* Variables */
+:root {
+  /* Palette */
+  --yankees-blue: 226, 26%, 20%;
+  --japanese-indigo: 222, 22%, 24%;
+  --clr-accent: 216, 100%, 45%;
+  --ghost-white: 210, 50%, 98%;
+  --lavender: 0, 0%, 96%;
+
+  /* Basic colors */
+  --black: 0, 0%, 0%;
+  --white: 0, 0%, 100%;
+  --green: 100, 65%;
+  --orange: 45, 80%;
+  --red: 340, 60%;
+  --blue: 220, 90%;
+  --violet: 260, 90%;
+  --yellow: 60, 90%;
+
+  /* Dark light */
+  --dark: 0, 0%, 30%;
+  --light: 0, 0%, 90%;
+  --grey: 220, 10%, 45%;
+
+  /* Shadows and borders */
+  --shadow: hsla(var(--black), 0.1);
+  --border: hsla(var(--white), 0.2);
+
+  /* Typography */
+  --clr-text: hsl(var(--black));
+  --clr-text-light: hsl(var(--light));
+  --clr-tex-dark: hsl(var(--dark));
+  --clr-text-muted: hsl(var(--grey));
+  --clr-text-muted-dark: hsla(var(--grey));
+
+  --bg-input: 222, 22%, 90%;
+
+  --smooth: all 0.5s 0s ease;
+
+  --paper-background: rgb(244, 244, 244);
+  --clr-placeholder: rgb(159, 166, 187);
+  --clr-label: rgb(130, 139, 162);
+
+  --background-disabled: hsl(240, 10%, 95%);
+  --clr-disabled: hsl(240, 10%, 80%);
+
+  --header-height: clamp(4rem, 4rem, 6rem);
+}
+
+/* Color scheme toggle */
+.app[data-theme="dark"] {
+  --bg-header: hsl(var(--yankees-blue));
+  --bg-app: hsl(var(--japanese-indigo));
+  --clr-text: hsla(var(--light), 0.95);
+  --clr-label: hsla(var(--light), 0.75);
+  --border: hsla(var(--light), 0.2);
+  --clr-accent: 216, 100%, 60%;
+  --bg-input: hsl(222, 22%, 34%);
+  --bg-collapse: hsla(var(--japanese-indigo));
+  --border: hsla(var(--light), 0.2);
+  --blue: 220, 70%;
+}
+
+.app[data-theme="light"] {
+  --bg-app: hsl(var(--white));
+  --bg-header: hsl(var(--bg-input));
+  --bg-collapse: hsla(var(--white));
+  --clr-text: #333333;
+  --border: hsla(var(--dark), 0.2);
+}
+/* if color scheme is dark change clr-text */
+/* @media (prefers-color-scheme: dark) {
+  .app {
+    --bg-header: hsl(var(--yankees-blue));
+    --bg-app: hsl(var(--japanese-indigo));
+    --clr-text: hsl(var(--white));
+  }
+}
+*/

@@ -51,3 +51,8 @@ export function checkType(component) {
   }
   return type;
 }
+
+export function stripNumber(value) {
+  console.log(`stripNumber: ${value}`);
+  return value.replace(/[^0-9]/g, "");
+}

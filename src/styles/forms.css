@@ -4,16 +4,14 @@
   display: flex;
   border-radius: 0.25rem;
   padding: 0.75rem 1rem;
-  width: clamp(100px, -webkit-fit-content, 100%);
-  width: clamp(100px, -moz-fit-content, 100%);
-  width: clamp(100px, fit-content, 100%);
+  width: clamp(100px, 100%, 100vw);
   height: 100%;
   line-height: normal;
   background-color: var(--bg-input, --white);
   outline: currentcolor none medium;
   border: 0px none;
   resize: vertical;
-  color: var(--grey);
+  color: var(--clr-text);
   transition: all 0.1s ease 0s;
 }
 
@@ -72,12 +70,14 @@ input[type="range"]::-ms-thumb {
 }
 
 .range::-webkit-slider-thumb {
+  -webkit-appearance: none;
   appearance: none;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
   background-color: var(--primary);
   cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
@@ -105,79 +105,103 @@ textarea:focus-within + .form-decoration {
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-size: small;
+  color: var(--clr-placeholder);
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  font-size: small;
+  color: var(--clr-placeholder);
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-size: small;
+  color: var(--clr-placeholder);
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  font-size: small;
+  color: var(--clr-placeholder);
 }
 
 input::placeholder,
 textarea::placeholder {
   font-size: small;
-  color: var(--color-placeholder);
+  color: var(--clr-placeholder);
 }
 
 .form-decoration {

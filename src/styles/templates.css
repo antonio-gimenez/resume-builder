@@ -45,6 +45,8 @@
   padding: var(--template-paddings, 0);
   margin: var(--template-margins, 0);
   display: grid;
+  display: -ms-grid;
+
   grid-template-columns: repeat(var(--template-body-columns, 1), 1fr);
   height: 100%;
   width: 100%;
@@ -74,9 +76,14 @@
 }
 
 .template-select-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   cursor: pointer;
   display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0.25rem;
   align-items: center;
@@ -102,6 +109,8 @@
 
 .template-section {
   display: grid;
+  display: -ms-grid;
+
   grid-template-columns: repeat(var(--template-section-columns, 1), 1fr);
   gap: 0.5rem;
   padding: 0.25rem;
@@ -116,6 +125,7 @@
   height: clamp(12px, 32px, 64px);
   border: 2px solid var(--paper-background);
   border-radius: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
