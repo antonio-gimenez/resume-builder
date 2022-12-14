@@ -44,7 +44,7 @@
   --background-disabled: hsl(240, 10%, 95%);
   --clr-disabled: hsl(240, 10%, 80%);
 
-  --header-height: clamp(4rem, 4rem, 6rem);
+  --header-height: clamp(4vh, 5vh, 8vh);
 }
 
 /* Color scheme toggle */

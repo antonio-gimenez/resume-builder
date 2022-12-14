@@ -13,9 +13,9 @@
   color: var(--clr-text);
   fill: var(--clr-text);
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   flex-direction: row;
-  padding: 0 2rem;
+  padding: 0 1rem;
   line-height: 0;
   align-items: center;
   justify-content: space-between;
@@ -23,8 +23,9 @@
 
 .app-title {
   text-transform: uppercase;
-  display: flex;
-  text-align: center;
+  font-size: clamp(1rem, 1.2rem, 1.4rem);
+  width: auto;
+  word-wrap: break-word;
 }
 
 .nav-right {
@@ -38,6 +39,6 @@
 
 .github-icon {
   margin-left: 0.5rem;
-  height: calc(var(--toggle-size-y));
+  height: calc(var(--toggle-size-y) * 1.05);
   width: auto;
 }
