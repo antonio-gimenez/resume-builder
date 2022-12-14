@@ -5,9 +5,9 @@ function useColorScheme() {
   const [colorScheme, setColorScheme] = useLocalStorage("color-scheme");
 
   useEffect(() => {
-    // if a color scheme is not set, use the browser's default
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mediaQuery.matches) return;
     if (!colorScheme) {
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
       const colorScheme = mediaQuery.matches ? "dark" : "light";
       setColorScheme(colorScheme);
     }
