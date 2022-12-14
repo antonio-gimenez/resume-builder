@@ -65,7 +65,7 @@
 }
 
 .app[data-theme="light"] {
-  --bg-app: hsl(220, 29%, 58%);
+  --bg-app: hsl(220, 29%, 85%);
   --bg-header: hsl(var(--header-bg));
   --bg-input: hsl(222, 40%, 87%);
   --bg-collapse: hsla(var(--white));

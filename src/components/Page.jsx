@@ -12,7 +12,7 @@ function Page() {
             <span className="template-header-title">
               {profile.firstName} {profile.lastName}
             </span>
-            {profile.avatar && <img className="template-avatar" src={profile.avatar} alt="avatar" />}
+            {profile.avatar && <img className="template-avatar" src={profile.avatar} alt="Your picture" />}
           </div>
         </header>
 

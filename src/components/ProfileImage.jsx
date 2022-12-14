@@ -38,7 +38,7 @@ function ProfileImage() {
         <input type="file" className="hide-input" id={"avatar"} accept="image/*" onChange={handleImageChange} />
 
         {image ? (
-          <img src={image} className={"profile-photo"} alt={"profile-photo"} />
+          <img src={image} className={"profile-photo"} alt={"You"} />
         ) : (
           <div className="placeholder">
             <div className="figure">64x64</div>
