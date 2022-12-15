@@ -1,5 +1,5 @@
 import React from "react";
-// import ThemeSwitcher from "./ThemeSwitcher";
+import ThemeSwitcher from "./ThemeSwitcher";
 function Header() {
   return (
     <header className="header">
@@ -16,7 +16,7 @@ function Header() {
             GitHub
           </a>
         </nav>
-        {/* <ThemeSwitcher /> */}
+        <ThemeSwitcher />
       </div>
     </header>
   );
