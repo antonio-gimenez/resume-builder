@@ -22,7 +22,7 @@
 .card-header {
   padding: var(--space-4);
   color: var(--clr-text);
-  font-size: var(--fs-regular);
+  font-size: var(--font-size-base);
   font-weight: 300;
 
   height: auto;

@@ -33,7 +33,7 @@
 
 .navbar-branding {
   text-transform: uppercase;
-  font-size: var(--fs-big);
+  font-size: var(--fs-huge);
   font-weight: var(--fw-bold);
 }
 

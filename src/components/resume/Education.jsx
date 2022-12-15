@@ -110,7 +110,7 @@ function Education() {
                     >
                       Confirm
                     </Button>
-                    <Button color={"blue"} block onClick={() => handleModal(education.id)}>
+                    <Button color={"blue"} onClick={() => handleModal(education.id)}>
                       Cancel
                     </Button>
                   </ModalActions>

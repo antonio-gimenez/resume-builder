@@ -71,7 +71,6 @@ function Languages() {
                   </ModalContent>
                   <ModalActions>
                     <Button
-                      color={"red"}
                       onClick={() => {
                         removeLanguage(lang.id);
                         handleModal(lang.id);
@@ -79,7 +78,7 @@ function Languages() {
                     >
                       Confirm
                     </Button>
-                    <Button color={"blue"} block onClick={() => handleModal(lang.id)}>
+                    <Button color={"blue"} onClick={() => handleModal(lang.id)}>
                       Cancel
                     </Button>
                   </ModalActions>

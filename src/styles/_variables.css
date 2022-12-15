@@ -1,18 +1,17 @@
 /* Variables */
 html {
   --ff-family: "Fira Sans", sans-serif;
-
   --fw-light: 300;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
-
-  --fs-small: clamp(1.15rem, 0.13vw + 1.1rem, 1.35rem);
-  --fs-regular: clamp(1.44rem, 0.24vw + 1.35rem, 1.8rem);
-  --fs-medium: clamp(1.8rem, 0.39vw + 1.64rem, 2.4rem);
-  --fs-large: clamp(2.25rem, 0.62vw + 2rem, 3.2rem);
-  --fs-big: clamp(2.81rem, 0.96vw + 2.43rem, 4.26rem);
+  --fs-small: clamp(0.9rem, 0.17vw + 0.76rem, 0.89rem);
+  --fs-regular: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --fs-medium: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --fs-large: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --fs-big: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --fs-huge: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 
   --space-0: 0;
   --space-1: 0.25rem;
@@ -62,10 +61,6 @@ html {
   --bg-disabled: hsl(240, 10%, 95%);
   --clr-disabled: hsl(240, 10%, 80%);
   --header-height: 4.5rem;
-
-  --font-family: "Fira Sansss", sans-serif;
-  --fw-body-regular: 400;
-  --fw-body-bold: 700;
 }
 
 /* Color scheme toggle */
@@ -74,13 +69,12 @@ html {
   --bg-header: hsl(var(--yankees-blue));
   --bg-app: hsl(var(--japanese-indigo));
   --clr-text: hsla(var(--light), 0.95);
-  --clr-label: hsla(var(--blue), 80%, 0.9);
+  --clr-label: hsla(var(--blue), 95%, 0.7);
   --border: hsla(var(--light), 0.2);
   --clr-accent: 216, 100%, 60%;
   --bg-input: hsl(222, 22%, 34%);
   --bg-collapse: hsla(var(--japanese-indigo));
   --border: hsla(var(--light), 0.2);
-  --blue: 220, 70%;
   --clr-placeholder: hsla(var(--light), 1);
 }
 
@@ -93,5 +87,6 @@ html {
   --bg-collapse: hsla(var(--white));
   --clr-text: hsla(var(--dark), 1);
   --border: hsla(var(--dark), 0.1);
-  --clr-label: #828ba2;
+  --clr-label: hsl(223, 15%, 57%);
+  --blue: 220, 60%;
 }

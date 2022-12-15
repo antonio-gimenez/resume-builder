@@ -16,7 +16,7 @@ function PersonalDetails() {
         <h2 className="card-title">Personal Details</h2>
       </CardHeader>
       <CardContent>
-        <div className="">
+        <form className="form-grid">
           <Input
             id="firstName"
             placeholder={"ex: John"}
@@ -33,8 +33,6 @@ function PersonalDetails() {
             onChange={(e) => updateProfile(e)}
             name="lastName"
           />
-          {/* <ProfileImage /> */}
-
           <Input
             id="email"
             placeholder={"ex: john@doe.com"}
@@ -68,14 +66,14 @@ function PersonalDetails() {
             onChange={(e) => updateProfile(e)}
             name="state"
           />
-          <TextArea
-            id="summary"
-            label={"Summary (optional)"}
-            value={profile.summary}
-            onChange={(e) => updateProfile(e)}
-            name="summary"
-          />
-        </div>
+        </form>
+        <TextArea
+          id="summary"
+          label={"Summary (optional)"}
+          value={profile.summary}
+          onChange={(e) => updateProfile(e)}
+          name="summary"
+        />
       </CardContent>
     </Card>
   );

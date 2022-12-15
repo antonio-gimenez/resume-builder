@@ -128,7 +128,7 @@ function Work() {
                     >
                       Confirm
                     </Button>
-                    <Button color={"blue"} block onClick={() => handleModal(work.id)}>
+                    <Button color={"blue"} onClick={() => handleModal(work.id)}>
                       Cancel
                     </Button>
                   </ModalActions>

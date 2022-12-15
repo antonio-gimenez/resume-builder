@@ -34,7 +34,7 @@ html {
 }
 
 body {
-  font-size: var(--fs-regular);
+  font-size: var(--fs-medium);
   line-height: var(--lh-base);
   scroll-behavior: smooth;
   font-family: var(--ff-family);
@@ -61,7 +61,6 @@ ul {
 
 .text-muted {
   color: var(--clr-text-muted);
-  font-size: var(--fs-small);
 }
 
 .container > * {

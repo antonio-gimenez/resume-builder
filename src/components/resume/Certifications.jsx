@@ -87,7 +87,7 @@ function Certifications() {
                     >
                       Confirm
                     </Button>
-                    <Button color={"blue"} block onClick={() => handleModal(certificate.id)}>
+                    <Button color={"blue"} onClick={() => handleModal(certificate.id)}>
                       Cancel
                     </Button>
                   </ModalActions>

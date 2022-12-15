@@ -26,7 +26,7 @@ function Range({ levelType = "skills", steps = 30, currentProgress = 5, handleCh
   }
 
   return (
-    <div className={`level-container`}>
+    <div className={`input-container level-container`}>
       <label className="label" htmlFor="name">
         Level {"- " + findLabelProgress(progress, levelType)}
       </label>

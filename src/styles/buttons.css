@@ -24,6 +24,11 @@ button {
   color: var(--button-clr-text);
 }
 
+.collapse-button {
+  padding: 0.5rem 0;
+  border-radius: 0.25rem;
+}
+
 .button {
   position: relative;
   font-size: var(--button-font-size);
