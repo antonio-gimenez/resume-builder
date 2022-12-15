@@ -2,10 +2,8 @@ import React from "react";
 import useResume from "../../hooks/useResume";
 import { CardContent, CardHeader } from "../Card";
 import Card from "../Card/Card";
-import Collapse from "../Collapse";
-import ProfileImage from "../ProfileImage";
 
-import { Button, Input, TextArea } from "../ui";
+import { Input, TextArea } from "../ui";
 
 function PersonalDetails() {
   const { profile, updateProfile } = useResume();

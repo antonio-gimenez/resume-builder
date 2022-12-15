@@ -6,7 +6,6 @@ import AppWrapper from "./components/layouts/AppWrapper";
 
 function App() {
   return (
-    // <>
     <AppWrapper>
       <Header />
       <div className="scrollable-content">
@@ -15,7 +14,6 @@ function App() {
         </div>
       </div>
     </AppWrapper>
-    // </>
   );
 }
 

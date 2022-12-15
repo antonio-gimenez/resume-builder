@@ -15,15 +15,15 @@ function useResume() {
     certificates,
     sectionTitles,
     customSettings,
-    sectionsOrder,
+    // sectionsOrder,
   } = resume;
 
-  const changeSectionsOrder = (section, index) => {
-    const newSectionsOrder = [...sectionsOrder];
-    newSectionsOrder.splice(index, 1);
-    newSectionsOrder.splice(section.index, 0, section.id);
-    setResume({ ...resume, sectionsOrder: newSectionsOrder });
-  };
+  // const changeSectionsOrder = (section, index) => {
+  //   const newSectionsOrder = [...sectionsOrder];
+  //   newSectionsOrder.splice(index, 1);
+  //   newSectionsOrder.splice(section.index, 0, section.id);
+  //   setResume({ ...resume, sectionsOrder: newSectionsOrder });
+  // };
 
   const updateProfile = (event) => {
     if (!event || !event.target) {

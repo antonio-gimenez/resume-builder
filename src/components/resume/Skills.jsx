@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
-import Card, { CardActions, CardContent, CardFooter, CardHeader } from "../Card";
+import Card, { CardActions, CardContent, CardHeader } from "../Card";
 import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
 import { Button, Input } from "../ui";
 import Range from "../ui/Range";
