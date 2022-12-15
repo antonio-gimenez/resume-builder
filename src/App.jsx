@@ -6,13 +6,16 @@ import AppWrapper from "./components/layouts/AppWrapper";
 
 function App() {
   return (
+    // <>
     <AppWrapper>
+      <Header />
       <div className="scrollable-content">
-        <Header />
-        <Editor />
-        <div className="scroll-decoration" />
+        <div className=" container">
+          <Editor />
+        </div>
       </div>
     </AppWrapper>
+    // </>
   );
 }
 

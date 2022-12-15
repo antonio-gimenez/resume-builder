@@ -1,0 +1,25 @@
+a.link {
+  text-decoration: none;
+  color: var(--clr-text);
+  font-size: var(--fs-regular);
+  border-bottom: 2px solid transparent;
+}
+
+a.link:hover {
+  border-bottom: 2px dotted var(--clr-text);
+}
+
+.card-title {
+  font-weight: var(--fw-medium);
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-transform: none;
+}
+
+.label {
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-regular);
+  display: block;
+  color: var(--clr-label);
+}

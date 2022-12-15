@@ -6,7 +6,7 @@ function Input({ label, ...props }) {
   const type = props.type || "text";
 
   return (
-    <div>
+    <div className="input-container">
       {label && (
         <label className="label" htmlFor={id}>
           {label}

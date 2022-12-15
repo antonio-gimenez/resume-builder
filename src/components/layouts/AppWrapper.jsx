@@ -5,9 +5,9 @@ function AppWrapper({ children, ...props }) {
   const { theme } = useTheme();
 
   return (
-    <div className="app" data-theme={theme} {...props}>
+    <main className="app" data-theme={theme} {...props}>
       {children}
-    </div>
+    </main>
   );
 }
 

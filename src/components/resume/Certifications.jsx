@@ -41,7 +41,7 @@ function Certifications() {
         {certificates.length > 0 ? (
           certificates.map((certificate) => (
             <Collapse key={certificate.id} open={!certificate.name} title={certificate.name || "(Not specified)"}>
-              <div className="container">
+              <div>
                 <Input
                   id={certificate.id}
                   name="name"
@@ -96,7 +96,7 @@ function Certifications() {
             </Collapse>
           ))
         ) : (
-          <div className="container">
+          <div>
             <p className="text-muted">No certifications added yet.</p>
           </div>
         )}

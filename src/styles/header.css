@@ -18,12 +18,23 @@
 .navbar {
   display: flex;
   align-items: center;
+  gap: 1.6rem;
+}
+
+.navbar nav {
+  white-space: nowrap;
+  flex: 1 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
 }
 
 .navbar-branding {
   text-transform: uppercase;
-  font-size: var(--fs-xxl);
-  font-weight: var(--ff-bold);
+  font-size: var(--fs-big);
+  font-weight: var(--fw-bold);
 }
 
 .nav-right {

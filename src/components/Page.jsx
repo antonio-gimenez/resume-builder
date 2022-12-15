@@ -58,7 +58,7 @@ function Page() {
             </div>
             <div className="section-content">
               {education.map((edu) => (
-                <div key={edu.id} className="container">
+                <div key={edu.id} >
                   <span>{edu.institution}</span>
                   <span>{edu.name}</span>
                   <span>
@@ -78,7 +78,7 @@ function Page() {
             </div>
             <div className="section-content">
               {certificates.map((certificate) => (
-                <div key={certificate.id} className="container">
+                <div key={certificate.id} >
                   <span>{certificate.name}</span>
                   <span>{certificate.year}</span>
                   <span>{certificate.issuer}</span>
@@ -91,7 +91,7 @@ function Page() {
           <>
             <-- className="preview-title">Professional Experience</-->
             {professionalExperience.map((exp) => (
-              <div key={exp.id} className="container">
+              <div key={exp.id} >
                 <span>{exp.company}</span>
                 <span>{exp.position}</span>
                 <span>{exp.from}</span>

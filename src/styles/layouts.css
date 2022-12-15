@@ -1,22 +1,11 @@
-.aside {
-  position: relative;
-  top: 0;
+html {
+  --container-max-width: 75rem;
+  --padding-x: 1rem;
 }
 
-.aside-nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  transition: cubic-bezier(0.4, 0, 0.2, 1) 1s;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding: 1.5em 1rem;
-  height: auto;
+.container {
+  max-width: calc(var(--container-max-width) + 2 * var(--padding-x));
   width: 100%;
-  line-height: 0;
+  margin-inline: auto;
+  padding-inline: var(--padding-x);
 }

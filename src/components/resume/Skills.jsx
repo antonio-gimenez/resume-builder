@@ -42,24 +42,22 @@ function Skills() {
         {skills.length > 0 ? (
           skills.map((skill, index) => (
             <Collapse key={skill.id} open={!skill.name} title={skill.name || "(Not specified)"}>
-              <div className="container">
-                <Input
-                  id={skill.id}
-                  label={`Proficency`}
-                  name="name"
-                  defaultValue={skill.name}
-                  placeholder="(e.g. React, JavaScript, etc.)"
-                  onChange={handleUpdateSkill}
-                />
-                <Range
-                  levelType="skills"
-                  disabled={!skill.name}
-                  id={skill.id}
-                  name={"progress"}
-                  currentProgress={skill.progress || 5}
-                  handleChange={handleUpdateSkill}
-                />
-              </div>
+              <Input
+                id={skill.id}
+                label={`Proficency`}
+                name="name"
+                defaultValue={skill.name}
+                placeholder="(e.g. React, JavaScript, etc.)"
+                onChange={handleUpdateSkill}
+              />
+              <Range
+                levelType="skills"
+                disabled={!skill.name}
+                id={skill.id}
+                name={"progress"}
+                currentProgress={skill.progress || 5}
+                handleChange={handleUpdateSkill}
+              />
               <CardActions>
                 <Button color={"red"} onClick={() => handleModal(skill.id)}>
                   Delete
@@ -87,7 +85,7 @@ function Skills() {
             </Collapse>
           ))
         ) : (
-          <div className="container">
+          <div>
             <p className="text-muted">No skills added yet.</p>
           </div>
         )}

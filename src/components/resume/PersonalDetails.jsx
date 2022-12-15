@@ -5,7 +5,7 @@ import Card from "../Card/Card";
 import Collapse from "../Collapse";
 import ProfileImage from "../ProfileImage";
 
-import { Input, TextArea } from "../ui";
+import { Button, Input, TextArea } from "../ui";
 
 function PersonalDetails() {
   const { profile, updateProfile } = useResume();
@@ -16,7 +16,7 @@ function PersonalDetails() {
         <h2 className="card-title">Personal Details</h2>
       </CardHeader>
       <CardContent>
-        <div className="container">
+        <div className="">
           <Input
             id="firstName"
             placeholder={"ex: John"}
@@ -33,7 +33,7 @@ function PersonalDetails() {
             onChange={(e) => updateProfile(e)}
             name="lastName"
           />
-          <ProfileImage />
+          {/* <ProfileImage /> */}
 
           <Input
             id="email"

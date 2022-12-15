@@ -19,17 +19,17 @@
   justify-content: space-between;
   align-items: center;
   color: var(--clr-text);
-  font-size: var(--fs-base);
+  font-size: var(--fs-regular);
   width: 100%;
   line-height: normal;
-  font-weight: var(--ff-regular);
+  font-weight: var(--fw-regular);
 }
 
 .collapse-content {
   display: flex;
   position: relative;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1rem 0;
   border-radius: 1rem;
 }
 

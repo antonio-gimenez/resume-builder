@@ -14,6 +14,7 @@
 @import url("avatar.css");
 @import url("preview.css");
 @import url("mobile.css");
+@import url("typography.css");
 
 *,
 *::before,
@@ -27,15 +28,17 @@ html {
   This sets the base font size to 10px, which makes it easier to work with rems.
   The important thing to understand is that the html tag font-size need not be the same as the font-size on the body tag. 
   */
+  color: var(--clr-text);
+
   font-size: 62.5%;
 }
 
 body {
-  font-size: var(--fs-base);
+  font-size: var(--fs-regular);
   line-height: var(--lh-base);
   scroll-behavior: smooth;
   font-family: var(--ff-family);
-  font-weight: var(--ff-regular);
+  font-weight: var(--fw-regular);
 }
 
 .sr-only {
@@ -72,16 +75,18 @@ ul {
 }
 
 .app {
-  padding-top: var(--header-height);
   display: flex;
   flex-direction: column;
-  background: var(--bg-app) !important;
+  padding-top: var(--header-height);
   height: 100vh;
   width: 100vw;
 }
 
 .scrollable-content {
+  padding-top: var(--header-height);
+
   height: 100%;
+  background: var(--bg-app);
   overflow: auto;
 }
 
@@ -112,15 +117,6 @@ ul {
   background: hsl(var(--clr-accent));
   border-radius: 8px;
   height: var(--progress-height);
-}
-
-.label {
-  font-weight: var(--ff-light);
-  font-size: var(--fs-base);
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0.5rem;
-  color: var(--clr-label);
 }
 
 /* Symbols */

@@ -42,7 +42,7 @@ function Languages() {
         {languages.length > 0 ? (
           languages.map((lang) => (
             <Collapse key={lang.id} open={!lang.name} title={lang.name || "(Not specified)"}>
-              <div className="container">
+              <div>
                 <Input
                   id={lang.id}
                   name="name"
@@ -88,7 +88,7 @@ function Languages() {
             </Collapse>
           ))
         ) : (
-          <div className="container">
+          <div>
             <p className="text-muted">No languages added yet.</p>
           </div>
         )}

@@ -3,24 +3,27 @@ html {
   --selected-thumb: hsl(0, 0%, 100%);
   --selected-thumb-hover: hsl(0, 0%, 100%);
   --position-thumb: 0%;
+  --level-width: 60px;
 }
 
 .level-container {
   display: flex;
-
   flex-direction: column;
-  width: clamp(220px, 250px, 300px);
-  height: auto;
+  width: calc(var(--level-width) * 4);
+  height: 100%;
 }
 
 .level-selector {
   display: flex;
+  padding: 0;
+  z-index: 1;
+
+  margin: 0;
   position: relative;
   overflow: hidden;
-  height: 3rem;
-  /* border-radius: 8px; */
+  height: calc(var(--level-width) / 1.2);
+  border-radius: 0.4rem;
   transform: translateX(0px);
-  border: 1px solid var(--selected-thumb);
   background-color: var(--selected-background, var(--bg-input));
   pointer-events: auto;
 }
@@ -38,8 +41,8 @@ html {
 
 .level {
   flex: 1;
-  min-width: 40px;
-  min-height: 40px;
+  width: var(--level-width);
+  height: calc(var(--level-width));
   position: relative;
 }
 
@@ -55,7 +58,7 @@ html {
 }
 
 .level:not(.selected):hover {
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   background: var(--selected-thumb-hover);
 }
 
@@ -63,9 +66,10 @@ html {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 25%;
-  height: 100%;
-  z-index: 1;
+  width: calc(var(--level-width));
+  height: calc(var(--level-width) / 1.2);
+  z-index: 0;
+  border-radius: 0.4rem;
   background-color: var(--selected-thumb);
   transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
   transform: translateX(var(--position-thumb));
@@ -82,19 +86,19 @@ html {
   --selected-background: hsl(var(--green), 85%);
   --selected-thumb: hsl(var(--green), 55%);
   --selected-thumb-hover: hsl(var(--green), 70%);
-  --position-thumb: 100%;
+  --position-thumb: calc(var(--level-width) * 1);
 }
 
 .level-3 {
   --selected-background: hsl(var(--blue), 85%);
   --selected-thumb: hsl(var(--blue), 55%);
   --selected-thumb-hover: hsl(var(--blue), 80%);
-  --position-thumb: 200%;
+  --position-thumb: calc(var(--level-width) * 2);
 }
 
 .level-4 {
   --selected-background: hsl(var(--violet), 85%);
   --selected-thumb: hsl(var(--violet), 55%);
   --selected-thumb-hover: hsl(var(--violet), 80%);
-  --position-thumb: 300%;
+  --position-thumb: calc(var(--level-width) * 3);
 }

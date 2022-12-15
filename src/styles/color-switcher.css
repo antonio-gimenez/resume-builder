@@ -19,7 +19,7 @@ html {
   --satellite-position: calc(var(--toggle-size-x) - var(--satellite-size));
 }
 
-.switch-theme-container input {
+#switch-theme {
   position: absolute;
   top: 0;
   left: 0;

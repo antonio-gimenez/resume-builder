@@ -32,31 +32,18 @@
   padding: 32px 40px;
 }
 
-.close-icon {
-  display: block;
-  width: 20px;
-  height: 20px;
-  fill: var(--black);
-}
-
-.close-icon:hover {
-  fill: var(--clr-accent);
-}
-
-.modal-close:hover {
-  color: rgb(255, 255, 255);
-}
-
 .modal-header {
   display: flex;
-  font-weight: 600;
-  font-size: 2.4rem;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-medium);
+  color: hsl(var(--black));
   justify-content: space-between;
   align-items: center;
 }
 
 .modal-content {
-  font-weight: 400;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-regular);
   z-index: 2;
   padding: 1rem 2rem;
 }
@@ -65,5 +52,5 @@
   display: flex;
   gap: 0.5rem;
   justify-content: flex-end;
-  padding: 0.25 0.5rem;
+  padding: 0.45rem 0.65rem;
 }

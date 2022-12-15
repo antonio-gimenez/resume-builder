@@ -1,25 +1,25 @@
 /* Variables */
 html {
   --ff-family: "Fira Sans", sans-serif;
-  --ff-light: 300;
-  --ff-regular: 400;
-  --ff-medium: 500;
-  --ff-semibold: 600;
-  --ff-bold: 700;
 
-  /* fs base */
-  /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
-  --fs-base: calc(1.4rem + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
-  /* To test */
-  /* --fs-base: clamp(1rem, 0.67vw + 0.85rem, 1.25rem); */
-  /* --fs-base: 1.4rem; */
-  --fs-small: clamp(calc(var(--fs-base) * 0.8), 0.67vw + 0.85rem, 1.25rem);
-  /* --fs-small: clamp(0.88rem, 0.67vw + 0.73rem, 1.13rem); */
-  --fs-large: clamp(1.38rem, 1.67vw + 1rem, 2rem);
-  --fs-xxl: clamp(1.63rem, 2.33vw + 1rem, 2.5rem);
-  --fs-xxxl: clamp(2rem, 3vw + 1rem, 3rem);
-  --fs-xxxxl: clamp(2.5rem, 3.67vw + 1rem, 3.75rem);
-  /* --fs-4xl: clamp(2.5rem, 6vw + 1.15rem, 4.75rem); */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-small: clamp(1.15rem, 0.13vw + 1.1rem, 1.35rem);
+  --fs-regular: clamp(1.44rem, 0.24vw + 1.35rem, 1.8rem);
+  --fs-medium: clamp(1.8rem, 0.39vw + 1.64rem, 2.4rem);
+  --fs-large: clamp(2.25rem, 0.62vw + 2rem, 3.2rem);
+  --fs-big: clamp(2.81rem, 0.96vw + 2.43rem, 4.26rem);
+
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 2rem;
 
   --lh-base: normal;
   /*  */
@@ -38,10 +38,11 @@ html {
   --violet: 260, 90%;
   --yellow: 60, 90%;
 
-  --dark: 0, 0%, 30%;
+  --dark: 0, 0%, 20%;
   --light: 0, 0%, 90%;
   --grey: 220, 10%, 45%;
-  --lightgrey: hsl(0, 0%, 27%);
+  --soft-dark: hsl(0, 0%, 25%);
+  --soft-light: hsl(0, 0%, 60%);
 
   --shadow: hsla(var(--black), 0.1);
   --border: hsla(var(--white), 0.2);
@@ -57,10 +58,10 @@ html {
   --smooth: all 0.5s 0s ease;
   --paper-background: rgb(244, 244, 244);
   --clr-placeholder: rgb(159, 166, 187);
-  --clr-label: rgb(130, 139, 162);
+
   --bg-disabled: hsl(240, 10%, 95%);
   --clr-disabled: hsl(240, 10%, 80%);
-  --header-height: clamp(3rem, 4.8rem, 6.4rem);
+  --header-height: 4.5rem;
 
   --font-family: "Fira Sansss", sans-serif;
   --fw-body-regular: 400;
@@ -73,7 +74,7 @@ html {
   --bg-header: hsl(var(--yankees-blue));
   --bg-app: hsl(var(--japanese-indigo));
   --clr-text: hsla(var(--light), 0.95);
-  --clr-label: hsla(var(--light), 0.75);
+  --clr-label: hsla(var(--blue), 80%, 0.9);
   --border: hsla(var(--light), 0.2);
   --clr-accent: 216, 100%, 60%;
   --bg-input: hsl(222, 22%, 34%);
@@ -83,21 +84,14 @@ html {
   --clr-placeholder: hsla(var(--light), 1);
 }
 
+/* If no theme is set, use light theme */
 .app[data-theme="light"],
 .app:not([data-theme]) {
   --bg-app: hsl(220, 29%, 85%);
   --bg-header: hsl(var(--header-bg));
   --bg-input: hsl(222, 40%, 87%);
   --bg-collapse: hsla(var(--white));
-  --clr-text: hsla(var(--lightgrey), 1);
+  --clr-text: hsla(var(--dark), 1);
   --border: hsla(var(--dark), 0.1);
+  --clr-label: #828ba2;
 }
-/* if color scheme is dark change clr-text */
-/* @media (prefers-color-scheme: dark) {
-  .app {
-    --bg-header: hsl(var(--yankees-blue));
-    --bg-app: hsl(var(--japanese-indigo));
-    --clr-text: hsl(var(--white));
-  }
-}
-*/
