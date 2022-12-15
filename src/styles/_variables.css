@@ -51,6 +51,7 @@ html {
   --clr-tex-dark: hsl(var(--dark));
   --clr-text-muted: hsl(var(--grey));
   --clr-text-muted-dark: hsla(var(--grey));
+  --clr-text-inverse: hsl(var(--white));
 
   --bg-input: 222, 22%, 90%;
   --header-bg: 226 26% 90%;
