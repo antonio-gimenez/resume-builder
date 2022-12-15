@@ -1,5 +1,5 @@
 /* Variables */
-html {
+:root {
   --ff-family: "Fira Sans", sans-serif;
   --fw-light: 300;
   --fw-regular: 400;

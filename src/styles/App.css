@@ -1,18 +1,14 @@
 @import url("_variables.css");
-@import url("fonts.css");
+/* @import url("fonts.css"); */
 @import url("color-switcher.css");
 @import url("forms.css");
 @import url("layouts.css");
 @import url("buttons.css");
-@import url("print.css");
 @import url("collapse.css");
 @import url("header.css");
 @import url("card.css");
-@import url("templates.css");
 @import url("level.css");
 @import url("modal.css");
-@import url("avatar.css");
-@import url("preview.css");
 @import url("typography.css");
 
 /*
