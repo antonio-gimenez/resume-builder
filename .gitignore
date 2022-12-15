@@ -1,5 +1,6 @@
-#vscode
+# User-specific stuff
 .vscode
+build
 
 # Logs
 logs

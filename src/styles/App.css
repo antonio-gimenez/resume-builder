@@ -23,13 +23,12 @@
   -webkit-font-smoothing: antialiased;
 }
 
-html {
-  /*
+/*
   This sets the base font size to 10px, which makes it easier to work with rems.
   The important thing to understand is that the html tag font-size need not be the same as the font-size on the body tag. 
   */
+html {
   color: var(--clr-text);
-
   font-size: 62.5%;
 }
 
