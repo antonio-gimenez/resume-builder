@@ -15,13 +15,6 @@
 @import url("preview.css");
 @import url("typography.css");
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
-
 /*
   This sets the base font size to 10px, which makes it easier to work with rems.
   The important thing to understand is that the html tag font-size need not be the same as the font-size on the body tag. 
@@ -29,6 +22,13 @@
 html {
   color: var(--clr-text);
   font-size: 62.5%;
+}
+
+/* box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
