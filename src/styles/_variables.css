@@ -6,12 +6,12 @@ html {
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
-  --fs-small: clamp(0.9rem, 0.17vw + 0.76rem, 0.89rem);
-  --fs-regular: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-  --fs-medium: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
-  --fs-large: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
-  --fs-big: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
-  --fs-huge: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --fs-small: clamp(0.9rem, calc(0.17vw + 0.76rem), 0.89rem);
+  --fs-regular: clamp(1rem, calc(0.34vw + 0.91rem), 1.19rem);
+  --fs-medium: clamp(1.25rem, calc(0.61vw + 1.1rem), 1.58rem);
+  --fs-large: clamp(1.56rem, calc(1vw + 1.31rem), 2.11rem);
+  --fs-big: clamp(1.95rem, calc(1.56vw + 1.56rem), 2.81rem);
+  --fs-huge: clamp(2.44rem, calc(2.38vw + 1.85rem), 3.75rem);
 
   --space-0: 0;
   --space-1: 0.25rem;
