@@ -43,7 +43,24 @@ function useLocalStorage(key, initialValue) {
     }
   };
 
-  return [storedValue, setValue];
+  const itemExistsonLocalStorage = () => {
+    if (typeof window !== "undefined") {
+      return window.localStorage.getItem(key) ? true : false;
+    }
+  };
+
+  const removeItemFromLocalStorage = () => {
+    try {
+      if (typeof window !== "undefined") {
+        window.localStorage.removeItem(key);
+        window.dispatchEvent(new Event("storage"));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return [storedValue, setValue, removeItemFromLocalStorage, itemExistsonLocalStorage];
 }
 
 export default useLocalStorage;

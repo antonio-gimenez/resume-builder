@@ -2,35 +2,28 @@ import React from "react";
 import useTheme from "../hooks/useTheme";
 import { ReactComponent as Moon } from "../assets/icons/moon.svg";
 import { ReactComponent as Sun } from "../assets/icons/sun.svg";
+import { ReactComponent as System } from "../assets/icons/system.svg";
+import { Dropdown } from "./ui";
 function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, remove, system } = useTheme();
 
-  function toggleTheme() {
-    const activeTheme = theme === "light" ? "dark" : "light";
-    setTheme(activeTheme);
+  function toggleTheme(theme) {
+    if (theme === "system") {
+      remove();
+    } else {
+      setTheme(theme);
+    }
   }
 
-  const isEnabledDark = theme === "dark";
+  // return the theme icon
+  const Icon = system ? System : theme === "dark" ? Moon : Sun;
+  const themes = [
+    { id: 0, label: "Light", value: "light" },
+    { id: 1, label: "Dark", value: "dark" },
+    { id: 2, label: "System", value: "system" },
+  ];
 
-  return (
-    <button type="button" onClick={toggleTheme}>
-      {isEnabledDark ? <Sun /> : <Moon />}
-    </button>
-  );
+  return <Dropdown label={<Icon />} items={themes} onClick={toggleTheme} />;
 }
 
 export default ThemeSwitcher;
-
-//  <div className="">
-//    <input type="checkbox" id="switch-theme" onChange={toggleTheme} checked={isEnabledDark} />
-//    <label htmlFor="switch-theme" className="toggle">
-//      <div className="satellite">
-//        <div className="craters" />
-//      </div>
-//      <span className="cloud" />
-//      <div className="stars">
-//        <span />
-//        <span />
-//      </div>
-//    </label>
-//  </div>;

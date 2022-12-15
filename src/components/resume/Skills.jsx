@@ -68,14 +68,14 @@ function Skills() {
                     <p>Are you sure you want to delete this entry?</p>
                   </ModalContent>
                   <ModalActions>
-                    <Button
+                    <button
                       onClick={() => {
                         removeSkill(skill.id);
                         handleModal(skill.id);
                       }}
                     >
                       Confirm
-                    </Button>
+                    </button>
                     <Button color={"blue"} onClick={() => handleModal(skill.id)}>
                       Cancel
                     </Button>

@@ -1,9 +1,9 @@
 html {
-  --button-padding: 0.4rem 0.6rem;
+  --button-padding: 0.8rem 1rem;
   --button-background: transparent;
-  --button-font-size: clamp(1.2rem, 1.4rem, 1.6rem);
+  --button-font-size: var(--fs-medium);
   --button-radius: 0.25rem;
-  --button-clr-text: var(--clr-text-light);
+  --button-clr-text: var(--clr-text);
   --button-border-clr: var(--button-background);
   --button-border: 2px solid transparent;
   --button-weight: var(--fw-medium);
@@ -54,7 +54,10 @@ button {
 
 .button:hover {
   --button-background: hsl(0, 0%, 0% / 0.1);
-  /* --button-border-clr: hsl(0, 0%, 0% / 0.1); */
+}
+/* if button has a class */
+button:not([class=""]) {
+  --button-clr-text: var(--clr-text-light);
 }
 
 .button.block {

@@ -49,8 +49,9 @@
 }
 
 .modal-actions {
+  padding: 1rem 0rem;
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
   justify-content: flex-end;
-  padding: 0.45rem 0.65rem;
+  gap: 1.6rem;
 }
