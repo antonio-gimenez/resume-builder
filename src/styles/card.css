@@ -20,9 +20,9 @@
 }
 
 .card-header {
-  padding: var(--space-4);
+  padding: 2rem;
   color: var(--clr-text);
-  font-size: var(--font-size-base);
+  font-size: var(--fs-regular);
   font-weight: 300;
 
   height: auto;
@@ -35,7 +35,7 @@
 }
 
 .card-content {
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .card-actions {
