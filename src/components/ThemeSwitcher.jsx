@@ -2,7 +2,6 @@ import React from "react";
 import useTheme from "../hooks/useTheme";
 import { ReactComponent as Moon } from "../assets/icons/moon.svg";
 import { ReactComponent as Sun } from "../assets/icons/sun.svg";
-import { Button } from "./ui";
 function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
 

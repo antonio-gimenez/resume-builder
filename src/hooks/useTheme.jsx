@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useLocalStorage from "./useLocalStorage";
-
-// get the html tag
-const html = document.querySelector("html");
 
 function useTheme() {
   const [theme, setTheme] = useLocalStorage("theme");
