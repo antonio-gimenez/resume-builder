@@ -45,8 +45,7 @@
   justify-content: center;
 }
 
-.github-icon {
-  margin-left: 0.5rem;
-  height: calc(var(--toggle-size-y) * 1.05);
-  width: auto;
+/* select parent element of github icon */
+*:hover > svg {
+  stroke: hsl(var(--clr-accent));
 }

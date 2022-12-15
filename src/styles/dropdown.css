@@ -9,7 +9,7 @@
   position: absolute;
   z-index: 2;
   border-radius: 0.5rem;
-  transform-origin: center;
+  transform-origin: right;
   transition: display 1s ease-in-out;
 }
 
@@ -43,13 +43,4 @@
   background-color: hsl(var(--clr-accent));
   color: white;
   cursor: pointer;
-}
-
-/* position the .dropdown .menu on mobile */
-
-.dropdown .menu.mobile {
-  position: fixed;
-  width: fit-content;
-  right: clamp(0.5rem, 1vw, 1rem);
-  z-index: 1;
 }

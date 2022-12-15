@@ -1,5 +1,6 @@
 import React from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { ReactComponent as Github } from "../assets/icons/github.svg";
 function Header() {
   return (
     <header className="header">
@@ -13,7 +14,8 @@ function Header() {
             rel="noopener noreferrer"
             href="https://github.com/antonio-gimenez/resume-generator"
           >
-            GitHub
+            <Github />
+            {/* GitHub */}
           </a>
         </nav>
         <ThemeSwitcher />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { ReactComponent as Chevron } from "../../assets/icons/chevron-down.svg";
 
 function Collapse({ children, title = "New Item", open = true, ...props }) {
   const [isOpen, setOpen] = useState(false);
@@ -9,7 +9,7 @@ function Collapse({ children, title = "New Item", open = true, ...props }) {
       <button type={"button"} className="collapse-button" onClick={() => setOpen(!isOpen)}>
         <div className={`collapse-title`}>
           <span>{title}</span>
-          <ChevronDownIcon className={`chevron ${isOpen ? "chevron-open" : "chevron-closed"}`} />
+          <Chevron className={`chevron ${isOpen ? "chevron-open" : "chevron-closed"}`} />
         </div>
       </button>
       <span className={`collapse-content ${isOpen ? "visible" : "hidden"} `}>{children}</span>

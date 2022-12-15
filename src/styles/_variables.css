@@ -79,6 +79,20 @@ html {
   --clr-placeholder: hsla(var(--light), 1);
 }
 
+.app[data-theme="dim"] {
+  color-scheme: dark;
+  --bg-header: hsl(var(--yankees-blue));
+  --bg-app: hsl(var(--japanese-indigo));
+  --clr-text: hsla(var(--light), 1);
+  --clr-label: hsla(var(--blue), 95%, 0.7);
+  --border: hsla(var(--light), 0.2);
+  --clr-accent: 216, 100%, 60%;
+  --bg-input: hsl(222, 22%, 34%);
+  --bg-collapse: hsla(var(--japanese-indigo));
+  --border: hsla(var(--light), 0.2);
+  --clr-placeholder: hsla(var(--light), 1);
+}
+
 /* If no theme is set, use light theme */
 .app[data-theme="light"],
 .app:not([data-theme]) {
