@@ -1,7 +1,7 @@
 /* if there are more than 2 collapse-container add a separator */
 .collapse-container:not(:last-child) {
   border-radius: 0;
-  border-bottom: 1px solid var(--clr-border);
+  border-bottom: 1px dashed var(--clr-border);
 }
 
 .collapse-button {
