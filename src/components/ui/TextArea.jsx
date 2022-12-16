@@ -10,10 +10,7 @@ function TextArea({ label, ...props }) {
           {label}
         </label>
       )}
-      <div className="textarea-container">
-        <textarea className="textarea" id={id} {...props} />
-        <div className="form-decoration" />
-      </div>
+      <textarea className="textarea" id={id} {...props} />
     </div>
   );
 }

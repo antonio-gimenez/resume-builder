@@ -1,4 +1,4 @@
-html {
+:root {
   /*  Font related */
   --ff-family: "Fira Sans", sans-serif;
   --fw-light: 300;
@@ -26,19 +26,6 @@ html {
   --dark: 0, 0%, 20%;
   --light: 0, 0%, 90%;
   --grey: 220, 10%, 45%;
-
-  /* Dark theme */
-  /* --bg-main-dark: hsl(222deg, 22%, 26%);
-  --bg-header-dark: hsl(226deg, 26%, 20%);
-  --bg-button-dark: hsl(216deg, 100%, 45%);
-  --bg-form-dark: hsl(222deg, 22%, 32%);
-  --clr-label-dark: hsl(216deg, 50%, 90%);
-  --clr-text-dark: hsl(0deg, 0%, 90%);
-  --clr-text-inverted-dark: hsl(0deg, 0%, 20%);
-  --clr-text-placeholder-dark: hsl(0deg, 0%, 90%);
-  --clr-border-dark: hsla(0deg, 0%, 90%, 0.2);
-  --clr-accent-dark: hsl(216deg, 100%, 45%);
-  --clr-accent-hover-dark: hsl(216deg, 100%, 35%); */
 
   /* Modal fallback */
   --bg-button: var(--bg-button-dark);
@@ -74,11 +61,29 @@ html {
   --shadow: hsla(var(--black), 0.1);
   --clr-border: hsla(var(--white), 0.2);
 
-  --clr-placeholder: rgb(159, 166, 187);
-
   --bg-disabled: hsl(240, 10%, 95%);
   --clr-disabled: hsl(240, 10%, 80%);
   --header-height: 4.5rem;
+}
+
+/* If no theme is set, use light theme */
+.app[data-theme="light"],
+.app:not([data-theme]) {
+  --bg-main: hsl(220, 29%, 85%);
+  --bg-header: hsl(226deg, 26%, 90%);
+  --bg-button: hsl(216deg, 100%, 45%);
+  --bg-form: hsl(226deg, 26%, 82%, 90%);
+  --bg-card: hsl(226deg, 26%, 90%);
+  --bg-modal: hsl(226deg, 26%, 80%);
+  --clr-form-focus: hsl(216deg, 100%, 45%);
+  --clr-label: hsl(216deg, 50%, 20%);
+  --clr-text: hsl(0deg, 0%, 20%);
+  --clr-text-light: hsl(0deg, 0%, 90%);
+  --clr-text-inverted: hsl(0deg, 0%, 90%);
+  --clr-text-placeholder: hsl(225deg, 17%, 68%);
+  --clr-border: hsla(0deg, 0%, 20%, 0.3);
+  --clr-accent: hsl(216deg, 100%, 45%);
+  --clr-accent-hover: hsl(216deg, 100%, 35%);
 }
 
 /* Color scheme toggle */
@@ -88,10 +93,15 @@ html {
   --bg-header: hsl(226deg, 26%, 20%);
   --bg-button: hsl(216deg, 100%, 45%);
   --bg-form: hsl(222deg, 22%, 32%);
+  --clr-form-focus: hsl(216deg, 100%, 55%);
+  --bg-card: hsl(226deg, 26%, 20%);
+  --bg-modal: hsl(226deg, 26%, 80%);
   --clr-label: hsl(216deg, 50%, 90%);
   --clr-text: hsl(0deg, 0%, 90%);
+  --clr-text-light: hsl(0deg, 0%, 90%);
+
   --clr-text-inverted: hsl(0deg, 0%, 20%);
-  --clr-text-placeholder: hsl(0deg, 0%, 90%);
+  --clr-text-placeholder: hsl(225deg, 17%, 90%);
   --clr-border: hsla(0deg, 0%, 90%, 0.2);
   --clr-accent: hsl(216deg, 100%, 45%);
   --clr-accent-hover: hsl(216deg, 100%, 35%);
@@ -110,18 +120,4 @@ html {
   --clr-border: hsla(0deg, 0%, 90%, 0.2);
   --clr-accent: hsl(216deg, 100%, 45%);
   --clr-accent-hover: hsl(216deg, 100%, 35%);
-}
-
-/* If no theme is set, use light theme */
-.app[data-theme="light"],
-.app:not([data-theme]) {
-  --accent: 216, 100%, 45%;
-  --bg-main: hsl(220, 29%, 85%);
-  --bg-header: hsl(var(--header-bg));
-  --bg-input: hsl(222, 40%, 87%);
-  --bg-collapse: hsla(var(--white));
-  --clr-text: hsla(var(--dark), 1);
-  --clr-border: hsla(var(--dark), 0.1);
-  --clr-label: hsl(223, 15%, 57%);
-  --blue: 220, 60%;
 }

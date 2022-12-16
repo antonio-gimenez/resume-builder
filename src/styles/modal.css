@@ -25,7 +25,7 @@
   max-height: 90vh;
   overflow-y: auto;
   max-width: 540px;
-  background: hsl(var(--white));
+  background: white;
   border-radius: 6px;
 
   z-index: 2;

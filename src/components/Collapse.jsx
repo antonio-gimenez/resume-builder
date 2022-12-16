@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ReactComponent as Chevron } from "../../assets/icons/chevron-down.svg";
+import { ReactComponent as Chevron } from "../assets/icons/chevron-down.svg";
 
 function Collapse({ children, title = "New Item", open = true, ...props }) {
   const [isOpen, setOpen] = useState(false);
@@ -17,4 +17,9 @@ function Collapse({ children, title = "New Item", open = true, ...props }) {
   );
 }
 
+function CollapseTitle({ children }) {
+  return <div className="collapse-title">{children}</div>;
+}
+
+export { Collapse, CollapseTitle };
 export default Collapse;

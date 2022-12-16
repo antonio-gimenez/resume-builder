@@ -12,10 +12,7 @@ function Input({ label, ...props }) {
           {label}
         </label>
       )}
-      <div className="input-container">
-        <input type={type} className="input" id={id} {...props} />
-        {/* <span className="form-decoration" /> */}
-      </div>
+      <input type={type} className="input" id={id} {...props} />
     </div>
   );
 }

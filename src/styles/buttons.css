@@ -45,6 +45,7 @@ button {
 
 .button.blue {
   background: var(--bg-button);
+  color: var(--clr-text-light);
 }
 
 .button.blue:hover {

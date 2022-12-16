@@ -1,7 +1,6 @@
 import React from "react";
 import useResume from "../../hooks/useResume";
-import { CardContent, CardHeader } from "../Card";
-import Card from "../Card/Card";
+import Card, { CardContent, CardHeader } from "../Card";
 
 import { Input, TextArea } from "../ui";
 

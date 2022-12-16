@@ -9,7 +9,7 @@
 
 .card {
   overflow: hidden;
-  background-color: var(--bg-header);
+  background-color: var(--bg-card);
   border-radius: 0.75rem;
   height: fit-content;
   width: clamp(200px, 100%, 480px);
@@ -23,8 +23,7 @@
   padding: 2rem;
   color: var(--clr-text);
   font-size: var(--fs-regular);
-  font-weight: 300;
-
+  font-weight: var(--fw-light);
   height: auto;
   box-shadow: 0 -0.2rem 0rem inset var(--shadow);
   display: flex;
