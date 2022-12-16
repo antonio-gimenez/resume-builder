@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 
 const modalRoot = document.getElementById("modal-root");
 
-function Modal({ children, open = false }) {
-  if (!open) return null;
+function Modal({ children, open = false, close = () => {} }) {
+  useEffect(() => {
+    if (!open) return null;
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        close();
+      }
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   const modalWrapper = (
     <div className="modal-wrapper">

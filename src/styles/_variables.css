@@ -72,22 +72,43 @@
   --bg-main: hsl(220, 29%, 85%);
   --bg-header: hsl(226deg, 26%, 90%);
   --bg-button: hsl(216deg, 100%, 45%);
-  --bg-form: hsl(226deg, 26%, 82%, 90%);
+  --bg-form: hsl(226deg, 26%, 87%);
   --bg-card: hsl(226deg, 26%, 90%);
   --bg-modal: hsl(226deg, 26%, 80%);
   --clr-form-focus: hsl(216deg, 100%, 45%);
   --clr-label: hsl(216deg, 50%, 20%);
   --clr-text: hsl(0deg, 0%, 20%);
   --clr-text-light: hsl(0deg, 0%, 90%);
+  --clr-text-dark: hsl(0deg, 0%, 20%);
   --clr-text-inverted: hsl(0deg, 0%, 90%);
   --clr-text-placeholder: hsl(225deg, 17%, 68%);
-  --clr-border: hsla(0deg, 0%, 20%, 0.3);
+  --clr-border: hsla(0deg, 0%, 20%, 0.15);
   --clr-accent: hsl(216deg, 100%, 45%);
   --clr-accent-hover: hsl(216deg, 100%, 35%);
 }
 
 /* Color scheme toggle */
 .app[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-main: hsl(226deg, 26%, 29%);
+  --bg-header: hsl(226deg, 26%, 22%);
+  --bg-button: hsl(216deg, 100%, 45%);
+  --bg-form: hsl(222deg, 22%, 32%);
+  --clr-form-focus: hsl(226deg, 100%, 55%);
+  --bg-card: hsl(226deg, 26%, 22%);
+  --bg-modal: hsl(226deg, 26%, 80%);
+  --clr-label: hsl(216deg, 50%, 90%);
+  --clr-text: hsl(0deg, 0%, 90%);
+  --clr-text-light: hsl(0deg, 0%, 90%);
+  --clr-text-dark: hsl(0deg, 0%, 20%);
+  --clr-text-inverted: hsl(0deg, 0%, 20%);
+  --clr-text-placeholder: hsl(225deg, 17%, 90%);
+  --clr-border: hsla(0deg, 0%, 90%, 0.12);
+  --clr-accent: hsl(216deg, 100%, 65%);
+  --clr-accent-hover: hsl(216deg, 100%, 35%);
+}
+
+.app[data-theme="dim"] {
   color-scheme: dark;
   --bg-main: hsl(222deg, 22%, 26%);
   --bg-header: hsl(226deg, 26%, 20%);
@@ -99,24 +120,9 @@
   --clr-label: hsl(216deg, 50%, 90%);
   --clr-text: hsl(0deg, 0%, 90%);
   --clr-text-light: hsl(0deg, 0%, 90%);
-
+  --clr-text-dark: hsl(0deg, 0%, 20%);
   --clr-text-inverted: hsl(0deg, 0%, 20%);
   --clr-text-placeholder: hsl(225deg, 17%, 90%);
-  --clr-border: hsla(0deg, 0%, 90%, 0.2);
-  --clr-accent: hsl(216deg, 100%, 45%);
-  --clr-accent-hover: hsl(216deg, 100%, 35%);
-}
-
-.app[data-theme="dim"] {
-  color-scheme: dark;
-  --bg-main: hsl(222deg, 22%, 26%);
-  --bg-header: hsl(226deg, 26%, 20%);
-  --bg-button: hsl(216deg, 100%, 45%);
-  --bg-form: hsl(222deg, 22%, 32%);
-  --clr-label: hsl(216deg, 50%, 90%);
-  --clr-text: hsl(0deg, 0%, 90%);
-  --clr-text-inverted: hsl(0deg, 0%, 20%);
-  --clr-text-placeholder: hsl(0deg, 0%, 90%);
   --clr-border: hsla(0deg, 0%, 90%, 0.2);
   --clr-accent: hsl(216deg, 100%, 45%);
   --clr-accent-hover: hsl(216deg, 100%, 35%);

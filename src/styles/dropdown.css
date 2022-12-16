@@ -21,10 +21,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  border-radius: 0.3rem;
   flex-wrap: wrap;
   box-shadow: 0 0 0.4rem hsl(var(--shadow));
   background-color: white;
-  color: black;
 }
 
 .menu-item {
@@ -33,13 +33,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 2rem;
-  color: hsl(var(--black));
   z-index: 2;
+  color: var(--clr-text-dark);
+
   transition: all 0.3s ease-in-out;
 }
 
 .menu-item:hover {
   background-color: var(--clr-accent);
-  color: white;
+  color: var(--clr-text-light);
+
   cursor: pointer;
 }
