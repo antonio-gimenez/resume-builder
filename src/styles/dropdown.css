@@ -8,7 +8,6 @@
   display: none;
   position: absolute;
   z-index: 2;
-  border-radius: 0.5rem;
   transform-origin: right;
   transition: display 1s ease-in-out;
 }
@@ -40,7 +39,7 @@
 }
 
 .menu-item:hover {
-  background-color: hsl(var(--clr-accent));
+  background-color: var(--clr-accent);
   color: white;
   cursor: pointer;
 }

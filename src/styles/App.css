@@ -30,7 +30,7 @@ html {
 
 body {
   font-size: var(--fs-medium);
-  line-height: var(--lh-base);
+  line-height: normal;
   scroll-behavior: smooth;
   font-family: var(--ff-family);
   font-weight: var(--fw-regular);
@@ -80,7 +80,7 @@ ul {
   padding-top: var(--header-height);
 
   height: 100%;
-  background: var(--bg-app);
+  background: var(--bg-main);
   overflow: auto;
 }
 
@@ -108,7 +108,7 @@ ul {
 }
 
 .progress .bar {
-  background: hsl(var(--clr-accent));
+  background: var(--clr-accent);
   border-radius: 8px;
   height: var(--progress-height);
 }

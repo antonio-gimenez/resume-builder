@@ -1,13 +1,14 @@
 .input,
 .textarea {
   position: relative;
+  overflow: hidden;
   display: inline-flex;
-  border-radius: 0.25rem;
-  padding: 0.75rem 1rem;
+  border-radius: 0.55rem;
+  padding: 1.6rem 1.2rem;
   width: 100%;
   height: 100%;
   line-height: normal;
-  background-color: var(--bg-input, --white);
+  background-color: var(--bg-form, --white);
   outline: currentcolor none medium;
   border: 0px none;
   resize: vertical;
@@ -16,6 +17,7 @@
 }
 
 .textarea-container {
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -39,20 +41,26 @@ textarea:focus-within + .form-decoration {
   transform: scaleX(1);
 }
 
+input:focus-within {
+  background-color: var(--clr-accent-hover);
+}
+
 input::placeholder,
 textarea::placeholder {
-  /* font-size: var(--fs-small); */
+  font-size: 1.3rem;
   color: var(--clr-placeholder);
 }
 
 .form-decoration {
   position: absolute;
-  bottom: 0px;
+  border-bottom-right-radius: 100rem;
+  border-bottom-left-radius: 100rem;
   left: 0px;
+  bottom: 0px;
   right: 0px;
-  width: 100%;
-  height: 2px;
-  background-color: hsl(var(--clr-accent));
+  width: calc(100% - 1px);
+  height: 4px;
+  background-color: var(--clr-accent);
   pointer-events: none;
   opacity: 0;
   transform: scaleX(0.5);

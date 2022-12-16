@@ -1,6 +1,6 @@
 import React from "react";
 
-function Button({ as = "button", color = "default", type = "button", children, block = false, ...props }) {
+function Button({ as = "button", color, type = "button", children, block = false, ...props }) {
   const id = props.id || Math.random().toString(36).substr(2, 9);
   const buttonColor = color ? color : "";
   const buttonBlock = block ? "block" : "";

@@ -1,14 +1,3 @@
-html {
-  --button-padding: 0.8rem 1rem;
-  --button-background: transparent;
-  --button-font-size: var(--fs-medium);
-  --button-radius: 0.25rem;
-  --button-clr-text: var(--clr-text);
-  --button-border-clr: var(--button-background);
-  --button-border: 2px solid transparent;
-  --button-weight: var(--fw-medium);
-}
-
 button {
   appearance: none;
   background: none;
@@ -17,47 +6,37 @@ button {
   margin: 0;
   padding: 0;
   color: var(--clr-text);
-  fill: var(--clr-text);
-}
-
-.button svg {
-  color: var(--button-clr-text);
-}
-
-.collapse-button {
-  padding: 0.5rem 0;
-  border-radius: 0.25rem;
+  transition: background 0.1s ease 0s, color 0.1s ease 0s, box-shadow 0.1s ease 0s;
+  pointer-events: auto;
 }
 
 .button {
   position: relative;
-  font-size: var(--button-font-size);
-  font-weight: var(--button-weight);
+  font-size: var(--fs-medium);
+  font-weight: var(--fw-medium);
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  appearance: none;
   overflow: hidden;
   outline: none;
   white-space: nowrap;
   text-align: center;
-  padding: var(--button-padding);
-  border-radius: var(--button-radius);
-  background-color: var(--button-background);
-  transition: background 0.1s ease 0s, color 0.1s ease 0s, box-shadow 0.1s ease 0s;
+  padding: 0.8rem 1rem;
+  border-radius: 0.25rem;
+  background: var(--bg-button);
   cursor: pointer;
-  border: var(--button-border);
-  color: var(--button-clr-text);
+  border: 2px solid transparent;
+  color: var(--button-color-text);
   user-select: none;
-  pointer-events: auto;
 }
 
 .button:hover {
-  --button-background: hsl(0, 0%, 0% / 0.1);
+  background: hsla(0, 0%, 100%, 0.8);
 }
 /* if button has a class */
-button:not([class=""]) {
-  --button-clr-text: var(--clr-text-light);
+.button:not([class=""]) {
+  color: var(--clr-button-text);
 }
 
 .button.block {
@@ -65,17 +44,17 @@ button:not([class=""]) {
 }
 
 .button.blue {
-  --button-background: hsl(var(--blue), 45%);
+  background: var(--bg-button);
 }
 
 .button.blue:hover {
-  --button-background: hsl(var(--blue), 35%);
+  background: var(--clr-accent-hover);
 }
 
 .button.red {
-  --button-background: hsl(var(--red), 45%);
+  background: hsl(var(--red), 45%);
 }
 
 .button.red:hover {
-  --button-background: hsl(var(--red), 35%);
+  background: hsl(var(--red), 35%);
 }

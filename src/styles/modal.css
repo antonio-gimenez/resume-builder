@@ -36,14 +36,11 @@
   display: flex;
   font-weight: var(--fw-semibold);
   font-size: var(--fs-large);
-  color: hsl(var(--black));
   justify-content: space-between;
   align-items: center;
 }
 
 .modal-content {
-  font-weight: var(--fw-regular);
-  font-size: var(--fs-medium);
   z-index: 2;
   padding: 1rem 2rem;
 }

@@ -1,5 +1,5 @@
-/* Variables */
 html {
+  /*  Font related */
   --ff-family: "Fira Sans", sans-serif;
   --fw-light: 300;
   --fw-regular: 400;
@@ -13,50 +13,67 @@ html {
   --fs-big: clamp(1.95rem, calc(1.56vw + 1.56rem), 2.81rem);
   --fs-huge: clamp(2.44rem, calc(2.38vw + 1.85rem), 3.75rem);
 
-  --space-0: 0;
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 2rem;
-
-  --lh-base: normal;
-  /*  */
-  --yankees-blue: 226, 26%, 20%;
-  --japanese-indigo: 222, 22%, 24%;
-  --clr-accent: 216, 100%, 45%;
-  --ghost-white: 210, 50%, 98%;
-  --lavender: 0, 0%, 96%;
-
+  /* Colors */
   --black: 0, 0%, 0%;
   --white: 0, 0%, 100%;
   --green: 100, 65%;
   --orange: 45, 80%;
   --red: 340, 60%;
-  --blue: 220, 90%;
+  --blue: 216, 100%;
   --violet: 260, 90%;
   --yellow: 60, 90%;
 
   --dark: 0, 0%, 20%;
   --light: 0, 0%, 90%;
   --grey: 220, 10%, 45%;
-  --soft-dark: hsl(0, 0%, 25%);
-  --soft-light: hsl(0, 0%, 60%);
 
-  --shadow: hsla(var(--black), 0.1);
-  --border: hsla(var(--white), 0.2);
+  /* Dark theme */
+  /* --bg-main-dark: hsl(222deg, 22%, 26%);
+  --bg-header-dark: hsl(226deg, 26%, 20%);
+  --bg-button-dark: hsl(216deg, 100%, 45%);
+  --bg-form-dark: hsl(222deg, 22%, 32%);
+  --clr-label-dark: hsl(216deg, 50%, 90%);
+  --clr-text-dark: hsl(0deg, 0%, 90%);
+  --clr-text-inverted-dark: hsl(0deg, 0%, 20%);
+  --clr-text-placeholder-dark: hsl(0deg, 0%, 90%);
+  --clr-border-dark: hsla(0deg, 0%, 90%, 0.2);
+  --clr-accent-dark: hsl(216deg, 100%, 45%);
+  --clr-accent-hover-dark: hsl(216deg, 100%, 35%); */
 
+  /* Modal fallback */
+  --bg-button: var(--bg-button-dark);
+  --clr-text: var(--clr-text-dark);
+  /*  Backgrounds */
+
+  --accent-dark: 216, 100%, 35%;
+
+  --bg-main-dim: 226, 26%, 70%;
+  --bg-header-dim: 226, 26%, 70%;
+  --bg-input-dim: 222, 22%, 70%;
+  --bg-button-dim: 222, 22%, 70%;
+  --accent-dim: 216, 100%, 55%;
+
+  /* Texts */
   --clr-text: hsl(var(--black));
-  --clr-text-light: hsl(var(--light));
+  --clr-text-light: hsl(0, 0%, 90%);
   --clr-tex-dark: hsl(var(--dark));
   --clr-text-muted: hsl(var(--grey));
   --clr-text-muted-dark: hsla(var(--grey));
   --clr-text-inverse: hsl(var(--white));
 
-  --bg-input: 222, 22%, 90%;
-  --header-bg: 226 26% 90%;
-  --smooth: all 0.5s 0s ease;
-  --paper-background: rgb(244, 244, 244);
+  --clr-accent: hsl(var(--accent));
+
+  /*  */
+  --accent: 216, 100%, 65%;
+  --sf-main: hsl(var(--white));
+  --sf-header: hsl(0, 0%, 90%);
+  --sf-content: hsl(var(--grey));
+
+  /*  */
+
+  --shadow: hsla(var(--black), 0.1);
+  --clr-border: hsla(var(--white), 0.2);
+
   --clr-placeholder: rgb(159, 166, 187);
 
   --bg-disabled: hsl(240, 10%, 95%);
@@ -67,41 +84,44 @@ html {
 /* Color scheme toggle */
 .app[data-theme="dark"] {
   color-scheme: dark;
-  --bg-header: hsl(var(--yankees-blue));
-  --bg-app: hsl(var(--japanese-indigo));
-  --clr-text: hsla(var(--light), 0.95);
-  --clr-label: hsla(var(--blue), 95%, 0.7);
-  --border: hsla(var(--light), 0.2);
-  --clr-accent: 216, 100%, 60%;
-  --bg-input: hsl(222, 22%, 34%);
-  --bg-collapse: hsla(var(--japanese-indigo));
-  --border: hsla(var(--light), 0.2);
-  --clr-placeholder: hsla(var(--light), 1);
+  --bg-main: hsl(222deg, 22%, 26%);
+  --bg-header: hsl(226deg, 26%, 20%);
+  --bg-button: hsl(216deg, 100%, 45%);
+  --bg-form: hsl(222deg, 22%, 32%);
+  --clr-label: hsl(216deg, 50%, 90%);
+  --clr-text: hsl(0deg, 0%, 90%);
+  --clr-text-inverted: hsl(0deg, 0%, 20%);
+  --clr-text-placeholder: hsl(0deg, 0%, 90%);
+  --clr-border: hsla(0deg, 0%, 90%, 0.2);
+  --clr-accent: hsl(216deg, 100%, 45%);
+  --clr-accent-hover: hsl(216deg, 100%, 35%);
 }
 
 .app[data-theme="dim"] {
   color-scheme: dark;
-  --bg-header: hsl(var(--yankees-blue));
-  --bg-app: hsl(var(--japanese-indigo));
-  --clr-text: hsla(var(--light), 1);
-  --clr-label: hsla(var(--blue), 95%, 0.7);
-  --border: hsla(var(--light), 0.2);
-  --clr-accent: 216, 100%, 60%;
-  --bg-input: hsl(222, 22%, 34%);
-  --bg-collapse: hsla(var(--japanese-indigo));
-  --border: hsla(var(--light), 0.2);
-  --clr-placeholder: hsla(var(--light), 1);
+  --bg-main: hsl(222deg, 22%, 26%);
+  --bg-header: hsl(226deg, 26%, 20%);
+  --bg-button: hsl(216deg, 100%, 45%);
+  --bg-form: hsl(222deg, 22%, 32%);
+  --clr-label: hsl(216deg, 50%, 90%);
+  --clr-text: hsl(0deg, 0%, 90%);
+  --clr-text-inverted: hsl(0deg, 0%, 20%);
+  --clr-text-placeholder: hsl(0deg, 0%, 90%);
+  --clr-border: hsla(0deg, 0%, 90%, 0.2);
+  --clr-accent: hsl(216deg, 100%, 45%);
+  --clr-accent-hover: hsl(216deg, 100%, 35%);
 }
 
 /* If no theme is set, use light theme */
 .app[data-theme="light"],
 .app:not([data-theme]) {
-  --bg-app: hsl(220, 29%, 85%);
+  --accent: 216, 100%, 45%;
+  --bg-main: hsl(220, 29%, 85%);
   --bg-header: hsl(var(--header-bg));
   --bg-input: hsl(222, 40%, 87%);
   --bg-collapse: hsla(var(--white));
   --clr-text: hsla(var(--dark), 1);
-  --border: hsla(var(--dark), 0.1);
+  --clr-border: hsla(var(--dark), 0.1);
   --clr-label: hsl(223, 15%, 57%);
   --blue: 220, 60%;
 }

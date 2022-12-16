@@ -3,7 +3,7 @@ html {
   --selected-thumb: hsl(0, 0%, 100%);
   --selected-thumb-hover: hsl(0, 0%, 100%);
   --position-thumb: 0%;
-  --level-width: 60px;
+  --level-width: 80px;
 }
 
 .level-container {

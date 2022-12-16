@@ -47,5 +47,5 @@
 
 /* select parent element of github icon */
 *:hover > svg {
-  stroke: hsl(var(--clr-accent));
+  stroke: var(--clr-accent);
 }
