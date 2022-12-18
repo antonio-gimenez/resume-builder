@@ -23,17 +23,17 @@ button {
   white-space: nowrap;
   text-align: center;
   padding: 0.8rem 1rem;
-  border-radius: 0.25rem;
   background: var(--bg-button);
   cursor: pointer;
   border: 2px solid transparent;
   color: var(--button-color-text);
   user-select: none;
+  /* From https://css.glass */
+  background: rgba(31, 41, 55, 0.2);
+  border-radius: var(--border-radius);
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
 }
 
-.button:hover {
-  background: hsla(0, 0%, 100%, 0.8);
-}
 /* if button has a class */
 .button:not([class=""]) {
   color: var(--clr-button-text);
@@ -58,4 +58,10 @@ button {
 
 .button.red:hover {
   background: hsl(var(--red), 35%);
+}
+
+.outline:hover {
+  background: transparent;
+  color: var(--clr-accent);
+  border: 2px solid var(--clr-accent);
 }

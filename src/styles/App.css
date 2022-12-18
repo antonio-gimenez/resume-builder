@@ -103,13 +103,13 @@ ul {
   flex-direction: column;
   width: 100%;
   background: var(--bg-input);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   height: 10px;
 }
 
 .progress .bar {
   background: var(--clr-accent);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   height: var(--progress-height);
 }
 

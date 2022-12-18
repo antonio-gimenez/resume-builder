@@ -1,3 +1,11 @@
+:root {
+  --bg-modal: hsl(0, 0%, 100%);
+  --bg-button: hsl(216deg, 100%, 45%);
+  --clr-text-light: hsl(0deg, 0%, 90%);
+  --clr-accent: hsl(216deg, 100%, 45%);
+  --clr-accent-hover: hsl(216deg, 100%, 35%);
+}
+
 .modal-wrapper {
   position: fixed;
   top: 0;
@@ -25,7 +33,7 @@
   max-height: 90vh;
   overflow-y: auto;
   max-width: 540px;
-  background: white;
+  background: var(--bg-modal);
   border-radius: 6px;
 
   z-index: 2;

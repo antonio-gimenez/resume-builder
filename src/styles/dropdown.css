@@ -8,7 +8,8 @@
   display: none;
   position: absolute;
   z-index: 2;
-  transform-origin: right;
+  right: 0;
+  transform-origin: top;
   transition: display 1s ease-in-out;
 }
 
@@ -16,12 +17,18 @@
   display: block;
 }
 
+.dropdown-label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 .menu {
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   flex-wrap: wrap;
   box-shadow: 0 0 0.4rem hsl(var(--shadow));
   background-color: white;
@@ -35,13 +42,16 @@
   padding: 1.5rem 2rem;
   z-index: 2;
   color: var(--clr-text-dark);
-
   transition: all 0.3s ease-in-out;
 }
 
 .menu-item:hover {
   background-color: var(--clr-accent);
   color: var(--clr-text-light);
-
   cursor: pointer;
+}
+
+.menu-item.is-selected {
+  background-color: var(--clr-accent);
+  color: var(--clr-text-light);
 }

@@ -64,6 +64,7 @@
   --bg-disabled: hsl(240, 10%, 95%);
   --clr-disabled: hsl(240, 10%, 80%);
   --header-height: 4.5rem;
+  --border-radius: 6px;
 }
 
 /* If no theme is set, use light theme */
@@ -104,7 +105,7 @@
   --clr-text-inverted: hsl(0deg, 0%, 20%);
   --clr-text-placeholder: hsl(225deg, 17%, 90%);
   --clr-border: hsla(0deg, 0%, 90%, 0.12);
-  --clr-accent: hsl(216deg, 100%, 65%);
+  --clr-accent: hsl(216deg, 100%, 35%);
   --clr-accent-hover: hsl(216deg, 100%, 35%);
 }
 

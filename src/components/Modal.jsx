@@ -5,8 +5,6 @@ const modalRoot = document.getElementById("modal-root");
 
 function Modal({ children, open = false, close = () => {} }) {
   useEffect(() => {
-    if (!open) return null;
-
     const handleEscape = (event) => {
       if (event.key === "Escape") {
         close();
@@ -18,6 +16,7 @@ function Modal({ children, open = false, close = () => {} }) {
     };
   }, []);
 
+  if (!open) return;
   const modalWrapper = (
     <div className="modal-wrapper">
       <div className="modal">{children}</div>

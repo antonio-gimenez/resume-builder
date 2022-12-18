@@ -62,13 +62,14 @@ function Skills() {
                 <Button color={"red"} onClick={() => handleModal(skill.id)}>
                   Delete
                 </Button>
-                <Modal open={isModalOpen[skill.id]} close={() => handleModal(skill.id)}>
+                <Modal open={isModalOpen[skill.id]} close={() => setModalOpen({ [skill.id]: false })}>
                   <ModalHeader>Delete Entry</ModalHeader>
                   <ModalContent>
                     <p>Are you sure you want to delete this entry?</p>
                   </ModalContent>
                   <ModalActions>
                     <button
+                      className="button"
                       onClick={() => {
                         removeSkill(skill.id);
                         handleModal(skill.id);

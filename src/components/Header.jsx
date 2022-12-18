@@ -15,7 +15,7 @@ function Header() {
             href="https://github.com/antonio-gimenez/resume-generator"
           >
             <Github />
-            {/* GitHub */}
+            GitHub
           </a>
         </nav>
         <ThemeSwitcher />

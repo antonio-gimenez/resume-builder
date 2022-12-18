@@ -10,13 +10,9 @@
 .card {
   overflow: hidden;
   background-color: var(--bg-card);
-  border-radius: 0.75rem;
+  border-radius: var(--border-radius);
   height: fit-content;
   width: clamp(200px, 100%, 480px);
-}
-
-.card.rounded {
-  border-radius: 0.5rem;
 }
 
 .card-header {

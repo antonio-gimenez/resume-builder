@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-
-function Dropdown({ label, items, onClick = () => {}, ...props }) {
+import { ReactComponent as DropdownIcon } from "../../assets/icons/chevron-down.svg";
+function Dropdown({ label, items, onClick = () => {}, colorSelected, ...props }) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -15,24 +15,24 @@ function Dropdown({ label, items, onClick = () => {}, ...props }) {
   // detect if is on mobile
   const isMobile = window.innerWidth <= 768 ? true : false;
 
-  useEffect(() => {
-    // get the dropdown offset from top
-    if (!isMobile) return;
-    const dropdown = document.querySelector(".dropdown");
-    const menu = document.querySelector("#menu");
-    // get the offset from top
-    const offset = dropdown.offsetTop;
-    console.log(offset);
+  // useEffect(() => {
+  //   // get the dropdown offset from top
+  //   if (!isMobile) return;
+  //   const dropdown = document.querySelector(".dropdown");
+  //   const menu = document.querySelector("#menu");
+  //   // get the offset from top
+  //   const offset = dropdown.offsetTop;
+  //   console.log(offset);
 
-    // set the menu top position to the offset + 25px
-    menu.style.top = `${offset}px`;
+  //   // set the menu top position to the offset + 25px
+  //   menu.style.top = `${offset}px`;
 
-    // get the dropdown width
-    const width = dropdown.offsetWidth;
+  //   // get the dropdown width
+  //   const width = dropdown.offsetWidth;
 
-    // set the menu left position the center of the dropdown
-    menu.style.right = `${width}px`;
-  }, [open]);
+  //   // set the menu left position the center of the dropdown
+  //   menu.style.right = `${width}px`;
+  // }, [open]);
 
   // if click outside the dropdown, close it
   useEffect(() => {
@@ -57,16 +57,21 @@ function Dropdown({ label, items, onClick = () => {}, ...props }) {
 
   return (
     <div className="dropdown">
-      <button {...props} onClick={handleOpen}>
+      <button {...props} className="dropdown-label" onClick={handleOpen}>
         {label}
-        <ul id={"menu"} className={`menu ${open ? "open" : ""}`}>
-          {items.map((child) => (
-            <li key={child.id} className="menu-item" onClick={() => handleClick(child.value)}>
-              {child.label}
-            </li>
-          ))}
-        </ul>
+        <DropdownIcon />
       </button>
+      <ul id={"menu"} className={`menu ${open ? "open" : ""}`}>
+        {items.map((child) => (
+          <li
+            key={child.id}
+            className={`menu-item ${colorSelected && child.active ? "is-selected" : ""}`}
+            onClick={() => handleClick(child.value)}
+          >
+            {child.label}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
