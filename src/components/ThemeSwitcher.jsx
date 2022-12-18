@@ -32,21 +32,7 @@ function ThemeSwitcher() {
     { id: 3, label: "System", value: "system", active: system },
   ];
 
-  const currentTheme = themes.find((t) => t.active);
-
-  return (
-    <Dropdown
-      label={
-        <>
-          <Icon />
-          <span className="mr-2">{currentTheme.label}</span>
-        </>
-      }
-      colorSelected
-      items={themes}
-      onClick={toggleTheme}
-    />
-  );
+  return <Dropdown label={<Icon />} colorSelected items={themes} onClick={toggleTheme} />;
 }
 
 export default ThemeSwitcher;

@@ -17,12 +17,6 @@
   display: block;
 }
 
-.dropdown-label {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
 .menu {
   overflow: hidden;
   position: relative;
