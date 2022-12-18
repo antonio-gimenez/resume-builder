@@ -58,7 +58,7 @@
 
   /*  */
 
-  --shadow: hsla(var(--black), 0.1);
+  --shadow: hsl(0deg, 0%, 0%, 0.15);
   --clr-border: hsla(var(--white), 0.2);
 
   --bg-disabled: hsl(240, 10%, 95%);

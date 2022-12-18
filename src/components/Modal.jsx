@@ -1,9 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import useKey from "../hooks/useKey";
+import useOnClickOutside from "../hooks/useOnClickOutside";
 
 const modalRoot = document.getElementById("modal-root");
 
 function Modal({ children, open = false, close = () => {} }) {
+  const modalRef = useRef();
+  useOnClickOutside({ ref: modalRef, handler: () => close() });
+  useKey({ key: "Escape", handler: () => close() });
+
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
@@ -11,15 +17,19 @@ function Modal({ children, open = false, close = () => {} }) {
       }
     };
     document.addEventListener("keydown", handleEscape);
+
     return () => {
       document.removeEventListener("keydown", handleEscape);
     };
   }, []);
 
   if (!open) return;
+
   const modalWrapper = (
     <div className="modal-wrapper">
-      <div className="modal">{children}</div>
+      <div className="modal" ref={modalRef}>
+        {children}
+      </div>
     </div>
   );
 

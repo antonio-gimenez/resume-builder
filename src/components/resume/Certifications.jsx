@@ -80,6 +80,7 @@ function Certifications() {
                   </ModalContent>
                   <ModalActions>
                     <Button
+                      color={"blue"}
                       onClick={() => {
                         removeCertificate(certificate.id);
                         handleModal(certificate.id);
@@ -87,9 +88,7 @@ function Certifications() {
                     >
                       Confirm
                     </Button>
-                    <Button color={"blue"} onClick={() => handleModal(certificate.id)}>
-                      Cancel
-                    </Button>
+                    <Button onClick={() => handleModal(certificate.id)}>Cancel</Button>
                   </ModalActions>
                 </Modal>
               </CardActions>

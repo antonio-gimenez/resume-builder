@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { ReactComponent as DropdownIcon } from "../../assets/icons/chevron-down.svg";
+import useKey from "../../hooks/useKey";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
 function Dropdown({ label, items, onClick = () => {}, colorSelected, ...props }) {
   const [open, setOpen] = useState(false);
-
+  const dropdownRef = useRef();
+  useOnClickOutside({ ref: dropdownRef, handler: () => setOpen(false) });
+  useKey({ key: "Escape", handler: () => setOpen(false) });
   const handleOpen = () => {
     setOpen(!open);
   };
@@ -12,51 +16,8 @@ function Dropdown({ label, items, onClick = () => {}, colorSelected, ...props })
     setOpen(false);
   };
 
-  // detect if is on mobile
-  const isMobile = window.innerWidth <= 768 ? true : false;
-
-  // useEffect(() => {
-  //   // get the dropdown offset from top
-  //   if (!isMobile) return;
-  //   const dropdown = document.querySelector(".dropdown");
-  //   const menu = document.querySelector("#menu");
-  //   // get the offset from top
-  //   const offset = dropdown.offsetTop;
-  //   console.log(offset);
-
-  //   // set the menu top position to the offset + 25px
-  //   menu.style.top = `${offset}px`;
-
-  //   // get the dropdown width
-  //   const width = dropdown.offsetWidth;
-
-  //   // set the menu left position the center of the dropdown
-  //   menu.style.right = `${width}px`;
-  // }, [open]);
-
-  // if click outside the dropdown, close it
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (open && !event.target.closest(".dropdown")) {
-        setOpen(false);
-      }
-    };
-
-    const handleEscape = (event) => {
-      if (open && event.key === "Escape") {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    document.addEventListener("keydown", handleEscape);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, [open]);
-
   return (
-    <div className="dropdown">
+    <div className="dropdown" ref={dropdownRef}>
       <button {...props} className="dropdown-label" onClick={handleOpen}>
         {label}
         <DropdownIcon />

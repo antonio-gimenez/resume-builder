@@ -103,6 +103,7 @@ function Education() {
                   </ModalContent>
                   <ModalActions>
                     <Button
+                      color={"blue"}
                       onClick={() => {
                         removeEducation(education.id);
                         handleModal(education.id);
@@ -110,9 +111,7 @@ function Education() {
                     >
                       Confirm
                     </Button>
-                    <Button color={"blue"} onClick={() => handleModal(education.id)}>
-                      Cancel
-                    </Button>
+                    <Button onClick={() => handleModal(education.id)}>Cancel</Button>
                   </ModalActions>
                 </Modal>
               </CardActions>

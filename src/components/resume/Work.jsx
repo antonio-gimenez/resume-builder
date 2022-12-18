@@ -121,6 +121,7 @@ function Work() {
                   </ModalContent>
                   <ModalActions>
                     <Button
+                      color={"blue"}
                       onClick={() => {
                         removeProfessionalExperience(work.id);
                         handleModal(work.id);
@@ -128,9 +129,7 @@ function Work() {
                     >
                       Confirm
                     </Button>
-                    <Button color={"blue"} onClick={() => handleModal(work.id)}>
-                      Cancel
-                    </Button>
+                    <Button onClick={() => handleModal(work.id)}>Cancel</Button>
                   </ModalActions>
                 </Modal>
               </CardActions>
