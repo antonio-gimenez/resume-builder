@@ -50,7 +50,7 @@ function Work() {
       <CardHeader>
         <h2 className="card-title">Experience</h2>
         <Button
-          color={"blue"}
+          color={"primary"}
           onClick={() =>
             updateProfessionalExperience({ id: nextId, position: "", from: "", to: "", company: "", description: "" })
           }
@@ -121,7 +121,7 @@ function Work() {
                   </ModalContent>
                   <ModalActions>
                     <Button
-                      color={"blue"}
+                      color={"primary"}
                       onClick={() => {
                         removeProfessionalExperience(work.id);
                         handleModal(work.id);

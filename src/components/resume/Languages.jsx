@@ -34,7 +34,7 @@ function Languages() {
     <Card>
       <CardHeader>
         <h2 className="card-title">Languages</h2>
-        <Button color={"blue"} onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
+        <Button color={"primary"} onClick={() => updateLanguage({ id: nextId, name: "", progress: 0 })}>
           Add Language
         </Button>
       </CardHeader>
@@ -71,7 +71,7 @@ function Languages() {
                   </ModalContent>
                   <ModalActions>
                     <Button
-                      color={"blue"}
+                      color={"primary"}
                       onClick={() => {
                         removeLanguage(lang.id);
                         handleModal(lang.id);

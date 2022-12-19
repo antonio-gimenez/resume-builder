@@ -1,9 +1,8 @@
-html {
-  --selected-background: hsl(0, 0%, 100%);
-  --selected-thumb: hsl(0, 0%, 100%);
-  --selected-thumb-hover: hsl(0, 0%, 100%);
+:root {
+  --opacity: 1;
   --position-thumb: 0%;
   --level-width: 80px;
+  --current-color: 0, 0%, 100%;
 }
 
 .level-container {
@@ -24,15 +23,18 @@ html {
   height: calc(var(--level-width) / 1.2);
   border-radius: 0.4rem;
   transform: translateX(0px);
-  background-color: var(--selected-background, var(--bg-input));
+  --opacity: 0.15;
+  background-color: hsl(var(--current-color), var(--opacity));
   pointer-events: auto;
 }
 
 .level-selector.disabled {
   cursor: not-allowed;
   pointer-events: none;
-  background: var(--bg-disabled);
-  --selected-thumb: var(--clr-disabled);
+  background: hsl(var(--disabled), 0.15);
+  --current-color: 240, 10%, 70%;
+  pointer-events: none;
+  --position-thumb: 0%;
 }
 
 .level:not(.selected) {
@@ -54,12 +56,14 @@ html {
   width: 1px;
   height: 14px;
   margin-top: -7px;
-  background-color: var(--selected-thumb);
+  --opacity: 1;
+  background-color: hsl(var(--current-color), var(--opacity));
 }
 
 .level:not(.selected):hover {
   border-radius: 0.5rem;
-  background: var(--selected-thumb-hover);
+  --opacity: 0.5;
+  background: hsl(var(--current-color), var(--opacity));
 }
 
 .thumb {
@@ -70,35 +74,28 @@ html {
   height: calc(var(--level-width) / 1.2);
   z-index: 0;
   border-radius: 0.4rem;
-  background-color: var(--selected-thumb);
+  --opacity: 1;
+  background-color: hsl(var(--current-color), var(--opacity));
   transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
   transform: translateX(var(--position-thumb));
 }
 
 .level-1 {
-  --selected-background: hsl(var(--orange), 85%);
-  --selected-thumb: hsl(var(--orange), 55%);
-  --selected-thumb-hover: hsl(var(--orange), 80%);
+  --current-color: 40, 100%, 50%;
   --position-thumb: 0%;
 }
 
 .level-2 {
-  --selected-background: hsl(var(--green), 85%);
-  --selected-thumb: hsl(var(--green), 55%);
-  --selected-thumb-hover: hsl(var(--green), 70%);
+  --current-color: var(--red);
   --position-thumb: calc(var(--level-width) * 1);
 }
 
 .level-3 {
-  --selected-background: hsl(var(--blue), 85%);
-  --selected-thumb: hsl(var(--blue), 55%);
-  --selected-thumb-hover: hsl(var(--blue), 80%);
+  --current-color: var(--blue);
   --position-thumb: calc(var(--level-width) * 2);
 }
 
 .level-4 {
-  --selected-background: hsl(var(--violet), 85%);
-  --selected-thumb: hsl(var(--violet), 55%);
-  --selected-thumb-hover: hsl(var(--violet), 80%);
+  --current-color: var(--indigo);
   --position-thumb: calc(var(--level-width) * 3);
 }

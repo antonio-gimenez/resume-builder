@@ -1,8 +1,10 @@
 import React from "react";
-function Card({ children, rounded = false }) {
+function Card({ children, rounded = true, outlined = false, elevated = false }) {
   if (!children) return console.error("Card component requires children");
-  const roundedClass = rounded ? "rounded" : "";
-  return <div className={`card ${roundedClass}`}>{children}</div>;
+  const roundedClass = rounded ? "card-rounded" : "";
+  const outlinedClass = outlined ? "card-outlined" : "";
+  const elevatedClass = elevated ? "card-elevated" : "";
+  return <div className={`card ${roundedClass} ${outlinedClass} ${elevatedClass}`}>{children}</div>;
 }
 
 function CardActions({ children }) {

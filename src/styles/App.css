@@ -1,6 +1,5 @@
 @import url("_variables.css");
 @import url("fonts.css");
-@import url("color-switcher.css");
 @import url("forms.css");
 @import url("layouts.css");
 @import url("buttons.css");
@@ -11,7 +10,6 @@
 @import url("modal.css");
 @import url("dropdown.css");
 @import url("typography.css");
-
 /*
   This sets the base font size to 10px, which makes it easier to work with rems.
   The important thing to understand is that the html tag font-size need not be the same as the font-size on the body tag. 
@@ -77,23 +75,9 @@ ul {
 }
 
 .scrollable-content {
-  padding-top: var(--header-height);
-
   height: 100%;
   background: var(--bg-main);
   overflow: auto;
-}
-
-.scroll-decoration {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(to bottom, transparent, var(--red));
-  width: 100%;
-  /* overflow: hidden; */
-  height: 4rem;
-  pointer-events: none;
-  z-index: 1;
 }
 
 /* Progress */

@@ -38,7 +38,7 @@ textarea:focus {
 input:focus-within,
 input:focus,
 textarea:focus-within {
-  border: 2px solid var(--clr-form-focus);
+  border: 2px solid var(--clr-accent);
 }
 
 input::placeholder,

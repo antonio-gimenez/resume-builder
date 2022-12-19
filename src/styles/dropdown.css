@@ -16,6 +16,15 @@
   display: block;
 }
 
+.dropdown-label {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-label:hover {
+  color: var(--clr-accent);
+}
+
 .menu {
   overflow: hidden;
   position: relative;
@@ -41,11 +50,11 @@
 
 .menu-item:hover {
   background-color: var(--clr-accent);
-  color: var(--clr-text-light);
+  color: var(--clr-text-light, --clr-text);
   cursor: pointer;
 }
 
 .menu-item.is-selected {
-  background-color: var(--clr-accent);
-  color: var(--clr-text-light);
+  background-color: hsl(var(--grey));
+  color: var(--clr-text-light, --clr-text);
 }

@@ -33,7 +33,7 @@ function Certifications() {
     <Card>
       <CardHeader>
         <h2 className="card-title">Certifications</h2>
-        <Button color={"blue"} onClick={() => updateCertificate({ id: nextId, name: "" })}>
+        <Button color={"primary"} onClick={() => updateCertificate({ id: nextId, name: "" })}>
           Add Certification
         </Button>
       </CardHeader>
@@ -80,7 +80,7 @@ function Certifications() {
                   </ModalContent>
                   <ModalActions>
                     <Button
-                      color={"blue"}
+                      color={"primary"}
                       onClick={() => {
                         removeCertificate(certificate.id);
                         handleModal(certificate.id);

@@ -10,9 +10,24 @@
 .card {
   overflow: hidden;
   background-color: var(--bg-card);
-  border-radius: var(--border-radius);
   height: fit-content;
   width: clamp(200px, 100%, 480px);
+}
+
+.card-rounded {
+  border-radius: var(--border-radius);
+}
+
+.card-outlined {
+  box-shadow: 0 0 0 0.1rem var(--clr-shadow);
+}
+
+.card-outlined > .card-header {
+  box-shadow: 0 -0.1rem 0rem inset var(--clr-shadow);
+}
+
+.card-elevated {
+  box-shadow: 0 0.2rem 0.5rem var(--clr-shadow);
 }
 
 .card-header {
@@ -21,7 +36,7 @@
   font-size: var(--fs-regular);
   font-weight: var(--fw-light);
   height: auto;
-  box-shadow: 0 -0.2rem 0rem inset var(--clr-border);
+  /* box-shadow: 0 -0.2rem 0rem inset var(--clr-shadow); */
   display: flex;
   flex-wrap: wrap;
   align-items: center;

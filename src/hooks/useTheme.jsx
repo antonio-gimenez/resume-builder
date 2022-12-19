@@ -8,7 +8,6 @@ function useTheme() {
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)").matches;
     setSystemTheme(mediaQuery ? "dark" : "light");
-    console.log(theme);
   }, []);
 
   return {

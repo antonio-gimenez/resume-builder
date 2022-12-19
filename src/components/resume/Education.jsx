@@ -36,7 +36,7 @@ function Education() {
     <Card>
       <CardHeader>
         <h2 className="card-title">Education</h2>
-        <Button color={"blue"} onClick={() => updateEducation({ id: nextId, name: "" })}>
+        <Button color={"primary"} onClick={() => updateEducation({ id: nextId, name: "" })}>
           Add Education
         </Button>
       </CardHeader>
@@ -103,7 +103,7 @@ function Education() {
                   </ModalContent>
                   <ModalActions>
                     <Button
-                      color={"blue"}
+                      color={"primary"}
                       onClick={() => {
                         removeEducation(education.id);
                         handleModal(education.id);

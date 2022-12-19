@@ -27,12 +27,24 @@ function ThemeSwitcher() {
   const Icon = getIcon();
 
   const themes = [
-    { id: 0, label: "Light", value: "light", active: theme === "light" && !system },
-    { id: 1, label: "Dark", value: "dark", active: theme === "dark" && !system },
+    {
+      id: 0,
+      label: "Light",
+      value: "light",
+      active: theme === "light" && !system,
+    },
+    {
+      id: 1,
+      label: "Dark",
+      value: "dark",
+      active: theme === "dark" && !system,
+    },
     { id: 3, label: "System", value: "system", active: system },
   ];
 
-  return <Dropdown label={<Icon />} colorSelected items={themes} onClick={toggleTheme} />;
+  return (
+    <Dropdown showSelectedItemAsLabel={false} label={<Icon />} colorSelected items={themes} onClick={toggleTheme} />
+  );
 }
 
 export default ThemeSwitcher;

@@ -12,119 +12,69 @@
   --fs-large: clamp(1.56rem, calc(1vw + 1.31rem), 2.11rem);
   --fs-big: clamp(1.95rem, calc(1.56vw + 1.56rem), 2.81rem);
   --fs-huge: clamp(2.44rem, calc(2.38vw + 1.85rem), 3.75rem);
-
-  /* Colors */
+  /* Static Colors */
   --black: 0, 0%, 0%;
   --white: 0, 0%, 100%;
-  --green: 100, 65%;
-  --orange: 45, 80%;
-  --red: 340, 60%;
-  --blue: 216, 100%;
-  --violet: 260, 90%;
+  --red: 0, 60%, 50%;
+  --orange: 40deg, 100%, 50%;
   --yellow: 60, 90%;
-
+  --green: 100deg, 65%, 50%;
+  --blue: 216, 100%, 50%;
+  --indigo: 170, 100%, 50%;
+  --violet: 300, 100%, 50%;
   --dark: 0, 0%, 20%;
   --light: 0, 0%, 90%;
   --grey: 220, 10%, 45%;
+  --disabled: 240, 10%, 50%;
 
-  /* Modal fallback */
-  --bg-button: var(--bg-button-dark);
-  --clr-text: var(--clr-text-dark);
-  /*  Backgrounds */
+  /* Dynamic Colors */
+  --primary: 216, 100%, 45%;
+  --secondary: 215, 28%, 17%;
+  --accent: 216, 100%, 45%;
+  --neutral: 0, 0%, 90%;
+  --base: 0, 0%, 20%;
 
-  --accent-dark: 216, 100%, 35%;
-
-  --bg-main-dim: 226, 26%, 70%;
-  --bg-header-dim: 226, 26%, 70%;
-  --bg-input-dim: 222, 22%, 70%;
-  --bg-button-dim: 222, 22%, 70%;
-  --accent-dim: 216, 100%, 55%;
-
-  /* Texts */
-  --clr-text: hsl(var(--black));
-  --clr-text-light: hsl(0, 0%, 90%);
-  --clr-tex-dark: hsl(var(--dark));
-  --clr-text-muted: hsl(var(--grey));
-  --clr-text-muted-dark: hsla(var(--grey));
-  --clr-text-inverse: hsl(var(--white));
-
-  --clr-accent: hsl(var(--accent));
-
-  /*  */
-  --accent: 216, 100%, 65%;
-  --sf-main: hsl(var(--white));
-  --sf-header: hsl(0, 0%, 90%);
-  --sf-content: hsl(var(--grey));
-
-  /*  */
-
-  --shadow: hsl(0deg, 0%, 0%, 0.15);
-  --clr-border: hsla(var(--white), 0.2);
-
-  --bg-disabled: hsl(240, 10%, 95%);
-  --clr-disabled: hsl(240, 10%, 80%);
-  --header-height: 4.5rem;
+  /* Others */
+  --header-height: clamp(32px, 48px, 64px);
   --border-radius: 6px;
 }
 
 /* If no theme is set, use light theme */
-.app[data-theme="light"],
-.app:not([data-theme]) {
+[data-theme="light"],
+root:not([data-theme]) {
   --bg-main: hsl(220, 29%, 85%);
   --bg-header: hsl(226deg, 26%, 90%);
-  --bg-button: hsl(216deg, 100%, 45%);
   --bg-form: hsl(226deg, 26%, 87%);
   --bg-card: hsl(226deg, 26%, 90%);
   --bg-modal: hsl(226deg, 26%, 80%);
   --clr-form-focus: hsl(216deg, 100%, 45%);
   --clr-label: hsl(216deg, 50%, 20%);
   --clr-text: hsl(0deg, 0%, 20%);
-  --clr-text-light: hsl(0deg, 0%, 90%);
-  --clr-text-dark: hsl(0deg, 0%, 20%);
+  --clr-text-light: hsl(var(--light));
+  --clr-text-dark: hsl(var(--dark));
   --clr-text-inverted: hsl(0deg, 0%, 90%);
   --clr-text-placeholder: hsl(225deg, 17%, 68%);
-  --clr-border: hsla(0deg, 0%, 20%, 0.15);
+  --clr-border: hsla(0deg, 0%, 20%, 0.45);
+  --clr-shadow: hsla(0deg, 0%, 0%, 0.15);
   --clr-accent: hsl(216deg, 100%, 45%);
-  --clr-accent-hover: hsl(216deg, 100%, 35%);
 }
 
 /* Color scheme toggle */
-.app[data-theme="dark"] {
+[data-theme="dark"] {
   color-scheme: dark;
   --bg-main: hsl(226deg, 26%, 29%);
   --bg-header: hsl(226deg, 26%, 22%);
-  --bg-button: hsl(216deg, 100%, 45%);
   --bg-form: hsl(222deg, 22%, 32%);
-  --clr-form-focus: hsl(226deg, 100%, 55%);
+  --clr-form-focus: var(--clr-accent);
   --bg-card: hsl(226deg, 26%, 22%);
   --bg-modal: hsl(226deg, 26%, 80%);
   --clr-label: hsl(216deg, 50%, 90%);
   --clr-text: hsl(0deg, 0%, 90%);
-  --clr-text-light: hsl(0deg, 0%, 90%);
-  --clr-text-dark: hsl(0deg, 0%, 20%);
+  --clr-text-light: hsl(var(--light));
+  --clr-text-dark: hsl(var(--dark));
   --clr-text-inverted: hsl(0deg, 0%, 20%);
   --clr-text-placeholder: hsl(225deg, 17%, 90%);
-  --clr-border: hsla(0deg, 0%, 90%, 0.12);
-  --clr-accent: hsl(216deg, 100%, 35%);
-  --clr-accent-hover: hsl(216deg, 100%, 35%);
-}
-
-.app[data-theme="dim"] {
-  color-scheme: dark;
-  --bg-main: hsl(222deg, 22%, 26%);
-  --bg-header: hsl(226deg, 26%, 20%);
-  --bg-button: hsl(216deg, 100%, 45%);
-  --bg-form: hsl(222deg, 22%, 32%);
-  --clr-form-focus: hsl(216deg, 100%, 55%);
-  --bg-card: hsl(226deg, 26%, 20%);
-  --bg-modal: hsl(226deg, 26%, 80%);
-  --clr-label: hsl(216deg, 50%, 90%);
-  --clr-text: hsl(0deg, 0%, 90%);
-  --clr-text-light: hsl(0deg, 0%, 90%);
-  --clr-text-dark: hsl(0deg, 0%, 20%);
-  --clr-text-inverted: hsl(0deg, 0%, 20%);
-  --clr-text-placeholder: hsl(225deg, 17%, 90%);
-  --clr-border: hsla(0deg, 0%, 90%, 0.2);
-  --clr-accent: hsl(216deg, 100%, 45%);
-  --clr-accent-hover: hsl(216deg, 100%, 35%);
+  --clr-border: hsla(0deg, 0%, 90%, 0.45);
+  --clr-shadow: hsla(0deg, 0%, 0%, 0.15);
+  --clr-accent: hsl(var(--primary));
 }

@@ -24,40 +24,35 @@ button {
   text-align: center;
   padding: 0.8rem 1rem;
   background: var(--bg-button);
+  border-radius: var(--border-radius);
   cursor: pointer;
   border: 2px solid transparent;
-  color: var(--button-color-text);
+  color: var(--clr-text-dark);
   user-select: none;
-  /* From https://css.glass */
-  background: rgba(31, 41, 55, 0.2);
-  border-radius: var(--border-radius);
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  background: hsla(215, 28%, 17%, 0.2);
 }
 
 /* if button has a class */
 .button:not([class=""]) {
-  color: var(--clr-button-text);
+  color: var(--clr-text-dark);
 }
 
 .button.block {
   width: 100%;
 }
 
-.button.blue {
-  background: var(--bg-button);
+.button.primary {
+  background: var(--clr-accent);
   color: var(--clr-text-light);
 }
 
-.button.blue:hover {
-  background: var(--clr-accent-hover);
-}
-
 .button.red {
-  background: hsl(var(--red), 45%);
+  background: hsl(var(--red));
+  color: var(--clr-text-light);
 }
 
 .button.red:hover {
-  background: hsl(var(--red), 35%);
+  background: hsl(var(--red), 0.95);
 }
 
 .outline:hover {
