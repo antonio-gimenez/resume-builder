@@ -23,13 +23,13 @@ button {
   white-space: nowrap;
   text-align: center;
   padding: 0.8rem 1rem;
-  background: var(--bg-button);
+  background-color: hsl(var(--neutral));
+
   border-radius: var(--border-radius);
   cursor: pointer;
   border: 2px solid transparent;
   color: var(--clr-text-dark);
   user-select: none;
-  background: hsla(215, 28%, 17%, 0.2);
 }
 
 /* if button has a class */
@@ -42,7 +42,7 @@ button {
 }
 
 .button.primary {
-  background: var(--clr-accent);
+  background: hsl(var(--accent));
   color: var(--clr-text-light);
 }
 
@@ -53,10 +53,4 @@ button {
 
 .button.red:hover {
   background: hsl(var(--red), 0.95);
-}
-
-.outline:hover {
-  background: transparent;
-  color: var(--clr-accent);
-  border: 2px solid var(--clr-accent);
 }

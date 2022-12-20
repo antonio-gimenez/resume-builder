@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react";
 import { ReactComponent as DropdownIcon } from "../../assets/icons/chevron-down.svg";
 import useKey from "../../hooks/useKey";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
-function Dropdown({ label, items, onClick = () => {}, showSelectedItemAsLabel, colorSelected, ...props }) {
+import Menu from "./Menu";
+function Dropdown({ label, items, onClick = () => {}, showSelectedItemAsLabel, ...props }) {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef();
   useOnClickOutside({ ref: dropdownRef, handler: () => setOpen(false) });
@@ -27,17 +28,7 @@ function Dropdown({ label, items, onClick = () => {}, showSelectedItemAsLabel, c
         <span>{showSelectedItemAsLabel ? labelFromSelectedItem() : label}</span>
         <DropdownIcon />
       </button>
-      <ul id={"menu"} className={`menu ${open ? "open" : ""}`}>
-        {items.map((child) => (
-          <li
-            key={child.id}
-            className={`menu-item ${colorSelected && child.active ? "is-selected" : ""}`}
-            onClick={() => handleClick(child.value)}
-          >
-            {child.label}
-          </li>
-        ))}
-      </ul>
+      <Menu items={items} open={open} onClick={handleClick} />
     </div>
   );
 }

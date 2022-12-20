@@ -1,33 +1,17 @@
 .card-list {
   padding: 1rem 0.75rem;
   display: grid;
-  align-items: stretch;
-  justify-content: stretch;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 0.5rem;
 }
 
 .card {
   overflow: hidden;
-  background-color: var(--bg-card);
+  background-color: hsl(var(--base-1));
   height: fit-content;
   width: clamp(200px, 100%, 480px);
-}
-
-.card-rounded {
+  overflow: auto;
   border-radius: var(--border-radius);
-}
-
-.card-outlined {
-  box-shadow: 0 0 0 0.1rem var(--clr-shadow);
-}
-
-.card-outlined > .card-header {
-  box-shadow: 0 -0.1rem 0rem inset var(--clr-shadow);
-}
-
-.card-elevated {
-  box-shadow: 0 0.2rem 0.5rem var(--clr-shadow);
 }
 
 .card-header {
@@ -36,7 +20,7 @@
   font-size: var(--fs-regular);
   font-weight: var(--fw-light);
   height: auto;
-  /* box-shadow: 0 -0.2rem 0rem inset var(--clr-shadow); */
+  box-shadow: 0 -0.2rem 0rem inset hsl(var(--shadow), 0.1);
   display: flex;
   flex-wrap: wrap;
   align-items: center;

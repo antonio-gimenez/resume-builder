@@ -1,4 +1,4 @@
-:root {
+html {
   /*  Font related */
   --ff-family: "Fira Sans", sans-serif;
   --fw-light: 300;
@@ -17,64 +17,58 @@
   --white: 0, 0%, 100%;
   --red: 0, 60%, 50%;
   --orange: 40deg, 100%, 50%;
-  --yellow: 60, 90%;
+  --yellow: 60, 50%, 50%;
   --green: 100deg, 65%, 50%;
   --blue: 216, 100%, 50%;
-  --indigo: 170, 100%, 50%;
   --violet: 300, 100%, 50%;
   --dark: 0, 0%, 20%;
   --light: 0, 0%, 90%;
   --grey: 220, 10%, 45%;
   --disabled: 240, 10%, 50%;
-
   /* Dynamic Colors */
-  --primary: 216, 100%, 45%;
-  --secondary: 215, 28%, 17%;
+  --base: 220, 16%, 16%;
+  --base-1: 220, 20%, 20%;
+  --base-2: 220, 22%, 22%;
+  --base-3: 220, 25%, 25%;
   --accent: 216, 100%, 45%;
-  --neutral: 0, 0%, 90%;
-  --base: 0, 0%, 20%;
-
+  --neutral: 220, 5%, 75%;
   /* Others */
   --header-height: clamp(32px, 48px, 64px);
-  --border-radius: 6px;
+  --border-radius: 0.75rem;
 }
 
 /* If no theme is set, use light theme */
 [data-theme="light"],
 root:not([data-theme]) {
-  --bg-main: hsl(220, 29%, 85%);
-  --bg-header: hsl(226deg, 26%, 90%);
-  --bg-form: hsl(226deg, 26%, 87%);
-  --bg-card: hsl(226deg, 26%, 90%);
-  --bg-modal: hsl(226deg, 26%, 80%);
-  --clr-form-focus: hsl(216deg, 100%, 45%);
+  --base: 220, 16%, 96%;
+  --base-1: 220, 20%, 91%;
+  --base-2: 220, 22%, 86%;
+  --base-3: 220, 25%, 84%;
+  --accent: 216, 100%, 45%;
+  --neutral: 220, 5%, 75%;
   --clr-label: hsl(216deg, 50%, 20%);
   --clr-text: hsl(0deg, 0%, 20%);
   --clr-text-light: hsl(var(--light));
   --clr-text-dark: hsl(var(--dark));
-  --clr-text-inverted: hsl(0deg, 0%, 90%);
   --clr-text-placeholder: hsl(225deg, 17%, 68%);
-  --clr-border: hsla(0deg, 0%, 20%, 0.45);
-  --clr-shadow: hsla(0deg, 0%, 0%, 0.15);
-  --clr-accent: hsl(216deg, 100%, 45%);
+  --border: 0deg, 0%, 20%;
+  --shadow: 0deg, 0%, 0%;
 }
 
 /* Color scheme toggle */
 [data-theme="dark"] {
   color-scheme: dark;
-  --bg-main: hsl(226deg, 26%, 29%);
-  --bg-header: hsl(226deg, 26%, 22%);
-  --bg-form: hsl(222deg, 22%, 32%);
-  --clr-form-focus: var(--clr-accent);
-  --bg-card: hsl(226deg, 26%, 22%);
-  --bg-modal: hsl(226deg, 26%, 80%);
+  --base: 220, 16%, 16%;
+  --base-1: 220, 20%, 20%;
+  --base-2: 220, 22%, 22%;
+  --base-3: 220, 25%, 25%;
+  --accent: 216, 100%, 45%;
+  --neutral: 220, 5%, 75%;
   --clr-label: hsl(216deg, 50%, 90%);
   --clr-text: hsl(0deg, 0%, 90%);
   --clr-text-light: hsl(var(--light));
   --clr-text-dark: hsl(var(--dark));
-  --clr-text-inverted: hsl(0deg, 0%, 20%);
   --clr-text-placeholder: hsl(225deg, 17%, 90%);
-  --clr-border: hsla(0deg, 0%, 90%, 0.45);
-  --clr-shadow: hsla(0deg, 0%, 0%, 0.15);
-  --clr-accent: hsl(var(--primary));
+  --border: 0deg, 0%, 90%;
+  --shadow: 0deg, 0%, 0%;
 }

@@ -8,7 +8,7 @@
   width: 100%;
   height: 100%;
   line-height: normal;
-  background: var(--bg-form, --white);
+  background: hsl(var(--base-3, --white));
   outline: currentcolor none medium;
   border: 2px solid transparent;
   resize: vertical;
@@ -38,7 +38,13 @@ textarea:focus {
 input:focus-within,
 input:focus,
 textarea:focus-within {
-  border: 2px solid var(--clr-accent);
+  border: 2px solid hsl(var(--accent), 0.45);
+}
+
+/* check if color-scheme is dark */
+[data-theme="dark"] input:focus-within,
+[data-theme="dark"] textarea:focus-within {
+  background-color: hsl(var(--accent), 0.1);
 }
 
 input::placeholder,

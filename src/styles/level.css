@@ -81,21 +81,21 @@
 }
 
 .level-1 {
-  --current-color: 40, 100%, 50%;
+  --current-color: var(--red);
   --position-thumb: 0%;
 }
 
 .level-2 {
-  --current-color: var(--red);
+  --current-color: var(--orange);
   --position-thumb: calc(var(--level-width) * 1);
 }
 
 .level-3 {
-  --current-color: var(--blue);
+  --current-color: var(--green);
   --position-thumb: calc(var(--level-width) * 2);
 }
 
 .level-4 {
-  --current-color: var(--indigo);
+  --current-color: var(--blue);
   --position-thumb: calc(var(--level-width) * 3);
 }

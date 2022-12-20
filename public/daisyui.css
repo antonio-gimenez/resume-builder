@@ -199,7 +199,7 @@ html {
 }
 :root {
   color-scheme: light;
-  --pf: 259 94% 41%;
+  /* --pf: 259 94% 41%;
   --sf: 314 100% 38%;
   --af: 174 60% 41%;
   --nf: 219 14% 22%;
@@ -220,7 +220,7 @@ html {
   --btn-focus-scale: 0.95;
   --border-btn: 1px;
   --tab-border: 1px;
-  --tab-radius: 0.5rem;
+  --tab-radius: 0.5rem; */
   --p: 259 94% 51%;
   --pc: 0 0% 100%;
   --s: 314 100% 47%;

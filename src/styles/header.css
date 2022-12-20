@@ -5,8 +5,8 @@
   left: 0;
   height: var(--header-height);
   width: 100%;
-  background: var(--bg-header);
-  box-shadow: 0 0.25rem 1rem var(--shadow);
+  background: hsl(var(--base-1));
+  box-shadow: 0 0.25rem 1rem hsl(var(--shadow), 0.1);
   color: var(--clr-text);
   fill: var(--clr-text);
   display: flex;
@@ -37,8 +37,8 @@
 
 .navbar-branding {
   text-transform: uppercase;
-  font-size: var(--fs-huge);
-  font-weight: var(--fw-bold);
+  font-size: var(--fs-big);
+  font-weight: var(--fw-semibold);
 }
 
 .nav-right {
@@ -52,5 +52,5 @@
 
 /* select parent element of github icon */
 *:hover > svg {
-  stroke: var(--clr-accent);
+  stroke: hsl(var(--accent));
 }

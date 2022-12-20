@@ -43,7 +43,7 @@ function ThemeSwitcher() {
   ];
 
   return (
-    <Dropdown showSelectedItemAsLabel={false} label={<Icon />} colorSelected items={themes} onClick={toggleTheme} />
+    <Dropdown showSelectedItemAsLabel={false} label={"Theme"} colorSelected items={themes} onClick={toggleTheme} />
   );
 }
 

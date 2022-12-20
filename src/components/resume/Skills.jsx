@@ -31,7 +31,7 @@ function Skills() {
   };
 
   return (
-    <Card>
+    <Card elevated>
       <CardHeader>
         <h2 className="card-title">Skills</h2>
         <Button color={"primary"} onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
