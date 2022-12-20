@@ -1,6 +1,7 @@
 import React from "react";
 
-function Menu({ items, open, onClick = () => {} }) {
+function Menu({ items, open = true, onClick = () => {} }) {
+  if (!items || !open) return null;
   return (
     <ul id={"menu"} className={`menu ${open ? "open" : ""}`}>
       {items.map((child) => (
