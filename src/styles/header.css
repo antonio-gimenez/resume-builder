@@ -5,10 +5,10 @@
   left: 0;
   height: var(--header-height);
   width: 100%;
-  background: hsl(var(--base-1));
-  box-shadow: 0 0.25rem 1rem hsl(var(--shadow), 0.1);
-  color: var(--clr-text);
-  fill: var(--clr-text);
+  background: hsl(var(--secondary));
+  /* box-shadow: 0 0.25rem 1rem hsl(var(--shadow), 0.1); */
+  color: var(--base-content);
+  fill: var(--base-content);
   display: flex;
   align-items: center;
   padding-block: 1rem;
@@ -51,6 +51,6 @@
 }
 
 /* select parent element of github icon */
-*:hover > svg {
+/* *:hover > svg {
   stroke: hsl(var(--accent));
-}
+} */

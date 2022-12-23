@@ -1,4 +1,5 @@
 @import url("_variables.css");
+@import url("themes.css");
 @import url("fonts.css");
 @import url("forms.css");
 @import url("layouts.css");
@@ -9,17 +10,18 @@
 @import url("level.css");
 @import url("modal.css");
 @import url("dropdown.css");
+@import url("switch.css");
 @import url("typography.css");
+@import url("reset.css");
+
 /*
   This sets the base font size to 10px, which makes it easier to work with rems.
   The important thing to understand is that the html tag font-size need not be the same as the font-size on the body tag. 
-  */
+*/
 html {
-  color: var(--clr-text);
   font-size: 62.5%;
 }
 
-/* box sizing */
 *,
 *::before,
 *::after {
@@ -27,11 +29,11 @@ html {
 }
 
 body {
+  color: hsl(var(--base-content));
   font-size: var(--fs-medium);
   line-height: normal;
   scroll-behavior: smooth;
   font-family: var(--ff-family);
-
   font-weight: var(--fw-regular);
 }
 
@@ -68,10 +70,6 @@ ul {
   text-shadow: 0 1px rgb(0 0 0 / var(--glass-text-shadow-opacity, 5%));
 }
 
-.text-muted {
-  color: var(--clr-text-muted);
-}
-
 .container > * {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -85,7 +83,7 @@ ul {
 .app {
   display: flex;
   flex-direction: column;
-  background: hsl(var(--base-2));
+  background: hsl(var(--base), 1);
 
   padding-top: var(--header-height);
   height: 100vh;

@@ -5,7 +5,6 @@ button {
   cursor: pointer;
   margin: 0;
   padding: 0;
-  color: var(--clr-text);
   transition: background 0.1s ease 0s, color 0.1s ease 0s, box-shadow 0.1s ease 0s;
   pointer-events: auto;
 }
@@ -22,35 +21,53 @@ button {
   outline: none;
   white-space: nowrap;
   text-align: center;
-  padding: 0.8rem 1rem;
+  padding: 1rem;
+  /* height: 4rem; */
   background-color: hsl(var(--neutral));
-
   border-radius: var(--border-radius);
   cursor: pointer;
   border: 2px solid transparent;
-  color: var(--clr-text-dark);
+  color: hsl(var(--neutral-content));
   user-select: none;
 }
 
-/* if button has a class */
-.button:not([class=""]) {
-  color: var(--clr-text-dark);
+.button:hover {
+  background: hsl(var(--neutral-focus));
 }
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* if button has a class */
 
 .button.block {
   width: 100%;
 }
 
 .button.primary {
-  background: hsl(var(--accent));
-  color: var(--clr-text-light);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-content));
 }
 
+.button.primary:hover {
+  background: hsl(var(--primary-focus));
+}
 .button.red {
   background: hsl(var(--red));
-  color: var(--clr-text-light);
+  color: var(--red-content);
 }
 
 .button.red:hover {
-  background: hsl(var(--red), 0.95);
+  background: hsl(var(--red-focus));
+}
+
+.button.ghost {
+  background: transparent;
+  color: hsl(var(--neutral-content));
+}
+
+.button.ghost:hover {
+  background-color: hsl(var(--base-content, hsl(0, 0, 0)) / var(--bg-opacity));
+  --bg-opacity: 0.2;
 }

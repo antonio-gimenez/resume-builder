@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { ReactComponent as DropdownIcon } from "../../assets/icons/chevron-down.svg";
+import { ReactComponent as DropdownIcon } from "../../assets/icons/chevron-down-20.svg";
 import useKey from "../../hooks/useKey";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import Menu from "./Menu";
@@ -24,9 +24,9 @@ function Dropdown({ label, items, onClick = () => {}, showSelectedItemAsLabel, .
 
   return (
     <div className="dropdown" ref={dropdownRef}>
-      <button {...props} className="dropdown-label" onClick={handleOpen}>
+      <button {...props} onClick={handleOpen}>
         <span>{showSelectedItemAsLabel ? labelFromSelectedItem() : label}</span>
-        <DropdownIcon />
+        <DropdownIcon className="dropdown-icon" />
       </button>
       <Menu items={items} open={open} onClick={handleClick} />
     </div>

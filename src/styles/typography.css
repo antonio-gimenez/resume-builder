@@ -1,11 +1,10 @@
 a.link {
+  color: var(--base-content);
   text-decoration: none;
-  color: var(--clr-text);
-  border-bottom: 2px solid transparent;
 }
 
 a.link:hover {
-  border-bottom: 2px dotted var(--clr-text);
+  text-decoration: underline;
 }
 
 .card-title {
@@ -18,5 +17,11 @@ a.link:hover {
 
 .label {
   display: block;
-  color: var(--clr-label);
+  --text-opacity: 0.8;
+  color: hsl(var(--base-content), var(--text-opacity));
+}
+
+.text-muted {
+  --text-opacity: 0.5;
+  color: hsl(var(--base-content) / var(--text-opacity));
 }

@@ -3,7 +3,6 @@ import useTheme from "../hooks/useTheme";
 import { ReactComponent as Moon } from "../assets/icons/moon.svg";
 import { ReactComponent as Sun } from "../assets/icons/sun.svg";
 import { ReactComponent as System } from "../assets/icons/system.svg";
-import { ReactComponent as Dim } from "../assets/icons/cloud.svg";
 import { Dropdown } from "./ui";
 
 function ThemeSwitcher() {
@@ -21,7 +20,6 @@ function ThemeSwitcher() {
     if (system) return System;
     if (theme === "light") return Sun;
     if (theme === "dark") return Moon;
-    if (theme === "dim") return Dim;
   }
 
   const Icon = getIcon();
@@ -42,9 +40,7 @@ function ThemeSwitcher() {
     { id: 3, label: "System", value: "system", active: system },
   ];
 
-  return (
-    <Dropdown showSelectedItemAsLabel={false} label={"Theme"} colorSelected items={themes} onClick={toggleTheme} />
-  );
+  return <Dropdown showSelectedItemAsLabel={false} label={<Icon />} items={themes} onClick={toggleTheme} />;
 }
 
 export default ThemeSwitcher;

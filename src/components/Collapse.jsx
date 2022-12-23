@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { ReactComponent as Chevron } from "../assets/icons/chevron-down.svg";
+import { ReactComponent as Chevron } from "../assets/icons/chevron-down-24.svg";
 
 function Collapse({ children, title = "New Item", open = true, ...props }) {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <div className="collapse-container" {...props} tabIndex={0}>
+    <div className="collapse" {...props} tabIndex={0}>
       <button type={"button"} className="collapse-button" onClick={() => setOpen(!isOpen)}>
         <div className={`collapse-title`}>
           <span>{title}</span>

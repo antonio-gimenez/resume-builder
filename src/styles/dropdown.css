@@ -14,8 +14,7 @@
 
 .dropdown .menu.open {
   display: block;
-
-  box-shadow: 0 0 1.2rem 0rem hsla(var(--shadow), 0.3);
+  box-shadow: 0 0 1.2rem 0rem hsla(var(--shadow), 0.15);
 }
 
 .dropdown-label {
@@ -23,13 +22,11 @@
   align-items: center;
 }
 
-.dropdown-label:hover {
-  color: hsl(var(--accent));
-}
-
 .menu {
   overflow: hidden;
   position: relative;
+  background-color: hsl(var(--neutral));
+
   display: flex;
   flex-direction: column;
   border-radius: var(--border-radius);
@@ -40,10 +37,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  background-color: white;
   justify-content: space-between;
   padding: 1.5rem 2.25rem;
-  color: var(--clr-text-dark);
+  color: hsl(var(--base-content));
   transition: all 0.3s ease-in-out;
 }
 

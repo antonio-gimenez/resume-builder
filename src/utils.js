@@ -13,7 +13,10 @@ export const defaultLevels = {
   ],
 };
 
-export function findLabelProgress(progress, type = "skills") {
+export function findLabelProgress(progress, type = "skills", disabled = false) {
+  if (disabled) {
+    return "Disabled";
+  }
   const levels = defaultLevels[type];
   if (!progress || !levels) {
     return console.error("Progress is required");

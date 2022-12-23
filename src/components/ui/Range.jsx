@@ -28,7 +28,7 @@ function Range({ levelType = "skills", steps = 30, currentProgress = 5, handleCh
   return (
     <div className={`input-container level-container`}>
       <label className="label" htmlFor="name">
-        Level {"- " + findLabelProgress(progress, levelType)}
+        {props.disabled ? "Disabled" : findLabelProgress(progress, levelType, props.disabled)}
       </label>
       <div className={`level-selector ${props.disabled && "disabled"} level-${getLevelLabel()}`}>
         {defaultLevels[levelType].map((level) => {

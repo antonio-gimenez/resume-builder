@@ -5,11 +5,12 @@ import Card, { CardContent, CardHeader, CardActions } from "../Card";
 import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
 import { Button, Input } from "../ui";
 import Range from "../ui/Range";
+import Switch from "../ui/Switch";
 
 function Skills() {
   const { skills, updateSkill, removeSkill } = useResume();
   const [nextId, setNextId] = useState(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
-
+  const [showSkillLevel, setShowSkillLevel] = useState(false);
   const [isModalOpen, setModalOpen] = useState({});
 
   function handleModal(id) {
@@ -31,14 +32,18 @@ function Skills() {
   };
 
   return (
-    <Card elevated>
+    <Card>
       <CardHeader>
         <h2 className="card-title">Skills</h2>
-        <Button color={"primary"} onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>
-          Add Skill
-        </Button>
+        <Button onClick={() => updateSkill({ id: nextId, name: "", progress: 0 })}>Add Skill</Button>
       </CardHeader>
       <CardContent>
+        <Switch
+          checked={showSkillLevel}
+          onChange={() => setShowSkillLevel(!showSkillLevel)}
+          label="Don't show skill level"
+        />
+
         {skills.length > 0 ? (
           skills.map((skill, index) => (
             <Collapse key={skill.id} open={!skill.name} title={skill.name || "(Not specified)"}>
@@ -52,7 +57,7 @@ function Skills() {
               />
               <Range
                 levelType="skills"
-                disabled={!skill.name}
+                disabled={showSkillLevel || !skill.name}
                 id={skill.id}
                 name={"progress"}
                 currentProgress={skill.progress || 5}

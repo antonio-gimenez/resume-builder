@@ -1,5 +1,5 @@
 /* if there are more than 2 collapse-container add a separator */
-.collapse-container:not(:last-child) {
+.collapse:not(:last-child) {
   border-radius: 0;
   border-bottom: 1px dashed hsl(var(--border), 0.5);
 }
@@ -9,7 +9,7 @@
   margin: 0.25rem;
 }
 
-.collapse-container {
+.collapse {
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
