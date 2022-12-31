@@ -1,7 +1,7 @@
 import React from "react";
 function Card({ children }) {
   if (!children) return console.error("Card component requires children");
-  return <div className={`card `}>{children}</div>;
+  return <div className={`card  `}>{children}</div>;
 }
 
 function CardHeader({ children }) {

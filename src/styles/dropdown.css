@@ -7,14 +7,14 @@
 .dropdown .menu {
   display: none;
   position: absolute;
-  z-index: 1;
   overflow: hidden;
+
   right: 0;
 }
 
 .dropdown .menu.open {
   display: block;
-  box-shadow: 0 0 1.2rem 0rem hsla(var(--shadow), 0.15);
+  /* box-shadow: 0 0 1.2rem 0rem hsla(var(--shadow), 0.15); */
 }
 
 .dropdown-label {
@@ -23,14 +23,16 @@
 }
 
 .menu {
-  overflow: hidden;
-  position: relative;
-  background-color: hsl(var(--neutral));
-
+  max-height: 30rem;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 1.2rem 0rem hsla(var(--shadow), 0.15);
   border-radius: var(--border-radius);
   flex-wrap: wrap;
+  color: hsl(var(--surface-content));
 }
 
 .menu-item {
@@ -38,18 +40,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2.25rem;
-  color: hsl(var(--base-content));
+  padding: 1.5rem 2.5rem;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .menu-item:hover {
-  background-color: hsl(var(--accent));
-  color: var(--clr-text-light, --clr-text);
-  cursor: pointer;
+  background-color: hsl(var(--surface-content));
+  color: hsl(var(--surface));
 }
 
 .menu-item.is-selected {
   background-color: hsl(var(--accent));
-  color: var(--clr-text-light, --clr-text);
+  color: hsl(var(--light));
 }

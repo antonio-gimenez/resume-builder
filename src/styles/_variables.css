@@ -19,43 +19,41 @@ html {
   --green: 100deg, 65%, 50%;
   --blue: 216, 100%, 50%;
   --violet: 300, 100%, 50%;
-  --dark: 0, 0%, 20%;
+  --dark: 0 0% 20%;
   --light: 0, 0%, 90%;
   --grey: 220, 10%, 45%;
   --disabled: 240, 10%, 50%;
   --header-height: clamp(32px, 48px, 64px);
-  --border-radius: 1rem;
+  --border-radius: 0.95rem;
 
-  --base: 220, 16%, 16%;
-  --base-content: 220 13% 19%;
+  --gradient: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  --surface: 220, 16%, 16%;
+  --surface-content: 220 13% 19%;
 
-  --base-100: 220, 22%, 22%;
-  --base-200: 220, 25%, 25%;
-  --base-300: 220, 28%, 28%;
+  --surface-100: 220, 22%, 22%;
+  --surface-200: 220, 25%, 25%;
+  --surface-300: 220, 28%, 28%;
 
-  --neutral: 220, 5%, 75%;
-  --neutral-content: 0, 0%, 100%;
-  --primary: 262 80% 40%;
-  --primary-content: 0 0% 100%;
+  --complementary: 220, 5%, 75%;
+  --complementary-content: 0, 0%, 100%;
+  --accent: 262 80% 40%;
+  --accent-content: 0 0% 100%;
 
   --secondary: 316 70% 40%;
   --secondary-content: 0 0% 100%;
 }
 
 /* If no theme is set, use light theme */
-[data-theme="light"] {
-  --base: 220, 16%, 96%;
-  --base-1: 220, 20%, 91%;
-  --base-2: 220, 22%, 86%;
-  --base-3: 220, 25%, 84%;
+[data-theme="light"],
+root:not([data-theme]) {
+  --surface: 220, 15%, 90%;
+  --surface-100: 220, 20%, 85%;
+  --surface-200: 220, 20%, 75%;
+  --surface-300: 220, 20%, 72%;
+  --surface-content: 220 13% 19%;
   --accent: 216, 100%, 45%;
-  --neutral: 220, 5%, 75%;
-  --base-content: 0, 0%, 20%;
-  --clr-label: hsl(216deg, 50%, 20%);
-  --clr-text: hsl(0deg, 0%, 20%);
-  --clr-text-light: hsl(var(--light));
-  --clr-text-dark: hsl(var(--dark));
-  --clr-text-placeholder: hsl(225deg, 17%, 68%);
+  --complementary: 220, 5%, 75%;
+
   --border: 0deg, 0%, 20%;
   --shadow: 0deg, 0%, 0%;
 }
@@ -63,30 +61,24 @@ html {
 /* Color scheme toggle */
 [data-theme="dark"] {
   color-scheme: dark;
-  --base: 220, 20%, 25%;
-  --base-100: 220, 20%, 20%;
-  --base-200: 220, 20%, 15%;
-  --base-300: 220, 20%, 13%;
-  --base-content: 220 15% 85%;
-  /* make a neutral color */
-  --neutral: 220, 18%, 14%;
-  --neutral-focus: 223, 17%, 8%;
-  --neutral-content: 220, 13%, 69%;
+  --surface: 220, 20%, 25%;
+  --surface-100: 220, 20%, 20%;
+  --surface-200: 220, 20%, 15%;
+  --surface-300: 220, 20%, 13%;
+  --surface-content: 220 15% 85%;
 
-  --accent: 216 100% 45%;
-  --accent-focus: 216, 100%, 50%;
+  --complementary: 220, 20%, 25%;
+  --complementary-focus: 220, 20%, 20%;
+  --complementary-content: 220, 15%, 85%;
 
-  --primary: 220 100% 40%;
-  --primary-focus: 220 100% 35%;
-  --primary-content: 0 0% 100%;
-
-  --secondary: 316 70% 40%;
-  --secondary-focus: 316 70% 45%;
-  --secondary-content: 0 0% 100%;
+  --accent: 222 100% 45%;
+  --accent-focus: 222, 100%, 50%;
+  --accent-content: 0, 0%, 100%;
 
   --red: 0, 70%, 40%;
   --red-focus: 0, 70%, 35%;
   --red-content: 0, 0%, 100%;
+  --gradient: linear-gradient(43deg, hsl(230, 40%, 24%) 0%, hsl(304, 22%, 25%) 46%, hsl(39, 50%, 42%) 100%);
 
   --border: 0deg, 0%, 90%;
   --shadow: 0deg, 0%, 0%;

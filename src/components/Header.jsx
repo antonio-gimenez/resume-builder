@@ -4,7 +4,6 @@ import { ReactComponent as Github } from "../assets/icons/github.svg";
 function Header() {
   useEffect(() => {
     const header = document.querySelector(".header");
-    console.log({ header });
     const handleScroll = () => {
       console.log(window.scrollY, window.scroll, window.pageYOffset);
       if (window.scroll > 0) {
@@ -22,7 +21,7 @@ function Header() {
   }, []);
 
   return (
-    <header className="header">
+    <header className="header ">
       <div className="navbar container">
         <nav aria-label={"Main navigation"}>
           <span className="navbar-branding">Resume builder</span>

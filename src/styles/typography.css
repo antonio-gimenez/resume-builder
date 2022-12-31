@@ -1,5 +1,5 @@
 a.link {
-  color: var(--base-content);
+  color: var(--surface-content);
   text-decoration: none;
 }
 
@@ -18,10 +18,10 @@ a.link:hover {
 .label {
   display: block;
   --text-opacity: 0.8;
-  color: hsl(var(--base-content), var(--text-opacity));
+  color: hsl(var(--surface-content), var(--text-opacity));
 }
 
 .text-muted {
   --text-opacity: 0.5;
-  color: hsl(var(--base-content) / var(--text-opacity));
+  color: hsl(var(--surface-content) / var(--text-opacity));
 }

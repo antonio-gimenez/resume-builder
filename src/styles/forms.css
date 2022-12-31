@@ -9,7 +9,7 @@
   height: 100%;
   line-height: normal;
   --bg-opacity: 0.4;
-  background: hsl(var(--base-200), var(--bg-opacity));
+  background: hsl(var(--surface-200), var(--bg-opacity));
   outline: currentcolor none medium;
   border: 2px solid transparent;
   resize: vertical;
@@ -27,7 +27,7 @@
 .input:focus-within,
 .textarea:focus-within {
   --border-opacity: 1;
-  border-color: hsl(var(--base-content) / var(--border-opacity));
+  border-color: hsl(var(--surface-content) / var(--border-opacity));
 }
 
 input:disabled,

@@ -18,8 +18,8 @@
   max-height: 90vh;
   overflow-y: auto;
   max-width: 540px;
-  background: hsl(var(--neutral));
-  color: hsl(var(--neutral-content));
+  background: hsl(var(--surface-100));
+  color: hsl(var(--surface-content));
   border-radius: var(--border-radius);
   z-index: 2;
   padding: 32px 40px;

@@ -2,7 +2,7 @@
   --toggle-width: 3rem;
   --toggle-height: calc(var(--toggle-width) / 1.8);
   flex-shrink: 0;
-  --toggle-background: hsl(var(--base));
+  --toggle-background: hsl(var(--surface));
   --offset: calc(var(--toggle-width) / 2);
   --offset-enabled: calc(var(--offset) * -1);
   --toggle-border: 0 0;
@@ -12,9 +12,9 @@
   -webkit-appearance: none;
   appearance: none;
   --border-opacity: 0.2;
-  border: 1px solid hsl(var(--secondary) / var(--border-opacity));
+  border: 1px solid hsl(var(--surface-content) / var(--border-opacity));
   --bg-opacity: 0.5;
-  background-color: hsl(var(--secondary) / var(--bg-opacity));
+  background-color: hsl(var(--surface-content) / var(--bg-opacity));
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: var(--border-radius, 1rem);
@@ -33,7 +33,7 @@
 
 .toggle + .label-toggle {
   --text-opacity: 0.5;
-  color: hsl(var(--base-content) / var(--text-opacity));
+  color: hsl(var(--surface-content) / var(--text-opacity));
 }
 
 .toggle:checked + .label-toggle,

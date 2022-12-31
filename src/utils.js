@@ -59,3 +59,11 @@ export function stripNumber(value) {
   console.log(`stripNumber: ${value}`);
   return value.replace(/[^0-9]/g, "");
 }
+
+export function getLastIdFromArray(array) {
+  if (!array.length) {
+    return 0;
+  }
+  const lastElement = array.reverse().find((item) => item !== null && item !== undefined);
+  return lastElement ? lastElement.id + 1 : 0;
+}

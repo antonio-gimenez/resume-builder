@@ -23,16 +23,16 @@ button {
   text-align: center;
   padding: 1rem;
   /* height: 4rem; */
-  background-color: hsl(var(--neutral));
+  background-color: hsl(var(--complementary));
   border-radius: var(--border-radius);
   cursor: pointer;
   border: 2px solid transparent;
-  color: hsl(var(--neutral-content));
+  color: hsl(var(--complementary-content));
   user-select: none;
 }
 
 .button:hover {
-  background: hsl(var(--neutral-focus));
+  background: hsl(var(--complementary-focus));
 }
 
 button:active {
@@ -45,13 +45,13 @@ button:active {
   width: 100%;
 }
 
-.button.primary {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-content));
+.button.accent {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-content));
 }
 
-.button.primary:hover {
-  background: hsl(var(--primary-focus));
+.button.accent:hover {
+  background: hsl(var(--accent-focus));
 }
 .button.red {
   background: hsl(var(--red));
@@ -64,10 +64,10 @@ button:active {
 
 .button.ghost {
   background: transparent;
-  color: hsl(var(--neutral-content));
+  color: hsl(var(--complementary-content));
 }
 
 .button.ghost:hover {
-  background-color: hsl(var(--base-content, hsl(0, 0, 0)) / var(--bg-opacity));
+  background-color: hsl(var(--surface-content, hsl(0, 0, 0)) / var(--bg-opacity));
   --bg-opacity: 0.2;
 }

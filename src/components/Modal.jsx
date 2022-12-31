@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import useKey from "../hooks/useKey";
+import useKeyPress from "../hooks/useKeyPress";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 
 const modalRoot = document.getElementById("modal-root");
@@ -8,7 +8,7 @@ const modalRoot = document.getElementById("modal-root");
 function Modal({ children, open = false, close = () => {} }) {
   const modalRef = useRef();
   useOnClickOutside({ ref: modalRef, handler: () => close() });
-  useKey({ key: "Escape", handler: () => close() });
+  useKeyPress({ key: "Escape", handler: () => close() });
 
   useEffect(() => {
     const handleEscape = (event) => {

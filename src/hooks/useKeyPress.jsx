@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function useKey({ key, handler }) {
+function useKeyPress({ key, handler }) {
   useEffect(
     () => {
       const listener = (event) => {
@@ -26,4 +26,4 @@ function useKey({ key, handler }) {
   );
 }
 
-export default useKey;
+export default useKeyPress;
