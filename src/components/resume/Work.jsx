@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ModalContext } from "../../contexts/ModalContext";
 import useResume from "../../hooks/useResume";
 import Card, { CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
-import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
+import PopupModal from "../PopupModal";
 import { Button, Input, TextArea } from "../ui";
 function Work() {
   const { professionalExperience, updateProfessionalExperience, removeProfessionalExperience } = useResume();
@@ -13,13 +14,7 @@ function Work() {
     setNextId(professionalExperience.length > 0 ? professionalExperience[professionalExperience.length - 1].id + 1 : 0);
   }, [professionalExperience]);
 
-  const [isModalOpen, setModalOpen] = useState({});
-
-  function handleModal(id) {
-    setModalOpen({
-      [id]: !isModalOpen[id] ? true : false,
-    });
-  }
+  const { closeModal } = useContext(ModalContext);
 
   const handleUpdateWork = (e) => {
     const { id, name, value } = e.target;
@@ -111,27 +106,24 @@ function Work() {
                 />
               </div>
               <CardActions>
-                <Button color={"red"} onClick={() => handleModal(work.id)}>
-                  Delete
-                </Button>
-                <Modal open={isModalOpen[work.id]}>
-                  <ModalHeader>Delete Entry</ModalHeader>
-                  <ModalContent>
-                    <p>Are you sure you want to delete this entry?</p>
-                  </ModalContent>
-                  <ModalActions>
+                <PopupModal
+                  id={"exp-" + work.id}
+                  header="Delete Entry"
+                  label="Delete"
+                  action={
                     <Button
-                      color={"primary"}
+                      color={"accent"}
                       onClick={() => {
+                        closeModal("exp-" + work.id);
                         removeProfessionalExperience(work.id);
-                        handleModal(work.id);
                       }}
                     >
                       Confirm
                     </Button>
-                    <Button onClick={() => handleModal(work.id)}>Cancel</Button>
-                  </ModalActions>
-                </Modal>
+                  }
+                >
+                  <p>Are you sure you want to delete this entry?</p>
+                </PopupModal>
               </CardActions>
             </Collapse>
           ))

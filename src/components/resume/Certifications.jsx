@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ModalContext } from "../../contexts/ModalContext";
 import useResume from "../../hooks/useResume";
 import Card, { CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
-import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
+import PopupModal from "../PopupModal";
 import { Button, Input } from "../ui";
 
 function Certifications() {
   const { certificates, updateCertificate, removeCertificate } = useResume();
   const [nextId, setNextId] = useState(certificates.length > 0 ? certificates[certificates.length - 1].id + 1 : 0);
 
-  const [isModalOpen, setModalOpen] = useState({});
-
-  function handleModal(id) {
-    setModalOpen({
-      [id]: !isModalOpen[id] ? true : false,
-    });
-  }
+  const { closeModal } = useContext(ModalContext);
 
   useEffect(() => {
     setNextId(certificates.length > 0 ? certificates[certificates.length - 1].id + 1 : 0);
@@ -70,27 +65,24 @@ function Certifications() {
                 />
               </div>
               <CardActions>
-                <Button color={"red"} onClick={() => handleModal(certificate.id)}>
-                  Delete
-                </Button>
-                <Modal open={isModalOpen[certificate.id]}>
-                  <ModalHeader>Delete Entry</ModalHeader>
-                  <ModalContent>
-                    <p>Are you sure you want to delete this entry?</p>
-                  </ModalContent>
-                  <ModalActions>
+                <PopupModal
+                  id={"cert-" + certificate.id}
+                  header="Delete Entry"
+                  label={"Delete"}
+                  action={
                     <Button
-                      color={"primary"}
+                      color={"accent"}
                       onClick={() => {
+                        closeModal("cert-" + certificate.id);
                         removeCertificate(certificate.id);
-                        handleModal(certificate.id);
                       }}
                     >
                       Confirm
                     </Button>
-                    <Button onClick={() => handleModal(certificate.id)}>Cancel</Button>
-                  </ModalActions>
-                </Modal>
+                  }
+                >
+                  <p>Are you sure you want to delete this entry?</p>
+                </PopupModal>
               </CardActions>
             </Collapse>
           ))

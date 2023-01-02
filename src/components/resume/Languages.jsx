@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Card, { CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
-import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
+import PopupModal from "../PopupModal";
 import { Button, Input } from "../ui";
 import Range from "../ui/Range";
 
@@ -61,17 +61,13 @@ function Languages() {
                 />
               </div>
               <CardActions>
-                <Button color={"red"} onClick={() => handleModal(lang.id)}>
-                  Delete
-                </Button>
-                <Modal open={isModalOpen[lang.id]}>
-                  <ModalHeader>Delete Entry</ModalHeader>
-                  <ModalContent>
-                    <p>Are you sure you want to delete this entry?</p>
-                  </ModalContent>
-                  <ModalActions>
+                <PopupModal
+                  header="Delete Language"
+                  label="Delete"
+                  id={"lang" + lang.id}
+                  action={
                     <Button
-                      color={"primary"}
+                      color={"accent"}
                       onClick={() => {
                         removeLanguage(lang.id);
                         handleModal(lang.id);
@@ -79,9 +75,10 @@ function Languages() {
                     >
                       Confirm
                     </Button>
-                    <Button onClick={() => handleModal(lang.id)}>Cancel</Button>
-                  </ModalActions>
-                </Modal>
+                  }
+                >
+                  <p>Are you sure you want to delete this entry?</p>
+                </PopupModal>
               </CardActions>
             </Collapse>
           ))

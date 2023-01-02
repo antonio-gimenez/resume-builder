@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ModalContext } from "../../contexts/ModalContext";
 import useResume from "../../hooks/useResume";
 import Card, { CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
-import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
+import PopupModal from "../PopupModal";
 import { Button, Input, TextArea } from "../ui";
 
 function Education() {
   const { education, updateEducation, removeEducation } = useResume();
   const [nextId, setNextId] = useState(education.length > 0 ? education[education.length - 1].id + 1 : 0);
 
-  const [isModalOpen, setModalOpen] = useState({});
-
-  function handleModal(id) {
-    setModalOpen({
-      [id]: !isModalOpen[id] ? true : false,
-    });
-  }
+  const { closeModal } = useContext(ModalContext);
 
   useEffect(() => {
     setNextId(education.length > 0 ? education[education.length - 1].id + 1 : 0);
@@ -93,27 +88,24 @@ function Education() {
                 />
               </div>
               <CardActions>
-                <Button color={"red"} onClick={() => handleModal(education.id)}>
-                  Delete
-                </Button>
-                <Modal open={isModalOpen[education.id]}>
-                  <ModalHeader>Delete Entry</ModalHeader>
-                  <ModalContent>
-                    <p>Are you sure you want to delete this entry?</p>
-                  </ModalContent>
-                  <ModalActions>
+                <PopupModal
+                  header={"Delete Education"}
+                  label={"Delete"}
+                  id={"edu-" + education.id}
+                  action={
                     <Button
-                      color={"primary"}
+                      color={"accent"}
                       onClick={() => {
+                        closeModal("edu-" + education.id);
                         removeEducation(education.id);
-                        handleModal(education.id);
                       }}
                     >
                       Confirm
                     </Button>
-                    <Button onClick={() => handleModal(education.id)}>Cancel</Button>
-                  </ModalActions>
-                </Modal>
+                  }
+                >
+                  <p>Are you sure you want to delete this entry?</p>
+                </PopupModal>
               </CardActions>
             </Collapse>
           ))

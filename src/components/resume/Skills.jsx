@@ -2,22 +2,19 @@ import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
 import Card, { CardContent, CardHeader, CardActions } from "../Card";
-import Modal, { ModalActions, ModalContent, ModalHeader } from "../Modal";
+import PopupModal from "../PopupModal";
 import { Button, Input } from "../ui";
 import Range from "../ui/Range";
 import Switch from "../ui/Switch";
+import { useContext } from "react";
+import { ModalContext } from "../../contexts/ModalContext";
 
 function Skills() {
   const { skills, updateSkill, removeSkill } = useResume();
   const [nextId, setNextId] = useState(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
   const [showSkillLevel, setShowSkillLevel] = useState(false);
-  const [isModalOpen, setModalOpen] = useState({});
 
-  function handleModal(id) {
-    setModalOpen({
-      [id]: !isModalOpen[id] ? true : false,
-    });
-  }
+  const { closeModal } = useContext(ModalContext);
 
   useEffect(() => {
     setNextId(skills.length > 0 ? skills[skills.length - 1].id + 1 : 0);
@@ -64,27 +61,24 @@ function Skills() {
                 handleChange={handleUpdateSkill}
               />
               <CardActions>
-                <Button color={"red"} onClick={() => handleModal(skill.id)}>
-                  Delete
-                </Button>
-                <Modal open={isModalOpen[skill.id]} close={() => setModalOpen({ [skill.id]: false })}>
-                  <ModalHeader>Delete Entry</ModalHeader>
-                  <ModalContent>
-                    <p>Are you sure you want to delete this entry?</p>
-                  </ModalContent>
-                  <ModalActions>
+                <PopupModal
+                  header="Delete Entry"
+                  label="Delete"
+                  id={"skill-" + skill.id}
+                  action={
                     <Button
-                      color={"primary"}
+                      color={"accent"}
                       onClick={() => {
+                        closeModal("skill-" + skill.id);
                         removeSkill(skill.id);
-                        handleModal(skill.id);
                       }}
                     >
                       Confirm
                     </Button>
-                    <Button onClick={() => handleModal(skill.id)}>Cancel</Button>
-                  </ModalActions>
-                </Modal>
+                  }
+                >
+                  <p>Are you sure you want to delete this entry?</p>
+                </PopupModal>
               </CardActions>
             </Collapse>
           ))

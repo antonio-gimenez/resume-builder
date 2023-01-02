@@ -4,6 +4,7 @@ import Editor from "./components/Editor";
 import Header from "./components/Header";
 import AppWrapper from "./components/layouts/AppWrapper";
 import useTheme from "./hooks/useTheme";
+import { ModalProvider } from "./contexts/ModalContext";
 
 function App() {
   const { theme } = useTheme();
@@ -12,14 +13,16 @@ function App() {
     html.setAttribute("data-theme", theme);
   }
   return (
-    <AppWrapper>
-      <Header />
-      <div className="scrollable-content">
-        <div className=" container">
-          <Editor />
+    <ModalProvider>
+      <AppWrapper>
+        <Header />
+        <div className="scrollable-content">
+          <div className=" container">
+            <Editor />
+          </div>
         </div>
-      </div>
-    </AppWrapper>
+      </AppWrapper>
+    </ModalProvider>
   );
 }
 

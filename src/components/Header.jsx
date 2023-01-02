@@ -1,30 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { ReactComponent as Github } from "../assets/icons/github.svg";
-function Header() {
-  useEffect(() => {
-    const header = document.querySelector(".header");
-    const handleScroll = () => {
-      console.log(window.scrollY, window.scroll, window.pageYOffset);
-      if (window.scroll > 0) {
-        header.classList.add("header-scrolled");
-      } else {
-        header.classList.remove("header-scrolled");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+import { ModalContext } from "../contexts/ModalContext";
+const Header = () => {
+  const { modals } = useContext(ModalContext);
   return (
-    <header className="header ">
+    <header className="header">
       <div className="navbar container">
-        <nav aria-label={"Main navigation"}>
+        <nav aria-label="Main navigation">
           <span className="navbar-branding">Resume builder</span>
+
+          {JSON.stringify(modals)}
+
           <a
             className="link"
             aria-label="View repository on GitHub"
@@ -39,6 +26,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

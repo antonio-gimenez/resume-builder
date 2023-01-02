@@ -1,24 +1,25 @@
 import React from "react";
-function Card({ children }) {
+
+const Card = ({ children }) => {
   if (!children) return console.error("Card component requires children");
-  return <div className={`card  `}>{children}</div>;
-}
+  return <div className={`card`}>{children}</div>;
+};
 
-function CardHeader({ children }) {
-  return <div className="card-header ">{children}</div>;
-}
+const CardHeader = ({ children }) => {
+  return <div className="card-header">{children}</div>;
+};
 
-function CardContent({ children }) {
+const CardContent = ({ children }) => {
   return <div className="card-content">{children}</div>;
-}
+};
 
-function CardActions({ children }) {
+const CardActions = ({ children }) => {
   return <div className="card-actions">{children}</div>;
-}
+};
 
-function CardFooter({ children }) {
+const CardFooter = ({ children }) => {
   return <footer className="card-footer">{children}</footer>;
-}
+};
 
 export { Card, CardContent, CardHeader, CardActions, CardFooter };
 
