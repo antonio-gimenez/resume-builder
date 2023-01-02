@@ -1,4 +1,4 @@
-const { useState, useEffect } = require("react");
+import { useState, useEffect, useCallback } from "react";
 
 function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
@@ -10,57 +10,62 @@ function useLocalStorage(key, initialValue) {
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
-      console.log(error);
+      console.error(error);
       return initialValue;
     }
   });
+
+  const storageEventListener = useCallback(() => {
+    const item = window.localStorage.getItem(key);
+    setStoredValue(item ? JSON.parse(item) : initialValue);
+  }, [key, initialValue]);
 
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
     }
 
-    window.addEventListener("storage", () => {
-      const item = window.localStorage.getItem(key);
-      setStoredValue(item ? JSON.parse(item) : initialValue);
-    });
+    window.addEventListener("storage", storageEventListener);
 
     return () => {
-      window.removeEventListener("storage", () => {});
+      window.removeEventListener("storage", storageEventListener);
     };
-  }, [key, initialValue]);
+  }, [storageEventListener]);
 
-  const setValue = (value) => {
-    try {
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore);
-      if (typeof window !== "undefined") {
-        window.localStorage.setItem(key, JSON.stringify(valueToStore));
-        window.dispatchEvent(new Event("storage"));
+  const setValue = useCallback(
+    (value) => {
+      try {
+        const valueToStore = value instanceof Function ? value(storedValue) : value;
+        setStoredValue(valueToStore);
+        if (typeof window !== "undefined") {
+          window.localStorage.setItem(key, JSON.stringify(valueToStore));
+          window.dispatchEvent(new Event("storage"));
+        }
+      } catch (error) {
+        console.error(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    },
+    [storedValue]
+  );
 
-  const itemExistsonLocalStorage = () => {
+  const itemExistsInLocalStorage = useCallback(() => {
     if (typeof window !== "undefined") {
       return window.localStorage.getItem(key) ? true : false;
     }
-  };
+  }, [key]);
 
-  const removeItemFromLocalStorage = () => {
+  const removeItemFromLocalStorage = useCallback(() => {
     try {
       if (typeof window !== "undefined") {
         window.localStorage.removeItem(key);
         window.dispatchEvent(new Event("storage"));
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
-  };
+  }, [key]);
 
-  return [storedValue, setValue, removeItemFromLocalStorage, itemExistsonLocalStorage];
+  return [storedValue, setValue, removeItemFromLocalStorage, itemExistsInLocalStorage];
 }
 
 export default useLocalStorage;
