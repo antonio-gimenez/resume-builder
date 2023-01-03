@@ -17,9 +17,4 @@ const Collapse = ({ children, title = "New Item", open = true, ...props }) => {
   );
 };
 
-const CollapseTitle = ({ children }) => {
-  return <div className="collapse-title">{children}</div>;
-};
-
-export { Collapse, CollapseTitle };
 export default Collapse;

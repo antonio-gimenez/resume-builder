@@ -3,7 +3,7 @@ import { ModalContext } from "../../contexts/ModalContext";
 import useResume from "../../hooks/useResume";
 import Card, { CardActions, CardContent, CardHeader } from "../Card";
 import Collapse from "../Collapse";
-import PopupModal from "../PopupModal";
+import PopupModal from "../ui/PopupModal";
 import { Button, Input, TextArea } from "../ui";
 function Work() {
   const { professionalExperience, updateProfessionalExperience, removeProfessionalExperience } = useResume();

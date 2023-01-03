@@ -5,57 +5,5 @@
     "phone": "123-456-7890",
     "location": "New York, NY"
   },
-  "objective": "Seeking a challenging and rewarding position as a software developer in a dynamic and innovative company.",
-  "education": [
-    {
-      "degree": "Bachelor of Science in Computer Science",
-      "institution": "XYZ University",
-      "graduation_year": 2020
-    },
-    {
-      "degree": "Associate of Applied Science in Computer Programming",
-      "institution": "ABC Community College",
-      "graduation_year": 2018
-    }
-  ],
-  "work_experience": [
-    {
-      "company": "ABC Company",
-      "title": "Software Developer",
-      "dates": "Jan 2021 - Present",
-      "responsibilities": [
-        "Develop and maintain software applications using languages such as Java and Python",
-        "Collaborate with cross-functional teams to gather requirements and deliver high-quality solutions",
-        "Provide technical guidance and support to junior developers on the team"
-      ]
-    },
-    {
-      "company": "XYZ Company",
-      "title": "Software Intern",
-      "dates": "May 2020 - Dec 2020",
-      "responsibilities": [
-        "Assisted senior developers in the design and development of software applications",
-        "Performed code reviews and provided constructive feedback to improve code quality",
-        "Learned and applied new technologies and programming languages"
-      ]
-    }
-  ],
-  "skills": ["Java", "Python", "SQL", "Agile development methodologies"],
-  "certifications": ["Certified Software Development Professional (CSDP)", "Java Certified Associate (JCA)"],
-  "references": [
-    {
-      "name": "Jane Smith",
-      "title": "Software Development Manager",
-      "company": "XYZ Company",
-      "phone": "123-456-7890",
-      "email": "janesmith@example.com"
-    },
-    {
-      "name": "Bob Johnson",
-      "title": "Senior Software Developer",
-      "company": "ABC Company",
-      "phone": "123-456-7890",
-      "email": "bobjohnson@example.com"
-    }
-  ]
+  "skills": [{ "name": "Java" }]
 }

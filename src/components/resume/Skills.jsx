@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useResume from "../../hooks/useResume";
 import Collapse from "../Collapse";
 import Card, { CardContent, CardHeader, CardActions } from "../Card";
-import PopupModal from "../PopupModal";
+import PopupModal from "../ui/PopupModal";
 import { Button, Input } from "../ui";
 import Range from "../ui/Range";
 import Switch from "../ui/Switch";

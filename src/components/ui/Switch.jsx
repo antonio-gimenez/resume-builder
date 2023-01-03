@@ -11,6 +11,7 @@ function Switch({ label = "Label", checked, onChange }) {
         aria-checked={checked}
         onChange={onChange}
         className={"toggle"}
+        name={"toggle"}
       />
       {label && <span className="label-toggle">{label}</span>}
     </label>

@@ -1,6 +1,15 @@
 import React from "react";
 
-function Button({ as = "button", color, ghost = false, type = "button", children, block = false, ...props }) {
+function Button({
+  as = "button",
+  color,
+  ghost = false,
+  type = "button",
+  children,
+  block = false,
+  onClick = () => {},
+  ...props
+}) {
   const id = props.id || Math.random().toString(36).substr(2, 9);
   const buttonColor = color ? color : "";
   const buttonBlock = block ? "block" : "";
@@ -17,6 +26,7 @@ function Button({ as = "button", color, ghost = false, type = "button", children
     <button
       type={type ? type : "button"}
       id={id}
+      onClick={onClick}
       className={`button ${buttonGhost} ${buttonColor} ${buttonBlock}`}
       {...props}
     >
