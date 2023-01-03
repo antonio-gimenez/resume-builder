@@ -13,3 +13,7 @@
 | ci | Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) |
 | wip | Work in progress |
 | malformed | Commit message is malformed |
+| merge | Merge commit |
+| release | Release commit |
+| sync | Sync commit |
+| other | Other commit |
