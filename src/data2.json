@@ -1,9 +1,7 @@
 {
-  "personal_info": {
-    "name": "John Doe",
-    "email": "johndoe@example.com",
-    "phone": "123-456-7890",
-    "location": "New York, NY"
-  },
-  "skills": [{ "name": "Java" }]
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "phone": "123-456-7890",
+  "location": "New York, NY",
+  "skills": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
 }

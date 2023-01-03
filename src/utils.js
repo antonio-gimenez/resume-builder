@@ -67,3 +67,10 @@ export function getLastIdFromArray(array) {
   const lastElement = array.reverse().find((item) => item !== null && item !== undefined);
   return lastElement ? lastElement.id + 1 : 0;
 }
+
+export function getType(value) {
+  if (Array.isArray(value)) {
+    return "array";
+  }
+  return typeof value;
+}

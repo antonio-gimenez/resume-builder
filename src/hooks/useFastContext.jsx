@@ -37,16 +37,13 @@ export default function createFastContext(initialState) {
       throw new Error("Store not found");
     }
 
-    if (typeof selector === "function") {
-      const state = useSyncExternalStore(
-        store.subscribe,
-        () => selector(store.get()),
-        () => selector(initialState)
-      );
-      return [state, store.set];
-    }
+    const state = useSyncExternalStore(
+      store.subscribe,
+      () => selector(store.get()),
+      () => selector(initialState)
+    );
 
-    return [store.get(), store.set];
+    return [state, store.set];
   }
 
   return {
