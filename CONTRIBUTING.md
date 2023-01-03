@@ -12,3 +12,4 @@
 | build | Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm) |
 | ci | Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) |
 | wip | Work in progress |
+| malformed | Commit message is malformed |
