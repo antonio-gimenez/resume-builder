@@ -1,45 +1,95 @@
 {
-  "customSettings": {
-    "templateNumber": 0
-  },
+  "name": "Untitled",
+  "avatar": {},
+  "position": "Embedded aFirmware Engineer",
+  "firstName": "Antonio",
+  "lastName": "Gimenez Rueda",
+  "phoneNumber": "6529668271",
+  "countryName": null,
+  "city": null,
+  "address": null,
+  "postalCode": null,
+  "birthPlace": null,
+  "birthDate": null,
+  "drivingLicense": null,
+  "nationality": null,
+  "email": "angiru1991@gmail.com",
+  "profile": null,
+  "template": "stockholm",
   "sectionsOrder": [
-    "personalDetails",
+    "profile",
+    "educations",
+    "socialProfiles",
+    "workExperiences",
     "skills",
+    "hobbies",
     "languages",
-    "workExperience",
-    "education",
-    "certifications",
-    "projects",
-    "awards",
-    "interests",
-    "references"
+    "courses"
   ],
-  "sectionTitles": {
-    "personalDetails": "Personal Details",
-    "skills": "Skills",
-    "education": "Education",
-    "certifications": "Certifications",
-    "workExperience": "Work Experience",
-    "projects": "Projects",
-    "awards": "Awards",
-    "languages": "Languages",
-    "interests": "Interests",
-    "references": "References"
-  },
-  "profile": {
-    "firstName": "",
-    "lastName": "",
-    "email": "",
-    "phone": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "summary": "",
-    "avatar": null
-  },
-  "skills": [],
-  "languages": [],
-  "certificates": [],
-  "education": [],
-  "professionalExperience": []
+  "gender": null,
+  "married": false,
+  "hideSkillLevel": false,
+  "sectionTitles": { "id": 0, "workExperience": "Experiencia Laboral" },
+
+  "workExperiences": [],
+  "educations": [
+    {
+      "id": null,
+      "school": null,
+      "degree": null,
+      "level": null,
+      "city": null,
+      "dateFrom": null,
+      "dateUntil": null,
+      "description": null,
+      "faculty": null,
+      "department": null
+    }
+  ],
+  "courses": [
+    {
+      "id": null,
+      "course": null,
+      "institution": null,
+      "dateFrom": null,
+      "dateUntil": null,
+      "description": null
+    }
+  ],
+  "internships": [],
+  "activities": [],
+  "skills": [
+    {
+      "id": null,
+      "skill": "HTML",
+      "level": "expert"
+    },
+    {
+      "id": null,
+      "skill": null,
+      "level": "expert"
+    }
+  ],
+  "languages": [
+    {
+      "id": null,
+      "language": null,
+      "level": null
+    }
+  ],
+  "hobbies": [
+    {
+      "id": null,
+      "hobby": null
+    }
+  ],
+  "references": [],
+  "socialProfiles": [
+    {
+      "id": 6867339,
+      "label": null,
+      "link": null
+    }
+  ],
+  "customSections": []
 }
