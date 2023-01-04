@@ -5,6 +5,7 @@ import AppWrapper from "./components/layouts/AppWrapper";
 import useTheme from "./hooks/useTheme";
 import { ModalProvider } from "./contexts/ModalContext";
 import Form from "./components/Form";
+import Calendar from "./components/Calendar";
 
 function App() {
   const { theme } = useTheme();
@@ -18,7 +19,8 @@ function App() {
       <AppWrapper>
         <Header />
         <div className="scrollable-content">
-          <Form />
+          <Calendar />
+          {/* <Form /> */}
         </div>
       </AppWrapper>
     </ModalProvider>

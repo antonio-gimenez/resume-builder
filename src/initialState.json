@@ -29,7 +29,7 @@
   "gender": null,
   "married": false,
   "hideSkillLevel": false,
-  "sectionTitles": {
+  "sectionsTitles": {
     "workExperience": "Work Experience",
     "education": "Education",
     "course": "Course",

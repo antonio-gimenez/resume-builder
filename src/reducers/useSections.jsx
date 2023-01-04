@@ -1,12 +1,17 @@
 import { useReducer } from "react";
-
+import useLocalStorage from "../hooks/useLocalStorage";
+import initialState from "../initialState";
 // example of section titles state
 // sectionTitles = [
 //   { "workExperience": "Experiencia Laboral" },
 // ]
 
-function useSectionTitles(initialState) {
-  const upsertReducer = (state, action) => {
+function useSections() {
+  // useLocalStorage hook to save the state in the browser's local storage
+
+  const [sections, setSections] = useLocalStorage("sections", initialState.sectionsTitles);
+
+  const sectionReducer = (state, action) => {
     switch (action.type) {
       case "UPSERT":
         // If the item already exists in the object, update it
@@ -39,6 +44,9 @@ function useSectionTitles(initialState) {
         }
         let newSectionNames;
         if (action.payload.direction === "up") {
+          if (sectionIndex === 0) {
+            return state;
+          }
           newSectionNames = [
             ...sectionNames.slice(0, sectionIndex - 1),
             sectionNames[sectionIndex],
@@ -46,6 +54,9 @@ function useSectionTitles(initialState) {
             ...sectionNames.slice(sectionIndex + 1),
           ];
         } else if (action.payload.direction === "down") {
+          if (sectionIndex === sectionNames.length - 1) {
+            return state;
+          }
           newSectionNames = [
             ...sectionNames.slice(0, sectionIndex),
             sectionNames[sectionIndex + 1],
@@ -66,24 +77,28 @@ function useSectionTitles(initialState) {
     }
   };
 
-  const [state, dispatch] = useReducer(upsertReducer, initialState);
+  const [state, dispatch] = useReducer(sectionReducer, sections);
 
   const upsertSectionTitle = (sectionName, title) => {
     dispatch({ type: "UPSERT", payload: { sectionName, title } });
+    setSections({ ...state, [sectionName]: title });
   };
 
   const deleteSectionTitle = (sectionName) => {
     dispatch({ type: "DELETE", payload: { sectionName } });
+    setSections({ ...state });
   };
 
   const resetSectionTitle = (sectionName) => {
     dispatch({ type: "RESET", payload: { sectionName } });
+    setSections({ ...state });
   };
 
   const changeOrder = (sectionName, direction) => {
     dispatch({ type: "CHANGE_ORDER", payload: { sectionName, direction } });
+    setSections({ ...state });
   };
 
   return [state, { upsertSectionTitle, deleteSectionTitle, resetSectionTitle, changeOrder }];
 }
-export default useSectionTitles;
+export default useSections;

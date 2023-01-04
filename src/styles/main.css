@@ -100,6 +100,9 @@ ul {
 }
 
 /* Progress */
+.selected-day {
+  background: hsl(var(--accent), 0.1);
+}
 
 .progress {
   display: flex;

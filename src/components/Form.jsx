@@ -1,32 +1,34 @@
 import React from "react";
-import initialState from "../data.json";
-import { Input } from "./ui";
-import useSectionTitles from "../reducers/useSectionTitles";
+import { Button, Input } from "./ui";
+import useSections from "../reducers/useSections";
 
 function Form() {
-  const [sections, { upsertSectionTitle, changeOrder }] = useSectionTitles(initialState.sectionTitles);
+  const [sections, { upsertSectionTitle, changeOrder }] = useSections();
 
   return (
     <>
       <form>
-        {JSON.stringify(sections)}
+        {console.log(sections)}
         <Input
           label={sections["workExperience"]}
           id="firstName"
           name="firstName"
           onChange={(event) => {
-            upsertSectionTitle("workExperience", event.target.value);
+            upsertSectionTitle(Object.keys(sections)[0], event.target.value);
           }}
           defaultValue={sections["workExperience"]}
         />
+        <Button color="accent" onClick={() => changeOrder("workExperience", "down")}>
+          Up
+        </Button>
         <Input
-          label={sections["education"]}
+          label={sections["aaa"]}
           id="firstName"
           name="firstName"
           onChange={(event) => {
-            upsertSectionTitle("education", event.target.value);
+            upsertSectionTitle("aaa", event.target.value);
           }}
-          defaultValue={sections["education"]}
+          defaultValue={sections["aaa"]}
         />
       </form>
     </>
