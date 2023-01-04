@@ -29,7 +29,19 @@
   "gender": null,
   "married": false,
   "hideSkillLevel": false,
-  "sectionTitles": { "id": 0, "workExperience": "Experiencia Laboral" },
+  "sectionTitles": {
+    "workExperience": "Work Experience",
+    "education": "Education",
+    "course": "Course",
+    "internship": "Internship",
+    "activity": "Activity",
+    "skill": "Skill",
+    "language": "Language",
+    "hobby": "Hobby",
+    "reference": "Reference",
+    "socialProfile": "Social Profile",
+    "customSection": "Custom Section"
+  },
 
   "workExperiences": [],
   "educations": [
